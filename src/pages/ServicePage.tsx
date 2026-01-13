@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ArrowRight, CheckCircle, Users, Settings, MessageCircle, Sparkles, Focus, MousePointer, PenTool, Heart, ThumbsUp, Award, BarChart2, Scale, ChevronUp, ChevronDown, TrendingDown, AlignLeft, RefreshCw, GitBranch, CircleDot, Zap, Brain, GitPullRequest, LogIn, MessageSquare, Grid3x3, Lightbulb, Maximize, Circle, PlayCircle, Cpu, TrendingUp, Cloud, MessageSquareOff } from "lucide-react";
 import { getServiceBySlug, serviceNavItems, ServiceData } from "../data/servicesData";
@@ -49,6 +49,11 @@ export default function ServicePage() {
   const { slug } = useParams<{ slug: string }>();
   const service = getServiceBySlug(slug || "");
 
+  // Scroll to top when service changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [slug]);
+
   if (!service) {
     return (
       <div className="min-h-screen bg-[#0B0C0E] text-white flex items-center justify-center">
@@ -63,8 +68,12 @@ export default function ServicePage() {
   }
 
   return (
-    <main className="bg-[#0B0C0E] text-white min-h-screen pt-24 font-['Inter']">
-      <section className="flex justify-center px-6 mb-8">
+    <main className="bg-[#0B0C0E] text-white min-h-screen pt-[164px] font-['Inter']">
+      {/* Sticky Service Navigation - 24px gap from main navbar */}
+      <div 
+        className="fixed top-[100px] left-0 right-0 z-40 flex justify-center px-6 py-4"
+        style={{ backgroundColor: '#0B0C0E' }}
+      >
         <div 
           className="flex items-center justify-center bg-zinc-900/80 border border-zinc-800"
           style={{
@@ -95,7 +104,7 @@ export default function ServicePage() {
             </Link>
           ))}
         </div>
-      </section>
+      </div>
 
       <section className="max-w-4xl mx-auto px-6 text-center py-12">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">{service.title}</h1>

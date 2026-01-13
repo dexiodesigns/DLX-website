@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { SunMoon, Sun, Moon, ChevronDown, ChevronUp, ChevronRight, ArrowLeft, Menu, X, FileSearch, Search, BarChart2, PenTool, Wand2, TrendingUp, PlayCircle } from "lucide-react";
 import { Logo } from "./../assets/Logo";
 
@@ -10,6 +10,16 @@ export default function Navbar() {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // Check if current path matches nav item
+  const isActive = (href: string) => {
+    if (href === "#") return false;
+    return location.pathname === href || location.pathname.startsWith(href + "/");
+  };
+
+  // Check if services is active (any service page)
+  const isServicesActive = location.pathname.startsWith("/services");
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -121,17 +131,40 @@ export default function Navbar() {
                   <button 
                     ref={buttonRef}
                     onClick={() => setIsServicesOpen(!isServicesOpen)}
-                    className="hover:text-white/80 cursor-pointer transition flex items-center gap-1 outline-none"
+                    className={`cursor-pointer transition flex items-center gap-1 outline-none ${
+                      isServicesActive ? "text-white font-semibold" : "text-zinc-300 hover:text-white"
+                    }`}
                   >
-                    Services 
+                    <span className="relative">
+                      Services
+                      {isServicesActive && (
+                        <div 
+                          className="absolute left-1/2 -translate-x-1/2 -bottom-3 bg-[#6366f1]"
+                          style={{ width: '40px', height: '4px', borderRadius: '4px' }}
+                        />
+                      )}
+                    </span>
                     {isServicesOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
                   </button>
                 </li>
-                <li className="hover:text-white/80 cursor-pointer transition">Products</li>
-                <li className="hover:text-white/80 cursor-pointer transition">Academy</li>
-                <li className="hover:text-white/80 cursor-pointer transition">Resources</li>
-                <li className="hover:text-white/80 cursor-pointer transition">Company</li>
-                <li className="hover:text-white/80 cursor-pointer transition">Contact</li>
+                {navItems.slice(1).map((item) => (
+                  <li key={item.name} className="relative">
+                    <Link
+                      to={item.href}
+                      className={`cursor-pointer transition ${
+                        isActive(item.href) ? "text-white font-semibold" : "text-zinc-300 hover:text-white"
+                      }`}
+                    >
+                      {item.name}
+                    </Link>
+                    {isActive(item.href) && (
+                      <div 
+                        className="absolute left-1/2 -translate-x-1/2 -bottom-3 bg-[#6366f1]"
+                        style={{ width: '40px', height: '4px', borderRadius: '4px' }}
+                      />
+                    )}
+                  </li>
+                ))}
             </ul>
 
             <div className="bg-zinc-800 p-1 rounded-full flex items-center gap-2 border border-zinc-700 ml-4">
