@@ -14,6 +14,7 @@ import { People2 } from "../assets/peopleImages/people2";
 import { People3 } from "../assets/peopleImages/people3";
 import { People4 } from "../assets/peopleImages/people4";
 import { People5 } from "../assets/peopleImages/people5";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("Design Services");
@@ -227,6 +228,9 @@ export default function Home() {
           We don't just build. We evolve with you.
         </h2>
       </section>
+
+      {/* Footer */}
+      <Footer />
     </main>
   );
 }
