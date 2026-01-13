@@ -1,4 +1,4 @@
-import { ArrowRight, Star } from "lucide-react";
+import { ArrowRight, Sparkles, Globe, Lightbulb } from "lucide-react";
 import {HomeImg} from "../assets/HomeImg";
 import { VideoImg } from "../assets/VideoImg";
 import { useState } from "react";
@@ -14,10 +14,44 @@ import { People2 } from "../assets/peopleImages/people2";
 import { People3 } from "../assets/peopleImages/people3";
 import { People4 } from "../assets/peopleImages/people4";
 import { People5 } from "../assets/peopleImages/people5";
+import { Star } from "../HomeIcons/star";
+import { Bulb } from "../HomeIcons/bulb";
+import { Sun } from "../HomeIcons/sun"; 
+import { Plus } from "../HomeIcons/Plus";
+import EvidenceOfImpact from "../components/Evidence";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("Design Services");
+    const [activeFAQTab, setActiveFAQTab] = useState("Design Company");
+const SparkleIcon = () => (
+  <svg 
+    width="34" 
+    height="34" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path 
+      /* M = Move to top tip
+         Q = Quadratic curve to the right tip (using center 12,12 as pull point)
+      */
+      d="M12 0Q12 12 24 12Q12 12 12 24Q12 12 0 12Q12 12 12 0Z" 
+      fill="#F06058" 
+    />
+  </svg>
+);
+const [openFaq, setOpenFaq] = useState<number | null>(0);
 
+  const faqs = [
+    {
+      question: "What are your areas of focus as a leading UI/UX design company in India?",
+      answer: "We specialize in user research, interaction design, usability testing, and digital product strategy. From mobile applications to enterprise platforms, our solutions combine human neuroscience, psychology, technology, and design thinking to develop intuitive, high-performing experiences."
+    },
+    { question: "What separates Dexio from other top UI/UX design agencies?", answer: "Our focus on AI-driven innovation and multidisciplinary approach." },
+    { question: "Does Dexio have experience working with large corporate organisations in UX/UI design?", answer: "Yes, we partner with both startups and global enterprises." },
+    { question: "Does Dexio work with startups in UX/UI design?", answer: "Absolutely, we help startups scale through intelligent design." },
+    { question: "Why should we onboard Dexio? What's special about you?", answer: "We don't just build products; we evolve with your business needs." }
+  ];
   return (
     <main className="bg-[#0B0C0E] text-white min-h-screen pt-24 selection:bg-purple-500/30">
       
@@ -150,83 +184,199 @@ export default function Home() {
       </section>
 
       {/* --- Testimonial Section (Blue Banner) --- */}
-      <section className="bg-[#2f329d] py-20 px-6 flex flex-col items-center text-center">
+      <section className="bg-[#2f329d] pt-10 pb-2 px-6 flex flex-col items-center text-center">
         {/* Avatar Stack */}
-<div className="flex items-center justify-center mb-12 relative h-44">
-  {/* Left Far - Small Squircle (Blue Border Only) */}
-  <div className="absolute -translate-x-[10.5rem] flex items-center justify-center opacity-50">
-    <div className="w-[64px] h-[64px] rounded-[24px] border-2 border-[#4d5ef7] overflow-hidden">
-        <People1/>
-      {/* <img src="https://i.pravatar.cc/150?u=1" className="w-full h-full object-cover grayscale brightness-75" /> */}
-      <div className="absolute inset-0 bg-[#4044E8]/40 mix-blend-color"></div>
-    </div>
-  </div>
+        <div className="flex items-center justify-center relative h-44">
+          {/* Left Far - Small Squircle (Blue Border Only) */}
+          <div className="absolute -translate-x-[10.5rem] flex items-center justify-center opacity-50">
+            <div className="w-[64px] h-[64px] rounded-[24px] border-2 border-[#4d5ef7] overflow-hidden">
+                <People1/>
+              {/* <img src="https://i.pravatar.cc/150?u=1" className="w-full h-full object-cover grayscale brightness-75" /> */}
+              <div className="absolute inset-0 bg-[#4044E8]/40 mix-blend-color"></div>
+            </div>
+          </div>
 
-  {/* Left Near - Medium Squircle (Blue Border Only) */}
-  <div className="absolute -translate-x-[6.5rem] flex items-center justify-center z-10">
-    <div className="w-[96px] h-[96px] rounded-[40px] border-[3px] border-[#4d5ef7] overflow-hidden relative">
-        <People2/>
-      {/* <img src="https://i.pravatar.cc/150?u=2" className="w-full h-full object-cover" /> */}
-      <div className="absolute inset-0 bg-[#4044E8]/30 mix-blend-color"></div>
-    </div>
-  </div>
+          {/* Left Near - Medium Squircle (Blue Border Only) */}
+          <div className="absolute -translate-x-[6.5rem] flex items-center justify-center z-10">
+            <div className="w-[96px] h-[96px] rounded-[40px] border-[3px] border-[#4d5ef7] overflow-hidden relative">
+                <People2/>
+              {/* <img src="https://i.pravatar.cc/150?u=2" className="w-full h-full object-cover" /> */}
+              <div className="absolute inset-0 bg-[#4044E8]/30 mix-blend-color"></div>
+            </div>
+          </div>
 
-  {/* Main Avatar (Center) - Circular with Double White Borders */}
-  <div className="relative z-20 flex items-center justify-center">
-    {/* Outer White Ring */}
-    <div className="w-[144px] h-[144px] rounded-[62px] border-[1.5px] border-white flex items-center justify-center bg-[#4044E8]/100">
-      {/* Inner Main White Border */}
-      <div className="w-[128px] h-[128px] rounded-[56px] border-[1.5px] border-white overflow-hidden bg-white shadow-2xl">
-        <People3/>
-        {/* <img src="https://i.pravatar.cc/150?u=3" className="w-full h-full object-cover scale-110" /> */}
-      </div>
-    </div>
-  </div>
+          {/* Main Avatar (Center) - Circular with Double White Borders */}
+          <div className="relative z-20 flex items-center justify-center">
+            {/* Outer White Ring */}
+            <div className="w-[144px] h-[144px] rounded-[62px] border-[1.5px] border-white flex items-center justify-center bg-[#4044E8]/100">
+              {/* Inner Main White Border */}
+              <div className="w-[128px] h-[128px] rounded-[56px] border-[1.5px] border-white overflow-hidden bg-white shadow-2xl">
+                <People3/>
+                {/* <img src="https://i.pravatar.cc/150?u=3" className="w-full h-full object-cover scale-110" /> */}
+              </div>
+            </div>
+          </div>
 
-  {/* Right Near - Medium Squircle (Blue Border Only) */}
-  <div className="absolute translate-x-[6.5rem] flex items-center justify-center z-10">
-    <div className="w-[96px] h-[96px] rounded-[40px] border-[3px] border-[#4d5ef7] overflow-hidden relative">
-        <People4/>
-      {/* <img src="https://i.pravatar.cc/150?u=4" className="w-full h-full object-cover" /> */}
-      <div className="absolute inset-0 bg-[#3b3ded]/30 mix-blend-color"></div>
-    </div>
-  </div>
+          {/* Right Near - Medium Squircle (Blue Border Only) */}
+          <div className="absolute translate-x-[6.5rem] flex items-center justify-center z-10">
+            <div className="w-[96px] h-[96px] rounded-[40px] border-[3px] border-[#4d5ef7] overflow-hidden relative">
+                <People4/>
+              {/* <img src="https://i.pravatar.cc/150?u=4" className="w-full h-full object-cover" /> */}
+              <div className="absolute inset-0 bg-[#3b3ded]/30 mix-blend-color"></div>
+            </div>
+          </div>
 
-  {/* Right Far - Small Squircle (Blue Border Only) */}
-  <div className="absolute translate-x-[10.5rem] flex items-center justify-center opacity-50">
-    <div className="w-[64px] h-[64px] rounded-[24px] border-2 border-[#4d5ef7] overflow-hidden">
-        <People5/>
-      {/* <img src="https://i.pravatar.cc/150?u=5" className="w-full h-full object-cover grayscale brightness-75" /> */}
-      <div className="absolute inset-0 bg-[#3b3ded]/40 mix-blend-color"></div>
-    </div>
-  </div>
-</div>
-        <h4 className="text-2xl font-bold text-white mb-1">Rithwin</h4>
-        <p className="text-blue-200 text-sm mb-8">Founder & CEO, Vittae Inc.</p>
+          {/* Right Far - Small Squircle (Blue Border Only) */}
+          <div className="absolute translate-x-[10.5rem] flex items-center justify-center opacity-50">
+            <div className="w-[64px] h-[64px] rounded-[24px] border-2 border-[#4d5ef7] overflow-hidden">
+                <People5/>
+              {/* <img src="https://i.pravatar.cc/150?u=5" className="w-full h-full object-cover grayscale brightness-75" /> */}
+              <div className="absolute inset-0 bg-[#3b3ded]/40 mix-blend-color"></div>
+            </div>
+          </div>
+        </div>
+        <h4 className="mb-1 tracking-[1px] leading-tight" style={{color: '#F1F2F4', textAlign: 'center', fontSize: '36px', fontStyle: 'normal', fontWeight: '600', lineHeight: '48px'}}>Rithwin</h4>
+        <p className="text-[#F1F2F4] tracking-[0.5px] leading-tight text-[20px] mb-8">Founder & CEO, Vittae Inc.</p>
 
-        <p className="max-w-3xl text-lg md:text-xl font-medium text-white leading-relaxed mb-10">
-          "Dexio team was able to support us in our revamp journey and are now turning out to 
+        <p className="max-w-[52rem] mb-10 px-4 sm:px-6 md:px-0" style={{overflow: 'hidden', color: '#F1F2F4', textAlign: 'center', textOverflow: 'ellipsis', fontFamily: 'Inter', fontSize: '20px', fontStyle: 'normal', fontWeight: '400', lineHeight: '30px'}}>
+          Dexio team was able to support us in our revamp journey and are now turning out to 
           be a valuable member of our engineering community. Our POC and designer Ganga 
           has been a phenomenal young talent for Vittae and she has proved that she is 
-          hungry to learn & grow along with us."
+          hungry to learn & grow along with us.
         </p>
 
         {/* Custom Pagination/Dots */}
         <div className="flex items-center gap-3">
-          <div className="w-1.5 h-1.5 rounded-full bg-blue-300 opacity-50"></div>
-          <div className="w-1.5 h-1.5 rounded-full bg-blue-300 opacity-50"></div>
-          <div className="text-orange-400"><Star size={16} fill="currentColor" /></div>
-          <div className="w-1.5 h-1.5 rounded-full bg-blue-300 opacity-50"></div>
-          <div className="w-1.5 h-1.5 rounded-full bg-blue-300 opacity-50"></div>
+          {/* <div className="w-2 h-2 rounded-full bg-blue-300 opacity-50"></div>
+          <div className="w-2 h-2 rounded-full bg-blue-300 opacity-50"></div> */}
+<div className="flex items-center gap-2 mt-8">
+  {/* Left inactive dots */}
+  <div className="w-2 h-2 rounded-full bg-white/40"></div>
+  <div className="w-2 h-2 rounded-full bg-white/40"></div>
+  
+  {/* The Sharp Sparkle */}
+  <div className="flex items-center justify-center w-8 h-8">
+    <SparkleIcon />
+  </div>
+
+  {/* Right inactive dots */}
+  <div className="w-2 h-2 rounded-full bg-white/40"></div>
+  <div className="w-2 h-2 rounded-full bg-white/40"></div>
+</div>
+          {/* <div className="w-2 h-2 rounded-full bg-blue-300 opacity-50"></div>
+          <div className="w-2 h-2 rounded-full bg-blue-300 opacity-50"></div> */}
         </div>
       </section>
 
-      {/* --- Footer Intro Section --- */}
-      <section className="py-40 text-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
+<section className="bg-black py-24 px-6 xl:px-[200px]">
+      
+      {/* --- Features Cards --- */}
+      <div className="text-center">
+        <h2 className="mb-12" style={{color: '#F1F2F4', fontSize: '38px', fontStyle: 'normal', fontWeight: '600', lineHeight: '48px'}}>
           We don't just build. We evolve with you.
         </h2>
-      </section>
+        
+        <div className="grid md:grid-cols-3 gap-12">
+          {/* Card 1 */}
+          <div className="bg-[#111214] p-8 rounded-[32px] text-left hover:border-zinc-700 transition">
+            <div className="mb-6">
+              {/* <Sparkles className="text-indigo-500" size={24} /> */}
+              <Star/>
+            </div>
+            <h3 className="text-2xl font-bold text-[#F1F2F4] mb-4 tracking-[1px] leading-tight">AI-Driven Innovation</h3>
+            <p className="text-[#D5D7DD] text-[16px]" style={{overflow: 'hidden', textOverflow: 'ellipsis', fontWeight: '400', lineHeight: '24px'}}>
+              Every solution is built with automation and intelligence at its core.
+            </p>
+          </div>
+
+          {/* Card 2 */}
+          <div className="bg-[#111214] p-8 rounded-[32px] text-left hover:border-zinc-700 transition">
+            <div className="mb-6">
+              {/* <Globe className="text-orange-500" size={24} /> */}
+              <Sun/>
+            </div>
+            <h3 className="text-2xl font-bold text-[#F1F2F4] mb-4 tracking-[1px] leading-tight">Global Mindset</h3>
+            <p className="text-[#D5D7DD] text-[16px]" style={{overflow: 'hidden', textOverflow: 'ellipsis', fontWeight: '400', lineHeight: '24px'}}>
+              Trusted by startups and enterprises across industries and continents.
+            </p>
+          </div>
+
+          {/* Card 3 */}
+          <div className="bg-[#111214] p-8 rounded-[32px] text-left hover:border-zinc-700 transition">
+            <div className="mb-6">
+              {/* <Lightbulb className="text-cyan-500" size={24} /> */}
+              <Bulb/>
+            </div>
+            <h3 className="text-2xl font-bold text-[#F1F2F4] mb-4 tracking-[1px] leading-tight">Creativity-First Thinking</h3>
+            <p className="text-[#D5D7DD] text-[16px]" style={{overflow: 'hidden', textOverflow: 'ellipsis', fontWeight: '400', lineHeight: '24px'}}>
+              Where aesthetics meet measurable business outcomes.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* --- FAQ Section --- */}
+      <div className="mt-40">
+        <h2 className="text-4xl font-bold text-white text-center mb-10">FAQs</h2>
+        
+        {/* FAQ Tabs Switcher */}
+
+                <div className="flex justify-center mb-[24px] h-[64px]">
+          <div className="p-2 rounded-[24px] flex items-center" style={{backgroundColor: 'rgb(26 27 30 / 66%)'}}>
+            {["Design Company", "Design Services", "Design Process", "Design Academy"].map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveFAQTab(tab)}
+                className={`px-8 py-2.5 rounded-[20px] transition-all duration-300  text-base font-medium leading-6 capitalize ${
+                  activeFAQTab === tab 
+                    ? "bg-white text-black h-[100%] font-inter" 
+                    : "text-white hover:text-white"
+                }`}
+                // style={activeTab === tab ? {color: 'rgba(213, 215, 221, 1)'} : {}}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Accordion */}
+<div>
+  {faqs.map((faq, index) => (
+    <div key={index} className="flex gap-4">
+      <div className={`${openFaq === index ? "pt-4" : "pt-8"}`}>
+        <Plus/>
+      </div>
+      <div className="flex-1 border-b border-zinc-800">
+        <button 
+          onClick={() => setOpenFaq(openFaq === index ? null : index)}
+          className={`w-full text-left group  ${openFaq === index ? "py-4" : "py-8"}`}
+        >
+          <h3 className="text-[18px] md:text-xl font-bold transition leading-10 text-[#F1F2F4]">
+            {faq.question}
+          </h3>
+        </button>
+        
+        <div className={`overflow-hidden transition-all duration-300 ${openFaq === index ? "max-h-60 pb-8" : "max-h-0"}`}>
+          <p 
+            style={{ 
+              color: '#D5D7DD', 
+              fontFamily: 'Inter', 
+              fontSize: '16px', 
+              fontWeight: '400', 
+              lineHeight: '24px' 
+            }}
+          >
+            {faq.answer}
+          </p>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+      </div>
+    </section>
+      <EvidenceOfImpact/>
     </main>
   );
 }
