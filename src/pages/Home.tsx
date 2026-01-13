@@ -19,6 +19,7 @@ import { Bulb } from "../HomeIcons/bulb";
 import { Sun } from "../HomeIcons/sun"; 
 import { Plus } from "../HomeIcons/Plus";
 import EvidenceOfImpact from "../components/Evidence";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("Design Services");
