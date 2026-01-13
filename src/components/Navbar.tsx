@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { SunMoon, Sun, Moon, ChevronDown, ChevronUp, ChevronRight, ArrowLeft, Menu, X, FileSearch, Search, BarChart2, PenTool, Wand2, TrendingUp, PlayCircle } from "lucide-react";
 import { Logo } from "./../assets/Logo";
 
@@ -8,8 +9,8 @@ export default function Navbar() {
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const navigate = useNavigate();
 
-  // Close dropdown when clicking outside (desktop only)
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -29,7 +30,7 @@ export default function Navbar() {
     };
   }, [isServicesOpen]);
 
-  // Prevent body scroll when mobile menu is open
+
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -46,63 +47,74 @@ export default function Navbar() {
     setIsMobileServicesOpen(false);
   };
 
+  const handleServiceClick = (slug: string) => {
+    setIsServicesOpen(false);
+    closeMobileMenu();
+    navigate(`/services/${slug}`);
+  };
+
   const services = [
     { 
       icon: <FileSearch className="w-6 h-6" />, 
-      title: "UX Audit", 
+      title: "UX Audit",
+      slug: "ux-audit",
       desc: "Identify Usability Gaps, Friction Points, And Conversion Blockers Across Your Product." 
     },
     { 
-      icon: <PenTool className="w-6 h-6" />, 
-      title: "UX Design", 
-      desc: "Design Intuitive, Scalable Product Experiences That Balance User Needs With Business Goals." 
-    },
-    { 
-      icon: <PlayCircle className="w-6 h-6" />, 
-      title: "Motion Graphics", 
-      desc: "Explain Products And Stories Through Motion. Clear, Engaging, And Conversion-Oriented." 
-    },
-    { 
       icon: <Search className="w-6 h-6" />, 
-      title: "UX Research", 
+      title: "UX Research",
+      slug: "ux-research",
       desc: "Understand Real User Needs And Behaviors Through Validated Research." 
     },
     { 
-      icon: <Wand2 className="w-6 h-6" />, 
-      title: "Next-Gen Experience Design", 
-      desc: "Design Intelligent, Immersive, And Future-Ready Experiences For Emerging Technologies." 
+      icon: <PenTool className="w-6 h-6" />, 
+      title: "UX Design",
+      slug: "ux-design",
+      desc: "Design Intuitive, Scalable Product Experiences That Balance User Needs With Business Goals." 
     },
     { 
       icon: <BarChart2 className="w-6 h-6" />, 
-      title: "Data-Driven UX", 
+      title: "Data-Driven UX",
+      slug: "data-driven-ux",
+      desc: "Turn Product Data Into Better Experiences And UX Decisions." 
+    },
+    { 
+      icon: <Wand2 className="w-6 h-6" />, 
+      title: "Next-Gen Experience Design",
+      slug: "next-gen-ux",
       desc: "Design Intelligent, Immersive, And Future-Ready Experiences For Emerging Technologies." 
     },
     { 
       icon: <TrendingUp className="w-6 h-6" />, 
-      title: "Growth-Focused Marketing Design", 
-      desc: "Design Intelligent, Immersive, And Future-Ready Experiences For Emerging Technologies." 
+      title: "Marketing Designs",
+      slug: "marketing-designs",
+      desc: "Design That Drives Measurable Engagement, Clarity, And Growth Across Channels." 
+    },
+    { 
+      icon: <PlayCircle className="w-6 h-6" />, 
+      title: "Motion Graphics",
+      slug: "motion-graphics",
+      desc: "Explain Products And Stories Through Motion. Clear, Engaging, And Conversion-Oriented." 
     },
   ];
 
   const navItems = [
-    { name: "Services", hasSubmenu: true },
-    { name: "Products", hasSubmenu: false },
-    { name: "Academy", hasSubmenu: false },
-    { name: "Resources", hasSubmenu: false },
-    { name: "Company", hasSubmenu: false },
-    { name: "Contact", hasSubmenu: false },
+    { name: "Services", hasSubmenu: true, href: "#" },
+    { name: "Products", hasSubmenu: false, href: "/products" },
+    { name: "Academy", hasSubmenu: false, href: "/academy" },
+    { name: "Resources", hasSubmenu: false, href: "/resources" },
+    { name: "Company", hasSubmenu: false, href: "/company" },
+    { name: "Contact", hasSubmenu: false, href: "/contact" },
   ];
 
   return (
     <>
       <nav className="fixed top-0 w-full z-50 bg-black/50 backdrop-blur-md text-white font-['Inter']">
         <div className="px-6 md:px-[200px] py-6 flex justify-between items-center">
-          {/* Logo Section */}
-          <div className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <Logo/>
-          </div>
+          </Link>
           
-          {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-8">
             <ul className="flex gap-8 items-center text-sm font-medium">
                 <li className="relative">
@@ -122,13 +134,10 @@ export default function Navbar() {
                 <li className="hover:text-white/80 cursor-pointer transition">Contact</li>
             </ul>
 
-            {/* Desktop Theme Toggle */}
             <div className="bg-zinc-800 p-1 rounded-full flex items-center gap-2 border border-zinc-700 ml-4">
                 <div className="p-1 rounded-full bg-zinc-700"><SunMoon size={16} /></div>
             </div>
           </div>
-
-          {/* Mobile Hamburger Menu */}
           <button 
             className="md:hidden p-2 hover:bg-white/10 rounded-lg transition"
             onClick={() => setIsMobileMenuOpen(true)}
@@ -137,8 +146,6 @@ export default function Navbar() {
           </button>
         </div>
       </nav>
-
-      {/* Desktop Services Mega Menu */}
       {isServicesOpen && (
         <div 
           ref={dropdownRef}
@@ -151,7 +158,11 @@ export default function Navbar() {
             className="px-6 md:px-[200px] py-6 h-full w-full grid grid-cols-3 gap-x-12 gap-y-6 overflow-y-auto"
           >
             {services.map((service, index) => (
-              <div key={index} className="flex gap-4 p-2 hover:bg-white/5 rounded-lg transition-colors cursor-pointer group">
+              <div 
+                key={index} 
+                onClick={() => handleServiceClick(service.slug)}
+                className="flex gap-4 p-2 hover:bg-white/5 rounded-lg transition-colors cursor-pointer group"
+              >
                 <div className="mt-1 text-white/90 group-hover:text-white transition-colors">
                   {service.icon}
                 </div>
@@ -166,11 +177,8 @@ export default function Navbar() {
           </div>
         </div>
       )}
-
-      {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
         <div className="md:hidden fixed inset-0 z-50 bg-[#0B0C0E] text-white font-['Inter']">
-          {/* Mobile Menu Header */}
           <div className="px-6 py-6 flex justify-between items-center border-b border-white/10">
             <Logo />
             <button 
@@ -181,9 +189,7 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Mobile Menu Content */}
           {!isMobileServicesOpen ? (
-            // Main Menu
             <div className="flex flex-col h-[calc(100vh-88px)]">
               <div className="flex-1 px-6 py-4">
                 {navItems.map((item, index) => (
@@ -205,9 +211,7 @@ export default function Navbar() {
               </div>
             </div>
           ) : (
-            // Services Submenu
             <div className="flex flex-col h-[calc(100vh-88px)] overflow-y-auto">
-              {/* Back Button */}
               <button
                 onClick={() => setIsMobileServicesOpen(false)}
                 className="px-6 py-4 flex items-center gap-2 text-white hover:text-white/80 transition border-b border-white/10"
@@ -215,16 +219,16 @@ export default function Navbar() {
                 <ArrowLeft size={20} />
                 <span>Back</span>
               </button>
-
-              {/* Services Header */}
               <div className="px-6 py-4">
                 <h2 className="text-xl font-semibold">Services</h2>
               </div>
-
-              {/* Services List */}
               <div className="px-6 pb-6 space-y-6">
                 {services.map((service, index) => (
-                  <div key={index} className="flex gap-4 cursor-pointer group">
+                  <div 
+                    key={index} 
+                    onClick={() => handleServiceClick(service.slug)}
+                    className="flex gap-4 cursor-pointer group"
+                  >
                     <div className="mt-1 text-white/90 group-hover:text-white transition-colors">
                       {service.icon}
                     </div>
