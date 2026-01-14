@@ -183,37 +183,76 @@ export default function ServicePage() {
           </p>
         </div>
 
-        <p className="text-center text-zinc-500 text-sm mb-8">
-          Structured & Outcome-Focused Approach
-        </p>
-
-        <div className="relative mb-12">
-          <div className="absolute top-4 left-0 right-0 h-0.5 bg-zinc-700">
-            <div 
-              className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-orange-500"
-            />
+        {/* Timeline Line with Icons */}
+        <div className="relative flex items-center justify-between mb-8" style={{ width: '100%' }}>
+          {/* Continuous Line Behind Icons */}
+          <div 
+            className="absolute left-0 right-0 top-1/2 -translate-y-1/2"
+            style={{ 
+              height: '2px', 
+              background: 'linear-gradient(0deg, rgba(240, 96, 88, 0.6), rgba(240, 96, 88, 0.6)), linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15))',
+            }} 
+          />
+          
+          {/* Circle Icon (outline) */}
+          <div 
+            className="w-6 h-6 rounded-full flex-shrink-0 relative z-10"
+            style={{ 
+              border: '1.5px solid #F06058',
+              backgroundColor: '#0B0C0E',
+            }}
+          />
+          
+          {/* Triangle Icon 1 - with line passing through */}
+          <div className="flex-shrink-0 relative z-10">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 4L20 12L6 20V4Z" stroke="#F06058" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="#0B0C0E"/>
+            </svg>
           </div>
           
-          <div className="grid grid-cols-4 gap-4 relative">
-            {service.processSteps.map((step, index) => (
-              <div key={index} className="text-center pt-10">
-                <div className="absolute top-2 left-1/2 -translate-x-1/2">
-                  {index === 0 && (
-                    <div className="w-3 h-3 rounded-full border-2 border-zinc-500 bg-[#0B0C0E]" />
-                  )}
-                  {index > 0 && index < service.processSteps.length - 1 && (
-                    <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-b-[8px] border-b-zinc-500 rotate-90" />
-                  )}
-                </div>
-                <h3 className="text-base font-semibold text-white mb-2">
-                  {step.title}
-                </h3>
-                <p className="text-zinc-400 text-xs leading-relaxed">
-                  {step.description}
-                </p>
-              </div>
-            ))}
+          {/* Triangle Icon 2 - with line passing through */}
+          <div className="flex-shrink-0 relative z-10">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 4L20 12L6 20V4Z" stroke="#F06058" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="#0B0C0E"/>
+            </svg>
           </div>
+          
+          {/* Filled Circle Icon */}
+          <div 
+            className="w-6 h-6 rounded-full flex-shrink-0 relative z-10"
+            style={{ backgroundColor: '#F06058' }}
+          />
+        </div>
+
+        {/* Step Labels */}
+        <div className="flex items-start justify-between w-full mb-12">
+          {service.processSteps.map((step, index) => (
+            <div key={index} className="flex flex-col items-center text-center" style={{ width: '280px' }}>
+              <h3 
+                className="mb-3"
+                style={{
+                  fontFamily: 'Sora, sans-serif',
+                  fontWeight: 600,
+                  fontSize: '20px',
+                  lineHeight: '28px',
+                  color: '#ffffff',
+                }}
+              >
+                {step.title}
+              </h3>
+              <p 
+                style={{
+                  fontFamily: 'Inter, sans-serif',
+                  fontWeight: 400,
+                  fontSize: '14px',
+                  lineHeight: '20px',
+                  color: 'rgba(255, 255, 255, 0.7)',
+                }}
+              >
+                {step.description}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 

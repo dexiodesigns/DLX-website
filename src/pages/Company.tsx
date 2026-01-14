@@ -8,6 +8,12 @@ const companyHeroVideoMov = new URL('../assets/companies/Company Page - Hero Sec
 const companyHeroVideoMp4 = new URL('../assets/companies/Company Page - Hero Section Video.mov', import.meta.url).href;
 const ourVisionVideo = new URL('../assets/companies/Our vision.mp4', import.meta.url).href;
 
+// Team images
+const img1 = new URL('../assets/companies/img1.png', import.meta.url).href;
+const img2 = new URL('../assets/companies/img2.png', import.meta.url).href;
+const img3 = new URL('../assets/companies/img3.png', import.meta.url).href;
+const img4 = new URL('../assets/companies/img4.png', import.meta.url).href;
+
 export default function Company() {
   return (
     <main className="bg-[#0B0C0E] text-white min-h-screen font-['Inter']">
@@ -406,150 +412,453 @@ export default function Company() {
 
         {/* Timeline Container */}
         <div 
-          className="relative flex items-center justify-between"
+          className="flex flex-col items-center"
           style={{
             width: '1280px',
             maxWidth: '100%',
           }}
         >
-          {/* Horizontal Line */}
-          <div 
-            className="absolute top-6 left-0 right-0 h-[2px] bg-white/20"
-            style={{ zIndex: 0 }}
-          />
-
-          {/* Step 1 - Understand */}
-          <div className="relative z-10 flex flex-col items-center text-center" style={{ width: '280px' }}>
+          {/* Timeline Line with Icons */}
+          <div className="relative flex items-center justify-between mb-8" style={{ width: '100%' }}>
+            {/* Continuous Line Behind Icons */}
+            <div 
+              className="absolute left-0 right-0 top-1/2 -translate-y-1/2"
+              style={{ 
+                height: '2px', 
+                background: 'linear-gradient(0deg, rgba(240, 96, 88, 0.6), rgba(240, 96, 88, 0.6)), linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15))',
+              }} 
+            />
+            
             {/* Circle Icon (outline) */}
-            <div className="w-12 h-12 flex items-center justify-center mb-6">
-              <div 
-                className="w-7 h-7 rounded-full"
-                style={{ border: '1.5px solid #E8A9A9' }}
-              />
-            </div>
-            <h3 
-              className="mb-3"
-              style={{
-                fontFamily: 'Sora, sans-serif',
-                fontWeight: 600,
-                fontSize: '20px',
-                lineHeight: '28px',
-                color: '#ffffff',
+            <div 
+              className="w-6 h-6 rounded-full flex-shrink-0 relative z-10"
+              style={{ 
+                border: '1.5px solid #F06058',
+                backgroundColor: '#0B0C0E',
               }}
-            >
-              Understand
-            </h3>
-            <p 
-              style={{
-                fontFamily: 'Inter, sans-serif',
-                fontWeight: 400,
-                fontSize: '14px',
-                lineHeight: '20px',
-                color: 'rgba(255, 255, 255, 0.7)',
-              }}
-            >
-              Deep dive into your product, users, and business context.
-            </p>
-          </div>
-
-          {/* Step 2 - Define */}
-          <div className="relative z-10 flex flex-col items-center text-center" style={{ width: '280px' }}>
-            {/* Triangle Icon (outline) */}
-            <div className="w-12 h-12 flex items-center justify-center mb-6">
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8 5L22 14L8 23V5Z" stroke="#E8A9A9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            />
+            
+            {/* Triangle Icon 1 - with line passing through */}
+            <div className="flex-shrink-0 relative z-10">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 4L20 12L6 20V4Z" stroke="#F06058" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="#0B0C0E"/>
               </svg>
             </div>
-            <h3 
-              className="mb-3"
-              style={{
-                fontFamily: 'Sora, sans-serif',
-                fontWeight: 600,
-                fontSize: '20px',
-                lineHeight: '28px',
-                color: '#ffffff',
-              }}
-            >
-              Define
-            </h3>
-            <p 
-              style={{
-                fontFamily: 'Inter, sans-serif',
-                fontWeight: 400,
-                fontSize: '14px',
-                lineHeight: '20px',
-                color: 'rgba(255, 255, 255, 0.7)',
-              }}
-            >
-              Clear problem statements, success metrics, and scope.
-            </p>
-          </div>
-
-          {/* Step 3 - Design */}
-          <div className="relative z-10 flex flex-col items-center text-center" style={{ width: '280px' }}>
-            {/* Triangle Icon (outline) */}
-            <div className="w-12 h-12 flex items-center justify-center mb-6">
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8 5L22 14L8 23V5Z" stroke="#E8A9A9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            
+            {/* Triangle Icon 2 - with line passing through */}
+            <div className="flex-shrink-0 relative z-10">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 4L20 12L6 20V4Z" stroke="#F06058" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="#0B0C0E"/>
               </svg>
             </div>
-            <h3 
-              className="mb-3"
-              style={{
-                fontFamily: 'Sora, sans-serif',
-                fontWeight: 600,
-                fontSize: '20px',
-                lineHeight: '28px',
-                color: '#ffffff',
-              }}
-            >
-              Design
-            </h3>
-            <p 
-              style={{
-                fontFamily: 'Inter, sans-serif',
-                fontWeight: 400,
-                fontSize: '14px',
-                lineHeight: '20px',
-                color: 'rgba(255, 255, 255, 0.7)',
-              }}
-            >
-              Iterative UX, strong systems thinking, and rapid validation.
-            </p>
-          </div>
-
-          {/* Step 4 - Enable */}
-          <div className="relative z-10 flex flex-col items-center text-center" style={{ width: '280px' }}>
+            
             {/* Filled Circle Icon */}
-            <div className="w-12 h-12 flex items-center justify-center mb-6">
-              <div 
-                className="w-7 h-7 rounded-full"
-                style={{ backgroundColor: '#E8A9A9' }}
-              />
+            <div 
+              className="w-6 h-6 rounded-full flex-shrink-0 relative z-10"
+              style={{ backgroundColor: '#F06058' }}
+            />
+          </div>
+
+          {/* Step Labels */}
+          <div className="flex items-start justify-between w-full">
+            {/* Step 1 - Understand */}
+            <div className="flex flex-col items-center text-center" style={{ width: '280px' }}>
+              <h3 
+                className="mb-3"
+                style={{
+                  fontFamily: 'Sora, sans-serif',
+                  fontWeight: 600,
+                  fontSize: '20px',
+                  lineHeight: '28px',
+                  color: '#ffffff',
+                }}
+              >
+                Understand
+              </h3>
+              <p 
+                style={{
+                  fontFamily: 'Inter, sans-serif',
+                  fontWeight: 400,
+                  fontSize: '14px',
+                  lineHeight: '20px',
+                  color: 'rgba(255, 255, 255, 0.7)',
+                }}
+              >
+                Deep dive into your product, users, and business context.
+              </p>
             </div>
-            <h3 
-              className="mb-3"
+
+            {/* Step 2 - Define */}
+            <div className="flex flex-col items-center text-center" style={{ width: '280px' }}>
+              <h3 
+                className="mb-3"
+                style={{
+                  fontFamily: 'Sora, sans-serif',
+                  fontWeight: 600,
+                  fontSize: '20px',
+                  lineHeight: '28px',
+                  color: '#ffffff',
+                }}
+              >
+                Define
+              </h3>
+              <p 
+                style={{
+                  fontFamily: 'Inter, sans-serif',
+                  fontWeight: 400,
+                  fontSize: '14px',
+                  lineHeight: '20px',
+                  color: 'rgba(255, 255, 255, 0.7)',
+                }}
+              >
+                Clear problem statements, success metrics, and scope.
+              </p>
+            </div>
+
+            {/* Step 3 - Design */}
+            <div className="flex flex-col items-center text-center" style={{ width: '280px' }}>
+              <h3 
+                className="mb-3"
+                style={{
+                  fontFamily: 'Sora, sans-serif',
+                  fontWeight: 600,
+                  fontSize: '20px',
+                  lineHeight: '28px',
+                  color: '#ffffff',
+                }}
+              >
+                Design
+              </h3>
+              <p 
+                style={{
+                  fontFamily: 'Inter, sans-serif',
+                  fontWeight: 400,
+                  fontSize: '14px',
+                  lineHeight: '20px',
+                  color: 'rgba(255, 255, 255, 0.7)',
+                }}
+              >
+                Iterative UX, strong systems thinking, and rapid validation.
+              </p>
+            </div>
+
+            {/* Step 4 - Enable */}
+            <div className="flex flex-col items-center text-center" style={{ width: '280px' }}>
+              <h3 
+                className="mb-3"
+                style={{
+                  fontFamily: 'Sora, sans-serif',
+                  fontWeight: 600,
+                  fontSize: '20px',
+                  lineHeight: '28px',
+                  color: '#ffffff',
+                }}
+              >
+                Enable
+              </h3>
+              <p 
+                style={{
+                  fontFamily: 'Inter, sans-serif',
+                  fontWeight: 400,
+                  fontSize: '14px',
+                  lineHeight: '20px',
+                  color: 'rgba(255, 255, 255, 0.7)',
+                }}
+              >
+                Clean handoffs, documentation, and ongoing support for scale.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* The Curious Squad Section */}
+      <section 
+        className="flex items-center justify-center px-6"
+        style={{
+          width: '100%',
+          paddingTop: '14px',
+          paddingBottom: '144px',
+          backgroundColor: '#0B0C0E',
+        }}
+      >
+        <div 
+          className="relative flex items-center"
+          style={{
+            width: '1280px',
+            maxWidth: '100%',
+            minHeight: '410px',
+          }}
+        >
+          {/* Left Content */}
+          <div style={{ width: '500px', flexShrink: 0 }}>
+            <h2 
+              className="mb-6"
               style={{
                 fontFamily: 'Sora, sans-serif',
                 fontWeight: 600,
-                fontSize: '20px',
-                lineHeight: '28px',
+                fontSize: '36px',
+                lineHeight: '48px',
                 color: '#ffffff',
               }}
             >
-              Enable
-            </h3>
+              The Curious Squad
+            </h2>
             <p 
+              className="mb-6"
               style={{
                 fontFamily: 'Inter, sans-serif',
                 fontWeight: 400,
-                fontSize: '14px',
-                lineHeight: '20px',
+                fontSize: '16px',
+                lineHeight: '24px',
                 color: 'rgba(255, 255, 255, 0.7)',
               }}
             >
-              Clean handoffs, documentation, and ongoing support for scale.
+              We are a Curiously Obsessed Squad; designers, researchers, builders, and thinkers who are driven by learning and experimentation.
             </p>
+            <p 
+              className="mb-4"
+              style={{
+                fontFamily: 'Inter, sans-serif',
+                fontWeight: 500,
+                fontSize: '16px',
+                lineHeight: '24px',
+                color: '#ffffff',
+              }}
+            >
+              Our squad:
+            </p>
+            <ul className="space-y-3">
+              {[
+                "Experiments daily with AI tools and workflows",
+                "Questions defaults and challenges assumptions",
+                "Designs systems, not just interfaces",
+                "Stays stupidly curious about what's next"
+              ].map((item, index) => (
+                <li 
+                  key={index}
+                  className="flex items-center gap-3"
+                  style={{
+                    fontFamily: 'Inter, sans-serif',
+                    fontWeight: 400,
+                    fontSize: '16px',
+                    lineHeight: '24px',
+                    color: 'rgba(255, 255, 255, 0.7)',
+                  }}
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-white flex-shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Right Image Collage */}
+          <div className="relative ml-auto" style={{ width: '669px', height: '410px', }} > 
+            {/* Top-left image (smaller) */}
+            <img 
+                src={img3} 
+                alt="Team collaboration 1" 
+                style={{ 
+                position: 'absolute', 
+                width: '290px', 
+                height: '180px', 
+                top: '0px', 
+                left: '0px', 
+                borderTopLeftRadius: '12px', 
+                borderTopRightRadius: '36px', 
+                borderBottomRightRadius: '36px', 
+                borderBottomLeftRadius: '36px', 
+                objectFit: 'cover',
+                zIndex: 1,
+                }} 
+            />
+
+            {/* Bottom-left image - with circular cutout - BEHIND img2 */}
+            <div
+                style={{
+                position: 'absolute',
+                width: '400px',
+                height: '210px',
+                top: '200px',
+                left: '0px',
+                borderRadius: '36px',
+                overflow: 'hidden',
+                zIndex: 1,
+                }}
+            >
+                <img 
+                src={img4} 
+                alt="Team collaboration 3" 
+                style={{ 
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover', 
+                }} 
+                />
+                {/* Circular cutout with 22px gap from img2 */}
+                <div
+                style={{
+                    position: 'absolute',
+                    top: '-85px',
+                    right: '-56px',
+                    width: '161px',
+                    height: '160px',
+                    borderRadius: '50%',
+                    background: 'black',
+                }}
+                />
+            </div>
+
+            {/* Top-right image - OVERLAYS img4 - fully visible */}
+            <img 
+                src={img2} 
+                alt="Team collaboration 2" 
+                style={{ 
+                position: 'absolute', 
+                width: '365px', 
+                height: '260px', 
+                top: '0px', 
+                left: '304px', 
+                borderTopLeftRadius: '36px', 
+                borderTopRightRadius: '36px', 
+                borderBottomRightRadius: '36px', 
+                borderBottomLeftRadius: '80px', 
+                objectFit: 'cover',
+                zIndex: 2, // Higher z-index to overlay img4
+                }} 
+            />
+
+            {/* Bottom-right image (smaller) */}
+            <img 
+                src={img1} 
+                alt="Team collaboration 4" 
+                style={{ 
+                position: 'absolute', 
+                width: '255px', 
+                height: '135px', 
+                bottom: '0px', 
+                right: '0px', 
+                borderTopLeftRadius: '36px', 
+                borderTopRightRadius: '36px', 
+                borderBottomRightRadius: '12px', 
+                borderBottomLeftRadius: '36px', 
+                objectFit: 'cover',
+                zIndex: 1,
+                }} 
+            />
+           </div>
+        </div>
+      </section>
+
+      {/* Quote Section */}
+      <section 
+        className="flex items-center justify-center px-6"
+        style={{
+          width: '100%',
+          paddingBottom: '100px',
+          backgroundColor: '#0B0C0E',
+        }}
+      >
+        <h2 
+          className="text-center"
+          style={{
+            fontFamily: 'Sora, sans-serif',
+            fontWeight: 600,
+            fontSize: '36px',
+            lineHeight: '48px',
+            color: '#ffffff',
+            maxWidth: '800px',
+          }}
+        >
+          "We care deeply about craft.<br />
+          We care even more about impact."
+        </h2>
+      </section>
+
+      {/* CTA Section with Gradient Top Border */}
+      <section 
+        className="flex items-center justify-center px-6"
+        style={{
+          width: '100%',
+          paddingTop: '60px',
+          paddingBottom: '144px',
+          backgroundColor: '#0B0C0E',
+        }}
+      >
+        <div 
+          className="relative overflow-hidden"
+          style={{
+            width: '1280px',
+            maxWidth: '100%',
+            borderRadius: '24px',
+          }}
+        >
+          {/* Gradient border at top only */}
+          <div 
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              height: '2px',
+              background: 'linear-gradient(225deg, #F4DC7C -0.1%, #F06058 39.94%, #4044E8 100%)',
+              borderTopLeftRadius: '24px',
+              borderTopRightRadius: '24px',
+            }}
+          />
+          
+          <div style={{ padding: '72px' }}>
+            <p 
+              className="mb-6"
+              style={{
+                fontFamily: 'Inter, sans-serif',
+                fontWeight: 400,
+                fontSize: '20px',
+                lineHeight: '30px',
+                letterSpacing: '0%',
+                color: '#D5D7DD',
+                width: '1136px',
+                maxWidth: '100%',
+              }}
+            >
+              We collaborate closely with founders and teams to understand challenges, align priorities, and explore how thoughtful design can unlock measurable business growth.
+            </p>
+            <div className="flex items-center justify-between">
+              <h3 
+                style={{
+                  fontFamily: 'Sora, sans-serif',
+                  fontWeight: 700,
+                  fontSize: '32px',
+                  lineHeight: '48px',
+                  letterSpacing: '0%',
+                  color: '#F1F2F4',
+                  width: '763px',
+                  maxWidth: '100%',
+                }}
+              >
+                Thinking of partnering beyond just execution?
+              </h3>
+              <a
+                href="/contact"
+                className="flex items-center justify-center font-medium transition hover:opacity-90"
+                style={{
+                  width: '214px',
+                  height: '56px',
+                  gap: '12px',
+                  paddingLeft: '24px',
+                  paddingRight: '24px',
+                  borderRadius: '24px',
+                  background: 'linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), linear-gradient(0deg, #F06058, #F06058)',
+                  color: '#ffffff',
+                }}
+              >
+                Let's connect
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 9H14M14 9L9 4M14 9L9 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </section>
