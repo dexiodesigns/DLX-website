@@ -39,80 +39,52 @@ export default function Company() {
         
         {/* Hero Content Container */}
         <div 
-          className="relative z-10 text-center flex flex-col items-center justify-center"
-          style={{ 
-            width: '1280px',
-            maxWidth: '100%',
-            height: '552px',
-            gap: '12px',
-            paddingTop: '144px',
-            marginTop: '76px',
-          }}
+          className="relative z-10 text-center flex flex-col items-center justify-center w-full max-w-[1280px] px-6 md:px-0 pt-[100px] md:pt-[144px] pb-[60px] md:pb-0 mt-[76px] gap-3"
         >
-          <div className="mx-auto">
+          <div className="mx-auto w-full">
             <h1 
-              className="mb-2"
+              className="mb-2 text-[32px] leading-[40px] md:text-[48px] md:leading-[60px] text-center"
               style={{
                 fontFamily: 'Sora, sans-serif',
                 fontWeight: 600,
-                fontSize: '48px',
-                lineHeight: '60px',
-                letterSpacing: '0%',
-                textAlign: 'center',
               }}
             >
               Designing for SaaS that is
             </h1>
             <h2 
+              className="text-[32px] leading-[40px] md:text-[48px] md:leading-[60px] text-center"
               style={{
                 fontFamily: 'Sora, sans-serif',
                 fontWeight: 600,
-                fontSize: '48px',
-                lineHeight: '60px',
-                letterSpacing: '0%',
-                textAlign: 'center',
               }}
             >
-              <span className="bg-gradient-to-r from-[#a855f7] via-[#ec4899] to-[#f97316] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#f97316] via-[#ec4899] to-[#a855f7] bg-clip-text text-transparent">
                 no longer built only for humans.
               </span>
             </h2>
           </div>
           
           {/* Description */}
-          <div 
-            className="mx-auto"
-            style={{ maxWidth: '1280px', minHeight: '48px' }}
-          >
-            <p className="text-zinc-300 text-base md:text-lg leading-relaxed">
+          <div className="mx-auto w-full max-w-[1280px]">
+            <p className="text-zinc-300 text-sm md:text-lg leading-relaxed text-center px-4 md:px-0">
               Every modern user works alongside AI and Dexio LabX designs Human&lt;&gt;AI systems that deliver real
               <br className="hidden md:block" />
               value inside SaaS products.
             </p>
           </div>
           
-          {/* CTA Buttons */}
-          <div 
-            className="flex items-center justify-center mx-auto"
-            style={{ 
-              maxWidth: '444px',
-              height: '72px',
-              gap: '24px',
-              paddingTop: '24px'
-            }}
-          >
+          {/* CTA Buttons - Stack vertically on mobile, horizontal on desktop */}
+          <div className="flex flex-col md:flex-row items-center justify-center mx-auto w-full md:w-auto gap-4 md:gap-6 pt-6 px-6 md:px-0">
             <Link
               to="/work"
-              className="flex items-center justify-center gap-2 bg-white text-black px-8 py-3 rounded-full font-medium hover:bg-zinc-200 transition whitespace-nowrap"
-              style={{ height: '48px' }}
+              className="flex items-center justify-center gap-2 bg-white text-black px-8 py-3 rounded-full font-medium hover:bg-zinc-200 transition whitespace-nowrap w-full md:w-auto h-[56px]"
             >
               Explore Our Work
               <ArrowRight size={18} />
             </Link>
             <Link
               to="/contact"
-              className="flex items-center justify-center gap-2 border border-zinc-600 text-white px-8 py-3 rounded-full font-medium hover:bg-white/10 transition whitespace-nowrap"
-              style={{ height: '48px' }}
+              className="flex items-center justify-center gap-2 border border-zinc-600 text-white px-8 py-3 rounded-full font-medium hover:bg-white/10 transition whitespace-nowrap w-full md:w-auto h-[56px]"
             >
               Talk To An Expert
               <ArrowRight size={18} />
@@ -122,30 +94,15 @@ export default function Company() {
 
         {/* Our Vision Section - Inside Video Background */}
         <div 
-          className="relative z-10 flex items-center justify-center px-6"
-          style={{
-            width: '100%',
-            marginTop: '144px',
-            paddingBottom: '144px',
-          }}
+          className="relative z-10 flex items-center justify-center px-6 mt-[80px] md:mt-[144px] pb-[80px] md:pb-[144px]"
+          style={{ width: '100%' }}
         >
           <div 
-            className="flex items-center justify-between"
-            style={{
-              width: '1280px',
-              maxWidth: '100%',
-              minHeight: '288px',
-              gap: '12px',
-            }}
+            className="flex flex-col md:flex-row items-center md:items-center md:justify-between w-full max-w-[1280px] gap-8 md:gap-3"
           >
-            {/* Video on Left */}
+            {/* Video - Top on mobile, Left on desktop */}
             <div 
-              className="relative overflow-hidden rounded-lg"
-              style={{ 
-                width: '604px', 
-                height: '288px',
-                flexShrink: 0,
-              }}
+              className="relative overflow-hidden rounded-2xl w-full md:w-[604px] h-[300px] md:h-[288px] flex-shrink-0"
             >
               <video
                 autoPlay
@@ -158,22 +115,15 @@ export default function Company() {
               </video>
             </div>
             
-            {/* Content on Right */}
+            {/* Content - Below on mobile, Right on desktop */}
             <div 
-              className="flex flex-col"
-              style={{
-                width: '604px',
-                height: '288px',
-                gap: '12px',
-              }}
+              className="flex flex-col w-full md:w-[604px] gap-3 md:gap-3"
             >
               <h2 
+                className="text-[28px] leading-[36px] md:text-[36px] md:leading-[48px]"
                 style={{
                   fontFamily: 'Sora, sans-serif',
                   fontWeight: 600,
-                  fontSize: '36px',
-                  lineHeight: '48px',
-                  letterSpacing: '0%',
                   color: '#ffffff',
                 }}
               >
@@ -181,7 +131,7 @@ export default function Company() {
               </h2>
               
               {/* Bullet Points */}
-              <ul className="space-y-3 mt-2">
+              <ul className="space-y-3 mt-4">
                 {[
                   "Shared context between user and AI",
                   "Clear decision ownership",
@@ -190,13 +140,10 @@ export default function Company() {
                 ].map((item, index) => (
                   <li 
                     key={index}
-                    className="flex items-center gap-3"
+                    className="flex items-center gap-3 text-[16px] leading-[24px]"
                     style={{
                       fontFamily: 'Inter, sans-serif',
                       fontWeight: 400,
-                      fontSize: '16px',
-                      lineHeight: '24px',
-                      letterSpacing: '0%',
                       color: '#ffffff',
                     }}
                   >
@@ -212,25 +159,19 @@ export default function Company() {
 
       {/* We Design Products Section */}
       <section 
-        className="flex flex-col items-center justify-center px-6"
+        className="flex flex-col items-center justify-center px-6 py-[60px] md:py-[80px]"
         style={{
           width: '100%',
-          paddingTop: '80px',
-          paddingBottom: '144px',
           backgroundColor: '#0B0C0E',
         }}
       >
         {/* Section Title */}
         <h2 
-          className="text-center mb-12"
+          className="text-center mb-8 md:mb-12 text-[28px] leading-[36px] md:text-[48px] md:leading-[60px] max-w-[800px]"
           style={{
             fontFamily: 'Sora, sans-serif',
             fontWeight: 600,
-            fontSize: '48px',
-            lineHeight: '60px',
-            letterSpacing: '0%',
             color: '#ffffff',
-            maxWidth: '800px',
           }}
         >
           We design products that think with the user, not around them.
@@ -238,19 +179,15 @@ export default function Company() {
 
         {/* Three Cards Container */}
         <div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
-          style={{
-            width: '1280px',
-            maxWidth: '100%',
-          }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 w-full max-w-[1280px]"
         >
           {/* Card 1 - Experiences Designed Around User Intent */}
           <div 
-            className="flex flex-col p-8 rounded-2xl bg-zinc-900 border border-white/5"
+            className="flex flex-col p-6 md:p-8 rounded-2xl bg-[#131517] border border-white/5"
           >
             {/* Blue Icon - Person with circles */}
-            <div className="mb-6">
-              <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div className="mb-4 md:mb-6">
+              <svg width="48" height="48" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="32" cy="16" r="8" stroke="#60A5FA" strokeWidth="2" fill="none"/>
                 <path d="M32 28V36" stroke="#60A5FA" strokeWidth="2" strokeLinecap="round"/>
                 <path d="M24 44H40" stroke="#60A5FA" strokeWidth="2" strokeLinecap="round"/>
@@ -259,23 +196,20 @@ export default function Company() {
               </svg>
             </div>
             <h3 
-              className="mb-4"
+              className="mb-3 md:mb-4 text-[20px] leading-[28px] md:text-[24px] md:leading-[32px]"
               style={{
                 fontFamily: 'Sora, sans-serif',
                 fontWeight: 600,
-                fontSize: '24px',
-                lineHeight: '32px',
                 color: '#ffffff',
               }}
             >
               Experiences Designed Around User Intent
             </h3>
             <p 
+              className="text-[14px] leading-[22px] md:text-[16px] md:leading-[24px]"
               style={{
                 fontFamily: 'Inter, sans-serif',
                 fontWeight: 400,
-                fontSize: '16px',
-                lineHeight: '24px',
                 color: 'rgba(255, 255, 255, 0.7)',
               }}
             >
@@ -285,11 +219,11 @@ export default function Company() {
 
           {/* Card 2 - Human-Led, AI-Assisted Workflows */}
           <div 
-            className="flex flex-col p-8 rounded-2xl bg-zinc-900 border border-white/5"
+            className="flex flex-col p-6 md:p-8 rounded-2xl bg-[#131517] border border-white/5"
           >
             {/* Red/Orange Icon - Connected nodes */}
-            <div className="mb-6">
-              <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div className="mb-4 md:mb-6">
+              <svg width="48" height="48" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="32" cy="16" r="6" stroke="#F87171" strokeWidth="2" fill="none"/>
                 <circle cx="16" cy="40" r="6" stroke="#F87171" strokeWidth="2" fill="none"/>
                 <circle cx="48" cy="40" r="6" stroke="#F87171" strokeWidth="2" fill="none"/>
@@ -306,23 +240,20 @@ export default function Company() {
               </svg>
             </div>
             <h3 
-              className="mb-4"
+              className="mb-3 md:mb-4 text-[20px] leading-[28px] md:text-[24px] md:leading-[32px]"
               style={{
                 fontFamily: 'Sora, sans-serif',
                 fontWeight: 600,
-                fontSize: '24px',
-                lineHeight: '32px',
                 color: '#ffffff',
               }}
             >
               Human-Led, AI-Assisted Workflows
             </h3>
             <p 
+              className="text-[14px] leading-[22px] md:text-[16px] md:leading-[24px]"
               style={{
                 fontFamily: 'Inter, sans-serif',
                 fontWeight: 400,
-                fontSize: '16px',
-                lineHeight: '24px',
                 color: 'rgba(255, 255, 255, 0.7)',
               }}
             >
@@ -332,11 +263,11 @@ export default function Company() {
 
           {/* Card 3 - Systems That Learn And Scale */}
           <div 
-            className="flex flex-col p-8 rounded-2xl bg-zinc-900 border border-white/5"
+            className="flex flex-col p-6 md:p-8 rounded-2xl bg-[#131517] border border-white/5"
           >
             {/* Cyan Icon - Brain */}
-            <div className="mb-6">
-              <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div className="mb-4 md:mb-6">
+              <svg width="48" height="48" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M24 20C20 20 16 24 16 28C16 32 18 34 18 34C14 36 14 42 18 44C18 48 22 52 28 52H36C42 52 46 48 46 44C50 42 50 36 46 34C46 34 48 32 48 28C48 24 44 20 40 20" stroke="#22D3EE" strokeWidth="2" fill="none"/>
                 <path d="M32 20V52" stroke="#22D3EE" strokeWidth="2"/>
                 <path d="M24 28C26 28 28 30 28 32" stroke="#22D3EE" strokeWidth="2" strokeLinecap="round"/>
@@ -346,23 +277,20 @@ export default function Company() {
               </svg>
             </div>
             <h3 
-              className="mb-4"
+              className="mb-3 md:mb-4 text-[20px] leading-[28px] md:text-[24px] md:leading-[32px]"
               style={{
                 fontFamily: 'Sora, sans-serif',
                 fontWeight: 600,
-                fontSize: '24px',
-                lineHeight: '32px',
                 color: '#ffffff',
               }}
             >
               Systems That Learn And Scale
             </h3>
             <p 
+              className="text-[14px] leading-[22px] md:text-[16px] md:leading-[24px]"
               style={{
                 fontFamily: 'Inter, sans-serif',
                 fontWeight: 400,
-                fontSize: '16px',
-                lineHeight: '24px',
                 color: 'rgba(255, 255, 255, 0.7)',
               }}
             >
@@ -374,22 +302,18 @@ export default function Company() {
 
       {/* How We Work Section */}
       <section 
-        className="flex flex-col items-center justify-center px-6"
+        className="flex flex-col items-start md:items-center justify-center px-6 py-[60px] md:py-[144px]"
         style={{
           width: '100%',
-          paddingTop: '14px',
-          paddingBottom: '144px',
           backgroundColor: '#0B0C0E',
         }}
       >
         {/* Section Title */}
         <h2 
-          className="text-center mb-4"
+          className="text-left md:text-center mb-2 md:mb-4 text-[28px] leading-[36px] md:text-[48px] md:leading-[60px] w-full max-w-[1280px]"
           style={{
             fontFamily: 'Sora, sans-serif',
             fontWeight: 600,
-            fontSize: '48px',
-            lineHeight: '60px',
             color: '#ffffff',
           }}
         >
@@ -398,28 +322,22 @@ export default function Company() {
         
         {/* Subtitle */}
         <p 
-          className="text-center mb-16"
+          className="text-left md:text-center mb-10 md:mb-16 text-[16px] md:text-[20px] leading-[24px] md:leading-[28px] w-full max-w-[1280px]"
           style={{
             fontFamily: 'Inter, sans-serif',
             fontWeight: 400,
-            fontSize: '20px',
-            lineHeight: '28px',
             color: 'rgba(255, 255, 255, 0.7)',
           }}
         >
           Structured. Collaborative. Outcome-Driven.
         </p>
 
-        {/* Timeline Container */}
+        {/* Desktop Timeline - Horizontal */}
         <div 
-          className="flex flex-col items-center"
-          style={{
-            width: '1280px',
-            maxWidth: '100%',
-          }}
+          className="hidden md:flex flex-col items-center w-full max-w-[1280px]"
         >
           {/* Timeline Line with Icons */}
-          <div className="relative flex items-center justify-between mb-8" style={{ width: '100%' }}>
+          <div className="relative flex items-center justify-between mb-8 w-full">
             {/* Continuous Line Behind Icons */}
             <div 
               className="absolute left-0 right-0 top-1/2 -translate-y-1/2"
@@ -438,14 +356,14 @@ export default function Company() {
               }}
             />
             
-            {/* Triangle Icon 1 - with line passing through */}
+            {/* Triangle Icon 1 */}
             <div className="flex-shrink-0 relative z-10">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6 4L20 12L6 20V4Z" stroke="#F06058" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="#0B0C0E"/>
               </svg>
             </div>
             
-            {/* Triangle Icon 2 - with line passing through */}
+            {/* Triangle Icon 2 */}
             <div className="flex-shrink-0 relative z-10">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6 4L20 12L6 20V4Z" stroke="#F06058" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="#0B0C0E"/>
@@ -459,170 +377,160 @@ export default function Company() {
             />
           </div>
 
-          {/* Step Labels */}
+          {/* Step Labels - Desktop */}
           <div className="flex items-start justify-between w-full">
-            {/* Step 1 - Understand */}
-            <div className="flex flex-col items-center text-center" style={{ width: '280px' }}>
-              <h3 
-                className="mb-3"
-                style={{
-                  fontFamily: 'Sora, sans-serif',
-                  fontWeight: 600,
-                  fontSize: '20px',
-                  lineHeight: '28px',
-                  color: '#ffffff',
-                }}
-              >
-                Understand
-              </h3>
-              <p 
-                style={{
-                  fontFamily: 'Inter, sans-serif',
-                  fontWeight: 400,
-                  fontSize: '14px',
-                  lineHeight: '20px',
-                  color: 'rgba(255, 255, 255, 0.7)',
-                }}
-              >
-                Deep dive into your product, users, and business context.
-              </p>
-            </div>
-
-            {/* Step 2 - Define */}
-            <div className="flex flex-col items-center text-center" style={{ width: '280px' }}>
-              <h3 
-                className="mb-3"
-                style={{
-                  fontFamily: 'Sora, sans-serif',
-                  fontWeight: 600,
-                  fontSize: '20px',
-                  lineHeight: '28px',
-                  color: '#ffffff',
-                }}
-              >
-                Define
-              </h3>
-              <p 
-                style={{
-                  fontFamily: 'Inter, sans-serif',
-                  fontWeight: 400,
-                  fontSize: '14px',
-                  lineHeight: '20px',
-                  color: 'rgba(255, 255, 255, 0.7)',
-                }}
-              >
-                Clear problem statements, success metrics, and scope.
-              </p>
-            </div>
-
-            {/* Step 3 - Design */}
-            <div className="flex flex-col items-center text-center" style={{ width: '280px' }}>
-              <h3 
-                className="mb-3"
-                style={{
-                  fontFamily: 'Sora, sans-serif',
-                  fontWeight: 600,
-                  fontSize: '20px',
-                  lineHeight: '28px',
-                  color: '#ffffff',
-                }}
-              >
-                Design
-              </h3>
-              <p 
-                style={{
-                  fontFamily: 'Inter, sans-serif',
-                  fontWeight: 400,
-                  fontSize: '14px',
-                  lineHeight: '20px',
-                  color: 'rgba(255, 255, 255, 0.7)',
-                }}
-              >
-                Iterative UX, strong systems thinking, and rapid validation.
-              </p>
-            </div>
-
-            {/* Step 4 - Enable */}
-            <div className="flex flex-col items-center text-center" style={{ width: '280px' }}>
-              <h3 
-                className="mb-3"
-                style={{
-                  fontFamily: 'Sora, sans-serif',
-                  fontWeight: 600,
-                  fontSize: '20px',
-                  lineHeight: '28px',
-                  color: '#ffffff',
-                }}
-              >
-                Enable
-              </h3>
-              <p 
-                style={{
-                  fontFamily: 'Inter, sans-serif',
-                  fontWeight: 400,
-                  fontSize: '14px',
-                  lineHeight: '20px',
-                  color: 'rgba(255, 255, 255, 0.7)',
-                }}
-              >
-                Clean handoffs, documentation, and ongoing support for scale.
-              </p>
-            </div>
+            {[
+              { title: "Understand", desc: "Deep dive into your product, users, and business context." },
+              { title: "Define", desc: "Clear problem statements, success metrics, and scope." },
+              { title: "Design", desc: "Iterative UX, strong systems thinking, and rapid validation." },
+              { title: "Enable", desc: "Clean handoffs, documentation, and ongoing support for scale." }
+            ].map((step, index) => (
+              <div key={index} className="flex flex-col items-center text-center" style={{ width: '280px' }}>
+                <h3 
+                  className="mb-3 text-[20px] leading-[28px]"
+                  style={{
+                    fontFamily: 'Sora, sans-serif',
+                    fontWeight: 600,
+                    color: '#ffffff',
+                  }}
+                >
+                  {step.title}
+                </h3>
+                <p 
+                  className="text-[14px] leading-[20px]"
+                  style={{
+                    fontFamily: 'Inter, sans-serif',
+                    fontWeight: 400,
+                    color: 'rgba(255, 255, 255, 0.7)',
+                  }}
+                >
+                  {step.desc}
+                </p>
+              </div>
+            ))}
           </div>
+        </div>
+
+        {/* Mobile Timeline - Vertical */}
+        <div className="md:hidden w-full">
+          {[
+            { title: "Understand", desc: "Deep dive into your product, users, and business context.", iconType: "circle-outline" },
+            { title: "Define", desc: "Clear problem statements, success metrics, and scope.", iconType: "triangle" },
+            { title: "Design", desc: "Iterative UX, strong systems thinking, and rapid validation.", iconType: "triangle" },
+            { title: "Enable", desc: "Clean handoffs, documentation, and ongoing support for scale.", iconType: "circle-filled" }
+          ].map((step, index, arr) => (
+            <div key={index} className="flex items-start gap-4">
+              {/* Icon and Line Column */}
+              <div className="flex flex-col items-center">
+                {/* Icon */}
+                {step.iconType === "circle-outline" && (
+                  <div 
+                    className="w-8 h-8 rounded-full flex-shrink-0"
+                    style={{ 
+                      border: '2px solid #F06058',
+                      backgroundColor: '#0B0C0E',
+                    }}
+                  />
+                )}
+                {step.iconType === "triangle" && (
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
+                    <path d="M8 6L8 26L24 16L8 6Z" stroke="#F06058" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="#0B0C0E"/>
+                  </svg>
+                )}
+                {step.iconType === "circle-filled" && (
+                  <div 
+                    className="w-8 h-8 rounded-full flex-shrink-0"
+                    style={{ backgroundColor: '#F06058' }}
+                  />
+                )}
+                {/* Vertical Line (except for last item) */}
+                {index < arr.length - 1 && (
+                  <div 
+                    className="w-[2px] flex-1 min-h-[80px]"
+                    style={{ 
+                      background: 'linear-gradient(180deg, rgba(240, 96, 88, 0.6), rgba(240, 96, 88, 0.6))',
+                    }}
+                  />
+                )}
+              </div>
+              
+              {/* Content Column */}
+              <div className="flex flex-col pb-8">
+                <h3 
+                  className="mb-2 text-[20px] leading-[28px]"
+                  style={{
+                    fontFamily: 'Sora, sans-serif',
+                    fontWeight: 600,
+                    color: '#ffffff',
+                  }}
+                >
+                  {step.title}
+                </h3>
+                <p 
+                  className="text-[14px] leading-[22px]"
+                  style={{
+                    fontFamily: 'Inter, sans-serif',
+                    fontWeight: 400,
+                    color: 'rgba(255, 255, 255, 0.7)',
+                  }}
+                >
+                  {step.desc}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* The Curious Squad Section */}
       <section 
-        className="flex items-center justify-center px-6"
+        className="flex items-center justify-center px-6 py-[60px] md:py-[144px]"
         style={{
           width: '100%',
-          paddingTop: '14px',
-          paddingBottom: '144px',
           backgroundColor: '#0B0C0E',
         }}
       >
         <div 
-          className="relative flex items-center"
-          style={{
-            width: '1280px',
-            maxWidth: '100%',
-            minHeight: '410px',
-          }}
+          className="relative flex flex-col md:flex-row md:items-center w-full max-w-[1280px]"
         >
           {/* Left Content */}
-          <div style={{ width: '500px', flexShrink: 0 }}>
+          <div className="w-full md:w-[500px] md:flex-shrink-0 mb-8 md:mb-0">
             <h2 
-              className="mb-6"
+              className="mb-2 md:mb-6 text-[28px] leading-[36px] md:text-[36px] md:leading-[48px]"
               style={{
                 fontFamily: 'Sora, sans-serif',
                 fontWeight: 600,
-                fontSize: '36px',
-                lineHeight: '48px',
                 color: '#ffffff',
               }}
             >
               The Curious Squad
             </h2>
+            {/* Mobile Subtitle */}
             <p 
-              className="mb-6"
+              className="md:hidden mb-6 text-[16px] leading-[24px]"
               style={{
                 fontFamily: 'Inter, sans-serif',
                 fontWeight: 400,
-                fontSize: '16px',
-                lineHeight: '24px',
+                color: 'rgba(255, 255, 255, 0.7)',
+              }}
+            >
+              Structured. Collaborative. Outcome-Driven.
+            </p>
+            <p 
+              className="mb-6 text-[14px] leading-[22px] md:text-[16px] md:leading-[24px]"
+              style={{
+                fontFamily: 'Inter, sans-serif',
+                fontWeight: 400,
                 color: 'rgba(255, 255, 255, 0.7)',
               }}
             >
               We are a Curiously Obsessed Squad; designers, researchers, builders, and thinkers who are driven by learning and experimentation.
             </p>
             <p 
-              className="mb-4"
+              className="mb-4 text-[16px] leading-[24px]"
               style={{
                 fontFamily: 'Inter, sans-serif',
                 fontWeight: 500,
-                fontSize: '16px',
-                lineHeight: '24px',
                 color: '#ffffff',
               }}
             >
@@ -637,24 +545,55 @@ export default function Company() {
               ].map((item, index) => (
                 <li 
                   key={index}
-                  className="flex items-center gap-3"
+                  className="flex items-start gap-3 text-[14px] leading-[22px] md:text-[16px] md:leading-[24px]"
                   style={{
                     fontFamily: 'Inter, sans-serif',
                     fontWeight: 400,
-                    fontSize: '16px',
-                    lineHeight: '24px',
                     color: 'rgba(255, 255, 255, 0.7)',
                   }}
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-white flex-shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-white flex-shrink-0 mt-2" />
                   {item}
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Right Image Collage */}
-          <div className="relative ml-auto" style={{ width: '669px', height: '410px', }} > 
+          {/* Mobile Image Collage - 2x2 Grid */}
+          <div className="md:hidden w-full mt-8">
+            <div className="grid grid-cols-2 gap-3">
+              {/* Top-left */}
+              <img 
+                src={img3} 
+                alt="Team collaboration 1" 
+                className="w-full h-[140px] object-cover rounded-2xl"
+              />
+              {/* Top-right */}
+              <img 
+                src={img2} 
+                alt="Team collaboration 2" 
+                className="w-full h-[200px] object-cover rounded-2xl row-span-2"
+                style={{ marginTop: '-20px' }}
+              />
+              {/* Bottom-left */}
+              <img 
+                src={img4} 
+                alt="Team collaboration 3" 
+                className="w-full h-[200px] object-cover rounded-2xl"
+                style={{ marginTop: '-40px' }}
+              />
+              {/* Bottom-right */}
+              <img 
+                src={img1} 
+                alt="Team collaboration 4" 
+                className="w-full h-[120px] object-cover rounded-2xl"
+                style={{ marginTop: '-20px' }}
+              />
+            </div>
+          </div>
+
+          {/* Desktop Image Collage */}
+          <div className="hidden md:block relative ml-auto" style={{ width: '669px', height: '410px' }}> 
             {/* Top-left image (smaller) */}
             <img 
                 src={img3} 
@@ -725,7 +664,7 @@ export default function Company() {
                 borderBottomRightRadius: '36px', 
                 borderBottomLeftRadius: '80px', 
                 objectFit: 'cover',
-                zIndex: 2, // Higher z-index to overlay img4
+                zIndex: 2,
                 }} 
             />
 

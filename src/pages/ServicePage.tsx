@@ -68,10 +68,10 @@ export default function ServicePage() {
   }
 
   return (
-    <main className="bg-[#0B0C0E] text-white min-h-screen pt-[164px] font-['Inter']">
-      {/* Sticky Service Navigation - 24px gap from main navbar */}
+    <main className="bg-[#0B0C0E] text-white min-h-screen pt-[100px] md:pt-[164px] font-['Inter']">
+      {/* Sticky Service Navigation - Hidden on mobile, visible on desktop */}
       <div 
-        className="fixed top-[100px] left-0 right-0 z-40 flex justify-center px-6 py-4"
+        className="hidden md:flex fixed top-[100px] left-0 right-0 z-40 justify-center px-6 py-4"
         style={{ backgroundColor: '#0B0C0E' }}
       >
         <div 
