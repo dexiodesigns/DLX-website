@@ -1,5 +1,4 @@
-import { SunMoon } from "lucide-react";
-import { Logo } from "./../assets/logo";
+import { Logo } from "./../assets/Logo";
 
 export default function Navbar() {
   return (

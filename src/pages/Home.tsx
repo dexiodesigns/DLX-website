@@ -1,8 +1,8 @@
-import { ArrowRight, Sparkles, Globe, Lightbulb } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import {HomeImg} from "../assets/HomeImg";
 import { VideoImg } from "../assets/VideoImg";
 import { useState } from "react";
-import { Vittae } from "../assets/Companies/vittae";
+import { Vittae } from "../assets/companies/Vittae";
 import {Miniature} from "../assets/companies/Miniature";
 import {MotorQ} from "../assets/companies/MotorQ";
 import {NearTail} from "../assets/companies/NearTail";
@@ -14,9 +14,9 @@ import { People2 } from "../assets/peopleImages/people2";
 import { People3 } from "../assets/peopleImages/people3";
 import { People4 } from "../assets/peopleImages/people4";
 import { People5 } from "../assets/peopleImages/people5";
-import { Star } from "../HomeIcons/star";
-import { Bulb } from "../HomeIcons/bulb";
-import { Sun } from "../HomeIcons/sun"; 
+import { Star } from "../HomeIcons/Star";
+import { Bulb } from "../HomeIcons/Bulb";
+import { Sun } from "../HomeIcons/Sun";
 import { Plus } from "../HomeIcons/Plus";
 import EvidenceOfImpact from "../components/Evidence";
 
