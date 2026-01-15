@@ -1,5 +1,5 @@
 import { ArrowRight, Sparkles, Globe, Lightbulb } from "lucide-react";
-import {HomeImg} from "../assets/HomeImg";
+import FutureIntelliImg from "../assets/HomePageImages/futureIntelliImg.jpg";
 import { VideoImg } from "../assets/VideoImg";
 import { useState } from "react";
 import { Vittae } from "../assets/Companies/vittae";
@@ -20,10 +20,13 @@ import { Sun } from "../HomeIcons/sun";
 import { Plus } from "../HomeIcons/Plus";
 import EvidenceOfImpact from "../components/Evidence";
 import Footer from "../components/Footer";
+import ContactFooter from "../components/ContactFooter";
+import homePageVideo from "../assets/Videos/HomePage.mp4";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("Design Services");
-    const [activeFAQTab, setActiveFAQTab] = useState("Design Company");
+  const [activeFAQTab, setActiveFAQTab] = useState("Design Company");
+  const HomeDescription = 'Every modern user works alongside AI and Dexio LabX designs Human<>AI systems that deliver real value inside SaaS products.';
 const SparkleIcon = () => (
   <svg 
     width="34" 
@@ -54,19 +57,40 @@ const [openFaq, setOpenFaq] = useState<number | null>(0);
     { question: "Why should we onboard Dexio? What's special about you?", answer: "We don't just build products; we evolve with your business needs." }
   ];
   return (
-    <main className="bg-[#0B0C0E] text-white min-h-screen pt-24 selection:bg-purple-500/30">
-      
-      {/* --- Hero Section --- */}
-      <section className="max-w-6xl mx-auto px-6 text-center flex flex-col items-center my-40">
+<main className="bg-[#0B0C0E] text-white min-h-screen pt-24 selection:bg-purple-500/30">
+  {/* Video Background Container - spans both sections */}
+  <div className="relative">
+    {/* Video Background */}
+    <div className="absolute inset-0 w-full pointer-events-none" style={{ height: 'calc(100% + 10rem)' }}>
+      <div className="absolute inset-0 bg-black/70 z-10"></div>
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        className="w-full h-full object-cover"
+        onError={(e) => console.error('Video error:', e)}
+        onLoadedData={() => console.log('Video loaded successfully')}
+      >
+        <source src={homePageVideo} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      {/* Gradient fade at bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-b from-transparent to-[#0B0C0E] z-10"></div>
+    </div>
+
+    {/* First Section */}
+    <section className="relative max-w-6xl mx-auto px-6 text-center flex flex-col items-center py-40 z-20">
+      <div className="flex flex-col items-center">
         <h1 className="text-[48px] font-[600] pb-5 tracking-[1.5px] inline-block" style={{color: '#F1F2F4', transform: 'scaleX(0.98)'}}>
-          Design that drives growth.
+          Designing for SaaS that is
         </h1>
-      <h2 className="text-[48px] font-[600] tracking-[1px] leading-tight inline-block bg-gradient-to-tr from-[#6366f1] via-[#a855f7] via-[#c34772] to-[#f9f916] bg-clip-text text-transparent" style={{transform: 'scaleX(1)'}}>
-  AI that simplifies work.
-</h2>  
+        <h2 className="text-[48px] font-[600] tracking-[1px] leading-tight inline-block bg-gradient-to-tr from-[#6366f1] via-[#a855f7] via-[#c34772] to-[#f9f916] bg-clip-text text-transparent" style={{transform: 'scaleX(1)'}}>
+          no longer built only for humans.
+        </h2>  
         <p className="mt-8 max-w-3xl text-center font-inter text-base font-normal leading-6" style={{color: '#D5D7DD'}}>
-          Dexio LabX is a multidisciplinary ecosystem where creativity, technology, and learning converge. 
-          We empower startups to scale, enterprises to innovate, and individuals to evolve.
+          {HomeDescription}
         </p>
 
         <div className="mt-10 flex gap-4">
@@ -77,25 +101,31 @@ const [openFaq, setOpenFaq] = useState<number | null>(0);
             Join Our Tribe <ArrowRight size={18} />
           </button>
         </div>
-      </section>
+      </div>
+    </section>
 
-      {/* --- Second Section --- */}
-      <section className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-        {/* Left: Dummy Image / Abstract Visual */}
-        <div>
-         <HomeImg/>
+    {/* Second Section */}
+    <section className="relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center pb-40 z-20">
+      {/* Left: Image with shadow effect */}
+      <div className="relative">
+        {/* Glow effect behind image */}
+        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/30 to-blue-500/30 blur-3xl scale-110 -z-10"></div>
+        <div className="relative">
+          <FutureIntelliImg/>
         </div>
+      </div>
 
-        {/* Right: Text Content */}
-        <div className="flex flex-col gap-6">
-          <h2 className="font-sora text-[36px] font-semibold leading-[48px] tracking-[0.5px]" style={{color: '#F1F2F4'}}>
-            Building the future of intelligent design and automation.
-          </h2>
-          <p className="text-400 leading-relaxed" style={{color: '#e5e7ecff'}}>
-            We are more than a digital agency. We are a laboratory of innovation. By fusing human-centric design with AI-driven SaaS products, we help businesses move from friction to flow. Our mission is to transform complex ideas into intelligent experiences that create measurable value.
-          </p>
-        </div>
-      </section>
+      {/* Right: Text Content */}
+      <div className="flex flex-col gap-6">
+        <h2 className="font-sora text-[36px] font-semibold leading-[48px] tracking-[0.5px]" style={{color: '#F1F2F4'}}>
+          Building the future of intelligent design and automation.
+        </h2>
+        <p className="text-400 leading-relaxed" style={{color: '#e5e7ecff'}}>
+          We are more than a digital agency. We are a laboratory of innovation. By fusing human-centric design with AI-driven SaaS products, we help businesses move from friction to flow. Our mission is to transform complex ideas into intelligent experiences that create measurable value.
+        </p>
+      </div>
+    </section>
+  </div>
       {/* --- Service Excellence Section --- */}
       <section className="max-w-10xl px-6 xl:px-[200px] mt-32">
         
@@ -269,7 +299,7 @@ const [openFaq, setOpenFaq] = useState<number | null>(0);
         </div>
       </section>
 
-<section className="bg-black py-24 px-6 xl:px-[200px]">
+<section className="py-24 px-6 xl:px-[200px]">
       
       {/* --- Features Cards --- */}
       <div className="text-center">
@@ -378,6 +408,14 @@ const [openFaq, setOpenFaq] = useState<number | null>(0);
       </div>
     </section>
       <EvidenceOfImpact/>
+    {/* --- Talk Section --- */}
+      <ContactFooter 
+        title="We design digital products, systems and stories that move the businesses forward - built on, Clarity, Creativity and measurable growth."
+        subtitle="Great partnership, starts with a quick hello."
+        buttonText="Let’s Talk"
+      />
+    {/* --- Footer --- */}
+      {/* <Footer/> */}
     </main>
   );
 }

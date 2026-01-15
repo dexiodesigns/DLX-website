@@ -1,19 +1,128 @@
-# React + Vite
+# DLX Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive website built with React, TypeScript, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Modern React 19** with TypeScript
+- **Tailwind CSS** for styling
+- **Lucide React** icons
+- **Vite** for fast development and building
+- **ESLint** for code quality
+- **Responsive design** with mobile-first approach
+- **Video background** support
+- **Custom animations** and transitions
 
-## React Compiler
+## 📦 Installation
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd DLX-website
+```
 
-## Expanding the ESLint configuration
+2. Install dependencies:
+```bash
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+3. Start the development server:
+```bash
+npm run dev
+```
 
-node version: 20+
-run command: npm run dev
+The application will be available at `http://localhost:5173/`
+
+## 🛠️ Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build locally
+- `npm run lint` - Run ESLint
+- `npm run lint:fix` - Fix ESLint errors automatically
+- `npm run type-check` - Run TypeScript type checking
+- `npm run predeploy` - Pre-deployment build script
+
+## 🚀 Deployment
+
+### Vercel Deployment
+
+1. Install Vercel CLI:
+```bash
+npm i -g vercel
+```
+
+2. Deploy:
+```bash
+vercel
+```
+
+Or connect your GitHub repository to Vercel dashboard for automatic deployments.
+
+### Netlify Deployment
+
+1. Build the project:
+```bash
+npm run build
+```
+
+2. Drag and drop the `dist` folder to Netlify dashboard, or use Netlify CLI:
+```bash
+npm install -g netlify-cli
+netlify deploy --prod --dir=dist
+```
+
+### Manual Deployment
+
+1. Build the project:
+```bash
+npm run build
+```
+
+2. Upload the contents of the `dist` folder to your web server.
+
+## 📁 Project Structure
+
+```
+src/
+├── assets/           # Static assets (images, videos, icons)
+├── components/       # Reusable React components
+├── pages/           # Page components
+├── types/           # TypeScript type definitions
+└── HomeIcons/       # Custom icon components
+```
+
+## 🔧 Configuration Files
+
+- `vite.config.js` - Vite configuration
+- `tailwind.config.js` - Tailwind CSS configuration
+- `eslint.config.js` - ESLint configuration
+- `postcss.config.js` - PostCSS configuration
+- `vercel.json` - Vercel deployment configuration
+- `netlify.toml` - Netlify deployment configuration
+
+## Requirements
+
+- **Node version: 20+**
+- **npm 8+**
+
+## Development
+
+Run the development server:
+```bash
+npm run dev
+```
+
+## Production Build
+
+Build for production:
+```bash
+npm run build
+```
+
+## 📱 Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
