@@ -559,37 +559,92 @@ export default function Company() {
             </ul>
           </div>
 
-          {/* Mobile Image Collage - 2x2 Grid */}
-          <div className="md:hidden w-full mt-8">
-            <div className="grid grid-cols-2 gap-3">
-              {/* Top-left */}
-              <img 
-                src={img3} 
-                alt="Team collaboration 1" 
-                className="w-full h-[140px] object-cover rounded-2xl"
-              />
-              {/* Top-right */}
-              <img 
-                src={img2} 
-                alt="Team collaboration 2" 
-                className="w-full h-[200px] object-cover rounded-2xl row-span-2"
-                style={{ marginTop: '-20px' }}
-              />
-              {/* Bottom-left */}
+          {/* Mobile Image Collage */}
+          <div className="md:hidden w-full mt-8 relative" style={{ height: '420px' }}>
+            {/* Top-left image */}
+            <img 
+              src={img3} 
+              alt="Team collaboration 1" 
+              className="absolute object-cover"
+              style={{ 
+                width: '45%', 
+                height: '150px', 
+                top: '0', 
+                left: '0',
+                borderTopLeftRadius: '12px',
+                borderTopRightRadius: '24px',
+                borderBottomRightRadius: '24px',
+                borderBottomLeftRadius: '24px',
+                zIndex: 1,
+              }}
+            />
+            
+            {/* Top-right image - OVERLAYS img4 */}
+            <img 
+              src={img2} 
+              alt="Team collaboration 2" 
+              className="absolute object-cover"
+              style={{ 
+                width: '53%', 
+                height: '220px', 
+                top: '0', 
+                right: '0',
+                borderTopLeftRadius: '24px',
+                borderTopRightRadius: '24px',
+                borderBottomRightRadius: '24px',
+                borderBottomLeftRadius: '60px',
+                zIndex: 2,
+              }}
+            />
+            
+            {/* Bottom-left image - with circular cutout */}
+            <div
+              className="absolute overflow-hidden"
+              style={{
+                width: '60%',
+                height: '200px',
+                top: '170px',
+                left: '0',
+                borderRadius: '24px',
+                zIndex: 1,
+              }}
+            >
               <img 
                 src={img4} 
                 alt="Team collaboration 3" 
-                className="w-full h-[200px] object-cover rounded-2xl"
-                style={{ marginTop: '-40px' }}
+                className="w-full h-full object-cover"
               />
-              {/* Bottom-right */}
-              <img 
-                src={img1} 
-                alt="Team collaboration 4" 
-                className="w-full h-[120px] object-cover rounded-2xl"
-                style={{ marginTop: '-20px' }}
+              {/* Circular cutout */}
+              <div
+                className="absolute"
+                style={{
+                  top: '-70px',
+                  right: '-40px',
+                  width: '120px',
+                  height: '120px',
+                  borderRadius: '50%',
+                  background: '#0B0C0E',
+                }}
               />
             </div>
+            
+            {/* Bottom-right image */}
+            <img 
+              src={img1} 
+              alt="Team collaboration 4" 
+              className="absolute object-cover"
+              style={{ 
+                width: '38%', 
+                height: '130px', 
+                bottom: '55px', 
+                right: '0',
+                borderTopLeftRadius: '24px',
+                borderTopRightRadius: '24px',
+                borderBottomRightRadius: '12px',
+                borderBottomLeftRadius: '24px',
+                zIndex: 1,
+              }}
+            />
           </div>
 
           {/* Desktop Image Collage */}
@@ -692,97 +747,78 @@ export default function Company() {
 
       {/* Quote Section */}
       <section 
-        className="flex items-center justify-center px-6"
+        className="flex items-center justify-center px-6 py-[60px] md:py-[100px]"
         style={{
           width: '100%',
-          paddingBottom: '100px',
           backgroundColor: '#0B0C0E',
         }}
       >
         <h2 
-          className="text-center"
+          className="text-center text-[24px] leading-[32px] md:text-[36px] md:leading-[48px] max-w-[800px]"
           style={{
             fontFamily: 'Sora, sans-serif',
             fontWeight: 600,
-            fontSize: '36px',
-            lineHeight: '48px',
             color: '#ffffff',
-            maxWidth: '800px',
           }}
         >
-          "We care deeply about craft.<br />
-          We care even more about impact."
+          "We care deeply about craft. We care even more about impact."
         </h2>
       </section>
 
-      {/* CTA Section with Gradient Top Border */}
+      {/* CTA Section with Gradient Border */}
       <section 
-        className="flex items-center justify-center px-6"
+        className="flex items-center justify-center px-6 py-[40px] md:py-[60px] pb-[80px] md:pb-[144px]"
         style={{
           width: '100%',
-          paddingTop: '60px',
-          paddingBottom: '144px',
           backgroundColor: '#0B0C0E',
         }}
       >
         <div 
-          className="relative overflow-hidden"
+          className="relative overflow-hidden w-full max-w-[1280px]"
           style={{
-            width: '1280px',
-            maxWidth: '100%',
             borderRadius: '24px',
+            background: '#131517',
           }}
         >
-          {/* Gradient border at top only */}
+          {/* Gradient border - using pseudo-element approach */}
           <div 
+            className="absolute inset-0 rounded-[24px] pointer-events-none"
             style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              right: 0,
-              height: '2px',
+              padding: '2px',
               background: 'linear-gradient(225deg, #F4DC7C -0.1%, #F06058 39.94%, #4044E8 100%)',
-              borderTopLeftRadius: '24px',
-              borderTopRightRadius: '24px',
+              WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+              WebkitMaskComposite: 'xor',
+              maskComposite: 'exclude',
             }}
           />
           
-          <div style={{ padding: '72px' }}>
+          <div className="p-6 md:p-[72px]">
             <p 
-              className="mb-6"
+              className="mb-6 text-[16px] leading-[24px] md:text-[20px] md:leading-[30px]"
               style={{
                 fontFamily: 'Inter, sans-serif',
                 fontWeight: 400,
-                fontSize: '20px',
-                lineHeight: '30px',
-                letterSpacing: '0%',
                 color: '#D5D7DD',
-                width: '1136px',
-                maxWidth: '100%',
               }}
             >
               We collaborate closely with founders and teams to understand challenges, align priorities, and explore how thoughtful design can unlock measurable business growth.
             </p>
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
               <h3 
+                className="text-[24px] leading-[32px] md:text-[32px] md:leading-[48px]"
                 style={{
                   fontFamily: 'Sora, sans-serif',
                   fontWeight: 700,
-                  fontSize: '32px',
-                  lineHeight: '48px',
-                  letterSpacing: '0%',
                   color: '#F1F2F4',
-                  width: '763px',
-                  maxWidth: '100%',
                 }}
               >
                 Thinking of partnering beyond just execution?
               </h3>
               <a
                 href="/contact"
-                className="flex items-center justify-center font-medium transition hover:opacity-90"
+                className="flex items-center justify-center font-medium transition hover:opacity-90 w-full md:w-auto flex-shrink-0"
                 style={{
-                  width: '214px',
+                  minWidth: '214px',
                   height: '56px',
                   gap: '12px',
                   paddingLeft: '24px',
@@ -792,7 +828,7 @@ export default function Company() {
                   color: '#ffffff',
                 }}
               >
-                Let's connect
+                Let's Connect
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M4 9H14M14 9L9 4M14 9L9 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>

@@ -226,20 +226,25 @@ export default function Navbar() {
             <div className="flex flex-col h-[calc(100vh-88px)]">
               <div className="flex-1 px-6 py-4">
                 {navItems.map((item, index) => (
-                  <button
-                    key={index}
-                    onClick={() => {
-                      if (item.hasSubmenu) {
-                        setIsMobileServicesOpen(true);
-                      } else {
-                        closeMobileMenu();
-                      }
-                    }}
-                    className="w-full flex items-center justify-between py-4 text-lg font-medium hover:text-white/80 transition border-b border-white/5"
-                  >
-                    {item.name}
-                    {item.hasSubmenu && <ChevronRight size={20} />}
-                  </button>
+                  item.hasSubmenu ? (
+                    <button
+                      key={index}
+                      onClick={() => setIsMobileServicesOpen(true)}
+                      className="w-full flex items-center justify-between py-4 text-lg font-medium hover:text-white/80 transition border-b border-white/5"
+                    >
+                      {item.name}
+                      <ChevronRight size={20} />
+                    </button>
+                  ) : (
+                    <Link
+                      key={index}
+                      to={item.href}
+                      onClick={closeMobileMenu}
+                      className="w-full flex items-center justify-between py-4 text-lg font-medium hover:text-white/80 transition border-b border-white/5"
+                    >
+                      {item.name}
+                    </Link>
+                  )
                 ))}
               </div>
             </div>
