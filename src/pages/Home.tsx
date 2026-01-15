@@ -1,8 +1,8 @@
-import { ArrowRight, Sparkles, Globe, Lightbulb } from "lucide-react";
-import FutureIntelliImg from "../assets/HomePageImages/futureIntelliImg.jpg";
+import { ArrowRight } from "lucide-react";
+import FutureIntelliImg from "../assets/HomePageImages/futureIntelliImg.jpeg";
 import { VideoImg } from "../assets/VideoImg";
 import { useState } from "react";
-import { Vittae } from "../assets/Companies/vittae";
+import { Vittae } from "../assets/companies/Vittae";
 import {Miniature} from "../assets/companies/Miniature";
 import {MotorQ} from "../assets/companies/MotorQ";
 import {NearTail} from "../assets/companies/NearTail";
@@ -14,14 +14,14 @@ import { People2 } from "../assets/peopleImages/people2";
 import { People3 } from "../assets/peopleImages/people3";
 import { People4 } from "../assets/peopleImages/people4";
 import { People5 } from "../assets/peopleImages/people5";
-import { Star } from "../HomeIcons/star";
-import { Bulb } from "../HomeIcons/bulb";
-import { Sun } from "../HomeIcons/sun"; 
+import { Star } from "../HomeIcons/Star";
+import { Bulb } from "../HomeIcons/Bulb";
+import { Sun } from "../HomeIcons/Sun"; 
 import { Plus } from "../HomeIcons/Plus";
 import EvidenceOfImpact from "../components/Evidence";
-import Footer from "../components/Footer";
 import ContactFooter from "../components/ContactFooter";
 import homePageVideo from "../assets/Videos/HomePage.mp4";
+import { TAB_CONFIGS, getTabConfig } from "../constants/tabConfig";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("Design Services");
@@ -59,26 +59,28 @@ const [openFaq, setOpenFaq] = useState<number | null>(0);
   return (
 <main className="bg-[#0B0C0E] text-white min-h-screen pt-24 selection:bg-purple-500/30">
   {/* Video Background Container - spans both sections */}
-  <div className="relative">
-    {/* Video Background */}
-    <div className="absolute inset-0 w-full pointer-events-none" style={{ height: 'calc(100% + 10rem)' }}>
-      <div className="absolute inset-0 bg-black/70 z-10"></div>
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
-        className="w-full h-full object-cover"
-        onError={(e) => console.error('Video error:', e)}
-        onLoadedData={() => console.log('Video loaded successfully')}
-      >
-        <source src={homePageVideo} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      {/* Gradient fade at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-b from-transparent to-[#0B0C0E] z-10"></div>
-    </div>
+<div className="relative">
+  {/* Video Background */}
+  <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+    <div className="absolute inset-0 bg-black/70 z-10"></div>
+    <video
+      autoPlay
+      loop
+      muted
+      playsInline
+      preload="auto"
+      className="w-full h-full object-cover"
+      onError={(e) => console.error('Video error:', e)}
+      onLoadedData={() => console.log('Video loaded successfully')}
+    >
+      <source src={homePageVideo} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    {/* Gradient fade at top */}
+    <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#0B0C0E] to-transparent z-10"></div>
+    {/* Gradient fade at bottom - starts from 50% */}
+    <div className="absolute top-[-800px] left-0 right-0 bottom-0 bg-gradient-to-b from-transparent to-[#0B0C0E] z-10"></div>
+  </div>
 
     {/* First Section */}
     <section className="relative max-w-6xl mx-auto px-6 text-center flex flex-col items-center py-40 z-20">
@@ -109,9 +111,15 @@ const [openFaq, setOpenFaq] = useState<number | null>(0);
       {/* Left: Image with shadow effect */}
       <div className="relative">
         {/* Glow effect behind image */}
-        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/30 to-blue-500/30 blur-3xl scale-110 -z-10"></div>
+<div 
+  className="absolute -top-12 left-1/2 -translate-x-1/2 w-[700px] h-[450px] blur-[60px] -z-10 opacity-60 mt-[20px]"
+  style={{
+    background: 'radial-gradient(circle, #F06058 0%, transparent 70%)'
+  }}
+></div>
         <div className="relative">
-          <FutureIntelliImg/>
+          {/* <FutureIntelliImg/> */}
+          <img src={FutureIntelliImg} alt="Future Intelligent Design" />
         </div>
       </div>
 
@@ -127,23 +135,25 @@ const [openFaq, setOpenFaq] = useState<number | null>(0);
     </section>
   </div>
       {/* --- Service Excellence Section --- */}
-      <section className="max-w-10xl px-6 xl:px-[200px] mt-32">
+      <section className="max-w-10xl px-6 xl:px-[200px]">
         
         {/* Tab Switcher */}
         <div className="flex justify-center mb-[48px] h-[64px]">
           <div className="p-2 rounded-[24px] flex items-center" style={{backgroundColor: 'rgb(26 27 30 / 66%)'}}>
-            {["Design Services", "Products", "Academy"].map((tab) => (
+            {Object.values(TAB_CONFIGS).map((tabConfig) => (
               <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`px-8 py-2.5 rounded-[20px] transition-all duration-300  text-base font-medium leading-6 capitalize ${
-                  activeTab === tab 
-                    ? "bg-[#7a78ed] text-black h-[100%]" 
+                key={tabConfig.label}
+                onClick={() => setActiveTab(tabConfig.label)}
+                className={`px-8 py-2.5 rounded-[20px] transition-all duration-300 text-base font-medium leading-6 capitalize ${
+                  activeTab === tabConfig.label 
+                    ? `h-[100%] ${tabConfig.textColor}` 
                     : "text-white hover:text-white"
                 }`}
-                // style={activeTab === tab ? {color: 'rgba(213, 215, 221, 1)'} : {}}
+                style={{
+                  backgroundColor: activeTab === tabConfig.label ? tabConfig.activeColor : 'transparent'
+                }}
               >
-                {tab}
+                {tabConfig.label}
               </button>
             ))}
           </div>
@@ -152,37 +162,48 @@ const [openFaq, setOpenFaq] = useState<number | null>(0);
         <div className="grid md:grid-cols-2 gap-[72px] items-start">
           {/* Left Side: Content & Stats */}
           <div className="flex flex-col">
-            <h2 className="text-[40px] font-semibold leading-tight mb-6" style={{ color: '#F1F2F4' }}>
-              Service <br /> Excellence
+            <h2 className="text-[40px] font-semibold leading-tight mb-6 whitespace-pre-line" style={{ color: '#F1F2F4' }}>
+              {getTabConfig(activeTab).content.title}
             </h2>
             <p className="text-base leading-relaxed mb-6 max-w-[38rem]" style={{ color: '#D5D7DD' }}>
-              Crafting human-centered design for digital transformation. From UX Research to Marketing Assets, we partner with businesses to design experiences that drive growth.
+              {getTabConfig(activeTab).content.description}
             </p>
 
-            {/* Stats Row */}
-            <div className="flex gap-12 mb-6">
-              <div className="flex flex-col">
-                <span className="text-4xl font-bold mb-1">100+</span>
-                <span className="font-sora text-base font-normal leading-6 tracking-[1px]" style={{color: '#D5D7DD'}}>Projects</span>
-              </div>
-              
-              {/* Vertical Divider */}
-              <div className="w-[1px] h-12 bg-zinc-800 self-center"></div>
+            {/* Stats Row - Only show for Design Services */}
+            {activeTab === "Design Services" && (
+              <div className="flex gap-12 mb-6">
+                <div className="flex flex-col">
+                  <span className="text-4xl font-bold mb-1">100+</span>
+                  <span className="font-sora text-base font-normal leading-6 tracking-[1px]" style={{color: '#D5D7DD'}}>Projects</span>
+                </div>
+                
+                {/* Vertical Divider */}
+                <div className="w-[1px] h-12 bg-zinc-800 self-center"></div>
 
-              <div className="flex flex-col">
-                <span className="text-4xl font-bold mb-1">20+</span>
-                <span className="font-sora text-base font-normal leading-6 tracking-[1px]" style={{color: '#D5D7DD'}}>Clients</span>
+                <div className="flex flex-col">
+                  <span className="text-4xl font-bold mb-1">20+</span>
+                  <span className="font-sora text-base font-normal leading-6 tracking-[1px]" style={{color: '#D5D7DD'}}>Clients</span>
+                </div>
               </div>
-            </div>
+            )}
 
             <button className="w-fit bg-[#22252A] px-6 py-3 rounded-full flex items-center gap-2 hover:bg-zinc-800 transition text-base font-medium leading-6 capitalize" style={{ color: '#D5D7DD' }}>
-              Explore Design Services <ArrowRight size={16} />
+              {getTabConfig(activeTab).content.buttonText} <ArrowRight size={16} />
             </button>
           </div>
 
-          {/* Right Side: Video Card */}
+          {/* Right Side: Dynamic Content */}
           <div className="relative group cursor-pointer">
-            <VideoImg />
+            {activeTab === "Design Services" ? (
+              <VideoImg />
+            ) : (
+              <div className="bg-[#111214] rounded-[32px] p-8 h-full flex items-center justify-center">
+                <div className="text-center">
+                  <div className="text-6xl mb-4 opacity-50">📱</div>
+                  <p className="text-white/60">Coming Soon</p>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
