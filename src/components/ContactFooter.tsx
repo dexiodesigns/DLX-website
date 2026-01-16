@@ -1,5 +1,5 @@
 import React from 'react';
-// import Footer from './Footer';
+import Footer from './Footer';
 
 interface HeroSectionProps {
   title?: string;
@@ -8,7 +8,11 @@ interface HeroSectionProps {
   onButtonClick?: () => void;
 }
 
-const ContactFooter: React.FC<HeroSectionProps> = ({title, subtitle, buttonText}) => {
+const ContactFooter: React.FC<HeroSectionProps> = ({
+  title,
+  subtitle,
+  buttonText,
+}) => {
   return (
     <div>
       <style>{`
@@ -20,32 +24,44 @@ const ContactFooter: React.FC<HeroSectionProps> = ({title, subtitle, buttonText}
             transform: translateX(-50%) rotate(360deg);
           }
         }
-        
+
         .hero-container {
           position: relative;
           width: 100%;
           margin: 0 auto;
+          height: 480px;
         }
-        
+
         .hero-content-box {
-            position: relative;
-            padding: 200px;
-            padding-top: 48px;
-            padding-bottom: 68px;
+          position: relative;
+          padding: 200px;
+          padding-top: 48px;
+          padding-bottom: 8px;
         }
-        
+
+        @media (max-width: 768px) {
+          .hero-content-box {
+            padding: 16px;
+            padding-top: 32px;
+            padding-bottom: 48px;
+          }
+        }
+
         .sunshine-effect {
-            position: absolute;
-            bottom: -50px;
-            left: 0;
-            right: 0;
-            top: 0px;
-            height: 412px;
-            overflow: hidden;
-            pointer-events: none;
-            z-index: 1;
+          position: absolute;
+          inset: 0;
+          height: 480px;
+          overflow: hidden;
+          pointer-events: none;
+          z-index: 1;
         }
-        
+
+        @media (max-width: 768px) {
+          .sunshine-effect {
+            height: 446px;
+          }
+        }
+
         .sunshine-effect::before {
           content: '';
           position: absolute;
@@ -66,7 +82,16 @@ const ContactFooter: React.FC<HeroSectionProps> = ({title, subtitle, buttonText}
           filter: blur(80px);
           opacity: 0.9;
         }
-        
+
+        @media (max-width: 768px) {
+          .sunshine-effect::before {
+            width: 900px;
+            height: 900px;
+            bottom: -720px;
+            filter: blur(60px);
+          }
+        }
+
         .sunshine-effect::after {
           content: '';
           position: absolute;
@@ -84,44 +109,69 @@ const ContactFooter: React.FC<HeroSectionProps> = ({title, subtitle, buttonText}
           );
           filter: blur(40px);
         }
-        
+
+        @media (max-width: 768px) {
+          .sunshine-effect::after {
+            width: 260px;
+            height: 140px;
+            filter: blur(30px);
+          }
+        }
+
         .content-wrapper {
           position: relative;
           z-index: 10;
+          padding: 72px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 24px;
+
+          #content-box-subtitle {
+            line-height: 5rem;
+          }
+        }
+          
+        @media (max-width: 768px) {
+          .content-wrapper {
+            padding: 24px;
+            display: flex;
+            align-items: flex-start;
+            text-align: left;
+            gap: 16px;
+
+            #content-box-subtitle {
+              line-height: 2.5rem;
+            }
+          }
         }
       `}</style>
-      
+
       <div className="hero-container">
         <div className="hero-content-box">
           <div
             className="content-wrapper"
             style={{
-              display: 'flex',
-              padding: '72px',
-              flexDirection: 'column',
-              alignItems: 'center',
-              gap: '24px',
               borderRadius: '36px',
               borderTop: '2px solid #F06058',
-              background: 'linear-gradient(180deg, rgba(11, 12, 14, 0.50) 0%, rgba(11, 12, 14, 0.00) 100%)',
+              background:
+                'linear-gradient(180deg, rgba(11, 12, 14, 0.50) 0%, rgba(11, 12, 14, 0.00) 100%)',
               position: 'relative',
               zIndex: 2,
             }}
           >
-            <p className="text-xl max-w-8xl leading-relaxed">
+            <p className="text-base md:text-xl max-w-5xl leading-relaxed text-[#D5D7DD]">
               {title}
             </p>
 
-            <div className="w-full flex flex-col md:flex-row items-center justify-between gap-8">
-              <h1 className="text-white text-3xl font-bold leading-tight flex-1">
+            <div className="w-full flex flex-col md:flex-row  items-start gap-8">
+              <h1 className="text-white text-2xl md:text-3xl font-bold leading-snug md:text-left md:max-w-50 md:ml-20" id="content-box-subtitle">
                 {subtitle}
               </h1>
 
               <button
-                className="group relative px-8 py-4 rounded-full text-white font-semibold text-lg transition-all duration-300 hover:shadow-xl hover:scale-105 flex items-center gap-3  leading-relaxed"
-                style={{
-                  background: 'rgb(172 78 72)',
-                }}
+                className="group relative px-8 py-4 rounded-[16px] md:rounded-[24px] text-white font-semibold text-base md:text-lg transition-all duration-300 hover:shadow-xl hover:scale-105 flex md:items-center gap-3 md:ml-[100px]"
+                style={{ background: 'rgb(172 78 72)' }}
               >
                 {buttonText}
                 <svg
@@ -143,13 +193,12 @@ const ContactFooter: React.FC<HeroSectionProps> = ({title, subtitle, buttonText}
               </button>
             </div>
           </div>
-          
+
           <div className="sunshine-effect"></div>
         </div>
       </div>
-      {/* <div className="w-full mt-32 py-16 px-8 rounded-lg" style={{backgroundColor: 'black'}}> */}
-        {/* <Footer /> */}
-        {/* </div> */}
+
+      <Footer />
     </div>
   );
 };
