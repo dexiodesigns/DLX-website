@@ -102,7 +102,7 @@ const ContactFooter: React.FC<HeroSectionProps> = ({title, subtitle, buttonText}
               alignItems: 'center',
               gap: '24px',
               borderRadius: '36px',
-              borderTop: '2px solid #F4DC7C',
+              borderTop: '2px solid #F06058',
               background: 'linear-gradient(180deg, rgba(11, 12, 14, 0.50) 0%, rgba(11, 12, 14, 0.00) 100%)',
               position: 'relative',
               zIndex: 2,
