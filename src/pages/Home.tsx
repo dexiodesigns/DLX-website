@@ -3,18 +3,9 @@ import FutureIntelliImg from "../assets/HomePageImages/futureIntelliImg.jpg";
 import AcademyHomeImg from "../assets/HomePageImages/AcademyHomeImg.jpg";
 import { VideoImg } from "../assets/VideoImg";
 import { useState } from "react";
-// import { Algo } from "../assets/companies/Algo";
-// import { Vittae } from "../assets/companies/Vittae";
-// import {Miniature} from "../assets/companies/Miniature";
-// import {MotorQ} from "../assets/companies/MotorQ";
-// import {NearTail} from "../assets/companies/NearTail";
-// import {Dforth} from "../assets/companies/Dforth";
-// import {Route} from "../assets/companies/Route";
-// import {Treasure} from "../assets/companies/Treasure";
-import { Star } from "../HomeIcons/Star";
-import { Bulb } from "../HomeIcons/Bulb";
-import { Sun } from "../HomeIcons/Sun"; 
-import { Plus } from "../HomeIcons/Plus";
+import { Star } from "../assets/HomeIcons/Star";
+import { Bulb } from "../assets/HomeIcons/Bulb";
+import { Sun } from "../assets/HomeIcons/Sun"; 
 import EvidenceOfImpact from "../components/Evidence";
 import ContactFooter from "../components/ContactFooter";
 import homePageVideo from "../assets/Videos/HomePage-HeroSection.mov";
@@ -22,23 +13,11 @@ import productsVideo from "../assets/Videos/Products-SaaS-Intelligence.mp4";
 import { TAB_CONFIGS, getTabConfig } from "../constants/tabConfig";
 import TestimonialCarousel from "../components/TestimonialCarousel";
 import LogoMarquee from "../components/Companies";
+import FAQSection from "../components/FAQSection";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("Design Services");
-  const [activeFAQTab, setActiveFAQTab] = useState("Design Company");
   const HomeDescription = 'Every modern user works alongside AI and Dexio LabX designs Human<>AI systems that deliver real value inside SaaS products.';
-const [openFaq, setOpenFaq] = useState<number | null>(0);
-
-  const faqs = [
-    {
-      question: "What are your areas of focus as a leading UI/UX design company in India?",
-      answer: "We specialize in user research, interaction design, usability testing, and digital product strategy. From mobile applications to enterprise platforms, our solutions combine human neuroscience, psychology, technology, and design thinking to develop intuitive, high-performing experiences."
-    },
-    { question: "What separates Dexio from other top UI/UX design agencies?", answer: "Our focus on AI-driven innovation and multidisciplinary approach." },
-    { question: "Does Dexio have experience working with large corporate organisations in UX/UI design?", answer: "Yes, we partner with both startups and global enterprises." },
-    { question: "Does Dexio work with startups in UX/UI design?", answer: "Absolutely, we help startups scale through intelligent design." },
-    { question: "Why should we onboard Dexio? What's special about you?", answer: "We don't just build products; we evolve with your business needs." }
-  ];
   return (
 <main className="bg-[#0B0C0E] text-white min-h-screen pt-24 selection:bg-purple-500/30">
   {/* Video Background Container - spans both sections */}
@@ -130,7 +109,7 @@ const [openFaq, setOpenFaq] = useState<number | null>(0);
           className={`px-8 py-2.5 rounded-[20px] transition-colors duration-300 text-base font-medium leading-6 capitalize ${
             activeTab === tabConfig.label
               ? `h-[100%] ${tabConfig.textColor}`
-              : "text-white bg-transparent hover:bg-[rgba(26, 27, 30, 0.78)]"
+              : "text-white bg-transparent hover:bg-zinc-800/50"
           }`}
           style={{
             backgroundColor:
@@ -270,66 +249,8 @@ const [openFaq, setOpenFaq] = useState<number | null>(0);
       </div>
 
       {/* --- FAQ Section --- */}
-      <div className="mt-40">
-        <h2 className="text-4xl font-bold text-white text-center mb-10">FAQs</h2>
-        
-        {/* FAQ Tabs Switcher */}
-
-                <div className="flex justify-center mb-[24px] h-[64px]">
-          <div className="p-2 rounded-[24px] flex items-center" style={{backgroundColor: 'rgb(26 27 30 / 66%)'}}>
-            {["Design Company", "Design Services", "Design Process", "Design Academy"].map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveFAQTab(tab)}
-                className={`px-8 py-2.5 rounded-[20px] transition-all duration-300  text-base font-medium leading-6 capitalize ${
-                  activeFAQTab === tab 
-                    ? "bg-white text-black h-[100%] font-inter" 
-                    : "text-white hover:text-white"
-                }`}
-                // style={activeTab === tab ? {color: 'rgba(213, 215, 221, 1)'} : {}}
-              >
-                {tab}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Accordion */}
-<div>
-  {faqs.map((faq, index) => (
-    <div key={index} className="flex gap-4">
-      <div className={`${openFaq === index ? "pt-4" : "pt-8"}`}>
-        <Plus/>
-      </div>
-      <div className="flex-1 border-b border-zinc-800">
-        <button 
-          onClick={() => setOpenFaq(openFaq === index ? null : index)}
-          className={`w-full text-left group  ${openFaq === index ? "py-4" : "py-8"}`}
-        >
-          <h3 className="text-[18px] md:text-xl font-bold transition leading-10 text-[#F1F2F4]">
-            {faq.question}
-          </h3>
-        </button>
-        
-        <div className={`overflow-hidden transition-all duration-300 ${openFaq === index ? "max-h-60 pb-8" : "max-h-0"}`}>
-          <p 
-            style={{ 
-              color: '#D5D7DD', 
-              fontFamily: 'Inter', 
-              fontSize: '16px', 
-              fontWeight: '400', 
-              lineHeight: '24px' 
-            }}
-          >
-            {faq.answer}
-          </p>
-        </div>
-      </div>
-    </div>
-  ))}
-</div>
-      </div>
-    </section>
+      <FAQSection/>
+      </section>
       <EvidenceOfImpact/>
     {/* --- Talk Section --- */}
       <ContactFooter 
