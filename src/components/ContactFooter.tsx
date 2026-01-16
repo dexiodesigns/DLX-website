@@ -29,13 +29,14 @@ const ContactFooter: React.FC<HeroSectionProps> = ({
           position: relative;
           width: 100%;
           margin: 0 auto;
+          height: 480px;
         }
 
         .hero-content-box {
           position: relative;
           padding: 200px;
           padding-top: 48px;
-          padding-bottom: 68px;
+          padding-bottom: 8px;
         }
 
         @media (max-width: 768px) {
@@ -49,7 +50,7 @@ const ContactFooter: React.FC<HeroSectionProps> = ({
         .sunshine-effect {
           position: absolute;
           inset: 0;
-          height: 420px;
+          height: 480px;
           overflow: hidden;
           pointer-events: none;
           z-index: 1;
@@ -124,6 +125,11 @@ const ContactFooter: React.FC<HeroSectionProps> = ({
           display: flex;
           flex-direction: column;
           align-items: center;
+          gap: 24px;
+
+          #content-box-subtitle {
+            line-height: 5rem;
+          }
         }
           
         @media (max-width: 768px) {
@@ -132,6 +138,11 @@ const ContactFooter: React.FC<HeroSectionProps> = ({
             display: flex;
             align-items: flex-start;
             text-align: left;
+            gap: 16px;
+
+            #content-box-subtitle {
+              line-height: 2.5rem;
+            }
           }
         }
       `}</style>
@@ -141,7 +152,6 @@ const ContactFooter: React.FC<HeroSectionProps> = ({
           <div
             className="content-wrapper"
             style={{
-              gap: '24px',
               borderRadius: '36px',
               borderTop: '2px solid #F06058',
               background:
@@ -150,17 +160,17 @@ const ContactFooter: React.FC<HeroSectionProps> = ({
               zIndex: 2,
             }}
           >
-            <p className="text-base md:text-xl max-w-4xl md:text-center leading-relaxed text-[#D5D7DD]">
+            <p className="text-base md:text-xl max-w-5xl leading-relaxed text-[#D5D7DD]">
               {title}
             </p>
 
-            <div className="w-full flex flex-col md:flex-row  items-start md:items-center md:justify-between gap-8">
-              <h1 className="text-white text-2xl md:text-3xl font-bold leading-snug md:text-center md:text-left flex-1">
+            <div className="w-full flex flex-col md:flex-row  items-start gap-8">
+              <h1 className="text-white text-2xl md:text-3xl font-bold leading-snug md:text-left md:max-w-50 md:ml-20" id="content-box-subtitle">
                 {subtitle}
               </h1>
 
               <button
-                className="group relative px-8 py-4 rounded-[16px] md:rounded-full text-white font-semibold text-base md:text-lg transition-all duration-300 hover:shadow-xl hover:scale-105 flex md:items-center gap-3"
+                className="group relative px-8 py-4 rounded-[16px] md:rounded-[24px] text-white font-semibold text-base md:text-lg transition-all duration-300 hover:shadow-xl hover:scale-105 flex md:items-center gap-3 md:ml-[100px]"
                 style={{ background: 'rgb(172 78 72)' }}
               >
                 {buttonText}
