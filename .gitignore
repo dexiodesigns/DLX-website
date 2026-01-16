@@ -1,2 +1,10 @@
+# Ignore all node_modules everywhere
 node_modules/
+**/node_modules/
+
+# Ignore Vite cache explicitly (optional but safe)
+node_modules/.vite/
+**/node_modules/.vite/
+
+# macOS
 .DS_Store

@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { SunMoon, Sun, Moon, ChevronDown, ChevronUp, ChevronRight, ArrowLeft, Menu, X, FileSearch, Search, BarChart2, PenTool, Wand2, TrendingUp, PlayCircle } from "lucide-react";
+import { ChevronDown, ChevronUp, ChevronRight, ArrowLeft, Menu, X, FileSearch, Search, BarChart2, PenTool, Wand2, TrendingUp, PlayCircle } from "lucide-react";
 import { Logo } from "./../assets/Logo";
 
 export default function Navbar() {
@@ -119,7 +119,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 w-full z-50 bg-black/50 backdrop-blur-md text-white font-['Inter']">
+      <nav className="fixed top-0 w-full z-50 bg-black/85 backdrop-blur-md text-white font-['Inter']">
         <div className="px-6 md:px-[200px] py-6 flex justify-between items-center">
           <Link to="/" className="flex items-center gap-2">
             <Logo/>
@@ -166,10 +166,6 @@ export default function Navbar() {
                   </li>
                 ))}
             </ul>
-
-            <div className="bg-zinc-800 p-1 rounded-full flex items-center gap-2 border border-zinc-700 ml-4">
-                <div className="p-1 rounded-full bg-zinc-700"><SunMoon size={16} /></div>
-            </div>
           </div>
           <button 
             className="md:hidden p-2 hover:bg-white/10 rounded-lg transition"
