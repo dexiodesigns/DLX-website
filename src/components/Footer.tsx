@@ -210,6 +210,7 @@ export default function Footer() {
               </ul>
             </div>
 
+            {/* AI Products - Options Disabled */}
             <div className="flex flex-col gap-4">
               <h4 
                 className="font-['Inter'] font-semibold text-[16px] leading-[24px] tracking-[0%] uppercase"
@@ -222,21 +223,19 @@ export default function Footer() {
               >
                 AI Products
               </h4>
-              <ul className="flex flex-col gap-3">
+              <ul className="flex flex-col gap-3 opacity-50 pointer-events-none">
                 {footerLinks.aiProducts.map((link, index) => (
                   <li key={index}>
-                    <Link
-                      to={link.href}
-                      className="font-['Inter'] font-normal text-[14px] leading-[20px] tracking-[0%] hover:text-white transition-colors"
+                    <span
+                      className="font-['Inter'] font-normal text-[14px] leading-[20px] tracking-[0%] cursor-not-allowed"
                       style={{
                         color: '#D5D7DD',
                         fontWeight: 400,
-                        height: '20px',
-                        opacity: 1
+                        height: '20px'
                       }}
                     >
                       {link.name}
-                    </Link>
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -434,7 +433,6 @@ export default function Footer() {
       <div 
         className="mx-auto"
         style={{
-          width: '1280px',
           maxWidth: '100%',
           height: '44px',
           opacity: 1,
