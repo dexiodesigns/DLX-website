@@ -42,40 +42,36 @@ export default function Contact() {
     <main className="bg-[#0B0C0E] text-white min-h-screen font-['Inter']">
       {/* Hero Section */}
       <section 
-        className="flex items-center justify-center px-6"
+        className="flex items-center justify-center mx-auto px-5 md:px-0"
         style={{
-          width: '100%',
+          maxWidth: '100%',
+          marginTop: '90px',
           paddingTop: '144px',
+          paddingBottom: '144px',
+          opacity: 1,
         }}
       >
         <div 
-          className="flex flex-col items-center text-center"
+          className="flex flex-col items-center text-center w-[335px] md:w-[1280px]"
           style={{
-            width: '1280px',
-            maxWidth: '100%',
-            minHeight: '408px',
             gap: '12px',
-            paddingTop: '144px',
-            paddingBottom: '144px',
           }}
         >
           {/* Main Heading */}
           <h1 
+            className="w-[335px] md:w-[717px] h-auto md:h-[60px] text-[30px] md:text-[48px] leading-[125%] md:leading-[60px]"
             style={{
-              width: '717px',
               maxWidth: '800px',
-              height: '60px',
               fontFamily: 'Sora, sans-serif',
               fontWeight: 600,
-              fontSize: '48px',
-              lineHeight: '60px',
               letterSpacing: '0%',
               textAlign: 'center',
+              opacity: 1,
             }}
           >
             Let's Solve the{' '}
             <span 
-              className="bg-clip-text text-transparent"
+              className="bg-clip-text text-transparent block md:inline"
               style={{
                 backgroundImage: 'linear-gradient(225deg, #F4DC7C -0.1%, #F06058 39.94%, #4044E8 100%)',
               }}
@@ -86,15 +82,15 @@ export default function Contact() {
           
           {/* Subtitle */}
           <p 
+            className="w-[335px] md:w-auto text-[14px] md:text-[18px] leading-[150%] md:leading-[28px]"
             style={{
               fontFamily: 'Inter, sans-serif',
               fontWeight: 400,
-              fontSize: '18px',
-              lineHeight: '28px',
               letterSpacing: '0%',
               textAlign: 'center',
               color: '#D5D7DD',
               maxWidth: '800px',
+              opacity: 1,
             }}
           >
             Great products start with the right questions. Tell us what you're working on, we'll respond with a clear, actionable recommendation within 24 hours.
@@ -116,8 +112,6 @@ export default function Contact() {
           style={{
             width: '1280px',
             maxWidth: '100%',
-            paddingTop: '80px',
-            paddingBottom: '80px',
           }}
         >
           {/* Left Side - Contact Form */}
