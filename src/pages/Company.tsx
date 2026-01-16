@@ -1,7 +1,6 @@
-import React from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import Footer from "../components/Footer";
+import ContactFooter from "../components/ContactFooter";
 
 // Video paths - Using URL constructor for files with spaces
 const companyHeroVideoMov = new URL('../assets/companies/Company Page - Hero Section Video.mov', import.meta.url).href;
@@ -37,6 +36,9 @@ export default function Company() {
         {/* Overlay for better text readability */}
         <div className="absolute inset-0 bg-black/80" style={{ zIndex: 1 }} />
         
+        {/* Gradient fade at bottom */}
+<div className="absolute bottom-0 left-0 right-0 h-48 md:h-64 bg-gradient-to-b from-transparent to-[#0B0C0E] z-[5]"></div>
+
         {/* Hero Content Container */}
         <div 
           className="relative z-10 text-center flex flex-col items-center justify-center w-full max-w-[1280px] px-6 md:px-0 pt-[100px] md:pt-[144px] pb-[60px] md:pb-0 mt-[76px] gap-3"
@@ -49,7 +51,7 @@ export default function Company() {
                 fontWeight: 600,
               }}
             >
-              Designing for SaaS that is
+              Design that drives growth.
             </h1>
             <h2 
               className="text-[32px] leading-[40px] md:text-[48px] md:leading-[60px] text-center"
@@ -59,7 +61,7 @@ export default function Company() {
               }}
             >
               <span className="bg-gradient-to-r from-[#f97316] via-[#ec4899] to-[#a855f7] bg-clip-text text-transparent">
-                no longer built only for humans.
+                AI that simplifies work.
               </span>
             </h2>
           </div>
@@ -67,9 +69,9 @@ export default function Company() {
           {/* Description */}
           <div className="mx-auto w-full max-w-[1280px]">
             <p className="text-zinc-300 text-sm md:text-lg leading-relaxed text-center px-4 md:px-0">
-              Every modern user works alongside AI and Dexio LabX designs Human&lt;&gt;AI systems that deliver real
+              Dexio LabX is a multidisciplinary ecosystem where creativity, technology, and learning converge. We empower
               <br className="hidden md:block" />
-              value inside SaaS products.
+              startups to scale, enterprises to innovate, and individuals to evolve.
             </p>
           </div>
           
@@ -79,22 +81,22 @@ export default function Company() {
               to="/work"
               className="flex items-center justify-center gap-2 bg-white text-black px-8 py-3 rounded-full font-medium hover:bg-zinc-200 transition whitespace-nowrap w-full md:w-auto h-[56px]"
             >
-              Explore Our Work
+              Talk To An Expert
               <ArrowRight size={18} />
             </Link>
-            <Link
+            {/* <Link
               to="/contact"
               className="flex items-center justify-center gap-2 border border-zinc-600 text-white px-8 py-3 rounded-full font-medium hover:bg-white/10 transition whitespace-nowrap w-full md:w-auto h-[56px]"
             >
               Talk To An Expert
               <ArrowRight size={18} />
-            </Link>
+            </Link> */}
           </div>
         </div>
 
         {/* Our Vision Section - Inside Video Background */}
         <div 
-          className="relative z-10 flex items-center justify-center px-6 mt-[80px] md:mt-[144px] pb-[80px] md:pb-[144px]"
+          className="relative z-10 flex items-center justify-center px-6 mt-[80px] md:mt-[144px] pb-[80px] md:pb-[0px]"
           style={{ width: '100%' }}
         >
           <div 
@@ -117,7 +119,7 @@ export default function Company() {
             
             {/* Content - Below on mobile, Right on desktop */}
             <div 
-              className="flex flex-col w-full md:w-[604px] gap-3 md:gap-3"
+              className="flex flex-col w-[99%] md:w-[604px] gap-3 md:gap-3"
             >
               <h2 
                 className="text-[28px] leading-[36px] md:text-[36px] md:leading-[48px]"
@@ -131,7 +133,7 @@ export default function Company() {
               </h2>
               
               {/* Bullet Points */}
-              <ul className="space-y-3 mt-4">
+              <ul className="space-y-1 mt-4 ml-2 md:ml-0">
                 {[
                   "Shared context between user and AI",
                   "Clear decision ownership",
@@ -140,7 +142,7 @@ export default function Company() {
                 ].map((item, index) => (
                   <li 
                     key={index}
-                    className="flex items-center gap-3 text-[16px] leading-[24px]"
+                    className="flex items-center gap-3 text-[16px] leading-[24px] md:gap-1"
                     style={{
                       fontFamily: 'Inter, sans-serif',
                       fontWeight: 400,
@@ -159,7 +161,7 @@ export default function Company() {
 
       {/* We Design Products Section */}
       <section 
-        className="flex flex-col items-center justify-center px-6 py-[60px] md:py-[80px]"
+        className="flex flex-col items-center justify-center px-6 py-[60px]  md:mt-[144px] md:pb-0"
         style={{
           width: '100%',
           backgroundColor: '#0B0C0E',
@@ -167,7 +169,7 @@ export default function Company() {
       >
         {/* Section Title */}
         <h2 
-          className="text-center mb-8 md:mb-12 text-[28px] leading-[36px] md:text-[48px] md:leading-[60px] max-w-[800px]"
+          className="text-center mb-8 md:mb-12 text-[28px] leading-[36px] md:text-[36px] md:leading-[50px] max-w-[800px]"
           style={{
             fontFamily: 'Sora, sans-serif',
             fontWeight: 600,
@@ -310,7 +312,7 @@ export default function Company() {
       >
         {/* Section Title */}
         <h2 
-          className="text-left md:text-center mb-2 md:mb-4 text-[28px] leading-[36px] md:text-[48px] md:leading-[60px] w-full max-w-[1280px]"
+          className="text-left md:text-center mb-2 text-[28px] leading-[36px] md:text-[36px] md:leading-[60px] w-full max-w-[1280px]"
           style={{
             fontFamily: 'Sora, sans-serif',
             fontWeight: 600,
@@ -322,11 +324,11 @@ export default function Company() {
         
         {/* Subtitle */}
         <p 
-          className="text-left md:text-center mb-10 md:mb-16 text-[16px] md:text-[20px] leading-[24px] md:leading-[28px] w-full max-w-[1280px]"
+          className="text-left md:text-center mb-10 md:mb-16 text-[20px] md:text-[24px] leading-[24px] md:leading-[28px] w-full max-w-[1280px]"
           style={{
             fontFamily: 'Inter, sans-serif',
             fontWeight: 400,
-            color: 'rgba(255, 255, 255, 0.7)',
+            color: '#D5D7DD',
           }}
         >
           Structured. Collaborative. Outcome-Driven.
@@ -337,7 +339,7 @@ export default function Company() {
           className="hidden md:flex flex-col items-center w-full max-w-[1280px]"
         >
           {/* Timeline Line with Icons */}
-          <div className="relative flex items-center justify-between mb-8 w-full">
+          <div className="relative flex items-center justify-between mb-8 w-[80%]">
             {/* Continuous Line Behind Icons */}
             <div 
               className="absolute left-0 right-0 top-1/2 -translate-y-1/2"
@@ -412,7 +414,7 @@ export default function Company() {
         </div>
 
         {/* Mobile Timeline - Vertical */}
-        <div className="md:hidden w-full">
+        <div className="md:hidden w-[80%]">
           {[
             { title: "Understand", desc: "Deep dive into your product, users, and business context.", iconType: "circle-outline" },
             { title: "Define", desc: "Clear problem statements, success metrics, and scope.", iconType: "triangle" },
@@ -484,7 +486,7 @@ export default function Company() {
 
       {/* The Curious Squad Section */}
       <section 
-        className="flex items-center justify-center px-6 py-[60px] md:py-[144px]"
+        className="flex items-center justify-center px-6 pt-[60px] md:pb-[144px]"
         style={{
           width: '100%',
           backgroundColor: '#0B0C0E',
@@ -496,7 +498,7 @@ export default function Company() {
           {/* Left Content */}
           <div className="w-full md:w-[500px] md:flex-shrink-0 mb-8 md:mb-0">
             <h2 
-              className="mb-2 md:mb-6 text-[28px] leading-[36px] md:text-[36px] md:leading-[48px]"
+              className="mb-6 md:mb-6 text-[28px] leading-[36px] md:text-[36px] md:leading-[48px]"
               style={{
                 fontFamily: 'Sora, sans-serif',
                 fontWeight: 600,
@@ -507,36 +509,36 @@ export default function Company() {
             </h2>
             {/* Mobile Subtitle */}
             <p 
-              className="md:hidden mb-6 text-[16px] leading-[24px]"
+              className="md:hidden mb-9 md:mb-6 text-[20px] md:text-[16px] leading-[24px] tracking-[0.1px]"
               style={{
                 fontFamily: 'Inter, sans-serif',
                 fontWeight: 400,
-                color: 'rgba(255, 255, 255, 0.7)',
+                color: '#D5D7DD',
               }}
             >
               Structured. Collaborative. Outcome-Driven.
             </p>
             <p 
-              className="mb-6 text-[14px] leading-[22px] md:text-[16px] md:leading-[24px]"
+              className="mb-6 text-[18px] leading-[22px] md:text-[16px] md:leading-[24px] tracking-[0.1px] md:text-[16px]"
               style={{
-                fontFamily: 'Inter, sans-serif',
+                // fontFamily: 'Inter, sans-serif',
                 fontWeight: 400,
-                color: 'rgba(255, 255, 255, 0.7)',
+                color: '#D5D7DD',
               }}
             >
               We are a Curiously Obsessed Squad; designers, researchers, builders, and thinkers who are driven by learning and experimentation.
             </p>
             <p 
-              className="mb-4 text-[16px] leading-[24px]"
+              className="mb-4 text-[18px] leading-[24px] tracking-[0.1px] md:text-[16px]"
               style={{
-                fontFamily: 'Inter, sans-serif',
-                fontWeight: 500,
-                color: '#ffffff',
+                // fontFamily: 'Inter, sans-serif',
+                fontWeight: 100,
+                color: '#D5D7DD',
               }}
             >
               Our squad:
             </p>
-            <ul className="space-y-3">
+            <ul className="space-y-1">
               {[
                 "Experiments daily with AI tools and workflows",
                 "Questions defaults and challenges assumptions",
@@ -545,11 +547,10 @@ export default function Company() {
               ].map((item, index) => (
                 <li 
                   key={index}
-                  className="flex items-start gap-3 text-[14px] leading-[22px] md:text-[16px] md:leading-[24px]"
+                  className="flex items-start gap-3 text-[16px] md:text-[14px] leading-[28px] md:text-[16px] md:leading-[24px] tracking-[0.1px]"
                   style={{
-                    fontFamily: 'Inter, sans-serif',
                     fontWeight: 400,
-                    color: 'rgba(255, 255, 255, 0.7)',
+                    color: '#D5D7DD',
                   }}
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-white flex-shrink-0 mt-2" />
@@ -747,99 +748,30 @@ export default function Company() {
 
       {/* Quote Section */}
       <section 
-        className="flex items-center justify-center px-6 py-[60px] md:py-[100px]"
+        className="flex items-center justify-center px-6 py-[40px] md:py-[60px] md:pb-[80px]"
         style={{
           width: '100%',
           backgroundColor: '#0B0C0E',
         }}
       >
         <h2 
-          className="text-center text-[24px] leading-[32px] md:text-[36px] md:leading-[48px] max-w-[800px]"
+          className="text-center text-[24px] leading-[32px] md:text-[36px] md:leading-[48px] max-w-[800px] md:max-w-[800px]"
           style={{
             fontFamily: 'Sora, sans-serif',
             fontWeight: 600,
             color: '#ffffff',
           }}
         >
-          "We care deeply about craft. We care even more about impact."
+          "We care deeply about craft. <br></br>We care even more about impact."
         </h2>
       </section>
 
       {/* CTA Section with Gradient Border */}
-      <section 
-        className="flex items-center justify-center px-6 py-[40px] md:py-[60px] pb-[80px] md:pb-[144px]"
-        style={{
-          width: '100%',
-          backgroundColor: '#0B0C0E',
-        }}
-      >
-        <div 
-          className="relative overflow-hidden w-full max-w-[1280px]"
-          style={{
-            borderRadius: '24px',
-            background: '#131517',
-          }}
-        >
-          {/* Gradient border - using pseudo-element approach */}
-          <div 
-            className="absolute inset-0 rounded-[24px] pointer-events-none"
-            style={{
-              padding: '2px',
-              background: 'linear-gradient(225deg, #F4DC7C -0.1%, #F06058 39.94%, #4044E8 100%)',
-              WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-              WebkitMaskComposite: 'xor',
-              maskComposite: 'exclude',
-            }}
-          />
-          
-          <div className="p-6 md:p-[72px]">
-            <p 
-              className="mb-6 text-[16px] leading-[24px] md:text-[20px] md:leading-[30px]"
-              style={{
-                fontFamily: 'Inter, sans-serif',
-                fontWeight: 400,
-                color: '#D5D7DD',
-              }}
-            >
-              We collaborate closely with founders and teams to understand challenges, align priorities, and explore how thoughtful design can unlock measurable business growth.
-            </p>
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-              <h3 
-                className="text-[24px] leading-[32px] md:text-[32px] md:leading-[48px]"
-                style={{
-                  fontFamily: 'Sora, sans-serif',
-                  fontWeight: 700,
-                  color: '#F1F2F4',
-                }}
-              >
-                Thinking of partnering beyond just execution?
-              </h3>
-              <a
-                href="/contact"
-                className="flex items-center justify-center font-medium transition hover:opacity-90 w-full md:w-auto flex-shrink-0"
-                style={{
-                  minWidth: '214px',
-                  height: '56px',
-                  gap: '12px',
-                  paddingLeft: '24px',
-                  paddingRight: '24px',
-                  borderRadius: '24px',
-                  background: 'linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), linear-gradient(0deg, #F06058, #F06058)',
-                  color: '#ffffff',
-                }}
-              >
-                Let's Connect
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4 9H14M14 9L9 4M14 9L9 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Footer */}
-      <Footer />
+      <ContactFooter 
+        title="We collaborate closely with founders and teams to understand challenges, align priorities, and explore how thoughtful design can unlock measurable business growth."
+        subtitle="Thinking of partnering beyond just execution?"
+        buttonText="Let’s Connect"
+      />
     </main>
   );
 }

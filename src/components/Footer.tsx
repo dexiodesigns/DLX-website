@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Logo } from "../assets/Logo";
 import { Linkedin, Youtube, Instagram, Facebook, MessageCircle, ChevronDown } from "lucide-react";
@@ -103,15 +103,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#0B0C0E] border-t border-white/10 text-white font-['Inter'] relative">
-      {/* Gradient overlay at the top of the footer */}
-      <div 
-        className="absolute top-0 left-0 right-0 h-[2px]"
-        style={{
-          background: 'linear-gradient(90deg, #F06058 0%, #A855F7 50%, #3B82F6 100%)',
-          opacity: 0.5,
-        }}
-      />
+    <footer className="bg-[#0B0C0E] text-white font-['Inter'] relative">
 
       {/* Desktop Layout */}
       <div className="hidden md:block max-w-[1280px] mx-auto px-6 py-12">
