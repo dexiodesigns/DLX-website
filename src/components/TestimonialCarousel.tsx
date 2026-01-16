@@ -107,7 +107,7 @@ export default function TestimonialCarousel() {
         }}
       >
         {/* Left Far */}
-        <motion.div layout animate={{ x: -170, scale: 0.8 }} className="absolute">
+        <motion.div layout animate={{ x: -170, scale: 0.8 }} className="absolute z-10">
           <div className="w-[88px] h-[88px] rounded-[34px] border-2 border-[#4d5ef7] overflow-hidden relative">
             <img
               src={testimonials[getIndex(-2)].image}
@@ -118,7 +118,7 @@ export default function TestimonialCarousel() {
         </motion.div>
 
         {/* Left Near */}
-        <motion.div layout animate={{ x: -110, scale: 1 }} className="absolute">
+        <motion.div layout animate={{ x: -110, scale: 1 }} className="absolute z-20">
           <div className="w-[96px] h-[96px] rounded-[40px] border-[3px] border-[#4d5ef7] overflow-hidden relative">
             <img
               src={testimonials[getIndex(-1)].image}
@@ -129,7 +129,7 @@ export default function TestimonialCarousel() {
         </motion.div>
 
         {/* Center */}
-        <motion.div layout animate={{ x: 0, scale: 1.1 }} className="relative">
+        <motion.div layout animate={{ x: 0, scale: 1.1 }} className="relative z-30">
           <div className="w-[144px] h-[144px] rounded-[62px] border border-white flex items-center justify-center bg-[#4044E8]">
             <div className="w-[128px] h-[128px] rounded-[56px] border border-white overflow-hidden bg-white shadow-2xl">
               <img
@@ -141,7 +141,7 @@ export default function TestimonialCarousel() {
         </motion.div>
 
         {/* Right Near */}
-        <motion.div layout animate={{ x: 110, scale: 1 }} className="absolute">
+        <motion.div layout animate={{ x: 110, scale: 1 }} className="absolute z-20">
           <div className="w-[96px] h-[96px] rounded-[40px] border-[3px] border-[#4d5ef7] overflow-hidden relative">
             <img
               src={testimonials[getIndex(1)].image}
@@ -152,7 +152,7 @@ export default function TestimonialCarousel() {
         </motion.div>
 
         {/* Right Far */}
-        <motion.div layout animate={{ x: 170, scale: 0.8 }} className="absolute">
+        <motion.div layout animate={{ x: 170, scale: 0.8 }} className="absolute z-10">
           <div className="w-[88px] h-[88px] rounded-[34px] border-2 border-[#4d5ef7] overflow-hidden relative">
             <img
               src={testimonials[getIndex(2)].image}
@@ -173,7 +173,7 @@ export default function TestimonialCarousel() {
           transition={{ duration: 0.3 }}
           className="flex flex-col items-center"
         >
-          <h4 className="mb-1 text-[36px] font-semibold text-[#F1F2F4]">
+          <h4 className="mb-[1.25rem] text-[36px] font-semibold text-[#F1F2F4]">
             {testimonials[activeIndex].name}
           </h4>
           <p className="text-[#F1F2F4] text-[20px] mb-8">
