@@ -7,7 +7,7 @@ import productsVideo from "../assets/Videos/Products-SaaS-Intelligence.mp4";
 import AcademyHomeImg from "../assets/HomePageImages/AcademyHomeImg.jpg";
 
 export default function ServiceExcellence() {
-  const [activeTab, setActiveTab] = useState("Design Services");
+  const [activeTab, setActiveTab] = useState("Services");
   const navigate = useNavigate();
 
   return (
@@ -52,7 +52,7 @@ export default function ServiceExcellence() {
           </p>
 
           {/* Stats Row - Centered on Mobile */}
-          {activeTab === "Design Services" && (
+          {activeTab === "Services" && (
             <div className="flex justify-center md:justify-start gap-8 md:gap-12 mb-8">
               <div className="flex flex-col">
                 <span className="text-3xl md:text-4xl font-bold mb-1 font-sora" style={{fontFamily: 'Sora, sans-serif'}}>100+</span>
@@ -82,7 +82,7 @@ export default function ServiceExcellence() {
         {/* Right Side: Visual Content (Video/Image) - Higher priority on mobile order */}
         <div className="relative group cursor-pointer order-1 md:order-2 w-full md:w-[604px]">
           <div className="rounded-[24px] md:rounded-[32px] overflow-hidden">
-            {activeTab === "Design Services" ? (
+            {activeTab === "Services" ? (
               <VideoImg />
             ) : activeTab === "Products" ? (
               <video

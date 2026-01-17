@@ -102,7 +102,7 @@ export default function Home() {
           /* Desktop resets */
           md:mt-0 md:gap-3"
         >
-          <h2 className="font-semibold text-[#F1F2F4]
+          <h2 className="font-sora font-semibold text-[#F1F2F4]
             /* Mobile: Matching the tight leading and size in Figma */
             text-[24px] leading-[32px] tracking-[0.02em]
             /* Desktop resets */
