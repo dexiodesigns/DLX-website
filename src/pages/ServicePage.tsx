@@ -201,11 +201,11 @@ export default function ServicePage() {
                   index < 3 ? 'md:border-b md:border-white/15' : ''
                 }`}
               >
-                <div className="flex justify-center items-center mb-4 text-cyan-300" style={{ width: '64px', height: '64px', margin: '0 auto 16px auto' }}>
+                <div className="flex justify-center items-center mb-4 text-cyan-300" style={{ width: '60px', height: '60px', margin: '0 auto 16px auto' }}>
                   {challenge.customSvg ? (
-                    <div dangerouslySetInnerHTML={{ __html: challenge.customSvg }} />
+                    <div className="w-full h-full flex items-center justify-center [&>svg]:w-full [&>svg]:h-full [&>svg]:max-w-[60px] [&>svg]:max-h-[60px]" dangerouslySetInnerHTML={{ __html: challenge.customSvg }} />
                   ) : (
-                    <div className="[&>svg]:w-8 [&>svg]:h-8 md:[&>svg]:w-6 md:[&>svg]:h-6">
+                    <div className="[&>svg]:w-[60px] [&>svg]:h-[60px]">
                       {getIcon(challenge.icon)}
                     </div>
                   )}
@@ -395,23 +395,16 @@ export default function ServicePage() {
         </div>
       </section>
 
-      <section className="w-full px-6 pt-12 pb-20 flex justify-center">
+      <section className="w-full px-4 md:px-6 pt-12 pb-20 flex justify-center">
         <div 
-          className="relative text-left md:text-center flex flex-col items-start md:items-center justify-center"
+          className="relative text-left md:text-center flex flex-col items-start md:items-center justify-center w-[335px] md:w-full md:max-w-[1280px] min-h-[258px] md:min-h-[310px] gap-6 rounded-[24px] md:rounded-[36px] p-6 md:p-[72px]"
           style={{
-            width: '100%',
-            maxWidth: '1280px',
-            minHeight: '310px',
-            gap: '24px',
-            borderRadius: '36px',
-            padding: '72px',
             background: 'linear-gradient(180deg, rgba(11, 12, 14, 0.5) 0%, rgba(11, 12, 14, 0) 100%)',
           }}
         >
           <div 
-            className="absolute inset-0"
+            className="absolute inset-0 rounded-[24px] md:rounded-[36px]"
             style={{
-              borderRadius: '36px',
               padding: '2px',
               background: 'linear-gradient(225deg, #F4DC7C -0.1%, #F06058 39.94%, #4044E8 100%)',
               WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
