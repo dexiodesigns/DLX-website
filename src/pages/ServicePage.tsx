@@ -68,10 +68,10 @@ export default function ServicePage() {
   }
 
   return (
-    <main className="bg-[#0B0C0E] text-white min-h-screen pt-[100px] md:pt-[164px] font-['Inter']">
+    <main className="bg-[#0B0C0E] text-white min-h-screen pt-[100px] md:pt-[100px] font-['Inter']">
       {/* Sticky Service Navigation - Hidden on mobile, visible on desktop */}
       <div 
-        className="hidden md:flex fixed top-[100px] left-0 right-0 z-40 justify-center px-6 py-4"
+        className="hidden md:flex sticky top-0 left-0 right-0 z-40 justify-center px-6 py-4"
         style={{ backgroundColor: '#0B0C0E' }}
       >
         <div 
@@ -106,28 +106,28 @@ export default function ServicePage() {
         </div>
       </div>
 
-      <section className="max-w-4xl mx-auto px-2 text-center pt-[44px] pb-[38px] md:pt-[160px]">
+      <section className="max-w-4xl mx-auto px-6 text-center py-[44px] md:py-12">
         <h1 
-          className="text-[36px] leading-[44px] md:text-[48px] md:leading-[60px] font-bold mb-2 md:mb-0"
+          className="text-[36px] leading-[44px] md:text-[48px] md:leading-[60px] font-bold mb-2 md:mb-4"
           style={{ fontFamily: 'Sora, sans-serif' }}
         >
           {service.title}
         </h1>
         <p 
-          className={`text-[28px] px-3 md:px-0 leading-[36px] md:text-[32px] md:leading-[40px] font-semibold mb-4 md:mb-[12px] bg-gradient-to-r ${service.subtitleGradient} bg-clip-text text-transparent`}
+          className={`text-[28px] leading-[36px] md:text-[32px] md:leading-[40px] font-semibold mb-4 md:mb-4 bg-gradient-to-r ${service.subtitleGradient} bg-clip-text text-transparent`}
           style={{ fontFamily: 'Sora, sans-serif' }}
         >
           {service.subtitle}
         </p>
         <p 
-          className="text-[16px] leading-[24px] md:text-lg text-zinc-400 max-w-4xl mx-auto mb-[36px] md:mb-8 px-2 md:px-0"
+          className="text-[16px] leading-[24px] md:text-lg text-zinc-400 max-w-2xl mx-auto mb-[36px] md:mb-8 px-2 md:px-0"
           style={{ fontFamily: 'Inter, sans-serif' }}
         >
           {service.description}
         </p>
         <Link
           to={service.ctaLink}
-          className="inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-[20px] font-medium hover:bg-zinc-200 transition text-[16px] md:text-base"
+          className="inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-full font-medium hover:bg-zinc-200 transition text-[16px] md:text-base"
           style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500 }}
         >
           {service.ctaText}
@@ -135,7 +135,7 @@ export default function ServicePage() {
         </Link>
       </section>
 
-      <section className="max-w-[1300px] mx-auto px-6 py-[44px] md:py-[144px]">
+      <section className="max-w-5xl mx-auto px-6 py-[44px] md:py-16">
         <h2 
           className="text-[28px] leading-[36px] md:text-[36px] md:leading-[44px] font-bold text-center mb-4 md:mb-12"
           style={{ fontFamily: 'Sora, sans-serif' }}
@@ -150,7 +150,7 @@ export default function ServicePage() {
             >
               <div>
                 <p 
-                  className="text-[24px] md:text-[36px] leading-[48px] md:text-4xl font-bold text-white mb-0 md:mb-5"
+                  className="text-[24px] md:text-[36px] leading-[48px] md:text-4xl font-bold text-white mb-0 md:mb-3"
                   style={{ fontFamily: 'Sora, sans-serif' }}
                 >
                   {stat.value}
@@ -162,10 +162,10 @@ export default function ServicePage() {
                   {stat.label}
                 </p>
               </div>
-              <div className="text-[#6366f1] flex justify-start items-start mb-[-8px] md:mb-[38px]" style={{ width: '60px', height: '60px' }}>
+              <div className="text-[#6366f1] flex justify-start items-start mb-[22px] md:mb-[38px]" style={{ width: '60px', height: '60px' }}>
                 {stat.customSvg ? (
                   <div 
-                    className="w-[30px] h-[30px] md:w-full md:h-full md:[&>svg]:w-full [&>svg]:h-full"
+                    className="w-full h-full [&>svg]:w-full [&>svg]:h-full"
                     dangerouslySetInnerHTML={{ __html: stat.customSvg }} 
                   />
                 ) : (
@@ -180,7 +180,7 @@ export default function ServicePage() {
       </section>
 
       <section 
-        className="py-12 md:pt-16"
+        className="py-12 md:py-16"
         style={{
           background: 'linear-gradient(0deg, rgba(11, 12, 14, 0.3), rgba(11, 12, 14, 0.3)), linear-gradient(0deg, #4044E8, #4044E8)',
         }}
@@ -192,11 +192,11 @@ export default function ServicePage() {
           >
             {service.challengesHeading}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-0">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0">
             {service.challenges.map((challenge, index) => (
               <div
                 key={index}
-                className={`relative text-center p-4 md:p-11 ${
+                className={`relative text-center p-4 md:p-8 ${
                   // Right border for first two columns on desktop
                   index % 3 !== 2 ? 'md:border-r md:border-white/15' : ''
                 } ${
@@ -221,7 +221,7 @@ export default function ServicePage() {
                 </h3>
                 <p 
                   className="text-[14px] leading-[22px] md:text-sm text-blue-100/80"
-                  style={{ fontFamily: 'Inter, sans-serif', color: '#D5D7DD' }}
+                  style={{ fontFamily: 'Inter, sans-serif' }}
                 >
                   {challenge.description}
                 </p>
@@ -231,27 +231,27 @@ export default function ServicePage() {
         </div>
       </section>
 
-      <section className="max-w-6xl mx-auto px-6 pt-16 pb-8 md:pt-24 md:pb-16">
+      <section className="max-w-5xl mx-auto px-6 pt-16 pb-8 md:pt-24 md:pb-16">
         <div className="text-left md:text-center mb-8 md:mb-12">
           <h2 
-            className="text-[28px] leading-[36px] md:text-[36px] md:leading-[44px] font-bold mb-3 md:mb-3"
+            className="text-[28px] leading-[36px] md:text-[36px] md:leading-[44px] font-bold mb-3 md:mb-4"
             style={{ fontFamily: 'Sora, sans-serif' }}
           >
             {service.processHeading}
           </h2>
           <p 
-            className="text-[14px] md:text-[16px] leading-[150%] max-w-3xl md:mx-auto"
+            className="text-[14px] leading-[150%] max-w-2xl md:mx-auto"
             style={{ 
               fontFamily: 'Inter, sans-serif',
               fontWeight: 400,
-              color: '#D5D7DD'
+              color: '#D5D7DD',
             }}
           >
             {service.processSubheading}
           </p>
           {/* Structured & Outcome-Focused Approach - Both views */}
           <p 
-            className="text-[20px] leading-[28px] md:text-[24px] md:leading-[36px] mt-4 md:mt-8"
+            className="text-[20px] leading-[28px] md:text-[24px] md:leading-[36px] mt-6 md:mt-8"
             style={{ 
               fontFamily: 'Sora, sans-serif',
               fontWeight: 400,
@@ -266,7 +266,7 @@ export default function ServicePage() {
         {/* Desktop Timeline - Horizontal */}
         <div className="hidden md:block">
           {/* Timeline Line with Icons */}
-          <div className="relative flex items-center justify-between mb-8" style={{ width: '85%', marginLeft: '70px' }}>
+          <div className="relative flex items-center justify-between mb-8" style={{ width: '100%' }}>
             {/* Continuous Line Behind Icons */}
             <div 
               className="absolute left-0 right-0 top-1/2 -translate-y-1/2"
@@ -317,7 +317,7 @@ export default function ServicePage() {
                     fontWeight: 600,
                     fontSize: '20px',
                     lineHeight: '28px',
-                    color: '#F1F2F4',
+                    color: '#ffffff',
                   }}
                 >
                   {step.title}
@@ -328,7 +328,7 @@ export default function ServicePage() {
                     fontWeight: 400,
                     fontSize: '14px',
                     lineHeight: '20px',
-                    color: '#D5D7DD',
+                    color: 'rgba(255, 255, 255, 0.7)',
                   }}
                 >
                   {step.description}
@@ -387,7 +387,7 @@ export default function ServicePage() {
                   </h3>
                   <p 
                     className="text-[14px] leading-[20px] text-zinc-400"
-                    style={{ fontFamily: 'Inter, sans-serif', color: '#D5D7DD' }}
+                    style={{ fontFamily: 'Inter, sans-serif' }}
                   >
                     {step.description}
                   </p>
@@ -400,7 +400,7 @@ export default function ServicePage() {
 
       <section className="w-full px-4 md:px-6 pt-12 pb-20 flex justify-center">
         <div 
-          className="relative text-left md:text-center flex flex-col items-start md:items-center justify-center w-[335px] md:w-full md:max-w-[1280px] min-h-[258px] md:min-h-[310px] gap-4 md:gap-1 rounded-[24px] md:rounded-[36px] p-6 md:p-[72px]"
+          className="relative text-left md:text-center flex flex-col items-start md:items-center justify-center w-[335px] md:w-full md:max-w-[1280px] min-h-[258px] md:min-h-[310px] gap-6 rounded-[24px] md:rounded-[36px] p-6 md:p-[72px]"
           style={{
             background: 'linear-gradient(180deg, rgba(11, 12, 14, 0.5) 0%, rgba(11, 12, 14, 0) 100%)',
           }}
@@ -462,7 +462,7 @@ export default function ServicePage() {
           {/* Desktop Button */}
           <Link
             to={service.ctaLink}
-            className="hidden md:inline-flex relative z-10 items-center gap-2 bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-zinc-200 transition md:mt-6 md:mb-0"
+            className="hidden md:inline-flex relative z-10 items-center gap-2 bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-zinc-200 transition"
           >
             {service.ctaBoxButtonText}
             <ArrowRight size={18} />
