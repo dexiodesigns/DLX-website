@@ -193,7 +193,7 @@ export default function Navbar() {
       {isServicesOpen && (
         <div 
           ref={dropdownRef}
-          className="hidden md:flex fixed top-[76px] left-0 w-full z-40 bg-[#22252A]/30 backdrop-blur-md text-white font-['Inter'] border-t border-white/10 justify-center py-6"
+          className="hidden md:flex fixed top-[76px] left-0 w-full z-40 bg-[#22252A]/80 backdrop-blur-md text-white font-['Inter'] border-t border-white/10 justify-center py-6"
           style={{ 
             height: '466px',
           }}
