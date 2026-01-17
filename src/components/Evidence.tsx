@@ -91,20 +91,22 @@ export default function EvidenceOfImpact() {
                     : "md:w-0 md:opacity-0 md:p-0 md:overflow-hidden md:hidden"
                 }`}
               >
-                <h3 className="text-2xl md:text-3xl font-bold text-white whitespace-nowrap">{project.title}</h3>
-                <p className="text-gray-400 text-xs md:text-sm mb-2">{project.subtitle}</p>
-                <p className="text-gray-300 text-sm leading-relaxed mb-6 line-clamp-3 md:line-clamp-none">
-                  {project.description}
-                </p>
-                <button 
-                  className="flex items-center gap-2 text-white font-medium hover:underline text-sm md:text-base" 
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    window.open(project.link, '_blank');
-                  }}
-                >
-                  Learn More <img src={OpenIcon} alt="Open link" className="w-4 h-4 md:w-auto" />
-                </button>
+                <div className="md:min-w-[380px]">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white whitespace-nowrap">{project.title}</h3>
+                  <p className="text-gray-400 text-xs md:text-sm mb-2 whitespace-nowrap">{project.subtitle}</p>
+                  <p className="text-gray-300 text-sm leading-relaxed mb-6 line-clamp-3 md:line-clamp-none">
+                    {project.description}
+                  </p>
+                  <button 
+                    className="flex items-center gap-2 text-white font-medium hover:underline text-sm md:text-base whitespace-nowrap" 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      window.open(project.link, '_blank');
+                    }}
+                  >
+                    Learn More <img src={OpenIcon} alt="Open link" className="w-4 h-4 md:w-auto" />
+                  </button>
+                </div>
               </div>
             </div>
           ))}
