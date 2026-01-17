@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Footer from './Footer';
 
 interface HeroSectionProps {
@@ -13,6 +14,7 @@ const ContactFooter: React.FC<HeroSectionProps> = ({
   subtitle,
   buttonText,
 }) => {
+  const navigate = useNavigate();
   return (
     <div>
       <style>{`
@@ -170,6 +172,7 @@ const ContactFooter: React.FC<HeroSectionProps> = ({
               </h1>
 
               <button
+                onClick={() => navigate('/contact')}
                 className="group relative px-8 py-4 rounded-[16px] md:rounded-[24px] text-white font-semibold text-base md:text-lg transition-all duration-300 hover:shadow-xl hover:scale-105 flex md:items-center gap-3 md:ml-[100px]"
                 style={{ background: 'rgb(172 78 72)' }}
               >

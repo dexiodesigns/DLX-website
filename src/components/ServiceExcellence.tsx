@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { TAB_CONFIGS, getTabConfig } from "../constants/tabConfig";
 import { VideoImg } from "../assets/VideoImg";
@@ -7,6 +8,7 @@ import AcademyHomeImg from "../assets/HomePageImages/AcademyHomeImg.jpg";
 
 export default function ServiceExcellence() {
   const [activeTab, setActiveTab] = useState("Design Services");
+  const navigate = useNavigate();
 
   return (
     <section className="max-w-10xl px-6 xl:px-[200px] py-16 md:py-24">
@@ -67,7 +69,11 @@ export default function ServiceExcellence() {
           )}
 
           <div className="flex justify-center md:justify-start">
-            <button className="w-fit bg-[#22252A] px-6 py-3 rounded-full flex items-center gap-2 hover:bg-zinc-800 transition text-base font-medium leading-6 capitalize" style={{ color: '#D5D7DD' }}>
+            <button 
+              onClick={() => navigate('/contact')}
+              className="w-fit bg-[#22252A] px-6 py-3 rounded-full flex items-center gap-2 hover:bg-zinc-800 transition text-base font-medium leading-6 capitalize" 
+              style={{ color: '#D5D7DD' }}
+            >
               {getTabConfig(activeTab).content.buttonText} <ArrowRight size={16} />
             </button>
           </div>
