@@ -193,25 +193,23 @@ export default function Navbar() {
       {isServicesOpen && (
         <div 
           ref={dropdownRef}
-          className="hidden md:flex fixed top-[76px] left-0 w-full z-40 bg-[#22252A]/80 backdrop-blur-md text-white font-['Inter'] border-t border-white/10 justify-center py-6"
-          style={{ 
-            height: '466px',
-          }}
+          className="hidden md:flex fixed top-[76px] left-0 w-full z-40 bg-[#22252A]/60 backdrop-blur-md text-white font-['Inter'] border-t border-white/10 justify-center"
         >
           <div 
-            className="px-6 md:px-[200px] py-6 h-full w-full grid grid-cols-3 gap-x-12 gap-y-12 overflow-y-auto"
+            className="px-6 md:px-[200px] py-6 h-full w-full grid grid-cols-3 gap-x-12 overflow-y-auto"
           >
             {services.map((service, index) => (
               <div 
                 key={index} 
                 onClick={() => handleServiceClick(service.slug)}
-                className="flex gap-4 p-2 hover:bg-white/5 rounded-lg transition-colors cursor-pointer group"
+                className="flex gap-4 p-6 hover:bg-white/5 rounded-lg transition-colors cursor-pointer "
+                style={{height: '110px'}}
               >
-                <div className="mt-1 text-white/90 group-hover:text-white transition-colors">
+                <div className="text-white/90 group-hover:text-white transition-colors mt-[0.25px]">
                   {service.icon}
                 </div>
-                <div>
-                  <h3 className="font-semibold mb-1" style={{ fontFamily: 'Sora, sans-serif', fontSize: '16px', fontWeight: 600, color: '#F1F2F4' }}>{service.title}</h3>
+                <div className="flex flex-col items-start gap-1 flex-1" style={{width: '100%'}}>
+                  <h3 className="font-semibold" style={{ fontFamily: 'Sora, sans-serif', fontSize: '16px', fontWeight: 600, color: '#F1F2F4' }}>{service.title}</h3>
                   <p style={{ overflow: 'hidden', color: '#D5D7DD', textOverflow: 'ellipsis', fontFamily: 'Inter', fontSize: '12px', fontStyle: 'normal', fontWeight: 400, lineHeight: '18px' }}>
                     {service.desc}
                   </p>

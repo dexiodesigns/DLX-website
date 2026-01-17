@@ -70,7 +70,7 @@ const ContactFooter: React.FC<HeroSectionProps> = ({
         .sunshine-effect::before {
           content: '';
           position: absolute;
-          bottom: -1160px;
+          bottom: -1256px;
           left: 50%;
           width: 1400px;
           height: 1400px;

@@ -56,7 +56,7 @@ const ContactPageFooter2 = ({}) => {
         .sunshine-effect::before {
           content: '';
           position: absolute;
-          bottom: -1301px;
+          bottom: -1256px;
           left: 50%;
           width: 1400px;
           height: 1400px;

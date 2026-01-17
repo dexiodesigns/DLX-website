@@ -56,22 +56,22 @@ export default function EvidenceOfImpact() {
                 } ${project.color} flex items-center justify-center`}
                 >
                 {/* Video Logic: Mobile Hidden, Desktop Block */}
-                {activeId === project.id && (
-                    <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500 hidden md:block"
-                    >
-                    <source src={project.video} type="video/mp4" />
-                    </video>
-                )}
+                {/* {activeId === project.id && (
+                    // <video
+                    // autoPlay
+                    // loop
+                    // muted
+                    // playsInline
+                    // className="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500 hidden md:block"
+                    // >
+                    // <source src={project.video} type="video/mp4" />
+                    // </video>
+                    <img src={project.logo} alt={project.title} className="w-full h-full object-contain" />
+                )} */}
 
                 {/* Logo Logic: Stays visible on mobile because video is hidden */}
-                <div className={`relative z-10 w-24 h-24 transition-opacity duration-300 ${
-                    activeId === project.id ? "md:opacity-0 md:invisible" : "opacity-100 visible"
-                }`}>
+                <div className={`relative z-10 w-24 h-24 transition-opacity duration-300
+                `}>
                     <img src={project.logo} alt={project.title} className="w-full h-full object-contain" />
                 </div>
                 

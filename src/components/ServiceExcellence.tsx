@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowRight, Play } from "lucide-react";
 import { TAB_CONFIGS, getTabConfig } from "../constants/tabConfig";
-import { VideoImg } from "../assets/VideoImg";
 import productsVideo from "../assets/Videos/Products-SaaS-Intelligence.mp4";
 import AcademyHomeImg from "../assets/HomePageImages/AcademyHomeImg.png";
 import DesignServicesVideo from "../assets/Videos/DesignServicesVideo.mp4";
@@ -70,10 +69,10 @@ export default function ServiceExcellence() {
             </div>
           )}
 
-          {activeTab !== "Services" && activeTab !== "Products" && (
+          {activeTab !== "Academy" && activeTab !== "Products" && (
             <div className="flex justify-center md:justify-start">
               <button 
-                onClick={() => navigate('/contact')}
+                onClick={() => navigate('/services/ux-audit')}
                 className="w-fit bg-[#22252A] px-6 py-3 rounded-full flex items-center gap-2 hover:bg-zinc-800 transition text-base font-medium leading-6 capitalize" 
                 style={{ color: '#D5D7DD' }}
               >
