@@ -13,15 +13,15 @@ export interface TabConfig {
 }
 
 export const TAB_CONFIGS: Record<string, TabConfig> = {
-  "Design Services": {
-    id: "design-services",
-    label: "Design Services",
+  "Services": {
+    id: "services",
+    label: "Services",
     activeColor: "#7a78ed",
     textColor: "text-black",
     content: {
       title: "Service\nExcellence",
       description: "Crafting human-centered design for digital transformation. From UX Research to Marketing Assets, we partner with businesses to design experiences that drive growth.",
-      buttonText: "Explore Design Services",
+      buttonText: "Explore Services",
       image: "VideoImg"
     }
   },
@@ -51,5 +51,5 @@ export const TAB_CONFIGS: Record<string, TabConfig> = {
 };
 
 export const getTabConfig = (tabName: string): TabConfig => {
-  return TAB_CONFIGS[tabName] || TAB_CONFIGS["Design Services"];
+  return TAB_CONFIGS[tabName] || TAB_CONFIGS["Services"];
 };

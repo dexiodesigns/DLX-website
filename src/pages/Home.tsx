@@ -40,10 +40,10 @@ export default function Home() {
       <section className="relative max-w-6xl mx-auto px-6 text-center flex flex-col items-center pt-28 pb-20 md:py-40 z-20">
         <div className="flex flex-col items-center">
           {/* Mobile Heading Size 32px as per Figma */}
-          <h1 className="text-[32px] md:text-[48px] font-[600] pb-2 md:pb-5 tracking-[1px] md:tracking-[1.5px] leading-[1.2] md:leading-tight" style={{color: '#F1F2F4'}}>
+          <h1 className="font-sora text-[32px] md:text-[48px] font-semibold tracking-[1px] md:tracking-[1.5px] leading-[1.2] md:leading-tight" style={{color: '#F1F2F4'}}>
             Designing for SaaS that is
           </h1>
-          <h2 className="text-[32px] md:text-[48px] font-[600] tracking-[1px] leading-[1.2] md:leading-tight inline-block bg-gradient-to-tr from-[#6366f1] via-[#a855f7] via-[#c34772] to-[#f9f916] bg-clip-text text-transparent">
+          <h2 className="font-sora text-[32px] md:text-[48px] font-semibold tracking-[1px] leading-[1.2] md:leading-tight inline-block bg-gradient-to-tr from-[#6366f1] via-[#a855f7] via-[#c34772] to-[#f9f916] bg-clip-text text-transparent">
             no longer built only for humans.
           </h2>  
           
@@ -102,7 +102,7 @@ export default function Home() {
           /* Desktop resets */
           md:mt-0 md:gap-6"
         >
-          <h2 className="font-semibold text-[#F1F2F4]
+          <h2 className="font-sora font-semibold text-[#F1F2F4]
             /* Mobile: Matching the tight leading and size in Figma */
             text-[24px] leading-[32px] tracking-[0.02em]
             /* Desktop resets */

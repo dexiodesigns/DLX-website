@@ -78,7 +78,7 @@ export default function TestimonialCarousel() {
   };
 
   return (
-    <section className="bg-[#2f329d] pt-10 pb-20 px-6 flex flex-col items-center text-center relative overflow-hidden">
+    <section className="bg-[#2f329d] pt-10 pb-20 px-6 flex flex-col items-center text-center relative overflow-hidden md:h-[642px]">
       
       {/* Navigation Arrows – Desktop only */}
       <button

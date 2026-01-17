@@ -106,7 +106,7 @@ export default function ServicePage() {
         </div>
       </div>
 
-      <section className="max-w-4xl mx-auto px-6 text-center py-8 md:py-12">
+      <section className="max-w-4xl mx-auto px-6 text-center py-8 md:py-24">
         <h1 
           className="text-[36px] leading-[44px] md:text-[48px] md:leading-[60px] font-bold mb-2 md:mb-4"
           style={{ fontFamily: 'Sora, sans-serif' }}
@@ -162,11 +162,14 @@ export default function ServicePage() {
                   {stat.label}
                 </p>
               </div>
-              <div className="text-[#6366f1] flex items-center justify-center">
+              <div className="text-[#6366f1] flex items-center justify-center" style={{ width: '60px', height: '60px' }}>
                 {stat.customSvg ? (
-                  <div dangerouslySetInnerHTML={{ __html: stat.customSvg }} />
+                  <div 
+                    className="w-full h-full [&>svg]:w-full [&>svg]:h-full"
+                    dangerouslySetInnerHTML={{ __html: stat.customSvg }} 
+                  />
                 ) : (
-                  <div className="[&>svg]:w-8 [&>svg]:h-8 md:[&>svg]:w-6 md:[&>svg]:h-6">
+                  <div className="[&>svg]:w-[60px] [&>svg]:h-[60px]">
                     {getIcon(stat.icon)}
                   </div>
                 )}
@@ -201,7 +204,7 @@ export default function ServicePage() {
                   index < 3 ? 'md:border-b md:border-white/15' : ''
                 }`}
               >
-                <div className="flex justify-center items-center mb-4 text-cyan-300" style={{ margin: '0 auto 16px auto' }}>
+                <div className="flex justify-center items-center text-cyan-300">
                   {challenge.customSvg ? (
                     <div dangerouslySetInnerHTML={{ __html: challenge.customSvg }} />
                   ) : (

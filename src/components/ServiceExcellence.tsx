@@ -7,7 +7,7 @@ import productsVideo from "../assets/Videos/Products-SaaS-Intelligence.mp4";
 import AcademyHomeImg from "../assets/HomePageImages/AcademyHomeImg.jpg";
 
 export default function ServiceExcellence() {
-  const [activeTab, setActiveTab] = useState("Design Services");
+  const [activeTab, setActiveTab] = useState("Services");
   const navigate = useNavigate();
 
   return (
@@ -44,7 +44,7 @@ export default function ServiceExcellence() {
         
         {/* Left Side: Content & Stats */}
         <div className="flex flex-col text-center md:text-left order-2 md:order-1">
-          <h2 className="text-[28px] md:text-[40px] font-semibold leading-tight mb-6" style={{ color: '#F1F2F4' }}>
+          <h2 className="font-sora text-[28px] md:text-[36px] font-semibold leading-tight mb-6 whitespace-pre-line" style={{ color: '#F1F2F4' }}>
             {getTabConfig(activeTab).content.title}
           </h2>
           <p className="text-sm md:text-base leading-relaxed mb-8 max-w-[38rem] mx-auto md:mx-0" style={{ color: '#D5D7DD' }}>
@@ -52,7 +52,7 @@ export default function ServiceExcellence() {
           </p>
 
           {/* Stats Row - Centered on Mobile */}
-          {activeTab === "Design Services" && (
+          {activeTab === "Services" && (
             <div className="flex justify-center md:justify-start gap-8 md:gap-12 mb-8">
               <div className="flex flex-col">
                 <span className="text-3xl md:text-4xl font-bold mb-1">100+</span>
@@ -82,7 +82,7 @@ export default function ServiceExcellence() {
         {/* Right Side: Visual Content (Video/Image) - Higher priority on mobile order */}
         <div className="relative group cursor-pointer order-1 md:order-2 w-full">
           <div className="rounded-[24px] md:rounded-[32px] overflow-hidden">
-            {activeTab === "Design Services" ? (
+            {activeTab === "Services" ? (
               <VideoImg />
             ) : activeTab === "Products" ? (
               <video
