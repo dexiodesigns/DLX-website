@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
 import { TAB_CONFIGS, getTabConfig } from "../constants/tabConfig";
 import productsVideo from "../assets/Videos/Products-SaaS-Intelligence.mp4";
-import AcademyHomeImg from "../assets/HomePageImages/AcademyHomeImg.jpg";
+import AcademyHomeImg from "../assets/HomePageImages/AcademyHomeImg.png";
+import DesignServicesVideo from "../assets/Videos/DesignServicesVideo.mp4";
 
 export default function ServiceExcellence() {
   const [activeTab, setActiveTab] = useState("Services");
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const navigate = useNavigate();
 
   return (
@@ -84,7 +86,22 @@ export default function ServiceExcellence() {
         <div className="relative group cursor-pointer order-1 md:order-2 w-full md:w-[604px]">
           <div className="rounded-[24px] md:rounded-[32px] overflow-hidden">
             {activeTab === "Services" ? (
-              <VideoImg />
+              <div className="relative" onClick={() => setIsVideoModalOpen(true)}>
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-[250px] md:h-[340px] object-cover cursor-pointer"
+                >
+                  <source src={DesignServicesVideo} type="video/mp4" />
+                </video>
+                <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                    <Play className="w-6 h-6 text-white ml-1" />
+                  </div>
+                </div>
+              </div>
             ) : activeTab === "Products" ? (
               <video
                 autoPlay
@@ -112,6 +129,33 @@ export default function ServiceExcellence() {
           </div>
         </div>
       </div>
+
+      {/* Video Modal */}
+      {isVideoModalOpen && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+          onClick={() => setIsVideoModalOpen(false)}
+        >
+          <div className="relative max-w-4xl w-full mx-4">
+            <button
+              onClick={() => setIsVideoModalOpen(false)}
+              className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors"
+            >
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            <video
+              autoPlay
+              controls
+              className="w-full rounded-lg"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <source src={DesignServicesVideo} type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
