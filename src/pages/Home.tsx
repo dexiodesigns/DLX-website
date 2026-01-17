@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import FutureIntelliImg from "../assets/HomePageImages/futureIntelliImg.jpg";
 import { Star } from "../assets/HomeIcons/Star";
 import { Bulb } from "../assets/HomeIcons/Bulb";
@@ -12,6 +13,7 @@ import FAQSection from "../components/FAQSection";
 import ServiceExcellence from "../components/ServiceExcellence";
 
 export default function Home() {
+  const navigate = useNavigate();
   const HomeDescription = 'Every modern user works alongside AI and Dexio LabX designs Human<>AI systems that deliver real value inside SaaS products.';
   return (
     <main className="bg-[#0B0C0E] text-white min-h-screen pt-24 selection:bg-purple-500/30 overflow-x-hidden">
@@ -49,12 +51,16 @@ export default function Home() {
 
           {/* Button Container - Stacked on Mobile, Row on Desktop */}
           <div className="mt-10 flex flex-col md:flex-row gap-4 w-full md:w-auto px-4 md:px-0">
-            <button className="w-full md:w-auto justify-center bg-[#F1F2F4] px-8 py-3.5 rounded-[20px] font-inter text-base font-semibold leading-6 flex items-center gap-2 hover:bg-gray-200 transition" style={{color: '#0B0C0E'}}>
+            <button 
+              onClick={() => navigate('/contact')}
+              className="w-full md:w-auto justify-center bg-[#F1F2F4] px-8 py-3.5 rounded-[20px] font-inter text-base font-semibold leading-6 flex items-center gap-2 hover:bg-gray-200 transition" 
+              style={{color: '#0B0C0E'}}
+            >
               Design With Us <ArrowRight size={18} />
             </button>
-            <button className="w-full md:w-auto justify-center border border-zinc-700 bg-transparent px-8 py-3.5 rounded-[20px] font-inter text-base font-semibold leading-6 text-white flex items-center gap-2 hover:bg-zinc-900 transition" style={{color: '#F1F2F4'}}>
+            {/* <button className="w-full md:w-auto justify-center border border-zinc-700 bg-transparent px-8 py-3.5 rounded-[20px] font-inter text-base font-semibold leading-6 text-white flex items-center gap-2 hover:bg-zinc-900 transition" style={{color: '#F1F2F4'}}>
               Join Our Tribe <ArrowRight size={18} />
-            </button>
+            </button> */}
           </div>
         </div>
       </section>
