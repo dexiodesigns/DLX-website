@@ -14,7 +14,7 @@ export default function Footer() {
       { name: "UX Audit", href: "/services/ux-audit" },
       { name: "UX Research", href: "/services/ux-research" },
       { name: "UX Design", href: "/services/ux-design" },
-      { name: "Marketing Designs", href: "/services/marketing-designs" },
+      { name: "Growth-Focused Marketing Design", href: "/services/growth-focused-marketing-design" },
       { name: "Motion Graphics", href: "/services/motion-graphics" },
       { name: "Next-Gen Experience", href: "/services/next-gen-ux" },
     ],
@@ -23,6 +23,7 @@ export default function Footer() {
       { name: "Vaahi", href: "/products/vaahi", disabled: true },
     ],
     quickLinks: [
+      { name: "Home", href: "/" },
       { name: "Academy", href: "/academy", disabled: true},
       { name: "Products", href: "/products", disabled: true },
       { name: "Resources", href: "/resources", disabled: true },
@@ -37,8 +38,8 @@ export default function Footer() {
     ],
   };
 
-  // Filter quickLinks based on current page - hide current page from Quick Links
-  const filteredQuickLinks = footerLinks.quickLinks.filter(link => link.href !== location.pathname);
+  // Filter quickLinks - hide current page and disabled links from Quick Links
+  const filteredQuickLinks = footerLinks.quickLinks.filter(link => link.href !== location.pathname && !link.disabled);
 
   const socialLinks = [
     { 
@@ -206,8 +207,8 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* AI Products - Options Disabled */}
-            <div className="flex flex-col gap-4">
+            {/* AI Products - Hidden */}
+            <div className="hidden flex-col gap-4">
               <h4 
                 className="font-['Inter'] font-semibold text-[16px] leading-[24px] tracking-[0%] uppercase"
                 style={{ 
@@ -393,12 +394,13 @@ export default function Footer() {
             links={footerLinks.services}
             isEnabled={true}
           />
-          <MobileAccordion 
+          {/* AI Products - Hidden */}
+          {/* <MobileAccordion 
             title="AI PRODUCTS" 
             sectionKey="aiProducts" 
             links={footerLinks.aiProducts}
             isEnabled={false}
-          />
+          /> */}
           <MobileAccordion 
             title="QUICK LINKS" 
             sectionKey="quickLinks" 

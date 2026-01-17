@@ -383,8 +383,8 @@ export const servicesData: ServiceData[] = [
   },
   {
     id: "marketing-designs",
-    slug: "marketing-designs",
-    title: "Marketing Designs",
+    slug: "growth-focused-marketing-design",
+    title: "Growth-Focused Marketing Design",
     subtitle: "Design that drives measurable growth.",
     subtitleGradient: "from-[#ec4899] to-[#f97316]",
     description: "Create marketing designs that drive measurable engagement, clarity, and growth across channels.",

@@ -74,7 +74,7 @@ export default function Company() {
           {/* CTA Buttons - Stack vertically on mobile, horizontal on desktop */}
           <div className="flex flex-col md:flex-row items-center justify-center mx-auto w-full md:w-auto gap-4 md:gap-6 pt-6 px-6 md:px-0">
             <Link
-              to="/work"
+              to="/contact"
               className="flex items-center justify-center gap-2 bg-white text-black px-8 py-3 rounded-full font-medium hover:bg-zinc-200 transition whitespace-nowrap w-full md:w-auto h-[56px]"
             >
               Talk To An Expert

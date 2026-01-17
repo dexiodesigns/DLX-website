@@ -176,7 +176,7 @@ const ContactFooter: React.FC<HeroSectionProps> = ({
 
               <button
                 onClick={() => navigate('/contact')}
-                className="group relative px-6 py-4 rounded-[16px] md:rounded-[24px] text-white font-semibold text-base md:text-lg transition-all duration-300 hover:shadow-xl hover:scale-105 flex items-center justify-center gap-3 md:ml-[100px] w-[180px]"
+                className="group relative px-6 py-4 rounded-[16px] md:rounded-[24px] text-white font-semibold text-base md:text-lg transition-all duration-300 hover:shadow-xl hover:scale-105 flex items-center justify-center gap-3 md:ml-[100px]"
                 style={{ background: 'rgb(172 78 72)' }}
               >
                 {buttonText}
