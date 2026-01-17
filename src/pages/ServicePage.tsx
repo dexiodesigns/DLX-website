@@ -77,14 +77,14 @@ export default function ServicePage() {
         <div 
           className="flex items-center justify-center bg-zinc-900/80 border border-zinc-800"
           style={{
-            maxWidth: '989px',
+            maxWidth: '1000px',
             width: '100%',
             height: '64px',
             borderRadius: '28px',
-            padding: '8px',
+            padding: '8px 16px',
           }}
         >
-          {serviceNavItems.map((item) => (
+          {serviceNavItems.map((item, index) => (
             <Link
               key={item.slug}
               to={item.href}
@@ -92,7 +92,7 @@ export default function ServicePage() {
                 item.slug === slug
                   ? "bg-white text-black"
                   : "bg-transparent text-zinc-400 hover:text-white"
-              }`}
+              } ${index === 0 ? 'ml-2' : ''} ${index === serviceNavItems.length - 1 ? 'mr-2' : ''}`}
               style={{
                 height: '48px',
                 display: 'flex',
@@ -201,11 +201,11 @@ export default function ServicePage() {
                   index < 3 ? 'md:border-b md:border-white/15' : ''
                 }`}
               >
-                <div className="flex justify-center items-center mb-4 text-cyan-300" style={{ width: '60px', height: '60px', margin: '0 auto 16px auto' }}>
+                <div className="flex justify-center items-center mb-4 text-cyan-300" style={{ margin: '0 auto 16px auto' }}>
                   {challenge.customSvg ? (
-                    <div className="w-full h-full flex items-center justify-center [&>svg]:w-full [&>svg]:h-full [&>svg]:max-w-[60px] [&>svg]:max-h-[60px]" dangerouslySetInnerHTML={{ __html: challenge.customSvg }} />
+                    <div dangerouslySetInnerHTML={{ __html: challenge.customSvg }} />
                   ) : (
-                    <div className="[&>svg]:w-[60px] [&>svg]:h-[60px]">
+                    <div className="[&>svg]:w-16 [&>svg]:h-16">
                       {getIcon(challenge.icon)}
                     </div>
                   )}
