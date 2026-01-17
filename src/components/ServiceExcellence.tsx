@@ -68,15 +68,17 @@ export default function ServiceExcellence() {
             </div>
           )}
 
-          <div className="flex justify-center md:justify-start">
-            <button 
-              onClick={() => navigate('/contact')}
-              className="w-fit bg-[#22252A] px-6 py-3 rounded-full flex items-center gap-2 hover:bg-zinc-800 transition text-base font-medium leading-6 capitalize" 
-              style={{ color: '#D5D7DD' }}
-            >
-              {getTabConfig(activeTab).content.buttonText} <ArrowRight size={16} />
-            </button>
-          </div>
+          {activeTab !== "Services" && activeTab !== "Products" && (
+            <div className="flex justify-center md:justify-start">
+              <button 
+                onClick={() => navigate('/contact')}
+                className="w-fit bg-[#22252A] px-6 py-3 rounded-full flex items-center gap-2 hover:bg-zinc-800 transition text-base font-medium leading-6 capitalize" 
+                style={{ color: '#D5D7DD' }}
+              >
+                {getTabConfig(activeTab).content.buttonText} <ArrowRight size={16} />
+              </button>
+            </div>
+          )}
         </div>
 
         {/* Right Side: Visual Content (Video/Image) - Higher priority on mobile order */}

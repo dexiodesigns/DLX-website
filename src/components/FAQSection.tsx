@@ -17,7 +17,7 @@ export default function FAQSection() {
       { question: "Do you work with startups and enterprises?", answer: "Yes. We collaborate with early-stage startups, growing businesses, and established organizations.." },
       { question: "Do you offer redesign services?", answer: "Yes. We improve existing products and brands through usability audits, visual refinement, and strategic redesigns." }
     ],
-    "Services": [
+    "Design Services": [
       { question: "What design services do you provide?", answer: "We offer UI/UX design, web and mobile app design, branding and identity design, design systems, usability audits, and product design support." },
       { question: "Do you provide end-to-end design solutions?", answer: "Yes. We handle the complete design lifecycle from discovery and wireframes to final UI and handoff." },
       { question: "Can clients choose individual services?", answer: "Yes. Our services are flexible and can be customized based on specific project requirements." },

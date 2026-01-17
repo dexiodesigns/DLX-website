@@ -77,7 +77,7 @@ export default function ServicePage() {
         <div 
           className="flex items-center justify-center bg-zinc-900/80 border border-zinc-800"
           style={{
-            maxWidth: '1000px',
+            maxWidth: '1110px',
             width: '100%',
             height: '64px',
             borderRadius: '28px',

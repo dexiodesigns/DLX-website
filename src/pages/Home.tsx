@@ -69,7 +69,7 @@ export default function Home() {
     </div>
 
       {/* Second Section: Future Intelli */}
-     <section className="relative max-w-7xl mx-auto flex flex-col md:grid md:grid-cols-2 items-center z-20 
+      <section className="relative max-w-7xl mx-auto flex flex-col md:grid md:grid-cols-2 items-center z-20 
         /* Mobile: 44px top/bottom, 20px sides as per Figma markers */
         pt-[44px] pb-[44px] px-[20px] 
         /* Desktop: Reverting to your original spacing */
