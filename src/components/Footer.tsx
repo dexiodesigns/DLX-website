@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
+import privacyPolicyPdf from "../assets/pdfs/DLX-privacy-policy.pdf";
+import refundPolicyPdf from "../assets/pdfs/DLX-refund-policy.pdf";
+import termsConditionsPdf from "../assets/pdfs/DLX-terms-and-conditions.pdf";
 
 export default function Footer() {
   const [openSection, setOpenSection] = useState<string | null>("services");
@@ -16,20 +19,21 @@ export default function Footer() {
       { name: "Next-Gen Experience", href: "/services/next-gen-ux" },
     ],
     aiProducts: [
-      { name: "Mr. RYT", href: "/products/mr-ryt" },
-      { name: "Vaahi", href: "/products/vaahi" },
+      { name: "Mr. RYT", href: "/products/mr-ryt", disabled: true },
+      { name: "Vaahi", href: "/products/vaahi", disabled: true },
     ],
     quickLinks: [
-      { name: "Academy", href: "/academy" },
-      { name: "Resources", href: "/resources" },
+      { name: "Academy", href: "/academy", disabled: true},
+      { name: "Products", href: "/products", disabled: true },
+      { name: "Resources", href: "/resources", disabled: true },
       { name: "Company", href: "/company" },
-      { name: "Careers", href: "/careers" },
+      { name: "Careers", href: "/careers", disabled: true },
       { name: "Contact", href: "/contact" },
     ],
     legal: [
-      { name: "Privacy Policy", href: "/privacy-policy" },
-      { name: "Refund Policy", href: "/refund-policy" },
-      { name: "Terms and Conditions", href: "/terms-and-conditions" },
+      { name: "Privacy Policy", href: privacyPolicyPdf, isPdf: true },
+      { name: "Refund Policy", href: refundPolicyPdf, isPdf: true },
+      { name: "Terms and Conditions", href: termsConditionsPdf, isPdf: true },
     ],
   };
 
@@ -215,19 +219,33 @@ export default function Footer() {
               >
                 AI Products
               </h4>
-              <ul className="flex flex-col gap-3 opacity-50 pointer-events-none">
+              <ul className={`flex flex-col gap-3 ${footerLinks.aiProducts.some(link => link.disabled) ? 'opacity-50 pointer-events-none' : ''}`}>
                 {footerLinks.aiProducts.map((link, index) => (
                   <li key={index}>
-                    <span
-                      className="font-['Inter'] font-normal text-[14px] leading-[20px] tracking-[0%] cursor-not-allowed"
-                      style={{
-                        color: '#D5D7DD',
-                        fontWeight: 400,
-                        height: '20px'
-                      }}
-                    >
-                      {link.name}
-                    </span>
+                    {link.disabled ? (
+                      <span
+                        className="font-['Inter'] font-normal text-[14px] leading-[20px] tracking-[0%] cursor-not-allowed"
+                        style={{
+                          color: '#D5D7DD',
+                          fontWeight: 400,
+                          height: '20px'
+                        }}
+                      >
+                        {link.name}
+                      </span>
+                    ) : (
+                      <Link
+                        to={link.href}
+                        className="font-['Inter'] font-normal text-[14px] leading-[20px] tracking-[0%] hover:text-white transition-colors"
+                        style={{
+                          color: '#D5D7DD',
+                          fontWeight: 400,
+                          height: '20px'
+                        }}
+                      >
+                        {link.name}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -248,18 +266,31 @@ export default function Footer() {
               <ul className="flex flex-col gap-3">
                 {filteredQuickLinks.map((link, index) => (
                   <li key={index}>
-                    <Link
-                      to={link.href}
-                      className="font-['Inter'] font-normal text-[14px] leading-[20px] tracking-[0%] hover:text-white transition-colors"
-                      style={{
-                        color: '#D5D7DD',
-                        fontWeight: 400,
-                        height: '20px',
-                        opacity: 1
-                      }}
-                    >
-                      {link.name}
-                    </Link>
+                    {link.disabled ? (
+                      <span
+                        className="font-['Inter'] font-normal text-[14px] leading-[20px] tracking-[0%] cursor-not-allowed opacity-50"
+                        style={{
+                          color: '#D5D7DD',
+                          fontWeight: 400,
+                          height: '20px'
+                        }}
+                      >
+                        {link.name}
+                      </span>
+                    ) : (
+                      <Link
+                        to={link.href}
+                        className="font-['Inter'] font-normal text-[14px] leading-[20px] tracking-[0%] hover:text-white transition-colors"
+                        style={{
+                          color: '#D5D7DD',
+                          fontWeight: 400,
+                          height: '20px',
+                          opacity: 1
+                        }}
+                      >
+                        {link.name}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -280,18 +311,35 @@ export default function Footer() {
               <ul className="flex flex-col gap-3">
                 {footerLinks.legal.map((link, index) => (
                   <li key={index}>
-                    <Link
-                      to={link.href}
-                      className="font-['Inter'] font-normal text-[14px] leading-[20px] tracking-[0%] hover:text-white transition-colors"
-                      style={{
-                        color: '#D5D7DD',
-                        fontWeight: 400,
-                        height: '20px',
-                        opacity: 1
-                      }}
-                    >
-                      {link.name}
-                    </Link>
+                    {link.isPdf ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-['Inter'] font-normal text-[14px] leading-[20px] tracking-[0%] hover:text-white transition-colors"
+                        style={{
+                          color: '#D5D7DD',
+                          fontWeight: 400,
+                          height: '20px',
+                          opacity: 1
+                        }}
+                      >
+                        {link.name}
+                      </a>
+                    ) : (
+                      <Link
+                        to={link.href}
+                        className="font-['Inter'] font-normal text-[14px] leading-[20px] tracking-[0%] hover:text-white transition-colors"
+                        style={{
+                          color: '#D5D7DD',
+                          fontWeight: 400,
+                          height: '20px',
+                          opacity: 1
+                        }}
+                      >
+                        {link.name}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

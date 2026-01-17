@@ -17,7 +17,7 @@ export default function Home() {
     <main className="bg-[#0B0C0E] text-white min-h-screen pt-24 selection:bg-purple-500/30 overflow-x-hidden">
     <div className="relative">
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-        <div className="absolute top-[-400px] md:top-[-800px] left-0 right-0 bottom-0 bg-gradient-to-b from-transparent to-[#0B0C0E] z-10"></div>
+        <div className="absolute top-[-400px] md:top-[-400px] left-0 right-0 bottom-0 bg-gradient-to-b from-transparent to-[#0B0C0E] z-10"></div>
         <video
           autoPlay
           loop
@@ -27,9 +27,11 @@ export default function Home() {
           className="w-full h-full object-cover"
         >
           <source src={homePageVideo} type="video/mp4" />
+          {/* MOV fallback for Safari */}
+          <source src={homePageVideo} type="video/quicktime" />
         </video>
-        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#0B0C0E] to-transparent z-10"></div>
-        <div className="absolute top-[-800px] left-0 right-0 bottom-0 bg-gradient-to-b from-transparent to-[#0B0C0E] z-10"></div>
+        <div className="absolute top-0 left-0 right-0 h-42 bg-gradient-to-b from-[#0B0C0E] to-transparent z-10"></div>
+        <div className="absolute md:top-[-200px] left-0 right-0 bottom-0 bg-gradient-to-b from-transparent to-[#0B0C0E] z-10"></div>
       </div>
 
       {/* First Section: Hero */}
@@ -58,9 +60,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+    </div>
 
       {/* Second Section: Future Intelli */}
-      <section className="relative max-w-7xl mx-auto flex flex-col md:grid md:grid-cols-2 items-center z-20 
+     <section className="relative max-w-7xl mx-auto flex flex-col md:grid md:grid-cols-2 items-center z-20 
         /* Mobile: 44px top/bottom, 20px sides as per Figma markers */
         pt-[44px] pb-[44px] px-[20px] 
         /* Desktop: Reverting to your original spacing */
@@ -70,7 +73,7 @@ export default function Home() {
         {/* Top on Mobile: Image */}
         <div className="relative w-full order-1">
           <div 
-            className="absolute -top-12 left-1/2 -translate-x-1/2 w-[280px] md:w-[700px] h-[200px] md:h-[450px] blur-[60px] -z-10 opacity-40 md:opacity-60"
+            className="absolute -top-12 left-1/2 -translate-x-1/2 w-[280px] md:w-[500px] h-[370px] md:h-[500px] blur-[60px] -z-10 opacity-40 md:opacity-60"
             style={{
               background: 'radial-gradient(circle, #F06058 0%, transparent 70%)'
             }}
@@ -112,7 +115,7 @@ export default function Home() {
           </p>
         </div>
       </section>
-    </div>
+
       {/* --- Service Excellence Section --- */}
    <ServiceExcellence/>
 

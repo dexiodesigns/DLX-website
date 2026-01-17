@@ -3,9 +3,8 @@ import { Link } from "react-router-dom";
 import ContactFooter from "../components/ContactFooter";
 
 // Video paths - Using URL constructor for files with spaces
-const companyHeroVideoMov = new URL('../assets/companies/Company Page - Hero Section Video.mov', import.meta.url).href;
-const companyHeroVideoMp4 = new URL('../assets/companies/Company Page - Hero Section Video.mov', import.meta.url).href;
-const ourVisionVideo = new URL('../assets/companies/Our vision.mp4', import.meta.url).href;
+const companyHeroVideoMov = new URL('../assets/Videos/CompanyPage-HeroSectionVideo.mov', import.meta.url).href;
+const ourVisionVideo = new URL('../assets/Videos/our-vision.mp4', import.meta.url).href;
 
 // Team images
 const img1 = new URL('../assets/companies/img1.png', import.meta.url).href;
@@ -15,9 +14,9 @@ const img4 = new URL('../assets/companies/img4.png', import.meta.url).href;
 
 export default function Company() {
   return (
-    <main className="bg-[#0B0C0E] text-white min-h-screen font-['Inter']">
+    <main className="bg-[#0B0C0E] text-white min-h-screen font-['Inter'] pt-24">
       {/* Hero Section with Video Background */}
-      <section className="relative flex flex-col items-center overflow-hidden">
+      <section className="relative flex flex-col items-center overflow-hidden md:pb-[144px]">
         {/* Video Background */}
         <video
           autoPlay
@@ -28,7 +27,7 @@ export default function Company() {
           style={{ zIndex: 0 }}
         >
           {/* MP4 first for better browser support */}
-          <source src={companyHeroVideoMp4} type="video/mp4" />
+          <source src={companyHeroVideoMov} type="video/mp4" />
           {/* MOV fallback for Safari */}
           <source src={companyHeroVideoMov} type="video/quicktime" />
         </video>
@@ -93,7 +92,7 @@ export default function Company() {
             </Link> */}
           </div>
         </div>
-
+      </section>
         {/* Our Vision Section - Inside Video Background */}
         <div 
           className="relative z-10 flex items-center justify-center px-6 mt-[80px] md:mt-[144px] pb-[80px] md:pb-[0px]"
@@ -157,8 +156,6 @@ export default function Company() {
             </div>
           </div>
         </div>
-      </section>
-
       {/* We Design Products Section */}
       <section 
         className="flex flex-col items-center justify-center px-6 py-[60px]  md:mt-[144px] md:pb-0"
