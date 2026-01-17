@@ -19,15 +19,15 @@ export const testimonials = [
   },
   {
     id: 2,
-    name: "Alex Rivera",
-    role: "CTO, TechFlow",
+    name: "Mani Doraisamy",
+    role: "Co-Founder of Neartail",
     content:
-      "The design precision and AI integration provided by Dexio exceeded our expectations. They didn't just build a product; they built an experience that our users love.",
+      "As developers with limited knowledge of UX, we found fantastic partners in Karthik and his team. They did more than just design our user experience; they really got to know our business to better engage our customers. We trusted them to create our product pages and explainer videos because they truly understand our products. To us, they are more than just a vendor; they are an essential part of our team. I highly recommend their services!",
     image: People2
   },
   {
     id: 3,
-    name: "Mithun",
+    name: "Rithwin",
     role: "Founder, Route Your Travel",
     content:
       "Dexio team was able to support us in our revamp journey and are now turning out to be a valuable member of our engineering community. Our POC and designer Ganga has been a phenomenal young talent for Vittae and she has proved that she is hungry to learn & grow along with us.",
@@ -35,7 +35,7 @@ export const testimonials = [
   },
   {
     id: 4,
-    name: "Nagraj",
+    name: "Nagraj Kuppuswamy",
     role: "Co-Founder, Beaconer",
     content:
       "Working with Dexio completely changed how our platform looks and feels. They helped us tell a clear story through our UI/UX, which led to great customer feedback. Dexio took the time to truly understand our complex platform instead of copying generic designs. Their work was high quality, collaborative, and budget-friendly for a startup like ours. I’d highly recommend Dexio for thoughtful and personalized design work.",
@@ -46,7 +46,7 @@ export const testimonials = [
     name: "Mithun",
     role: "Founder, Route Your Travel",
     content:
-      "A truly talented group of individuals. Their commitment to excellence and learning is evident in every pixel and line of code they deliver.",
+      "Dexio did an excellent job across branding and website design for Route Your Travel. The logo creation was impressive and aligned well with our brand identity, and the website hero section delivered a strong first impression. The AI-based itinerary builder stood out as an innovative solution that significantly reduced the time required to build itineraries while addressing real travel needs. The team supported us closely throughout the journey and delivered with clarity, creativity, and precision.",
     image: People5
   }
 ];
@@ -173,7 +173,7 @@ export default function TestimonialCarousel() {
           transition={{ duration: 0.3 }}
           className="flex flex-col items-center"
         >
-          <h4 className="mb-[1.25rem] text-[36px] font-semibold text-[#F1F2F4]">
+          <h4 className="mb-[1.25rem] text-[36px] font-semibold text-[#F1F2F4] leading-[40px] md:leading-normal" style={{ fontFamily: 'Sora, sans-serif' }}>
             {testimonials[activeIndex].name}
           </h4>
           <p className="text-[#F1F2F4] text-[20px] mb-8">

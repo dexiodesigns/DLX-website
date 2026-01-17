@@ -16,7 +16,7 @@ export default function Home() {
   const navigate = useNavigate();
   const HomeDescription = 'Every modern user works alongside AI and Dexio LabX designs Human<>AI systems that deliver real value inside SaaS products.';
   return (
-    <main className="bg-[#0B0C0E] text-white min-h-screen pt-24 selection:bg-purple-500/30 overflow-x-hidden">
+    <main className="bg-[#0B0C0E] text-white min-h-screen pt-16 selection:bg-purple-500/30 overflow-x-hidden">
     <div className="relative">
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
         <div className="absolute top-[-400px] md:top-[-400px] left-0 right-0 bottom-0 bg-gradient-to-b from-transparent to-[#0B0C0E] z-10"></div>
@@ -37,28 +37,28 @@ export default function Home() {
       </div>
 
       {/* First Section: Hero */}
-      <section className="relative max-w-6xl mx-auto px-6 text-center flex flex-col items-center pt-28 pb-20 md:py-40 z-20">
+      <section className="relative max-w-6xl mx-auto px-6 text-center flex flex-col items-center pt-28 pb-20 md:py-[144px] z-20">
         <div className="flex flex-col items-center">
-          {/* Mobile Heading Size 32px as per Figma */}
-          <h1 className="text-[32px] md:text-[48px] font-[600] pb-2 md:pb-5 tracking-[1px] md:tracking-[1.5px] leading-[1.2] md:leading-tight" style={{color: '#F1F2F4'}}>
+          {/* Mobile Heading Size 30px as per Figma */}
+          <h1 className="text-[30px] md:text-[48px] font-[600] pb-0 tracking-[0%] leading-[40px] md:leading-[60px]" style={{color: '#F1F2F4', fontFamily: 'Sora, sans-serif'}}>
             Designing for SaaS that is
           </h1>
-          <h2 className="text-[32px] md:text-[48px] font-[600] tracking-[1px] leading-[1.2] md:leading-tight inline-block bg-gradient-to-tr from-[#6366f1] via-[#a855f7] via-[#c34772] to-[#f9f916] bg-clip-text text-transparent">
+          <h2 className="text-[30px] md:text-[48px] font-[600] tracking-[0%] md:tracking-[1px] leading-[1.2] md:leading-tight inline-block bg-gradient-to-tr from-[#6366f1] via-[#a855f7] via-[#c34772] to-[#f9f916] bg-clip-text text-transparent" style={{fontFamily: 'Sora, sans-serif'}}>
             no longer built only for humans.
           </h2>  
           
-          <p className="mt-6 md:mt-8 max-w-3xl text-center font-inter text-[15px] md:text-base font-normal leading-6 md:leading-6 px-2 md:px-0" style={{color: '#D5D7DD'}}>
+          <p className="mt-4 md:mt-[12px] max-w-3xl text-center font-inter text-[14px] md:text-base font-normal leading-[150%] md:leading-6 px-0 md:px-0" style={{color: '#D5D7DD'}}>
             {HomeDescription}
           </p>
 
           {/* Button Container - Stacked on Mobile, Row on Desktop */}
-          <div className="mt-10 flex flex-col md:flex-row gap-4 w-full md:w-auto px-4 md:px-0">
+          <div className="mt-[40px] md:mt-[36px] flex flex-col md:flex-row gap-4 w-full md:w-auto px-4 md:px-0 items-center">
             <button 
               onClick={() => navigate('/contact')}
-              className="w-full md:w-auto justify-center bg-[#F1F2F4] px-8 py-3.5 rounded-[20px] font-inter text-base font-semibold leading-6 flex items-center gap-2 hover:bg-gray-200 transition" 
+              className="mobile-hero-button w-[200px] md:w-auto justify-center bg-[#F1F2F4] px-6 py-3 md:px-6 md:py-3 rounded-[20px] font-inter text-base font-medium leading-6 flex items-center gap-2 hover:bg-gray-200 transition" 
               style={{color: '#0B0C0E'}}
             >
-              Design With Us <ArrowRight size={18} />
+              Design With Us <ArrowRight className="w-5 h-5" />
             </button>
             {/* <button className="w-full md:w-auto justify-center border border-zinc-700 bg-transparent px-8 py-3.5 rounded-[20px] font-inter text-base font-semibold leading-6 text-white flex items-center gap-2 hover:bg-zinc-900 transition" style={{color: '#F1F2F4'}}>
               Join Our Tribe <ArrowRight size={18} />
@@ -95,18 +95,19 @@ export default function Home() {
 
         {/* Bottom on Mobile: Text Content */}
         <div className="flex flex-col text-center md:text-left order-2 
-          /* Mobile: 16px gap between heading and paragraph as per Figma marker */
-          gap-[16px] 
+          /* Mobile: 20px gap between heading and paragraph as per Figma marker */
+          gap-[20px] 
           /* Mobile: 44px gap from the image above it */
           mt-[44px] 
           /* Desktop resets */
-          md:mt-0 md:gap-6"
+          md:mt-0 md:gap-3"
         >
           <h2 className="font-semibold text-[#F1F2F4]
             /* Mobile: Matching the tight leading and size in Figma */
             text-[24px] leading-[32px] tracking-[0.02em]
             /* Desktop resets */
             md:text-[36px] md:leading-[48px] md:tracking-[0.5px]"
+            style={{fontFamily: 'Sora, sans-serif'}}
           >
             Building the future of intelligent design and automation.
           </h2>
@@ -142,42 +143,42 @@ export default function Home() {
       
       {/* --- Features Cards --- */}
       <div className="text-center">
-        <h2 className="mb-8 md:mb-12 text-[28px] md:text-[38px] leading-[36px] md:leading-[48px] font-semibold" style={{color: '#F1F2F4'}}>
+        <h2 className="mb-8 md:mb-12 text-[36px] font-semibold leading-[36px] md:leading-[48px]" style={{color: '#F1F2F4', fontFamily: 'Sora, sans-serif'}}>
           We don't just build. We evolve with you.
         </h2>
         
-        <div className="grid md:grid-cols-3 gap-12">
+        <div className="grid md:grid-cols-3 gap-12 md:gap-12 max-w-[1280px] mx-auto" style={{gap: '48px'}}>
           {/* Card 1 */}
-          <div className="bg-[#111214] p-8 rounded-[32px] text-left hover:border-zinc-700 transition">
+          <div className="bg-[#111214] p-9 rounded-[32px] text-left hover:border-zinc-700 transition">
             <div className="mb-6">
               {/* <Sparkles className="text-indigo-500" size={24} /> */}
               <Star/>
             </div>
-            <h3 className="text-2xl font-bold text-[#F1F2F4] mb-4 tracking-[1px] leading-tight">AI-Driven Innovation</h3>
+            <h3 className="text-[24px] font-bold text-[#F1F2F4] mb-4 tracking-[1px] leading-tight" style={{fontFamily: 'Sora, sans-serif'}}>AI-Driven Innovation</h3>
             <p className="text-[#D5D7DD] text-[16px]" style={{overflow: 'hidden', textOverflow: 'ellipsis', fontWeight: '400', lineHeight: '24px'}}>
               Every solution is built with automation and intelligence at its core.
             </p>
           </div>
 
           {/* Card 2 */}
-          <div className="bg-[#111214] p-8 rounded-[32px] text-left hover:border-zinc-700 transition">
+          <div className="bg-[#111214] p-9 rounded-[32px] text-left hover:border-zinc-700 transition">
             <div className="mb-6">
               {/* <Globe className="text-orange-500" size={24} /> */}
               <Sun/>
             </div>
-            <h3 className="text-2xl font-bold text-[#F1F2F4] mb-4 tracking-[1px] leading-tight">Global Mindset</h3>
+            <h3 className="text-[24px] font-bold text-[#F1F2F4] mb-4 tracking-[1px] leading-tight" style={{fontFamily: 'Sora, sans-serif'}}>Global Mindset</h3>
             <p className="text-[#D5D7DD] text-[16px]" style={{overflow: 'hidden', textOverflow: 'ellipsis', fontWeight: '400', lineHeight: '24px'}}>
               Trusted by startups and enterprises across industries and continents.
             </p>
           </div>
 
           {/* Card 3 */}
-          <div className="bg-[#111214] p-8 rounded-[32px] text-left hover:border-zinc-700 transition">
+          <div className="bg-[#111214] p-9 rounded-[32px] text-left hover:border-zinc-700 transition">
             <div className="mb-6">
               {/* <Lightbulb className="text-cyan-500" size={24} /> */}
               <Bulb/>
             </div>
-            <h3 className="text-2xl font-bold text-[#F1F2F4] mb-4 tracking-[1px] leading-tight">Creativity-First Thinking</h3>
+            <h3 className="text-[24px] font-bold text-[#F1F2F4] mb-4 tracking-[1px] leading-tight" style={{fontFamily: 'Sora, sans-serif'}}>Creativity-First Thinking</h3>
             <p className="text-[#D5D7DD] text-[16px]" style={{overflow: 'hidden', textOverflow: 'ellipsis', fontWeight: '400', lineHeight: '24px'}}>
               Where aesthetics meet measurable business outcomes.
             </p>

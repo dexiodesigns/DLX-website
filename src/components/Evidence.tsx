@@ -28,7 +28,7 @@ export default function EvidenceOfImpact() {
       
       {/* Static Heading Area */}
       <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-12 gap-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-white">Evidence Of Impact</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-white" style={{fontFamily: 'Sora, sans-serif'}}>Evidence Of Impact</h2>
         
         {/* Mobile-only Explore button from image 1 */}
         {/* <button className="md:hidden w-full bg-[#1A1B1E] border border-zinc-800 px-6 py-3 rounded-full text-sm text-gray-300 flex items-center justify-center gap-2">
@@ -92,7 +92,7 @@ export default function EvidenceOfImpact() {
                 }`}
               >
                 <div className="md:min-w-[380px]">
-                  <h3 className="text-2xl md:text-3xl font-bold text-white whitespace-nowrap">{project.title}</h3>
+                  <h3 className="text-2xl md:text-3xl font-bold text-white whitespace-nowrap" style={{fontFamily: 'Sora, sans-serif'}}>{project.title}</h3>
                   <p className="text-gray-400 text-xs md:text-sm mb-2 whitespace-nowrap">{project.subtitle}</p>
                   <p className="text-gray-300 text-sm leading-relaxed mb-6 line-clamp-3 md:line-clamp-none">
                     {project.description}

@@ -106,7 +106,7 @@ export default function ServicePage() {
         </div>
       </div>
 
-      <section className="max-w-4xl mx-auto px-6 text-center py-8 md:py-12">
+      <section className="max-w-4xl mx-auto px-6 text-center py-[44px] md:py-12">
         <h1 
           className="text-[36px] leading-[44px] md:text-[48px] md:leading-[60px] font-bold mb-2 md:mb-4"
           style={{ fontFamily: 'Sora, sans-serif' }}
@@ -120,7 +120,7 @@ export default function ServicePage() {
           {service.subtitle}
         </p>
         <p 
-          className="text-[16px] leading-[24px] md:text-lg text-zinc-400 max-w-2xl mx-auto mb-8 md:mb-8 px-2 md:px-0"
+          className="text-[16px] leading-[24px] md:text-lg text-zinc-400 max-w-2xl mx-auto mb-[36px] md:mb-8 px-2 md:px-0"
           style={{ fontFamily: 'Inter, sans-serif' }}
         >
           {service.description}
@@ -135,34 +135,34 @@ export default function ServicePage() {
         </Link>
       </section>
 
-      <section className="max-w-5xl mx-auto px-6 py-12 md:py-16">
+      <section className="max-w-5xl mx-auto px-6 py-[44px] md:py-16">
         <h2 
-          className="text-[28px] leading-[36px] md:text-[36px] md:leading-[44px] font-bold text-center mb-8 md:mb-12"
+          className="text-[28px] leading-[36px] md:text-[36px] md:leading-[44px] font-bold text-center mb-4 md:mb-12"
           style={{ fontFamily: 'Sora, sans-serif' }}
         >
           {service.statsHeading}
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-[26px] md:gap-6">
           {service.stats.map((stat, index) => (
             <div
               key={index}
-              className="bg-zinc-900/80 border border-zinc-800/50 rounded-[24px] md:rounded-2xl p-6 md:p-6 flex items-center justify-between"
+              className="bg-zinc-900/80 border border-zinc-800/50 rounded-[24px] md:rounded-2xl p-6 md:p-8 flex items-center justify-between"
             >
               <div>
                 <p 
-                  className="text-[40px] leading-[48px] md:text-4xl font-bold text-white mb-2 md:mb-1"
+                  className="text-[24px] md:text-[36px] leading-[48px] md:text-4xl font-bold text-white mb-0 md:mb-3"
                   style={{ fontFamily: 'Sora, sans-serif' }}
                 >
                   {stat.value}
                 </p>
                 <p 
-                  className="text-[16px] leading-[24px] md:text-sm text-zinc-400"
+                  className="text-[14px] leading-[24px] md:text-[20px] text-[#F1F2F4]-400"
                   style={{ fontFamily: 'Inter, sans-serif' }}
                 >
                   {stat.label}
                 </p>
               </div>
-              <div className="text-[#6366f1] flex items-center justify-center">
+              <div className="text-[#6366f1] flex justify-start items-start mb-[22px] md:mb-[38px]">
                 {stat.customSvg ? (
                   <div dangerouslySetInnerHTML={{ __html: stat.customSvg }} />
                 ) : (

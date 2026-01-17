@@ -42,6 +42,9 @@ const ContactFooter: React.FC<HeroSectionProps> = ({
         }
 
         @media (max-width: 768px) {
+          .hero-container {
+            height: 450px;
+          }
           .hero-content-box {
             padding: 16px;
             padding-top: 32px;
@@ -173,7 +176,7 @@ const ContactFooter: React.FC<HeroSectionProps> = ({
 
               <button
                 onClick={() => navigate('/contact')}
-                className="group relative px-8 py-4 rounded-[16px] md:rounded-[24px] text-white font-semibold text-base md:text-lg transition-all duration-300 hover:shadow-xl hover:scale-105 flex md:items-center gap-3 md:ml-[100px]"
+                className="group relative px-6 py-4 rounded-[16px] md:rounded-[24px] text-white font-semibold text-base md:text-lg transition-all duration-300 hover:shadow-xl hover:scale-105 flex items-center justify-center gap-3 md:ml-[100px] w-[180px]"
                 style={{ background: 'rgb(172 78 72)' }}
               >
                 {buttonText}

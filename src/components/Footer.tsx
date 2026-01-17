@@ -114,7 +114,7 @@ export default function Footer() {
     const isOpen = openSection === sectionKey && isEnabled;
     
     return (
-      <div className="border-b border-white/5 last:border-b-0">
+      <div>
         <button
           onClick={() => toggleSection(sectionKey, isEnabled)}
           className={`w-full flex items-center justify-between py-4 ${
@@ -384,7 +384,7 @@ export default function Footer() {
       </div>
 
       {/* Mobile Layout */}
-      <div className="md:hidden px-6 py-8">
+      <div className="md:hidden px-6 pb-8 md:py-8">
         {/* Accordion Sections */}
         <div className="mb-8">
           <MobileAccordion 
@@ -471,12 +471,11 @@ export default function Footer() {
 
       {/* Copyright - Both Desktop and Mobile */}
       <div 
-        className="mx-auto"
+        className="mx-auto mb-8 md:mb-0"
         style={{
           maxWidth: '100%',
           height: '44px',
           opacity: 1,
-          borderTop: '1px solid #22252A',
           paddingTop: '24px',
           paddingLeft: '24px',
           paddingRight: '24px',

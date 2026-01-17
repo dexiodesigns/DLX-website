@@ -77,16 +77,16 @@ export default function Navbar() {
       desc: "Understand Real User Needs And Behaviors Through Validated Research." 
     },
     { 
-      icon: <PenTool className="w-6 h-6" />, 
-      title: "UX Design",
-      slug: "ux-design",
-      desc: "Design Intuitive, Scalable Product Experiences That Balance User Needs With Business Goals." 
-    },
-    { 
       icon: <BarChart2 className="w-6 h-6" />, 
       title: "Data-Driven UX",
       slug: "data-driven-ux",
       desc: "Turn Product Data Into Better Experiences And UX Decisions." 
+    },
+    { 
+      icon: <PenTool className="w-6 h-6" />, 
+      title: "UX Design",
+      slug: "ux-design",
+      desc: "Design Intuitive, Scalable Product Experiences That Balance User Needs With Business Goals." 
     },
     { 
       icon: <Wand2 className="w-6 h-6" />, 
@@ -96,9 +96,9 @@ export default function Navbar() {
     },
     { 
       icon: <TrendingUp className="w-6 h-6" />, 
-      title: "Marketing Designs",
-      slug: "marketing-designs",
-      desc: "Design That Drives Measurable Engagement, Clarity, And Growth Across Channels." 
+      title: "Growth-Focused Marketing Design",
+      slug: "marketing-design",
+      desc: "High-impact creatives crafted to drive attention, engagement, and conversions." 
     },
     { 
       icon: <PlayCircle className="w-6 h-6" />, 
@@ -119,15 +119,15 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 w-full z-50 bg-black/85 backdrop-blur-md text-white font-['Inter']">
-        <div className="px-6 md:px-[200px] py-6 flex justify-between items-center">
+      <nav className="fixed top-0 w-full z-50 bg-[#0E0F11]/84 md:bg-[#0B0C0E]/85 backdrop-blur-md text-white font-['Inter']">
+        <div className="px-5 py-4 md:px-[200px] md:py-6 flex justify-between items-center">
           <Link to="/" className="flex items-center gap-2">
-            <Logo/>
+            <Logo width="100" height="35" />
           </Link>
           
           <div className="hidden md:flex items-center gap-8">
             <ul className="flex gap-8 items-center text-sm font-medium">
-                <li className="relative">
+                <li className="relative text-[16px] font-[400]">
                   <button 
                     ref={buttonRef}
                     onClick={() => setIsServicesOpen(!isServicesOpen)}
@@ -148,7 +148,7 @@ export default function Navbar() {
                   </button>
                 </li>
                 {navItems.slice(1).map((item) => (
-                  <li key={item.name} className="relative">
+                  <li key={item.name} className="relative text-[16px] font-[400]">
                     <Link
                       to={item.href}
                       className={`cursor-pointer transition ${
@@ -168,7 +168,7 @@ export default function Navbar() {
             </ul>
           </div>
           <button 
-            className="md:hidden p-2 hover:bg-white/10 rounded-lg transition"
+            className="md:hidden py-[12px] px-[16px] md:p-2 hover:bg-white/10 rounded-lg transition"
             onClick={() => setIsMobileMenuOpen(true)}
           >
             <Menu size={24} />
@@ -178,13 +178,13 @@ export default function Navbar() {
       {isServicesOpen && (
         <div 
           ref={dropdownRef}
-          className="hidden md:flex fixed top-[76px] left-0 w-full z-40 bg-black/50 backdrop-blur-md text-white font-['Inter'] border-t border-white/10 justify-center"
+          className="hidden md:flex fixed top-[76px] left-0 w-full z-40 bg-[#22252A]/30 backdrop-blur-md text-white font-['Inter'] border-t border-white/10 justify-center py-6"
           style={{ 
-            height: '384px',
+            height: '466px',
           }}
         >
           <div 
-            className="px-6 md:px-[200px] py-6 h-full w-full grid grid-cols-3 gap-x-12 gap-y-6 overflow-y-auto"
+            className="px-6 md:px-[200px] py-6 h-full w-full grid grid-cols-3 gap-x-12 gap-y-12 overflow-y-auto"
           >
             {services.map((service, index) => (
               <div 
@@ -196,8 +196,8 @@ export default function Navbar() {
                   {service.icon}
                 </div>
                 <div>
-                  <h3 className="text-white font-medium mb-1">{service.title}</h3>
-                  <p className="text-zinc-400 text-sm leading-relaxed max-w-sm">
+                  <h3 className="font-semibold mb-1" style={{ fontFamily: 'Sora, sans-serif', fontSize: '16px', fontWeight: 600, color: '#F1F2F4' }}>{service.title}</h3>
+                  <p style={{ overflow: 'hidden', color: '#D5D7DD', textOverflow: 'ellipsis', fontFamily: 'Inter', fontSize: '12px', fontStyle: 'normal', fontWeight: 400, lineHeight: '18px' }}>
                     {service.desc}
                   </p>
                 </div>
@@ -209,7 +209,7 @@ export default function Navbar() {
       {isMobileMenuOpen && (
         <div className="md:hidden fixed inset-0 z-50 bg-[#0B0C0E] text-white font-['Inter']">
           <div className="px-6 py-6 flex justify-between items-center border-b border-white/10">
-            <Logo />
+            <Logo width="100" height="35" />
             <button 
               onClick={closeMobileMenu}
               className="p-2 hover:bg-white/10 rounded-lg transition"
@@ -226,7 +226,7 @@ export default function Navbar() {
                     <button
                       key={index}
                       onClick={() => setIsMobileServicesOpen(true)}
-                      className="w-full flex items-center justify-between py-4 text-lg font-medium hover:text-white/80 transition border-b border-white/5"
+                      className="w-full flex items-center justify-between py-[12px] text-lg font-medium hover:text-white/80 transition border-b border-white/5"
                     >
                       {item.name}
                       <ChevronRight size={20} />
@@ -236,7 +236,7 @@ export default function Navbar() {
                       key={index}
                       to={item.href}
                       onClick={closeMobileMenu}
-                      className="w-full flex items-center justify-between py-4 text-lg font-medium hover:text-white/80 transition border-b border-white/5"
+                      className="w-full flex items-center justify-between py-[12px] text-lg font-medium hover:text-white/80 transition border-b border-white/5"
                     >
                       {item.name}
                     </Link>

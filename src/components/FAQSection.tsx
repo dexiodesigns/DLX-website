@@ -126,7 +126,7 @@ export default function FAQSection() {
       <div className="max-w-4xl mx-auto">
         {currentFaqs.map((faq, index) => (
           <div key={`${activeFAQTab}-${index}`} className="flex gap-3 md:gap-4">
-            <div className={`transition-all duration-300 ${openFaq === index ? "pt-4" : "pt-8"}`}>
+            <div className={`transition-all duration-300 ${openFaq === index ? "pt-4 md:pt-5" : "pt-8 md:pt-9"}`}>
               <Plus />
             </div>
 
@@ -135,7 +135,7 @@ export default function FAQSection() {
                 onClick={() => setOpenFaq(openFaq === index ? null : index)}
                 className={`w-full text-left transition-all duration-300 ${openFaq === index ? "py-4" : "py-8"}`}
               >
-                <h3 className="text-[16px] md:text-xl font-bold leading-7 md:leading-10 text-[#F1F2F4]">
+                <h3 className="text-[16px] md:text-xl font-bold leading-7 md:leading-10 text-[#F1F2F4]" style={{ fontFamily: 'Sora, sans-serif'}}>
                   {faq.question}
                 </h3>
               </button>
