@@ -32,10 +32,43 @@ export default function Contact() {
     setIsDropdownOpen(false);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Handle form submission
+    
+    try {
+      // Create email body with form data
+      const emailBody = `
+        New Contact Form Submission:
+
+        Full Name: ${formData.fullName}
+        Work Email: ${formData.workEmail}
+        Company Name: ${formData.companyName}
+        Area of Focus: ${formData.areaOfFocus}
+
+        Challenge/Goal:
+        ${formData.challenge}
+
+        Submitted at: ${new Date().toLocaleString()}
+      `.trim();
+
+      // Create mailto link
+      const mailtoLink = `mailto:Sales@dexiodesigns.com?subject=New Contact Form Submission from ${formData.fullName}&body=${encodeURIComponent(emailBody)}`;
+      
+      // Open default email client
+      window.open(mailtoLink);
+      
+      // Reset form after submission
+      setFormData({
+        fullName: '',
+        workEmail: '',
+        companyName: '',
+        areaOfFocus: '',
+        challenge: '',
+      });
+      
+    } catch (error) {
+      console.error('Error preparing email:', error);
+    }
   };
 
   return (
