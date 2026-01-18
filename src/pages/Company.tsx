@@ -561,7 +561,7 @@ export default function Company() {
             color: '#ffffff',
           }}
         >
-          "We care deeply about craft. <br></br>We care even more about impact."
+          "We care deeply about craft. <br className="hidden md:block"></br>We care even more about impact."
         </h2>
       </section>
 

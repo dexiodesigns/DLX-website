@@ -78,7 +78,7 @@ export default function TestimonialCarousel() {
   };
 
   return (
-    <section className="bg-[#2f329d] pt-10 pb-20 px-6 flex flex-col items-center text-center relative overflow-hidden">
+    <section className="bg-[#2f329d] pt-16 pb-12 px-6 flex flex-col items-center text-center relative overflow-hidden">
 
       {/* Navigation Arrows – Desktop only */}
       <button
@@ -173,7 +173,7 @@ export default function TestimonialCarousel() {
           transition={{ duration: 0.3 }}
           className="flex flex-col items-center"
         >
-          <h4 className="mb-1 text-[36px] font-semibold text-[#F1F2F4] leading-[40px] md:leading-normal" style={{ fontFamily: 'Sora, sans-serif' }}>
+          <h4 className="mb-1 text-[28px] md:text-[36px] font-semibold text-[#F1F2F4] leading-[40px] md:leading-normal" style={{ fontFamily: 'Sora, sans-serif' }}>
             {testimonials[activeIndex].name}
           </h4>
           <p className="text-[#F1F2F4] text-[20px] mb-8">

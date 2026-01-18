@@ -82,7 +82,7 @@ export default function FAQSection() {
 
       {/* ================= MOBILE HEADER ================= */}
       <div className="md:hidden flex flex-col items-center mb-10 relative">
-        <h2 className="text-3xl font-bold text-white mb-6">
+        <h2 className="text-[28px] font-bold text-white mb-6">
           FAQs
         </h2>
 
@@ -97,7 +97,7 @@ export default function FAQSection() {
           </button>
 
           {/* Active Tab */}
-          <span className="text-lg font-medium text-white capitalize">
+          <span className="text-[20px] font-medium text-white capitalize">
             {activeFAQTab}
           </span>
 
@@ -175,7 +175,7 @@ export default function FAQSection() {
                 onClick={() => setOpenFaq(openFaq === index ? null : index)}
                 className={`w-full text-left transition-all duration-300 ${openFaq === index ? "py-4" : "py-8"}`}
               >
-                <h3 className="text-[16px] md:text-xl font-bold leading-7 md:leading-10 text-[#F1F2F4]" style={{ fontFamily: 'Sora, sans-serif' }}>
+                <h3 className="text-[16px] md:text-xl font-bold leading-6 md:leading-10 text-[#F1F2F4]" style={{ fontFamily: 'Sora, sans-serif' }}>
                   {faq.question}
                 </h3>
               </button>
@@ -184,7 +184,7 @@ export default function FAQSection() {
                 className={`overflow-hidden transition-all duration-300 ${openFaq === index ? "max-h-[500px] pb-8 opacity-100" : "max-h-0 opacity-0"
                   }`}
               >
-                <p className="text-sm md:text-base text-[#D5D7DD] leading-6">
+                <p className="text-[16px] md:text-base text-[#D5D7DD] leading-6">
                   {faq.answer}
                 </p>
               </div>

@@ -38,7 +38,7 @@ const ContactFooter: React.FC<HeroSectionProps> = ({
           position: relative;
           max-width: 1280px;
           margin: 0 auto;
-          padding: 48px 24px 8px 24px;
+          padding: 0px 24px 8px 24px;
         }
 
         @media (min-width: 769px) {

@@ -24,11 +24,11 @@ export default function EvidenceOfImpact() {
 
   return (
     /* Section extends full width, no horizontal overflow hidden on section itself */
-    <section className="w-full pb-24 pt-14">
+    <section className="w-full pb-24 pt-0 md:pt-14">
 
       {/* Static Heading Area - aligned with site content */}
       <div className="px-6 md:px-[180px] flex flex-col md:flex-row justify-center items-center md:items-end mb-12 gap-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-white text-center" style={{ fontFamily: 'Sora, sans-serif' }}>Evidence Of Impact</h2>
+        <h2 className="text-[28px] md:text-4xl font-bold text-white text-center" style={{ fontFamily: 'Sora, sans-serif' }}>Evidence Of Impact</h2>
 
         {/* Mobile-only Explore button from image 1 */}
         {/* <button className="md:hidden w-full bg-[#1A1B1E] border border-zinc-800 px-6 py-3 rounded-full text-sm text-gray-300 flex items-center justify-center gap-2">
