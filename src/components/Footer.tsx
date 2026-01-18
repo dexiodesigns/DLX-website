@@ -44,6 +44,15 @@ export default function Footer() {
   const socialLinks = [
     {
       icon: (
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fillRule="evenodd" clipRule="evenodd" d="M8 0C4.68629 0 2 2.68629 2 6C2 10.5 8 16 8 16C8 16 14 10.5 14 6C14 2.68629 11.3137 0 8 0ZM8 8C9.10457 8 10 7.10457 10 6C10 4.89543 9.10457 4 8 4C6.89543 4 6 4.89543 6 6C6 7.10457 6.89543 8 8 8Z" fill="#D5D7DD" />
+        </svg>
+      ),
+      href: "https://maps.app.goo.gl/zwexAE6B83mEUBU99",
+      label: "Location"
+    },
+    {
+      icon: (
         <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fillRule="evenodd" clipRule="evenodd" d="M3.66911 1.75504C3.66911 2.71183 2.9406 3.48613 1.80134 3.48613C0.706469 3.48613 -0.0220367 2.71183 0.000508903 1.75504C-0.0220367 0.751758 0.706452 0 1.82317 0C2.94058 0 3.64727 0.751758 3.66911 1.75504ZM0.092104 15.9983V4.85367H3.55567V15.9976H0.092104V15.9983Z" fill="#D5D7DD" />
           <path fillRule="evenodd" clipRule="evenodd" d="M6.33159 8.41077C6.33159 7.02068 6.28579 5.83562 6.23999 4.85558H9.24842L9.40834 6.38236H9.47669C9.93254 5.67569 11.0718 4.60547 12.9177 4.60547C15.1962 4.60547 16.9055 6.10969 16.9055 9.3901V16.0002H13.4419V9.8241C13.4419 8.38752 12.941 7.40818 11.6876 7.40818C10.7301 7.40818 10.1608 8.06906 9.93325 8.70668C9.84166 8.93496 9.79657 9.25341 9.79657 9.57328V16.0002H6.33298V8.41077H6.33159Z" fill="#D5D7DD" />
@@ -147,6 +156,7 @@ export default function Footer() {
               <li key={index}>
                 <Link
                   to={link.href}
+                  onClick={() => window.scrollTo(0, 0)}
                   className="font-['Inter'] font-normal text-[14px] leading-[20px] tracking-[0%] hover:text-white transition-colors"
                   style={{
                     color: '#D5D7DD',
@@ -189,6 +199,7 @@ export default function Footer() {
                   <li key={index}>
                     <Link
                       to={link.href}
+                      onClick={() => window.scrollTo(0, 0)}
                       className="font-['Inter'] font-normal text-[14px] leading-[20px] tracking-[0%] hover:text-white transition-colors"
                       style={{
                         color: '#D5D7DD',
@@ -278,6 +289,7 @@ export default function Footer() {
                     ) : (
                       <Link
                         to={link.href}
+                        onClick={() => window.scrollTo(0, 0)}
                         className="font-['Inter'] font-normal text-[14px] leading-[20px] tracking-[0%] hover:text-white transition-colors"
                         style={{
                           color: '#D5D7DD',
@@ -384,7 +396,7 @@ export default function Footer() {
       </div>
 
       {/* Mobile Layout */}
-      <div className="md:hidden px-6 pb-8 md:py-8">
+      <div className="md:hidden px-6 pt-16 pb-8 md:py-8">
         {/* Accordion Sections */}
         <div className="mb-8">
           <MobileAccordion
@@ -472,6 +484,7 @@ export default function Footer() {
       </div>
 
       {/* Copyright - Both Desktop and Mobile */}
+      <div className="border-t border-zinc-800 mx-6 md:mx-[180px]" />
       <div
         className="mx-auto mb-8 md:mb-0"
         style={{
@@ -493,7 +506,7 @@ export default function Footer() {
             opacity: 1
           }}
         >
-          Copyright © 2025 Dexio LabX Private Limited. All rights reserved.
+          Copyright © 2026 Dexio LabX Private Limited. All rights reserved.
         </p>
       </div>
     </footer>

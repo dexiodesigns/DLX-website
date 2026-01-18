@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ArrowRight, ChevronDown, Check, Loader2 } from "lucide-react";
 import ContactPageFooter2 from "../components/ContactPageFooter2";
 
@@ -6,6 +6,10 @@ import ContactPageFooter2 from "../components/ContactPageFooter2";
 const WEB3FORMS_ACCESS_KEY = "1e8f0c25-0988-4ad4-b3e3-00e34c559366";
 
 export default function Contact() {
+  // Scroll to top when page mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [formData, setFormData] = useState({
     fullName: '',
     workEmail: '',

@@ -114,7 +114,7 @@ export default function Navbar() {
     },
     {
       icon: <svg width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.153629 9.64625C0.0434624 9.53592 -0.00745429 9.417 0.000879043 9.2895C0.00921238 9.162 0.0601291 9.05142 0.153629 8.95775L4.96713 4.0885C5.27363 3.76933 5.65246 3.60975 6.10363 3.60975C6.55496 3.60975 6.94021 3.76933 7.25938 4.0885L9.68063 6.5155C9.79596 6.63083 9.93696 6.6885 10.1036 6.6885C10.2703 6.6885 10.4178 6.63083 10.5461 6.5155L16.1306 1H13.2999C13.1575 1 13.0386 0.952251 12.9431 0.856751C12.8476 0.761251 12.7999 0.642333 12.7999 0.5C12.7999 0.357667 12.8476 0.238751 12.9431 0.143251C13.0386 0.047751 13.1575 0 13.2999 0H16.9921C17.2243 0 17.417 0.076667 17.5701 0.23C17.7233 0.383167 17.7999 0.57575 17.7999 0.80775V4.5C17.7999 4.64233 17.7521 4.76125 17.6566 4.85675C17.5611 4.95225 17.4422 5 17.2999 5C17.1575 5 17.0386 4.9555 16.9431 4.8665C16.8476 4.77733 16.7999 4.66158 16.7999 4.51925V1.70775L11.2404 7.2675C10.9339 7.57383 10.555 7.727 10.1036 7.727C9.65246 7.727 9.27363 7.57383 8.96713 7.2675L6.54613 4.84625C6.43063 4.73092 6.28313 4.67325 6.10363 4.67325C5.92413 4.67325 5.77671 4.73092 5.66138 4.84625L0.861379 9.64625C0.755046 9.75258 0.637129 9.80575 0.507629 9.80575C0.378129 9.80575 0.260129 9.75258 0.153629 9.64625Z" fill="#F1F2F4" /></svg>,
-      title: "Growth-Focused Marketing Design",
+      title: "Marketing Designs",
       slug: "growth-focused-marketing-design",
       desc: "High-impact creatives crafted to drive attention, engagement, and conversions."
     },
@@ -205,7 +205,7 @@ export default function Navbar() {
       {isServicesOpen && (
         <div
           ref={dropdownRef}
-          className="hidden md:flex fixed top-[76px] left-0 w-full z-40 bg-[#22252A]/60 backdrop-blur-md text-white font-['Inter'] border-t border-white/10 justify-center animate-slide-down-bounce"
+          className="hidden md:flex fixed top-[76px] left-0 w-full z-50 bg-[#22252A]/60 backdrop-blur-md text-white font-['Inter'] border-t border-white/10 justify-center animate-slide-down-bounce"
         >
           <div
             className="px-6 md:px-[200px] py-6 h-full w-full grid grid-cols-3 gap-x-12 overflow-y-auto"

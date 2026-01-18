@@ -1,10 +1,13 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Plus } from "../assets/HomeIcons/Plus";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function FAQSection() {
   const [activeFAQTab, setActiveFAQTab] = useState("Design Company");
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const tabRefs = useRef<{ [key: string]: HTMLButtonElement | null }>({});
+  const [tabDimensions, setTabDimensions] = useState({ left: 0, width: 0 });
 
   const faqData: Record<string, { question: string; answer: string }[]> = {
     "Design Company": [
@@ -43,6 +46,22 @@ export default function FAQSection() {
   const tabs = Object.keys(faqData);
   const currentIndex = tabs.indexOf(activeFAQTab);
   const currentFaqs = faqData[activeFAQTab] || [];
+
+  // Update sliding indicator position when active tab changes
+  useEffect(() => {
+    const activeButton = tabRefs.current[activeFAQTab];
+    if (activeButton) {
+      const container = activeButton.parentElement;
+      if (container) {
+        const containerRect = container.getBoundingClientRect();
+        const buttonRect = activeButton.getBoundingClientRect();
+        setTabDimensions({
+          left: buttonRect.left - containerRect.left,
+          width: buttonRect.width,
+        });
+      }
+    }
+  }, [activeFAQTab]);
 
   const goPrev = () => {
     if (currentIndex > 0) {
@@ -100,21 +119,39 @@ export default function FAQSection() {
 
       <div className="hidden md:flex justify-center mb-[24px] min-h-[64px]">
         <div
-          className="p-2 rounded-[24px] flex items-center"
+          className="p-2 rounded-[24px] flex items-center relative"
           style={{ backgroundColor: 'rgb(26 27 30 / 66%)' }}
         >
+          {/* Sliding Background Indicator */}
+          <motion.div
+            className="absolute rounded-[20px] z-0 bg-white shadow-md"
+            animate={{
+              left: tabDimensions.left,
+              width: tabDimensions.width,
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 400,
+              damping: 30,
+            }}
+            style={{
+              height: 'calc(100% - 16px)',
+              top: '8px',
+            }}
+          />
+
           {tabs.map((tab) => (
             <button
               key={tab}
+              ref={(el) => { tabRefs.current[tab] = el; }}
               onClick={() => {
                 setActiveFAQTab(tab);
                 setOpenFaq(0);
               }}
-              className={`px-8 py-2.5 rounded-[20px] transition-all duration-300 text-base font-medium capitalize whitespace-nowrap ${
-                activeFAQTab === tab
-                  ? "bg-white text-black shadow-md"
-                  : "text-white hover:bg-zinc-800/50"
-              }`}
+              className={`px-8 py-2.5 rounded-[20px] text-base font-medium capitalize whitespace-nowrap relative z-10 transition-colors duration-300 ${activeFAQTab === tab
+                ? "text-black"
+                : "text-white hover:text-white/80"
+                }`}
             >
               {tab}
             </button>
@@ -126,7 +163,10 @@ export default function FAQSection() {
       <div className="max-w-4xl mx-auto">
         {currentFaqs.map((faq, index) => (
           <div key={`${activeFAQTab}-${index}`} className="flex gap-3 md:gap-4">
-            <div className={`transition-all duration-300 ${openFaq === index ? "pt-4 md:pt-5" : "pt-8 md:pt-9"}`}>
+            <div
+              className={`transition-all duration-300 cursor-pointer ${openFaq === index ? "pt-4 md:pt-5" : "pt-8 md:pt-9"}`}
+              onClick={() => setOpenFaq(openFaq === index ? null : index)}
+            >
               <Plus />
             </div>
 
@@ -135,15 +175,14 @@ export default function FAQSection() {
                 onClick={() => setOpenFaq(openFaq === index ? null : index)}
                 className={`w-full text-left transition-all duration-300 ${openFaq === index ? "py-4" : "py-8"}`}
               >
-                <h3 className="text-[16px] md:text-xl font-bold leading-7 md:leading-10 text-[#F1F2F4]" style={{ fontFamily: 'Sora, sans-serif'}}>
+                <h3 className="text-[16px] md:text-xl font-bold leading-7 md:leading-10 text-[#F1F2F4]" style={{ fontFamily: 'Sora, sans-serif' }}>
                   {faq.question}
                 </h3>
               </button>
 
               <div
-                className={`overflow-hidden transition-all duration-300 ${
-                  openFaq === index ? "max-h-[500px] pb-8 opacity-100" : "max-h-0 opacity-0"
-                }`}
+                className={`overflow-hidden transition-all duration-300 ${openFaq === index ? "max-h-[500px] pb-8 opacity-100" : "max-h-0 opacity-0"
+                  }`}
               >
                 <p className="text-sm md:text-base text-[#D5D7DD] leading-6">
                   {faq.answer}
