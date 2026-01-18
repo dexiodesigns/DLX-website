@@ -36,19 +36,20 @@ const ContactFooter: React.FC<HeroSectionProps> = ({
 
         .hero-content-box {
           position: relative;
-          padding: 200px;
-          padding-top: 48px;
-          padding-bottom: 8px;
+          max-width: 1280px;
+          margin: 0 auto;
+          padding: 48px 24px 8px 24px;
+        }
+
+        @media (min-width: 769px) {
+          .hero-content-box {
+            padding: 48px 24px 8px 24px;
+          }
         }
 
         @media (max-width: 768px) {
           .hero-container {
             height: 450px;
-          }
-          .hero-content-box {
-            padding: 16px;
-            padding-top: 32px;
-            padding-bottom: 48px;
           }
         }
 
@@ -129,7 +130,7 @@ const ContactFooter: React.FC<HeroSectionProps> = ({
           padding: 72px;
           display: flex;
           flex-direction: column;
-          align-items: center;
+          align-items: flex-start;
           gap: 24px;
 
           #content-box-subtitle {
@@ -169,14 +170,14 @@ const ContactFooter: React.FC<HeroSectionProps> = ({
               {title}
             </p>
 
-            <div className="w-full flex flex-col md:flex-row  items-start gap-8">
-              <h1 className="text-white text-2xl md:text-3xl font-bold leading-snug md:text-left md:max-w-50 md:ml-20" id="content-box-subtitle">
+            <div className="w-full flex flex-col md:flex-row items-start md:items-center gap-8 md:justify-between">
+              <h1 className="text-white text-2xl md:text-3xl font-bold leading-snug md:text-left" id="content-box-subtitle">
                 {subtitle}
               </h1>
 
               <button
                 onClick={() => navigate('/contact')}
-                className="group relative px-6 py-4 rounded-[16px] md:rounded-[24px] text-white font-semibold text-base md:text-lg transition-all duration-300 hover:shadow-xl hover:scale-105 flex items-center justify-center gap-3 md:ml-[100px]"
+                className="group relative px-6 py-4 rounded-[16px] md:rounded-[24px] text-white font-semibold text-base md:text-lg transition-all duration-300 hover:shadow-xl hover:scale-105 flex items-center justify-center gap-3 flex-shrink-0"
                 style={{ background: 'rgb(172 78 72)' }}
               >
                 {buttonText}

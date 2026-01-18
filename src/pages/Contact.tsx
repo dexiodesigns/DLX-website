@@ -1,6 +1,9 @@
 import React, { useState } from "react";
-import { ArrowRight, ChevronDown, Check } from "lucide-react";
+import { ArrowRight, ChevronDown, Check, Loader2 } from "lucide-react";
 import ContactPageFooter2 from "../components/ContactPageFooter2";
+
+// Web3Forms Access Key - Replace with your actual key from web3forms.com
+const WEB3FORMS_ACCESS_KEY = "1e8f0c25-0988-4ad4-b3e3-00e34c559366";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -11,6 +14,8 @@ export default function Contact() {
     challenge: '',
   });
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const areaOptions = [
     'Product Design',
@@ -25,6 +30,8 @@ export default function Contact() {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
+    // Reset status when user starts typing again
+    if (submitStatus !== 'idle') setSubmitStatus('idle');
   };
 
   const handleSelectOption = (option: string) => {
@@ -34,47 +41,61 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
     try {
-      // Create email body with form data
-      const emailBody = `
-        New Contact Form Submission:
-
-        Full Name: ${formData.fullName}
-        Work Email: ${formData.workEmail}
-        Company Name: ${formData.companyName}
-        Area of Focus: ${formData.areaOfFocus}
-
-        Challenge/Goal:
-        ${formData.challenge}
-
-        Submitted at: ${new Date().toLocaleString()}
-      `.trim();
-
-      // Create mailto link
-      const mailtoLink = `mailto:Sales@dexiodesigns.com?subject=New Contact Form Submission from ${formData.fullName}&body=${encodeURIComponent(emailBody)}`;
-      
-      // Open default email client
-      window.open(mailtoLink);
-      
-      // Reset form after submission
-      setFormData({
-        fullName: '',
-        workEmail: '',
-        companyName: '',
-        areaOfFocus: '',
-        challenge: '',
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: `New Contact Form Submission from ${formData.fullName}`,
+          from_name: formData.fullName,
+          email: formData.workEmail,
+          // Form fields
+          name: formData.fullName,
+          company: formData.companyName,
+          area_of_focus: formData.areaOfFocus,
+          message: formData.challenge,
+          // Enable auto-reply to user
+          autoresponse: true,
+          autoresponse_subject: "Thanks for reaching out! — Dexio Designs",
+          autoresponse_from: "Dexio Designs",
+          autoresponse_message: `Hi ${formData.fullName},\n\nThank you for reaching out to Dexio Designs! We've received your message and will respond with a clear, actionable recommendation within 24 hours.\n\nBest regards,\nThe Dexio Team`,
+        }),
       });
-      
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitStatus('success');
+        // Reset form after successful submission
+        setFormData({
+          fullName: '',
+          workEmail: '',
+          companyName: '',
+          areaOfFocus: '',
+          challenge: '',
+        });
+      } else {
+        setSubmitStatus('error');
+        console.error('Form submission failed:', result);
+      }
     } catch (error) {
-      console.error('Error preparing email:', error);
+      setSubmitStatus('error');
+      console.error('Error submitting form:', error);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
     <main className="bg-[#0B0C0E] text-white min-h-screen font-['Inter']">
       {/* Hero Section */}
-      <section 
+      <section
         className="flex items-center justify-center mx-auto px-5 md:px-0"
         style={{
           maxWidth: '100%',
@@ -84,14 +105,14 @@ export default function Contact() {
           opacity: 1,
         }}
       >
-        <div 
+        <div
           className="flex flex-col items-center text-center w-[335px] md:w-[1280px]"
           style={{
             gap: '12px',
           }}
         >
           {/* Main Heading */}
-          <h1 
+          <h1
             className="w-[335px] md:w-[717px] h-auto md:h-[60px] text-[30px] md:text-[48px] leading-[125%] md:leading-[60px]"
             style={{
               maxWidth: '800px',
@@ -103,7 +124,7 @@ export default function Contact() {
             }}
           >
             Let's Solve the{' '}
-            <span 
+            <span
               className="bg-clip-text text-transparent block md:inline"
               style={{
                 backgroundImage: 'linear-gradient(225deg, #F4DC7C -0.1%, #F06058 39.94%, #4044E8 100%)',
@@ -112,9 +133,9 @@ export default function Contact() {
               Right Problem
             </span>
           </h1>
-          
+
           {/* Subtitle */}
-          <p 
+          <p
             className="w-[335px] md:w-auto text-[14px] md:text-[18px] leading-[150%] md:leading-[28px]"
             style={{
               fontFamily: 'Inter, sans-serif',
@@ -132,7 +153,7 @@ export default function Contact() {
       </section>
 
       {/* Get in Touch Section */}
-      <section 
+      <section
         className="flex items-center justify-center px-6"
         style={{
           width: '100%',
@@ -140,7 +161,7 @@ export default function Contact() {
           WebkitBackdropFilter: 'blur(40px)',
         }}
       >
-        <div 
+        <div
           className="flex flex-col lg:flex-row gap-12 lg:gap-24"
           style={{
             width: '1280px',
@@ -149,7 +170,7 @@ export default function Contact() {
         >
           {/* Left Side - Contact Form */}
           <div className="flex-1" style={{ maxWidth: '720px' }}>
-            <h2 
+            <h2
               className="mb-10"
               style={{
                 fontFamily: 'Sora, sans-serif',
@@ -167,7 +188,7 @@ export default function Contact() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Full Name */}
                 <div>
-                  <label 
+                  <label
                     className="block mb-2"
                     style={{
                       fontFamily: 'Inter, sans-serif',
@@ -199,7 +220,7 @@ export default function Contact() {
 
                 {/* Work Email */}
                 <div>
-                  <label 
+                  <label
                     className="block mb-2"
                     style={{
                       fontFamily: 'Inter, sans-serif',
@@ -232,7 +253,7 @@ export default function Contact() {
 
               {/* Company Name */}
               <div>
-                <label 
+                <label
                   className="block mb-2"
                   style={{
                     fontFamily: 'Inter, sans-serif',
@@ -264,7 +285,7 @@ export default function Contact() {
 
               {/* What are you working on? */}
               <div className="relative">
-                <label 
+                <label
                   className="block mb-2"
                   style={{
                     fontFamily: 'Inter, sans-serif',
@@ -289,15 +310,15 @@ export default function Contact() {
                   }}
                 >
                   {formData.areaOfFocus || 'Select an area of focus'}
-                  <ChevronDown 
-                    size={20} 
+                  <ChevronDown
+                    size={20}
                     className={`transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}
                     style={{ color: 'rgba(255, 255, 255, 0.5)' }}
                   />
                 </button>
-                
+
                 {isDropdownOpen && (
-                  <div 
+                  <div
                     className="absolute top-full left-0 right-0 mt-2 rounded-lg overflow-hidden z-50"
                     style={{
                       backgroundColor: '#1A1D21',
@@ -325,7 +346,7 @@ export default function Contact() {
 
               {/* Describe your challenge or goal */}
               <div>
-                <label 
+                <label
                   className="block mb-2"
                   style={{
                     fontFamily: 'Inter, sans-serif',
@@ -359,7 +380,8 @@ export default function Contact() {
               <div className="pt-4">
                 <button
                   type="submit"
-                  className="flex items-center justify-center transition hover:opacity-90"
+                  disabled={isSubmitting}
+                  className={`flex items-center justify-center transition ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:opacity-90'}`}
                   style={{
                     width: '204px',
                     height: '56px',
@@ -367,7 +389,9 @@ export default function Contact() {
                     paddingLeft: '24px',
                     paddingRight: '24px',
                     borderRadius: '24px',
-                    background: 'linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), linear-gradient(0deg, #F06058, #F06058)',
+                    background: submitStatus === 'success'
+                      ? 'linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), linear-gradient(0deg, #22C55E, #22C55E)'
+                      : 'linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), linear-gradient(0deg, #F06058, #F06058)',
                     color: '#ffffff',
                     fontFamily: 'Inter, sans-serif',
                     fontWeight: 600,
@@ -376,38 +400,85 @@ export default function Contact() {
                     letterSpacing: '0%',
                   }}
                 >
-                  Send It Over
-                  <ArrowRight size={20} />
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 size={20} className="animate-spin" />
+                      Sending...
+                    </>
+                  ) : submitStatus === 'success' ? (
+                    <>
+                      <Check size={20} />
+                      Sent!
+                    </>
+                  ) : (
+                    <>
+                      Send It Over
+                      <ArrowRight size={20} />
+                    </>
+                  )}
                 </button>
               </div>
 
+              {/* Status Messages */}
+              {submitStatus === 'success' && (
+                <p
+                  style={{
+                    fontFamily: 'Inter, sans-serif',
+                    fontWeight: 500,
+                    fontSize: '14px',
+                    lineHeight: '20px',
+                    color: '#22C55E',
+                    marginTop: '16px',
+                  }}
+                >
+                  ✓ Message sent! Check your email for a confirmation. We'll respond within 24 hours.
+                </p>
+              )}
+
+              {submitStatus === 'error' && (
+                <p
+                  style={{
+                    fontFamily: 'Inter, sans-serif',
+                    fontWeight: 500,
+                    fontSize: '14px',
+                    lineHeight: '20px',
+                    color: '#F06058',
+                    marginTop: '16px',
+                  }}
+                >
+                  Something went wrong. Please try again or email us directly at sales@dexiodesigns.com
+                </p>
+              )}
+
               {/* Note */}
-              <p 
-                style={{
-                  fontFamily: 'Inter, sans-serif',
-                  fontWeight: 400,
-                  fontSize: '14px',
-                  lineHeight: '20px',
-                  color: 'rgba(255, 255, 255, 0.5)',
-                  marginTop: '16px',
-                }}
-              >
-                No generic calendar links. Just a direct response with a clear next step.
-              </p>
+              {submitStatus === 'idle' && (
+                <p
+                  style={{
+                    fontFamily: 'Inter, sans-serif',
+                    fontWeight: 400,
+                    fontSize: '14px',
+                    lineHeight: '20px',
+                    color: 'rgba(255, 255, 255, 0.5)',
+                    marginTop: '16px',
+                  }}
+                >
+                  No generic calendar links. Just a direct response with a clear next step.
+                </p>
+              )}
             </form>
           </div>
 
           {/* Right Side - Info Cards */}
           <div className="flex flex-col gap-6" style={{ width: '480px', maxWidth: '100%' }}>
             {/* What to expect? Card */}
-            <div 
+            <div
               className="rounded-2xl p-8"
               style={{
                 backgroundColor: '#131517',
                 border: '1px solid rgba(255, 255, 255, 0.05)',
               }}
             >
-              <h3 
+              <h3
                 className="mb-8"
                 style={{
                   fontFamily: 'Sora, sans-serif',
@@ -423,7 +494,7 @@ export default function Contact() {
               {/* Steps with connecting line */}
               <div className="relative">
                 {/* Connecting Line */}
-                <div 
+                <div
                   className="absolute left-[18px] top-[36px]"
                   style={{
                     width: '2px',
@@ -435,7 +506,7 @@ export default function Contact() {
 
                 {/* Step 1 */}
                 <div className="flex gap-5 mb-8">
-                  <div 
+                  <div
                     className="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center"
                     style={{
                       backgroundColor: '#22D3EE',
@@ -448,7 +519,7 @@ export default function Contact() {
                     1
                   </div>
                   <div>
-                    <h4 
+                    <h4
                       className="mb-1"
                       style={{
                         fontFamily: 'Inter, sans-serif',
@@ -460,7 +531,7 @@ export default function Contact() {
                     >
                       We Review
                     </h4>
-                    <p 
+                    <p
                       style={{
                         fontFamily: 'Inter, sans-serif',
                         fontWeight: 400,
@@ -476,7 +547,7 @@ export default function Contact() {
 
                 {/* Step 2 */}
                 <div className="flex gap-5 mb-8">
-                  <div 
+                  <div
                     className="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center"
                     style={{
                       backgroundColor: '#22D3EE',
@@ -489,7 +560,7 @@ export default function Contact() {
                     2
                   </div>
                   <div>
-                    <h4 
+                    <h4
                       className="mb-1"
                       style={{
                         fontFamily: 'Inter, sans-serif',
@@ -501,7 +572,7 @@ export default function Contact() {
                     >
                       We Respond
                     </h4>
-                    <p 
+                    <p
                       style={{
                         fontFamily: 'Inter, sans-serif',
                         fontWeight: 400,
@@ -517,7 +588,7 @@ export default function Contact() {
 
                 {/* Step 3 */}
                 <div className="flex gap-5">
-                  <div 
+                  <div
                     className="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center"
                     style={{
                       backgroundColor: '#22D3EE',
@@ -530,7 +601,7 @@ export default function Contact() {
                     3
                   </div>
                   <div>
-                    <h4 
+                    <h4
                       className="mb-1"
                       style={{
                         fontFamily: 'Inter, sans-serif',
@@ -542,7 +613,7 @@ export default function Contact() {
                     >
                       We Decide Together
                     </h4>
-                    <p 
+                    <p
                       style={{
                         fontFamily: 'Inter, sans-serif',
                         fontWeight: 400,
@@ -559,14 +630,14 @@ export default function Contact() {
             </div>
 
             {/* We're a Good Fit If You... Card */}
-            <div 
+            <div
               className="rounded-2xl p-8"
               style={{
                 backgroundColor: '#131517',
                 border: '1px solid rgba(255, 255, 255, 0.05)',
               }}
             >
-              <h3 
+              <h3
                 className="mb-6"
                 style={{
                   fontFamily: 'Sora, sans-serif',
@@ -586,13 +657,13 @@ export default function Contact() {
                   'Want strategic thinking, not just execution.',
                 ].map((item, index) => (
                   <li key={index} className="flex items-center gap-3">
-                    <div 
+                    <div
                       className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center"
                       style={{ backgroundColor: '#F06058' }}
                     >
                       <Check size={14} color="#ffffff" strokeWidth={3} />
                     </div>
-                    <span 
+                    <span
                       style={{
                         fontFamily: 'Inter, sans-serif',
                         fontWeight: 400,
@@ -612,7 +683,7 @@ export default function Contact() {
       </section>
 
       {/* Reach Us Directly Section */}
-     <ContactPageFooter2 />
+      <ContactPageFooter2 />
     </main>
   );
 }

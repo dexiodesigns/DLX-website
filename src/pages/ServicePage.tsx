@@ -70,11 +70,11 @@ export default function ServicePage() {
   return (
     <main className="bg-[#0B0C0E] text-white min-h-screen pt-[100px] md:pt-[100px] font-['Inter']">
       {/* Sticky Service Navigation - Hidden on mobile, visible on desktop */}
-      <div 
+      <div
         className="hidden md:flex sticky top-0 left-0 right-0 z-40 justify-center px-6 py-4"
         style={{ backgroundColor: '#0B0C0E' }}
       >
-        <div 
+        <div
           className="flex items-center justify-center bg-zinc-900/80 border border-zinc-800"
           style={{
             maxWidth: '1110px',
@@ -88,11 +88,10 @@ export default function ServicePage() {
             <Link
               key={item.slug}
               to={item.href}
-              className={`px-6 py-3 rounded-[20px] text-sm font-medium transition-all whitespace-nowrap ${
-                item.slug === slug
+              className={`px-6 py-3 rounded-[20px] text-sm font-medium transition-all whitespace-nowrap ${item.slug === slug
                   ? "bg-white text-black"
                   : "bg-transparent text-zinc-400 hover:text-white"
-              } ${index === 0 ? 'ml-2' : ''} ${index === serviceNavItems.length - 1 ? 'mr-2' : ''}`}
+                } ${index === 0 ? 'ml-2' : ''} ${index === serviceNavItems.length - 1 ? 'mr-2' : ''}`}
               style={{
                 height: '48px',
                 display: 'flex',
@@ -107,19 +106,19 @@ export default function ServicePage() {
       </div>
 
       <section className="max-w-4xl mx-auto px-6 text-center py-[44px] md:py-12">
-        <h1 
+        <h1
           className="text-[36px] leading-[44px] md:text-[48px] md:leading-[60px] font-bold mb-2 md:mb-4"
           style={{ fontFamily: 'Sora, sans-serif' }}
         >
           {service.title}
         </h1>
-        <p 
+        <p
           className={`text-[28px] leading-[36px] md:text-[32px] md:leading-[40px] font-semibold mb-4 md:mb-4 bg-gradient-to-r ${service.subtitleGradient} bg-clip-text text-transparent`}
           style={{ fontFamily: 'Sora, sans-serif' }}
         >
           {service.subtitle}
         </p>
-        <p 
+        <p
           className="text-[16px] leading-[24px] md:text-lg text-zinc-400 max-w-2xl mx-auto mb-[36px] md:mb-8 px-2 md:px-0"
           style={{ fontFamily: 'Inter, sans-serif' }}
         >
@@ -135,8 +134,8 @@ export default function ServicePage() {
         </Link>
       </section>
 
-      <section className="max-w-5xl mx-auto px-6 py-[44px] md:py-16">
-        <h2 
+      <section className="max-w-[1280px] mx-auto px-6 py-[44px] md:py-16">
+        <h2
           className="text-[28px] leading-[36px] md:text-[36px] md:leading-[44px] font-bold text-center mb-4 md:mb-12"
           style={{ fontFamily: 'Sora, sans-serif' }}
         >
@@ -149,13 +148,13 @@ export default function ServicePage() {
               className="bg-zinc-900/80 border border-zinc-800/50 rounded-[24px] md:rounded-2xl p-6 md:p-8 flex items-center justify-between"
             >
               <div>
-                <p 
+                <p
                   className="text-[24px] md:text-[36px] leading-[48px] md:text-4xl font-bold text-white mb-0 md:mb-3"
                   style={{ fontFamily: 'Sora, sans-serif' }}
                 >
                   {stat.value}
                 </p>
-                <p 
+                <p
                   className="text-[14px] leading-[24px] md:text-[20px] text-[#F1F2F4]-400"
                   style={{ fontFamily: 'Inter, sans-serif' }}
                 >
@@ -164,9 +163,9 @@ export default function ServicePage() {
               </div>
               <div className="text-[#6366f1] flex justify-start items-start mb-[22px] md:mb-[38px]" style={{ width: '60px', height: '60px' }}>
                 {stat.customSvg ? (
-                  <div 
+                  <div
                     className="w-full h-full [&>svg]:w-full [&>svg]:h-full"
-                    dangerouslySetInnerHTML={{ __html: stat.customSvg }} 
+                    dangerouslySetInnerHTML={{ __html: stat.customSvg }}
                   />
                 ) : (
                   <div className="[&>svg]:w-[60px] [&>svg]:h-[60px]">
@@ -179,14 +178,14 @@ export default function ServicePage() {
         </div>
       </section>
 
-      <section 
+      <section
         className="py-12 md:py-16"
         style={{
           background: 'linear-gradient(0deg, rgba(11, 12, 14, 0.3), rgba(11, 12, 14, 0.3)), linear-gradient(0deg, #4044E8, #4044E8)',
         }}
       >
         <div className="max-w-5xl mx-auto px-6">
-          <h2 
+          <h2
             className="text-[28px] leading-[36px] md:text-[36px] md:leading-[44px] font-bold text-center mb-10 md:mb-12"
             style={{ fontFamily: 'Sora, sans-serif' }}
           >
@@ -199,10 +198,10 @@ export default function ServicePage() {
                 className={`relative text-center p-4 md:p-8 ${
                   // Right border for first two columns on desktop
                   index % 3 !== 2 ? 'md:border-r md:border-white/15' : ''
-                } ${
+                  } ${
                   // Bottom border for first row on desktop
                   index < 3 ? 'md:border-b md:border-white/15' : ''
-                }`}
+                  }`}
               >
                 <div className="flex justify-center items-center text-cyan-300">
                   {challenge.customSvg ? (
@@ -213,13 +212,13 @@ export default function ServicePage() {
                     </div>
                   )}
                 </div>
-                <h3 
+                <h3
                   className="text-[18px] leading-[26px] md:text-lg font-semibold text-white mb-2"
                   style={{ fontFamily: 'Sora, sans-serif' }}
                 >
                   {challenge.title}
                 </h3>
-                <p 
+                <p
                   className="text-[14px] leading-[22px] md:text-sm text-blue-100/80"
                   style={{ fontFamily: 'Inter, sans-serif' }}
                 >
@@ -233,15 +232,15 @@ export default function ServicePage() {
 
       <section className="max-w-5xl mx-auto px-6 pt-16 pb-8 md:pt-24 md:pb-16">
         <div className="text-left md:text-center mb-8 md:mb-12">
-          <h2 
+          <h2
             className="text-[28px] leading-[36px] md:text-[36px] md:leading-[44px] font-bold mb-3 md:mb-4"
             style={{ fontFamily: 'Sora, sans-serif' }}
           >
             {service.processHeading}
           </h2>
-          <p 
+          <p
             className="text-[14px] leading-[150%] max-w-2xl md:mx-auto"
-            style={{ 
+            style={{
               fontFamily: 'Inter, sans-serif',
               fontWeight: 400,
               color: '#D5D7DD',
@@ -250,9 +249,9 @@ export default function ServicePage() {
             {service.processSubheading}
           </p>
           {/* Structured & Outcome-Focused Approach - Both views */}
-          <p 
+          <p
             className="text-[20px] leading-[28px] md:text-[24px] md:leading-[36px] mt-6 md:mt-8"
-            style={{ 
+            style={{
               fontFamily: 'Sora, sans-serif',
               fontWeight: 400,
               textTransform: 'capitalize',
@@ -268,39 +267,39 @@ export default function ServicePage() {
           {/* Timeline Line with Icons */}
           <div className="relative flex items-center justify-between mb-8" style={{ width: '100%' }}>
             {/* Continuous Line Behind Icons */}
-            <div 
+            <div
               className="absolute left-0 right-0 top-1/2 -translate-y-1/2"
-              style={{ 
-                height: '2px', 
+              style={{
+                height: '2px',
                 background: 'linear-gradient(0deg, rgba(240, 96, 88, 0.6), rgba(240, 96, 88, 0.6)), linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15))',
-              }} 
+              }}
             />
-            
+
             {/* Circle Icon (outline) */}
-            <div 
+            <div
               className="w-6 h-6 rounded-full flex-shrink-0 relative z-10"
-              style={{ 
+              style={{
                 border: '1.5px solid #F06058',
                 backgroundColor: '#0B0C0E',
               }}
             />
-            
+
             {/* Triangle Icon 1 */}
             <div className="flex-shrink-0 relative z-10">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 4L20 12L6 20V4Z" stroke="#F06058" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="#0B0C0E"/>
+                <path d="M6 4L20 12L6 20V4Z" stroke="#F06058" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="#0B0C0E" />
               </svg>
             </div>
-            
+
             {/* Triangle Icon 2 */}
             <div className="flex-shrink-0 relative z-10">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 4L20 12L6 20V4Z" stroke="#F06058" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="#0B0C0E"/>
+                <path d="M6 4L20 12L6 20V4Z" stroke="#F06058" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="#0B0C0E" />
               </svg>
             </div>
-            
+
             {/* Filled Circle Icon */}
-            <div 
+            <div
               className="w-6 h-6 rounded-full flex-shrink-0 relative z-10"
               style={{ backgroundColor: '#F06058' }}
             />
@@ -310,7 +309,7 @@ export default function ServicePage() {
           <div className="flex items-start justify-between w-full mb-12">
             {service.processSteps.map((step, index) => (
               <div key={index} className="flex flex-col items-center text-center" style={{ width: '280px' }}>
-                <h3 
+                <h3
                   className="mb-3"
                   style={{
                     fontFamily: 'Sora, sans-serif',
@@ -322,7 +321,7 @@ export default function ServicePage() {
                 >
                   {step.title}
                 </h3>
-                <p 
+                <p
                   style={{
                     fontFamily: 'Inter, sans-serif',
                     fontWeight: 400,
@@ -347,30 +346,30 @@ export default function ServicePage() {
                 <div className="relative flex flex-col items-center">
                   {/* Icon */}
                   {index === 0 ? (
-                    <div 
+                    <div
                       className="w-6 h-6 rounded-full flex-shrink-0 relative z-10"
-                      style={{ 
+                      style={{
                         border: '1.5px solid #F06058',
                         backgroundColor: '#0B0C0E',
                       }}
                     />
                   ) : index === service.processSteps.length - 1 ? (
-                    <div 
+                    <div
                       className="w-6 h-6 rounded-full flex-shrink-0 relative z-10"
                       style={{ backgroundColor: '#F06058' }}
                     />
                   ) : (
                     <div className="flex-shrink-0 relative z-10">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4 6L12 20L20 6H4Z" stroke="#F06058" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="#0B0C0E"/>
+                        <path d="M4 6L12 20L20 6H4Z" stroke="#F06058" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="#0B0C0E" />
                       </svg>
                     </div>
                   )}
                   {/* Connecting Line */}
                   {index < service.processSteps.length - 1 && (
-                    <div 
+                    <div
                       className="absolute top-6 left-1/2 -translate-x-1/2 w-[2px]"
-                      style={{ 
+                      style={{
                         height: '100px',
                         background: 'linear-gradient(180deg, rgba(240, 96, 88, 0.6), rgba(240, 96, 88, 0.6)), linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15))',
                       }}
@@ -379,13 +378,13 @@ export default function ServicePage() {
                 </div>
                 {/* Content */}
                 <div className="flex-1 pb-4">
-                  <h3 
+                  <h3
                     className="text-[18px] leading-[26px] font-semibold text-white mb-2"
                     style={{ fontFamily: 'Sora, sans-serif' }}
                   >
                     {step.title}
                   </h3>
-                  <p 
+                  <p
                     className="text-[14px] leading-[20px] text-zinc-400"
                     style={{ fontFamily: 'Inter, sans-serif' }}
                   >
@@ -399,13 +398,13 @@ export default function ServicePage() {
       </section>
 
       <section className="w-full px-4 md:px-6 pt-12 pb-20 flex justify-center">
-        <div 
+        <div
           className="relative text-left md:text-center flex flex-col items-start md:items-center justify-center w-[335px] md:w-full md:max-w-[1280px] min-h-[258px] md:min-h-[310px] gap-6 rounded-[24px] md:rounded-[36px] p-6 md:p-[72px]"
           style={{
             background: 'linear-gradient(180deg, rgba(11, 12, 14, 0.5) 0%, rgba(11, 12, 14, 0) 100%)',
           }}
         >
-          <div 
+          <div
             className="absolute inset-0 rounded-[24px] md:rounded-[36px]"
             style={{
               padding: '2px',
@@ -415,10 +414,10 @@ export default function ServicePage() {
               maskComposite: 'exclude',
             }}
           />
-          
-          <h2 
+
+          <h2
             className="relative z-10 text-[24px] leading-[150%] md:text-[32px] md:leading-[140%] font-bold"
-            style={{ 
+            style={{
               fontFamily: 'Sora, sans-serif',
               fontWeight: 700,
               color: '#F1F2F4',
@@ -426,9 +425,9 @@ export default function ServicePage() {
           >
             {service.ctaBoxHeading}
           </h2>
-          <p 
+          <p
             className="relative z-10 text-[16px] leading-[150%]"
-            style={{ 
+            style={{
               fontFamily: 'Inter, sans-serif',
               fontWeight: 400,
               color: '#D5D7DD',
