@@ -78,8 +78,8 @@ export default function TestimonialCarousel() {
   };
 
   return (
-    <section className="bg-[#2f329d] pt-10 pb-20 px-6 flex flex-col items-center text-center relative overflow-hidden md:h-[642px]">
-      
+    <section className="bg-[#2f329d] pt-10 pb-20 px-6 flex flex-col items-center text-center relative overflow-hidden">
+
       {/* Navigation Arrows – Desktop only */}
       <button
         onClick={handlePrev}
@@ -173,13 +173,13 @@ export default function TestimonialCarousel() {
           transition={{ duration: 0.3 }}
           className="flex flex-col items-center"
         >
-          <h4 className="mb-[1.25rem] text-[36px] font-semibold text-[#F1F2F4] leading-[40px] md:leading-normal" style={{ fontFamily: 'Sora, sans-serif' }}>
+          <h4 className="mb-1 text-[36px] font-semibold text-[#F1F2F4] leading-[40px] md:leading-normal" style={{ fontFamily: 'Sora, sans-serif' }}>
             {testimonials[activeIndex].name}
           </h4>
           <p className="text-[#F1F2F4] text-[20px] mb-8">
             {testimonials[activeIndex].role}
           </p>
-          <p className="max-w-[80rem] px-4 text-[#F1F2F4] text-[20px] leading-[30px]">
+          <p className="max-w-[80rem] px-4 text-[#F1F2F4] text-[16px] leading-[24px]">
             {testimonials[activeIndex].content}
           </p>
         </motion.div>

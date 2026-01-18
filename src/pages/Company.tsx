@@ -11,7 +11,7 @@ const curiousSquadImg = new URL('../assets/companies/The Curious Squad.png', imp
 
 export default function Company() {
   return (
-    <main className="bg-[#0B0C0E] text-white min-h-screen font-['Inter'] pt-24">
+    <main className="bg-[#0B0C0E] text-white min-h-screen font-['Inter']">
       {/* Hero Section with Video Background */}
       <section className="relative flex flex-col items-center overflow-hidden md:pb-[144px]">
         {/* Video Background */}
@@ -28,14 +28,14 @@ export default function Company() {
         </video>
 
         {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/80" style={{ zIndex: 1 }} />
+        <div className="absolute inset-0 bg-black/60" style={{ zIndex: 1 }} />
 
         {/* Gradient fade at bottom */}
         <div className="absolute bottom-0 left-0 right-0 h-48 md:h-64 bg-gradient-to-b from-transparent to-[#0B0C0E] z-[5]"></div>
 
         {/* Hero Content Container */}
         <div
-          className="relative z-10 text-center flex flex-col items-center justify-center w-full max-w-[1280px] px-6 md:px-0 pt-[100px] md:pt-[144px] pb-[60px] md:pb-0 mt-[76px] gap-3"
+          className="relative z-10 text-center flex flex-col items-center justify-center w-full max-w-[1280px] px-6 md:px-0 pt-[140px] md:pt-[200px] pb-[60px] md:pb-0 gap-3"
         >
           <div className="mx-auto w-full">
             <h1

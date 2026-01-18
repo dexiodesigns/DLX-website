@@ -16,7 +16,7 @@ export default function Home() {
   const navigate = useNavigate();
   const HomeDescription = 'Every modern user works alongside AI and Dexio LabX designs Human<>AI systems that deliver real value inside SaaS products.';
   return (
-    <main className="bg-[#0B0C0E] text-white min-h-screen pt-16 selection:bg-purple-500/30 overflow-x-hidden">
+    <main className="bg-[#0B0C0E] text-white min-h-screen selection:bg-purple-500/30 overflow-x-hidden">
       <div className="relative">
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
           <div className="absolute top-[-400px] md:top-[-400px] left-0 right-0 bottom-0 bg-gradient-to-b from-transparent to-[#0B0C0E] z-10"></div>
@@ -30,12 +30,12 @@ export default function Home() {
           >
             <source src={homePageVideo} type="video/mp4" />
           </video>
-          <div className="absolute top-0 left-0 right-0 h-42 bg-gradient-to-b from-[#0B0C0E] to-transparent z-10"></div>
+          {/* Bottom gradient - fades video into background */}
           <div className="absolute md:top-[-200px] left-0 right-0 bottom-0 bg-gradient-to-b from-transparent to-[#0B0C0E] z-10"></div>
         </div>
 
         {/* First Section: Hero */}
-        <section className="relative max-w-6xl mx-auto px-6 text-center flex flex-col items-center pt-28 pb-20 md:py-[144px] z-20">
+        <section className="relative max-w-6xl mx-auto px-6 text-center flex flex-col items-center pt-36 pb-20 md:pt-[180px] md:pb-[144px] z-20">
           <div className="flex flex-col items-center">
             {/* Mobile Heading Size 30px as per Figma */}
             <h1 className="text-[30px] md:text-[48px] font-[600] pb-0 tracking-[0%] leading-[40px] md:leading-[60px]" style={{ color: '#F1F2F4', fontFamily: 'Sora, sans-serif' }}>
