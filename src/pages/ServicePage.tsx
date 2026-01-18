@@ -88,19 +88,18 @@ export default function ServicePage() {
 
   return (
     <main className="bg-[#0B0C0E] text-white min-h-screen pt-[100px] md:pt-[100px] font-['Inter']">
-      {/* Sticky Service Navigation - Hidden on mobile, visible on desktop */}
+      {/* Sticky Service Navigation - Hidden on mobile/tablet, visible on desktop */}
       <div
-        className="hidden md:flex sticky top-0 left-0 right-0 z-40 justify-center px-6 py-4"
+        className="hidden lg:flex sticky top-0 left-0 right-0 z-40 justify-center px-6 py-4"
         style={{ backgroundColor: '#0B0C0E' }}
       >
         <div
           className="flex items-center justify-center bg-zinc-900/80 border border-zinc-800 relative"
           style={{
-            maxWidth: '1110px',
-            width: '100%',
+            width: 'fit-content',
             height: '64px',
             borderRadius: '28px',
-            padding: '8px 16px',
+            padding: '8px',
           }}
         >
           {/* Sliding Background Indicator */}
@@ -129,7 +128,7 @@ export default function ServicePage() {
               className={`px-6 py-3 rounded-[20px] text-sm font-medium whitespace-nowrap relative z-10 transition-colors duration-300 ${item.slug === slug
                 ? "text-black"
                 : "text-zinc-400 hover:text-white"
-                } ${index === 0 ? 'ml-2' : ''} ${index === serviceNavItems.length - 1 ? 'mr-2' : ''}`}
+                }`}
               style={{
                 height: '48px',
                 display: 'flex',
@@ -200,7 +199,9 @@ export default function ServicePage() {
                 </p>
               </div>
               <div className="text-[#6366f1] flex justify-start items-start mb-[22px] md:mb-[38px]" style={{ width: '60px', height: '60px' }}>
-                {stat.customSvg ? (
+                {stat.iconSrc ? (
+                  <img src={stat.iconSrc} alt="" className="w-full h-full" />
+                ) : stat.customSvg ? (
                   <div
                     className="w-full h-full [&>svg]:w-full [&>svg]:h-full"
                     dangerouslySetInnerHTML={{ __html: stat.customSvg }}
@@ -242,7 +243,9 @@ export default function ServicePage() {
                   }`}
               >
                 <div className="flex justify-center items-center text-cyan-300">
-                  {challenge.customSvg ? (
+                  {challenge.iconSrc ? (
+                    <img src={challenge.iconSrc} alt="" className="w-16 h-16" />
+                  ) : challenge.customSvg ? (
                     <div dangerouslySetInnerHTML={{ __html: challenge.customSvg }} />
                   ) : (
                     <div className="[&>svg]:w-16 [&>svg]:h-16">
@@ -268,7 +271,7 @@ export default function ServicePage() {
         </div>
       </section>
 
-      <section className="max-w-5xl mx-auto px-6 pt-16 pb-8 md:pt-24 md:pb-16">
+      <section className="max-w-[1280px] mx-auto px-6 pt-16 pb-8 md:pt-24 md:pb-16">
         <div className="text-left md:text-center mb-8 md:mb-12">
           <h2
             className="text-[28px] leading-[36px] md:text-[36px] md:leading-[44px] font-bold mb-3 md:mb-4"
@@ -302,51 +305,53 @@ export default function ServicePage() {
 
         {/* Desktop Timeline - Horizontal */}
         <div className="hidden md:block">
-          {/* Timeline Line with Icons */}
-          <div className="relative flex items-center justify-between mb-8" style={{ width: '100%' }}>
-            {/* Continuous Line Behind Icons */}
-            <div
-              className="absolute left-0 right-0 top-1/2 -translate-y-1/2"
-              style={{
-                height: '2px',
-                background: 'linear-gradient(0deg, rgba(240, 96, 88, 0.6), rgba(240, 96, 88, 0.6)), linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15))',
-              }}
-            />
+          {/* Timeline Line with Icons - constrained width */}
+          <div className="max-w-5xl mx-auto">
+            <div className="relative flex items-center justify-between mb-8" style={{ width: '100%' }}>
+              {/* Continuous Line Behind Icons */}
+              <div
+                className="absolute left-0 right-0 top-1/2 -translate-y-1/2"
+                style={{
+                  height: '2px',
+                  background: 'linear-gradient(0deg, rgba(240, 96, 88, 0.6), rgba(240, 96, 88, 0.6)), linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15))',
+                }}
+              />
 
-            {/* Circle Icon (outline) */}
-            <div
-              className="w-6 h-6 rounded-full flex-shrink-0 relative z-10"
-              style={{
-                border: '1.5px solid #F06058',
-                backgroundColor: '#0B0C0E',
-              }}
-            />
+              {/* Circle Icon (outline) */}
+              <div
+                className="w-6 h-6 rounded-full flex-shrink-0 relative z-10"
+                style={{
+                  border: '1.5px solid #F06058',
+                  backgroundColor: '#0B0C0E',
+                }}
+              />
 
-            {/* Triangle Icon 1 */}
-            <div className="flex-shrink-0 relative z-10">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 4L20 12L6 20V4Z" stroke="#F06058" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="#0B0C0E" />
-              </svg>
+              {/* Triangle Icon 1 */}
+              <div className="flex-shrink-0 relative z-10">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 4L20 12L6 20V4Z" stroke="#F06058" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="#0B0C0E" />
+                </svg>
+              </div>
+
+              {/* Triangle Icon 2 */}
+              <div className="flex-shrink-0 relative z-10">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 4L20 12L6 20V4Z" stroke="#F06058" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="#0B0C0E" />
+                </svg>
+              </div>
+
+              {/* Filled Circle Icon */}
+              <div
+                className="w-6 h-6 rounded-full flex-shrink-0 relative z-10"
+                style={{ backgroundColor: '#F06058' }}
+              />
             </div>
-
-            {/* Triangle Icon 2 */}
-            <div className="flex-shrink-0 relative z-10">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 4L20 12L6 20V4Z" stroke="#F06058" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="#0B0C0E" />
-              </svg>
-            </div>
-
-            {/* Filled Circle Icon */}
-            <div
-              className="w-6 h-6 rounded-full flex-shrink-0 relative z-10"
-              style={{ backgroundColor: '#F06058' }}
-            />
           </div>
 
           {/* Desktop Step Labels */}
           <div className="flex items-start justify-between w-full mb-12">
             {service.processSteps.map((step, index) => (
-              <div key={index} className="flex flex-col items-center text-center" style={{ width: '280px' }}>
+              <div key={index} className="flex-1 flex flex-col items-center text-center px-2">
                 <h3
                   className="mb-3"
                   style={{

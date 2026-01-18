@@ -94,11 +94,11 @@ export default function Company() {
         style={{ width: '100%' }}
       >
         <div
-          className="flex flex-col md:flex-row items-center md:items-center md:justify-between w-full max-w-[1280px] gap-8 md:gap-3"
+          className="flex flex-col lg:flex-row items-center lg:items-center lg:justify-between w-full max-w-[1280px] gap-8 lg:gap-3"
         >
-          {/* Video - Top on mobile, Left on desktop */}
+          {/* Video - Top on mobile/tablet, Left on desktop */}
           <div
-            className="relative overflow-hidden rounded-2xl w-full md:w-[604px] h-[300px] md:h-[288px] flex-shrink-0"
+            className="relative overflow-hidden rounded-2xl w-full lg:w-[604px] h-[300px] lg:h-[288px] flex-shrink-0"
           >
             <video
               autoPlay
@@ -111,9 +111,9 @@ export default function Company() {
             </video>
           </div>
 
-          {/* Content - Below on mobile, Right on desktop */}
+          {/* Content - Below on mobile/tablet, Right on desktop */}
           <div
-            className="flex flex-col w-[99%] md:w-[604px] gap-3 md:gap-3"
+            className="flex flex-col w-full lg:w-[604px] gap-3"
           >
             <h2
               className="text-[28px] leading-[36px] md:text-[36px] md:leading-[48px]"
