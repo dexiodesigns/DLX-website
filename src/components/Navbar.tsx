@@ -138,7 +138,7 @@ export default function Navbar() {
   return (
     <>
       <nav className={`${isOnServicePage ? 'fixed md:absolute' : 'fixed'} top-0 w-full z-50 text-white font-['Inter'] transition-all duration-300 ${isScrolled ? 'bg-[#0E0F11]/84 md:bg-[#0B0C0E]/85 backdrop-blur-md' : 'bg-transparent'}`}>
-        <div className="px-5 py-4 md:px-[200px] md:py-6 flex justify-between items-center">
+        <div className="px-5 py-4 md:px-10 lg:px-[200px] md:py-6 flex justify-between items-center">
           <Link to="/" className="flex items-center gap-2">
             <Logo width="100" height="35" />
           </Link>

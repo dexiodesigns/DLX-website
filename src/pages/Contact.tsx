@@ -97,10 +97,95 @@ export default function Contact() {
   };
 
   return (
-    <main className="bg-[#0B0C0E] text-white min-h-screen font-['Inter']">
+    <main className="bg-[#0B0C0E] text-white min-h-screen font-['Inter'] relative overflow-hidden">
+      {/* Top Gradient Effect */}
+      <style>{`
+        @keyframes spinGradientTop {
+          0% {
+            transform: translateX(-50%) rotate(0deg);
+          }
+          100% {
+            transform: translateX(-50%) rotate(360deg);
+          }
+        }
+
+        .top-sunshine-effect {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 700px;
+          overflow: hidden;
+          pointer-events: none;
+          z-index: 0;
+        }
+
+        @media (max-width: 768px) {
+          .top-sunshine-effect {
+            height: 500px;
+          }
+        }
+
+        .top-sunshine-effect::before {
+          content: '';
+          position: absolute;
+          top: -1256px;
+          left: 50%;
+          width: 1400px;
+          height: 1400px;
+          background: conic-gradient(
+            from 0deg,
+            rgba(244, 220, 124, 0.4) 0deg,
+            rgba(240, 96, 88, 0.35) 90deg,
+            rgba(64, 68, 232, 0.3) 180deg,
+            rgba(240, 96, 88, 0.35) 270deg,
+            rgba(244, 220, 124, 0.4) 360deg
+          );
+          border-radius: 50%;
+          animation: spinGradientTop 8s linear infinite;
+          filter: blur(80px);
+          opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+          .top-sunshine-effect::before {
+            width: 900px;
+            height: 900px;
+            top: -720px;
+            filter: blur(60px);
+          }
+        }
+
+        .top-sunshine-effect::after {
+          content: '';
+          position: absolute;
+          top: -100px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 400px;
+          height: 200px;
+          border-radius: 50%;
+          background: radial-gradient(
+            ellipse at center,
+            rgba(244, 220, 124, 0.5) 0%,
+            rgba(240, 96, 88, 0.3) 40%,
+            transparent 70%
+          );
+          filter: blur(40px);
+        }
+
+        @media (max-width: 768px) {
+          .top-sunshine-effect::after {
+            width: 260px;
+            height: 140px;
+            filter: blur(30px);
+          }
+        }
+      `}</style>
+      <div className="top-sunshine-effect"></div>
       {/* Hero Section */}
       <section
-        className="flex items-center justify-center mx-auto px-5 md:px-0"
+        className="flex items-center justify-center mx-auto px-5 md:px-0 relative z-10"
         style={{
           maxWidth: '100%',
           marginTop: '90px',
@@ -158,7 +243,7 @@ export default function Contact() {
 
       {/* Get in Touch Section */}
       <section
-        className="flex items-center justify-center px-6"
+        className="flex items-center justify-center px-6 relative z-10"
         style={{
           width: '100%',
           backdropFilter: 'blur(40px)',
@@ -173,7 +258,7 @@ export default function Contact() {
           }}
         >
           {/* Left Side - Contact Form */}
-          <div className="flex-1" style={{ maxWidth: '720px' }}>
+          <div className="flex-1 w-full lg:w-auto mx-auto lg:mx-0" style={{ maxWidth: '720px' }}>
             <h2
               className="mb-10"
               style={{
@@ -473,7 +558,7 @@ export default function Contact() {
           </div>
 
           {/* Right Side - Info Cards */}
-          <div className="flex flex-col gap-6" style={{ width: '480px', maxWidth: '100%' }}>
+          <div className="flex flex-col gap-6 w-full lg:w-[480px] mx-auto lg:mx-0">
             {/* What to expect? Card */}
             <div
               className="rounded-2xl p-8"
