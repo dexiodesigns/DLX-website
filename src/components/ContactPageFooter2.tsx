@@ -24,7 +24,7 @@ const ContactPageFooter2 = ({ }) => {
           position: relative;
           max-width: 1280px;
           margin: 0 auto;
-          padding: 48px 24px 8px 24px;
+          padding: 96px 24px 8px 24px;
         }
 
         @media (max-width: 768px) {

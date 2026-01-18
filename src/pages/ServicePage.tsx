@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ArrowRight, CheckCircle, Users, Settings, MessageCircle, Sparkles, Focus, MousePointer, PenTool, Heart, ThumbsUp, Award, BarChart2, Scale, ChevronUp, ChevronDown, TrendingDown, AlignLeft, RefreshCw, GitBranch, CircleDot, Zap, Brain, GitPullRequest, LogIn, MessageSquare, Grid3x3, Lightbulb, Maximize, Circle, PlayCircle, Cpu, TrendingUp, Cloud, MessageSquareOff } from "lucide-react";
+import { motion } from "framer-motion";
 import { getServiceBySlug, serviceNavItems, ServiceData } from "../data/servicesData";
 import Footer from "../components/Footer";
 
@@ -48,10 +49,28 @@ const getIcon = (iconName: string) => {
 export default function ServicePage() {
   const { slug } = useParams<{ slug: string }>();
   const service = getServiceBySlug(slug || "");
+  const navRefs = useRef<{ [key: string]: HTMLAnchorElement | null }>({});
+  const [navDimensions, setNavDimensions] = useState({ left: 0, width: 0 });
 
   // Scroll to top when service changes
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [slug]);
+
+  // Update sliding indicator position when slug changes
+  useEffect(() => {
+    const activeLink = navRefs.current[slug || ''];
+    if (activeLink) {
+      const container = activeLink.parentElement;
+      if (container) {
+        const containerRect = container.getBoundingClientRect();
+        const linkRect = activeLink.getBoundingClientRect();
+        setNavDimensions({
+          left: linkRect.left - containerRect.left,
+          width: linkRect.width,
+        });
+      }
+    }
   }, [slug]);
 
   if (!service) {
@@ -75,7 +94,7 @@ export default function ServicePage() {
         style={{ backgroundColor: '#0B0C0E' }}
       >
         <div
-          className="flex items-center justify-center bg-zinc-900/80 border border-zinc-800"
+          className="flex items-center justify-center bg-zinc-900/80 border border-zinc-800 relative"
           style={{
             maxWidth: '1110px',
             width: '100%',
@@ -84,13 +103,32 @@ export default function ServicePage() {
             padding: '8px 16px',
           }}
         >
+          {/* Sliding Background Indicator */}
+          <motion.div
+            className="absolute rounded-[20px] z-0 bg-white"
+            animate={{
+              left: navDimensions.left,
+              width: navDimensions.width,
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 400,
+              damping: 30,
+            }}
+            style={{
+              height: '48px',
+              top: '8px',
+            }}
+          />
+
           {serviceNavItems.map((item, index) => (
             <Link
               key={item.slug}
+              ref={(el) => { navRefs.current[item.slug] = el; }}
               to={item.href}
-              className={`px-6 py-3 rounded-[20px] text-sm font-medium transition-all whitespace-nowrap ${item.slug === slug
-                  ? "bg-white text-black"
-                  : "bg-transparent text-zinc-400 hover:text-white"
+              className={`px-6 py-3 rounded-[20px] text-sm font-medium whitespace-nowrap relative z-10 transition-colors duration-300 ${item.slug === slug
+                ? "text-black"
+                : "text-zinc-400 hover:text-white"
                 } ${index === 0 ? 'ml-2' : ''} ${index === serviceNavItems.length - 1 ? 'mr-2' : ''}`}
               style={{
                 height: '48px',
@@ -105,7 +143,7 @@ export default function ServicePage() {
         </div>
       </div>
 
-      <section className="max-w-4xl mx-auto px-6 text-center py-[44px] md:py-12">
+      <section className="max-w-4xl mx-auto text-center py-[44px] md:py-12">
         <h1
           className="text-[36px] leading-[44px] md:text-[48px] md:leading-[60px] font-bold mb-2 md:mb-4"
           style={{ fontFamily: 'Sora, sans-serif' }}
@@ -113,13 +151,13 @@ export default function ServicePage() {
           {service.title}
         </h1>
         <p
-          className={`text-[28px] leading-[36px] md:text-[32px] md:leading-[40px] font-semibold mb-4 md:mb-4 bg-gradient-to-r ${service.subtitleGradient} bg-clip-text text-transparent`}
+          className={`text-[28px] leading-[36px] md:text-[32px] md:leading-[40px] font-semibold mb-4 md:mb-4 bg-gradient-to-tr ${service.subtitleGradient} bg-clip-text text-transparent`}
           style={{ fontFamily: 'Sora, sans-serif' }}
         >
           {service.subtitle}
         </p>
         <p
-          className="text-[16px] leading-[24px] md:text-lg text-zinc-400 max-w-2xl mx-auto mb-[36px] md:mb-8 px-2 md:px-0"
+          className="text-[16px] leading-[24px] md:text-lg text-zinc-400 mx-auto mb-[36px] md:mb-8"
           style={{ fontFamily: 'Inter, sans-serif' }}
         >
           {service.description}
@@ -184,7 +222,7 @@ export default function ServicePage() {
           background: 'linear-gradient(0deg, rgba(11, 12, 14, 0.3), rgba(11, 12, 14, 0.3)), linear-gradient(0deg, #4044E8, #4044E8)',
         }}
       >
-        <div className="max-w-5xl mx-auto px-6">
+        <div className="max-w-[1280px] mx-auto px-6">
           <h2
             className="text-[28px] leading-[36px] md:text-[36px] md:leading-[44px] font-bold text-center mb-10 md:mb-12"
             style={{ fontFamily: 'Sora, sans-serif' }}
