@@ -118,7 +118,7 @@ export default function ServiceExcellence() {
                 {activeTab === "Services" ? (
                   <button
                     onClick={() => navigate('/services/ux-audit')}
-                    className="w-fit bg-[#22252A] px-6 py-3 rounded-full flex items-center gap-2 hover:bg-zinc-800 transition text-[18px] font-medium leading-6 capitalize text-white"
+                    className="w-fit bg-[#22252A] px-6 py-3 rounded-[20px] flex items-center gap-2 hover:bg-zinc-800 transition text-[18px] font-medium leading-6 capitalize text-white"
                   >
                     {getTabConfig(activeTab).content.buttonText}
                     <ArrowRight size={16} />

@@ -138,24 +138,28 @@ export default function Navbar() {
   return (
     <>
       <nav className={`${isOnServicePage ? 'fixed md:absolute' : 'fixed'} top-0 w-full z-50 text-white font-['Inter'] transition-all duration-300 ${isScrolled ? 'bg-[#0E0F11]/84 md:bg-[#0B0C0E]/85 backdrop-blur-md' : 'bg-transparent'}`}>
-        <div className="px-5 py-4 md:px-10 lg:px-[200px] md:py-6 flex justify-between items-center">
+        <div className="max-w-[1280px] mx-auto w-full px-6 py-4 md:py-6 flex justify-between items-center">
           <Link to="/" className="flex items-center gap-2">
             <Logo width="100" height="35" />
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
             <ul className="flex gap-8 items-center text-sm font-medium">
-              {/* Home link - only show when not on home page */}
-              {location.pathname !== "/" && (
-                <li className="relative text-[16px] font-[400]">
-                  <Link
-                    to="/"
-                    className="cursor-pointer transition text-zinc-300 hover:text-white"
-                  >
-                    Home
-                  </Link>
-                </li>
-              )}
+              {/* Home link - always visible */}
+              <li className="relative text-[16px] font-[400]">
+                <Link
+                  to="/"
+                  className={`cursor-pointer transition ${location.pathname === "/" ? "text-white font-semibold" : "text-zinc-300 hover:text-white"}`}
+                >
+                  Home
+                </Link>
+                {location.pathname === "/" && (
+                  <div
+                    className="absolute left-1/2 -translate-x-1/2 -bottom-3 bg-[#6366f1]"
+                    style={{ width: '40px', height: '4px', borderRadius: '4px' }}
+                  />
+                )}
+              </li>
               <li className="relative text-[16px] font-[400]">
                 <button
                   ref={buttonRef}
@@ -208,7 +212,7 @@ export default function Navbar() {
           className="hidden md:flex fixed top-[76px] left-0 w-full z-50 bg-[#22252A]/60 backdrop-blur-md text-white font-['Inter'] border-t border-white/10 justify-center animate-slide-down-bounce"
         >
           <div
-            className="px-6 md:px-[200px] py-6 h-full w-full grid grid-cols-3 gap-x-12 overflow-y-auto"
+            className="max-w-[1280px] mx-auto px-6 py-6 h-full w-full grid grid-cols-3 gap-x-12 overflow-y-auto"
           >
             {services.map((service, index) => (
               <div
@@ -246,16 +250,14 @@ export default function Navbar() {
           {!isMobileServicesOpen ? (
             <div className="flex flex-col h-[calc(100vh-88px)]">
               <div className="flex-1 px-6 py-4">
-                {/* Home link - only show when not on home page */}
-                {location.pathname !== "/" && (
-                  <Link
-                    to="/"
-                    onClick={closeMobileMenu}
-                    className="w-full flex items-center justify-between py-[12px] text-lg font-medium hover:text-white/80 transition border-b border-white/5"
-                  >
-                    Home
-                  </Link>
-                )}
+                {/* Home link - always visible */}
+                <Link
+                  to="/"
+                  onClick={closeMobileMenu}
+                  className={`w-full flex items-center justify-between py-[12px] text-lg font-medium transition border-b border-white/5 ${location.pathname === "/" ? "text-white" : "hover:text-white/80"}`}
+                >
+                  Home
+                </Link>
                 {navItems.map((item, index) => (
                   item.hasSubmenu ? (
                     <button

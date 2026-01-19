@@ -142,7 +142,7 @@ export default function ServicePage() {
         </div>
       </div>
 
-      <section className="max-w-4xl mx-auto text-center py-[44px] md:py-12">
+      <section className="max-w-4xl mx-auto text-center px-6 py-[44px] md:py-12">
         <h1
           className="text-[36px] leading-[44px] md:text-[48px] md:leading-[60px] font-bold mb-2 md:mb-4"
           style={{ fontFamily: 'Sora, sans-serif' }}
@@ -163,7 +163,7 @@ export default function ServicePage() {
         </p>
         <Link
           to={service.ctaLink}
-          className="inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-full font-medium hover:bg-zinc-200 transition text-[16px] md:text-base"
+          className="inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-[20px] font-medium hover:bg-zinc-200 transition text-[16px] md:text-base"
           style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500 }}
         >
           {service.ctaText}
@@ -305,79 +305,76 @@ export default function ServicePage() {
 
         {/* Desktop Timeline - Horizontal */}
         <div className="hidden md:block">
-          {/* Timeline Line with Icons - constrained width */}
+          {/* Combined Timeline with Icons and Labels */}
           <div className="max-w-5xl mx-auto">
-            <div className="relative flex items-center justify-between mb-8" style={{ width: '100%' }}>
-              {/* Continuous Line Behind Icons */}
+            {/* Grid container for perfect alignment */}
+            <div className="grid grid-cols-4 gap-0 relative">
+              {/* Continuous Line Behind Icons - spans from first to last icon center */}
               <div
-                className="absolute left-0 right-0 top-1/2 -translate-y-1/2"
+                className="absolute top-3 left-[12.5%] right-[12.5%]"
                 style={{
                   height: '2px',
                   background: 'linear-gradient(0deg, rgba(240, 96, 88, 0.6), rgba(240, 96, 88, 0.6)), linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15))',
                 }}
               />
 
-              {/* Circle Icon (outline) */}
-              <div
-                className="w-6 h-6 rounded-full flex-shrink-0 relative z-10"
-                style={{
-                  border: '1.5px solid #F06058',
-                  backgroundColor: '#0B0C0E',
-                }}
-              />
+              {service.processSteps.map((step, index) => (
+                <div key={index} className="flex flex-col items-center text-center">
+                  {/* Icon */}
+                  <div className="relative z-10 mb-6">
+                    {index === 0 ? (
+                      /* Circle Icon (outline) - Start */
+                      <div
+                        className="w-6 h-6 rounded-full"
+                        style={{
+                          border: '1.5px solid #F06058',
+                          backgroundColor: '#0B0C0E',
+                        }}
+                      />
+                    ) : index === service.processSteps.length - 1 ? (
+                      /* Filled Circle Icon - End */
+                      <div
+                        className="w-6 h-6 rounded-full"
+                        style={{ backgroundColor: '#F06058' }}
+                      />
+                    ) : (
+                      /* Triangle Icon - Middle */
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 4L20 12L6 20V4Z" stroke="#F06058" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="#0B0C0E" />
+                      </svg>
+                    )}
+                  </div>
 
-              {/* Triangle Icon 1 */}
-              <div className="flex-shrink-0 relative z-10">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6 4L20 12L6 20V4Z" stroke="#F06058" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="#0B0C0E" />
-                </svg>
-              </div>
-
-              {/* Triangle Icon 2 */}
-              <div className="flex-shrink-0 relative z-10">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6 4L20 12L6 20V4Z" stroke="#F06058" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="#0B0C0E" />
-                </svg>
-              </div>
-
-              {/* Filled Circle Icon */}
-              <div
-                className="w-6 h-6 rounded-full flex-shrink-0 relative z-10"
-                style={{ backgroundColor: '#F06058' }}
-              />
+                  {/* Label */}
+                  <h3
+                    className="mb-3 px-2"
+                    style={{
+                      fontFamily: 'Sora, sans-serif',
+                      fontWeight: 600,
+                      fontSize: '20px',
+                      lineHeight: '28px',
+                      color: '#ffffff',
+                    }}
+                  >
+                    {step.title}
+                  </h3>
+                  <p
+                    className="px-2"
+                    style={{
+                      fontFamily: 'Inter, sans-serif',
+                      fontWeight: 400,
+                      fontSize: '14px',
+                      lineHeight: '20px',
+                      color: 'rgba(255, 255, 255, 0.7)',
+                    }}
+                  >
+                    {step.description}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
-
-          {/* Desktop Step Labels */}
-          <div className="flex items-start justify-between w-full mb-12">
-            {service.processSteps.map((step, index) => (
-              <div key={index} className="flex-1 flex flex-col items-center text-center px-2">
-                <h3
-                  className="mb-3"
-                  style={{
-                    fontFamily: 'Sora, sans-serif',
-                    fontWeight: 600,
-                    fontSize: '20px',
-                    lineHeight: '28px',
-                    color: '#ffffff',
-                  }}
-                >
-                  {step.title}
-                </h3>
-                <p
-                  style={{
-                    fontFamily: 'Inter, sans-serif',
-                    fontWeight: 400,
-                    fontSize: '14px',
-                    lineHeight: '20px',
-                    color: 'rgba(255, 255, 255, 0.7)',
-                  }}
-                >
-                  {step.description}
-                </p>
-              </div>
-            ))}
-          </div>
+          <div className="mb-12" />
         </div>
 
         {/* Mobile Timeline - Vertical */}
@@ -488,7 +485,7 @@ export default function ServicePage() {
               gap: '12px',
               paddingLeft: '24px',
               paddingRight: '24px',
-              borderRadius: '16px',
+              borderRadius: '20px',
               background: '#F1F2F4',
               fontFamily: 'Inter, sans-serif',
               fontWeight: 500,
@@ -504,7 +501,7 @@ export default function ServicePage() {
           {/* Desktop Button */}
           <Link
             to={service.ctaLink}
-            className="hidden md:inline-flex relative z-10 items-center gap-2 bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-zinc-200 transition"
+            className="hidden md:inline-flex relative z-10 items-center gap-2 bg-white text-black px-6 py-3 rounded-[20px] font-medium hover:bg-zinc-200 transition"
           >
             {service.ctaBoxButtonText}
             <ArrowRight size={18} />
