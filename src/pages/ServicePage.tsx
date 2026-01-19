@@ -163,8 +163,7 @@ export default function ServicePage() {
         </p>
         <Link
           to={service.ctaLink}
-          className="inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-[20px] font-medium hover:bg-zinc-200 transition text-[16px] md:text-base"
-          style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500 }}
+          className="inline-flex items-center justify-center gap-2 bg-white text-black px-8 py-3 rounded-[20px] font-medium hover:bg-zinc-200 transition whitespace-nowrap h-[56px]"
         >
           {service.ctaText}
           <ArrowRight size={18} />
@@ -478,22 +477,7 @@ export default function ServicePage() {
           {/* Mobile Button */}
           <Link
             to={service.ctaLink}
-            className="md:hidden relative z-10 inline-flex items-center justify-center hover:opacity-90 transition"
-            style={{
-              width: '232px',
-              height: '46px',
-              gap: '12px',
-              paddingLeft: '24px',
-              paddingRight: '24px',
-              borderRadius: '20px',
-              background: '#F1F2F4',
-              fontFamily: 'Inter, sans-serif',
-              fontWeight: 500,
-              fontSize: '16px',
-              lineHeight: '150%',
-              textTransform: 'capitalize',
-              color: '#0B0C0E',
-            }}
+            className="md:hidden relative z-10 inline-flex items-center justify-center gap-2 bg-white text-black px-8 py-3 rounded-[20px] font-medium hover:bg-zinc-200 transition whitespace-nowrap h-[56px]"
           >
             {service.ctaBoxButtonText}
             <ArrowRight size={18} />
@@ -501,7 +485,7 @@ export default function ServicePage() {
           {/* Desktop Button */}
           <Link
             to={service.ctaLink}
-            className="hidden md:inline-flex relative z-10 items-center gap-2 bg-white text-black px-6 py-3 rounded-[20px] font-medium hover:bg-zinc-200 transition"
+            className="hidden md:inline-flex relative z-10 items-center justify-center gap-2 bg-white text-black px-8 py-3 rounded-[20px] font-medium hover:bg-zinc-200 transition whitespace-nowrap h-[56px]"
           >
             {service.ctaBoxButtonText}
             <ArrowRight size={18} />

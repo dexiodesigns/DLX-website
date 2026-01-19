@@ -13,7 +13,7 @@ export default function Company() {
   return (
     <main className="bg-[#0B0C0E] text-white min-h-screen font-['Inter']">
       {/* Hero Section with Video Background */}
-      <section className="relative min-h-screen md:min-h-0 flex flex-col items-center overflow-hidden md:pb-[144px]">
+      <section className="relative flex flex-col items-center overflow-hidden md:pb-[144px]">
         {/* Video Background */}
         <video
           autoPlay
@@ -21,7 +21,7 @@ export default function Company() {
           muted
           playsInline
           preload="metadata"
-          className="absolute -top-32 md:top-0 left-0 right-0 bottom-0 w-full h-[calc(100%+64px)] md:h-full object-cover object-top md:object-center"
+          className="absolute -top-16 md:top-0 left-0 right-0 bottom-0 w-full h-[calc(100%+64px)] md:h-full object-cover object-top md:object-center"
           style={{ zIndex: 0 }}
         >
           <source src={companyHeroVideoMp4} type="video/mp4" />
@@ -90,7 +90,7 @@ export default function Company() {
       </section>
       {/* Our Vision Section - Inside Video Background */}
       <div
-        className="relative z-10 flex items-center justify-center px-6 mt-[80px] md:mt-[144px] pb-[80px] md:pb-[0px]"
+        className="relative z-10 flex items-center justify-center px-6 mt-[60px] md:mt-[144px] pb-[80px] md:pb-[0px]"
         style={{ width: '100%' }}
       >
         <div
@@ -382,7 +382,7 @@ export default function Company() {
         </div>
 
         {/* Mobile Timeline - Vertical */}
-        <div className="md:hidden w-[80%]">
+        <div className="md:hidden">
           {[
             { title: "Understand", desc: "Deep dive into your product, users, and business context.", iconType: "circle-outline" },
             { title: "Define", desc: "Clear problem statements, success metrics, and scope.", iconType: "triangle" },
@@ -425,7 +425,7 @@ export default function Company() {
               </div>
 
               {/* Content Column */}
-              <div className="flex flex-col pb-8">
+              <div className="flex-1 pb-8">
                 <h3
                   className="mb-2 text-[20px] leading-[28px]"
                   style={{
