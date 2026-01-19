@@ -185,12 +185,9 @@ export default function Contact() {
       <div className="top-sunshine-effect"></div>
       {/* Hero Section */}
       <section
-        className="flex items-center justify-center mx-auto px-5 md:px-0 relative z-10"
+        className="flex items-center justify-center mx-auto px-5 md:px-0 pt-[140px] md:pt-[200px] pb-[60px] md:pb-[144px] relative z-10"
         style={{
           maxWidth: '100%',
-          marginTop: '90px',
-          paddingTop: '144px',
-          paddingBottom: '144px',
           opacity: 1,
         }}
       >
@@ -477,7 +474,7 @@ export default function Contact() {
                     gap: '12px',
                     paddingLeft: '24px',
                     paddingRight: '24px',
-                    borderRadius: '24px',
+                    borderRadius: '20px',
                     background: submitStatus === 'success'
                       ? 'linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), linear-gradient(0deg, #22C55E, #22C55E)'
                       : 'linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), linear-gradient(0deg, #F06058, #F06058)',

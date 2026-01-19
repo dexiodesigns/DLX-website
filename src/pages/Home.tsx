@@ -35,7 +35,7 @@ export default function Home() {
         </div>
 
         {/* First Section: Hero */}
-        <section className="relative max-w-6xl mx-auto px-6 text-center flex flex-col items-center pt-36 pb-20 md:pt-[180px] md:pb-[144px] z-20">
+        <section className="relative max-w-6xl mx-auto px-6 text-center flex flex-col items-center pt-36 pb-12 md:pt-[180px] md:pb-[144px] z-20">
           <div className="flex flex-col items-center">
             {/* Mobile Heading Size 30px as per Figma */}
             <h1 className="text-[30px] md:text-[48px] font-[600] pb-0 tracking-[0%] leading-[40px] md:leading-[60px]" style={{ color: '#F1F2F4', fontFamily: 'Sora, sans-serif' }}>
@@ -68,8 +68,8 @@ export default function Home() {
 
       {/* Second Section: Future Intelli */}
       <section className="relative max-w-7xl mx-auto flex flex-col md:grid md:grid-cols-2 items-center z-20 
-        /* Mobile: 44px top/bottom, 20px sides as per Figma markers */
-        pt-[44px] pb-[44px] px-[20px] 
+        /* Mobile: 48px top/bottom for 96px total section spacing */
+        pt-12 pb-12 px-[20px] 
         /* Desktop: Reverting to your original spacing */
         md:pt-11 md:pb-40 md:px-6 md:gap-16"
       >
@@ -124,7 +124,7 @@ export default function Home() {
       {/* --- Service Excellence Section --- */}
       <ServiceExcellence />
 
-      <section className="mx-6 md:m-32 text-center max-w-10xl md:mx-auto px-6">
+      <section className="mx-6 md:m-32 text-center max-w-10xl md:mx-auto px-6 pt-8 pb-8">
         <h3 className="font-sora text-[28px] md:text-[36px] font-semibold leading-[36px] md:leading-[48px] mb-8 md:mb-16" style={{ color: '#F1F2F4' }}>
           Trusted by visionaries, loved by teams.
         </h3>
@@ -137,11 +137,11 @@ export default function Home() {
 
       <TestimonialCarousel />
 
-      <section className="py-24 px-6 xl:px-[200px]">
+      <section className="pt-12 pb-24 md:py-24 px-6 xl:px-[200px]">
 
         {/* --- Features Cards --- */}
         <div className="text-center">
-          <h2 className="mb-8 md:mb-12 text-[36px] font-semibold leading-[36px] md:leading-[48px]" style={{ color: '#F1F2F4', fontFamily: 'Sora, sans-serif' }}>
+          <h2 className="mb-8 md:mb-12 text-[28px] md:text-[36px] font-semibold leading-[36px] md:leading-[48px]" style={{ color: '#F1F2F4', fontFamily: 'Sora, sans-serif' }}>
             We don't just build. We evolve with you.
           </h2>
 

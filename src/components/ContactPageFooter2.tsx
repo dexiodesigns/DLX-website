@@ -36,76 +36,7 @@ const ContactPageFooter2 = ({ }) => {
           }
         }
 
-        .sunshine-effect {
-          position: absolute;
-          inset: 0;
-          height: 563px;
-          overflow: hidden;
-          pointer-events: none;
-          z-index: 1;
-        }
 
-        @media (max-width: 768px) {
-          .sunshine-effect {
-            height: 725px;
-          }
-        }
-
-        .sunshine-effect::before {
-          content: '';
-          position: absolute;
-          bottom: -1256px;
-          left: 50%;
-          width: 1400px;
-          height: 1400px;
-          background: conic-gradient(
-            from 0deg,
-            rgba(244, 220, 124, 0.4) 0deg,
-            rgba(240, 96, 88, 0.35) 90deg,
-            rgba(64, 68, 232, 0.3) 180deg,
-            rgba(240, 96, 88, 0.35) 270deg,
-            rgba(244, 220, 124, 0.4) 360deg
-          );
-          border-radius: 50%;
-          animation: spinGradient 8s linear infinite;
-          filter: blur(80px);
-          opacity: 0.9;
-        }
-
-        @media (max-width: 768px) {
-          .sunshine-effect::before {
-            width: 900px;
-            height: 900px;
-            bottom: -720px;
-            filter: blur(60px);
-          }
-        }
-
-        .sunshine-effect::after {
-          content: '';
-          position: absolute;
-          bottom: -100px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 400px;
-          height: 200px;
-          border-radius: 50%;
-          background: radial-gradient(
-            ellipse at center,
-            rgba(244, 220, 124, 0.5) 0%,
-            rgba(240, 96, 88, 0.3) 40%,
-            transparent 70%
-          );
-          filter: blur(40px);
-        }
-
-        @media (max-width: 768px) {
-          .sunshine-effect::after {
-            width: 260px;
-            height: 140px;
-            filter: blur(30px);
-          }
-        }
 
         .content-wrapper {
           position: relative;
@@ -513,7 +444,7 @@ const ContactPageFooter2 = ({ }) => {
           </div>
           {/* </section> */}
 
-          <div className="sunshine-effect" />
+
         </div>
       </div>
 

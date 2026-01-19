@@ -13,7 +13,7 @@ export default function Company() {
   return (
     <main className="bg-[#0B0C0E] text-white min-h-screen font-['Inter']">
       {/* Hero Section with Video Background */}
-      <section className="relative flex flex-col items-center overflow-hidden md:pb-[144px]">
+      <section className="relative min-h-screen md:min-h-0 flex flex-col items-center overflow-hidden md:pb-[144px]">
         {/* Video Background */}
         <video
           autoPlay
@@ -21,7 +21,7 @@ export default function Company() {
           muted
           playsInline
           preload="metadata"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute -top-32 md:top-0 left-0 right-0 bottom-0 w-full h-[calc(100%+64px)] md:h-full object-cover object-top md:object-center"
           style={{ zIndex: 0 }}
         >
           <source src={companyHeroVideoMp4} type="video/mp4" />
@@ -73,14 +73,14 @@ export default function Company() {
           <div className="flex flex-col md:flex-row items-center justify-center mx-auto w-full md:w-auto gap-4 md:gap-6 pt-6 px-6 md:px-0">
             <Link
               to="/contact"
-              className="flex items-center justify-center gap-2 bg-white text-black px-8 py-3 rounded-full font-medium hover:bg-zinc-200 transition whitespace-nowrap w-full md:w-auto h-[56px]"
+              className="flex items-center justify-center gap-2 bg-white text-black px-8 py-3 rounded-[20px] font-medium hover:bg-zinc-200 transition whitespace-nowrap w-auto h-[56px]"
             >
               Talk To An Expert
               <ArrowRight size={18} />
             </Link>
             {/* <Link
               to="/contact"
-              className="flex items-center justify-center gap-2 border border-zinc-600 text-white px-8 py-3 rounded-full font-medium hover:bg-white/10 transition whitespace-nowrap w-full md:w-auto h-[56px]"
+              className="flex items-center justify-center gap-2 border border-zinc-600 text-white px-8 py-3 rounded-[20px] font-medium hover:bg-white/10 transition whitespace-nowrap w-full md:w-auto h-[56px]"
             >
               Talk To An Expert
               <ArrowRight size={18} />
@@ -98,7 +98,7 @@ export default function Company() {
         >
           {/* Video - Top on mobile/tablet, Left on desktop */}
           <div
-            className="relative overflow-hidden rounded-2xl w-full lg:w-[604px] h-[300px] lg:h-[288px] flex-shrink-0"
+            className="relative overflow-hidden rounded-2xl w-full lg:w-[604px] h-[300px] lg:h-[288px] lg:min-w-0 lg:flex-shrink"
           >
             <video
               autoPlay
@@ -113,7 +113,7 @@ export default function Company() {
 
           {/* Content - Below on mobile/tablet, Right on desktop */}
           <div
-            className="flex flex-col w-full lg:w-[604px] gap-3"
+            className="flex flex-col w-full lg:w-[604px] lg:flex-shrink-0 gap-3"
           >
             <h2
               className="text-[28px] leading-[36px] md:text-[36px] md:leading-[48px]"
@@ -161,7 +161,7 @@ export default function Company() {
       >
         {/* Section Title */}
         <h2
-          className="text-center mb-8 md:mb-12 text-[28px] leading-[36px] md:text-[36px] md:leading-[50px] max-w-[800px]"
+          className="text-left md:text-center mb-8 md:mb-12 text-[28px] leading-[36px] md:text-[36px] md:leading-[50px] max-w-[800px]"
           style={{
             fontFamily: 'Sora, sans-serif',
             fontWeight: 600,
@@ -312,58 +312,52 @@ export default function Company() {
         <div
           className="hidden md:flex flex-col items-center w-full max-w-[1280px]"
         >
-          {/* Timeline Line with Icons */}
-          <div className="relative flex items-center justify-between mb-8 w-[80%]">
-            {/* Continuous Line Behind Icons */}
+          {/* Grid container for perfect alignment */}
+          <div className="grid grid-cols-4 gap-0 relative w-full">
+            {/* Continuous Line Behind Icons - spans from first to last icon center */}
             <div
-              className="absolute left-0 right-0 top-1/2 -translate-y-1/2"
+              className="absolute top-3 left-[12.5%] right-[12.5%]"
               style={{
                 height: '2px',
                 background: 'linear-gradient(0deg, rgba(240, 96, 88, 0.6), rgba(240, 96, 88, 0.6)), linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15))',
               }}
             />
 
-            {/* Circle Icon (outline) */}
-            <div
-              className="w-6 h-6 rounded-full flex-shrink-0 relative z-10"
-              style={{
-                border: '1.5px solid #F06058',
-                backgroundColor: '#0B0C0E',
-              }}
-            />
-
-            {/* Triangle Icon 1 */}
-            <div className="flex-shrink-0 relative z-10">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 4L20 12L6 20V4Z" stroke="#F06058" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="#0B0C0E" />
-              </svg>
-            </div>
-
-            {/* Triangle Icon 2 */}
-            <div className="flex-shrink-0 relative z-10">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 4L20 12L6 20V4Z" stroke="#F06058" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="#0B0C0E" />
-              </svg>
-            </div>
-
-            {/* Filled Circle Icon */}
-            <div
-              className="w-6 h-6 rounded-full flex-shrink-0 relative z-10"
-              style={{ backgroundColor: '#F06058' }}
-            />
-          </div>
-
-          {/* Step Labels - Desktop */}
-          <div className="flex items-start justify-between w-full">
             {[
-              { title: "Understand", desc: "Deep dive into your product, users, and business context." },
-              { title: "Define", desc: "Clear problem statements, success metrics, and scope." },
-              { title: "Design", desc: "Iterative UX, strong systems thinking, and rapid validation." },
-              { title: "Enable", desc: "Clean handoffs, documentation, and ongoing support for scale." }
-            ].map((step, index) => (
-              <div key={index} className="flex flex-col items-center text-center" style={{ width: '280px' }}>
+              { title: "Understand", desc: "Deep dive into your product, users, and business context.", iconType: "circle-outline" },
+              { title: "Define", desc: "Clear problem statements, success metrics, and scope.", iconType: "triangle" },
+              { title: "Design", desc: "Iterative UX, strong systems thinking, and rapid validation.", iconType: "triangle" },
+              { title: "Enable", desc: "Clean handoffs, documentation, and ongoing support for scale.", iconType: "circle-filled" }
+            ].map((step, index, arr) => (
+              <div key={index} className="flex flex-col items-center text-center">
+                {/* Icon */}
+                <div className="relative z-10 mb-6">
+                  {index === 0 ? (
+                    /* Circle Icon (outline) - Start */
+                    <div
+                      className="w-6 h-6 rounded-full"
+                      style={{
+                        border: '1.5px solid #F06058',
+                        backgroundColor: '#0B0C0E',
+                      }}
+                    />
+                  ) : index === arr.length - 1 ? (
+                    /* Filled Circle Icon - End */
+                    <div
+                      className="w-6 h-6 rounded-full"
+                      style={{ backgroundColor: '#F06058' }}
+                    />
+                  ) : (
+                    /* Triangle Icon - Middle */
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6 4L20 12L6 20V4Z" stroke="#F06058" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="#0B0C0E" />
+                    </svg>
+                  )}
+                </div>
+
+                {/* Label */}
                 <h3
-                  className="mb-3 text-[20px] leading-[28px]"
+                  className="mb-3 px-2 text-[20px] leading-[28px]"
                   style={{
                     fontFamily: 'Sora, sans-serif',
                     fontWeight: 600,
@@ -373,7 +367,7 @@ export default function Company() {
                   {step.title}
                 </h3>
                 <p
-                  className="text-[14px] leading-[20px]"
+                  className="px-2 text-[14px] leading-[20px]"
                   style={{
                     fontFamily: 'Inter, sans-serif',
                     fontWeight: 400,
@@ -561,7 +555,7 @@ export default function Company() {
             color: '#ffffff',
           }}
         >
-          "We care deeply about craft. <br></br>We care even more about impact."
+          "We care deeply about craft. <br className="hidden md:block"></br>We care even more about impact."
         </h2>
       </section>
 

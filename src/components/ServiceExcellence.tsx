@@ -33,7 +33,7 @@ export default function ServiceExcellence() {
   const tabOrder = Object.keys(TAB_CONFIGS);
 
   return (
-    <section className="max-w-10xl px-6 xl:px-[200px] py-16 md:py-[28px]">
+    <section className="max-w-10xl px-6 xl:px-[200px] pt-12 pb-16 md:py-[28px]">
 
       {/* Tab Switcher with Sliding Indicator */}
       <div className="flex justify-center mb-[32px] md:mb-[48px] w-full">
@@ -118,12 +118,10 @@ export default function ServiceExcellence() {
                 {activeTab === "Services" ? (
                   <button
                     onClick={() => navigate('/services/ux-audit')}
-                    className="w-fit bg-[#22252A] px-6 py-3 rounded-full flex items-center gap-2 hover:bg-zinc-800 transition text-[18px] font-medium leading-6 capitalize"
+                    className="w-fit bg-[#22252A] px-6 py-3 rounded-[20px] flex items-center gap-2 hover:bg-zinc-800 transition text-[18px] font-medium leading-6 capitalize text-white"
                   >
-                    <span className="bg-gradient-to-tr from-[#6366f1] via-[#a855f7] via-[#c34772] to-[#f9f916] bg-clip-text text-transparent">
-                      {getTabConfig(activeTab).content.buttonText}
-                    </span>
-                    <ArrowRight size={16} className="text-[#a855f7]" />
+                    {getTabConfig(activeTab).content.buttonText}
+                    <ArrowRight size={16} />
                   </button>
                 ) : (
                   <span className="text-[18px] font-medium leading-6 capitalize bg-gradient-to-tr from-[#6366f1] via-[#a855f7] via-[#c34772] to-[#f9f916] bg-clip-text text-transparent">
