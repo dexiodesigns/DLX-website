@@ -467,23 +467,12 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`flex items-center justify-center transition ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:opacity-90'}`}
+                  className={`flex items-center justify-center gap-2 px-8 py-3 rounded-[20px] font-medium whitespace-nowrap h-[56px] transition ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:opacity-90'}`}
                   style={{
-                    width: '204px',
-                    height: '56px',
-                    gap: '12px',
-                    paddingLeft: '24px',
-                    paddingRight: '24px',
-                    borderRadius: '20px',
                     background: submitStatus === 'success'
                       ? 'linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), linear-gradient(0deg, #22C55E, #22C55E)'
                       : 'linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), linear-gradient(0deg, #F06058, #F06058)',
                     color: '#ffffff',
-                    fontFamily: 'Inter, sans-serif',
-                    fontWeight: 600,
-                    fontSize: '20px',
-                    lineHeight: '30px',
-                    letterSpacing: '0%',
                   }}
                 >
                   {isSubmitting ? (

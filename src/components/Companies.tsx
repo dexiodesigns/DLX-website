@@ -39,30 +39,28 @@ const LogoItem = ({ defaultImg, hoverImg, alt }: { defaultImg: string, hoverImg:
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div 
+    <div
       className="flex-shrink-0 min-w-[160px] h-16 flex items-center justify-center cursor-pointer relative"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Container to maintain size and handle the swap */}
       <div className="relative w-full h-full flex items-center justify-center">
-        
+
         {/* DEFAULT IMAGE: Hidden on hover */}
-        <img 
-          src={hoverImg} 
-          alt={alt} 
-          className={`h-8 w-auto object-contain transition-opacity duration-300 ${
-            isHovered ? 'opacity-0' : 'opacity-40'
-          }`} 
+        <img
+          src={hoverImg}
+          alt={alt}
+          className={`h-8 w-auto object-contain transition-opacity duration-300 ${isHovered ? 'opacity-0' : 'opacity-40'
+            }`}
         />
 
         {/* HOVER IMAGE: Absolute positioned to sit exactly on top, shown on hover */}
-        <img 
-          src={defaultImg} 
-          alt={`${alt} hover`} 
-          className={`absolute h-8 w-auto object-contain transition-opacity duration-300 ${
-            isHovered ? 'opacity-100' : 'opacity-0'
-          }`} 
+        <img
+          src={defaultImg}
+          alt={`${alt} hover`}
+          className={`absolute h-8 w-auto object-contain transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'
+            }`}
         />
       </div>
     </div>
@@ -70,31 +68,31 @@ const LogoItem = ({ defaultImg, hoverImg, alt }: { defaultImg: string, hoverImg:
 };
 
 // --- 3. Mobile Logo Item (Tap to reveal colored version) ---
-const MobileLogoItem = ({ defaultImg, hoverImg, alt }: { defaultImg: string, hoverImg: string, alt: string }) => {
+const MobileLogoItem = ({ defaultImg, hoverImg, alt, size = 'h-8', scale }: { defaultImg: string, hoverImg: string, alt: string, size?: string, scale?: number }) => {
   const [isActive, setIsActive] = useState(false);
+  const scaleStyle = scale ? { transform: `scale(${scale})` } : {};
 
   return (
-    <div 
+    <div
       className="flex items-center justify-center cursor-pointer"
       onClick={() => setIsActive(!isActive)}
+      style={scaleStyle}
     >
       <div className="relative w-full h-full flex items-center justify-center">
         {/* Grayscale version (default state) */}
-        <img 
-          src={hoverImg} 
-          alt={alt} 
-          className={`h-8 w-auto object-contain transition-opacity duration-300 ${
-            isActive ? 'opacity-0' : 'opacity-100'
-          }`} 
+        <img
+          src={hoverImg}
+          alt={alt}
+          className={`${size} w-auto object-contain transition-opacity duration-300 ${isActive ? 'opacity-0' : 'opacity-100'
+            }`}
         />
 
         {/* Colored version (appears on tap) */}
-        <img 
-          src={defaultImg} 
-          alt={`${alt} colored`} 
-          className={`absolute h-8 w-auto object-contain transition-opacity duration-300 ${
-            isActive ? 'opacity-100' : 'opacity-0'
-          }`} 
+        <img
+          src={defaultImg}
+          alt={`${alt} colored`}
+          className={`absolute ${size} w-auto object-contain transition-opacity duration-300 ${isActive ? 'opacity-100' : 'opacity-0'
+            }`}
         />
       </div>
     </div>
@@ -131,9 +129,9 @@ export default function LogoMarquee() {
       <div className="hidden md:block overflow-hidden">
         <div className="flex gap-x-12 animate-[marquee_60s_linear_infinite] items-center whitespace-nowrap">
           {allDesktopLogos.map((logo, index) => (
-            <LogoItem 
-              key={`${logo.id}-${index}`} 
-              defaultImg={logo.defaultImg} 
+            <LogoItem
+              key={`${logo.id}-${index}`}
+              defaultImg={logo.defaultImg}
               hoverImg={logo.hoverImg}
               alt={logo.id}
             />
@@ -153,7 +151,7 @@ export default function LogoMarquee() {
         {/* Row 2: FlopHero, Vittae, Miniature */}
         <div className="flex justify-between items-center gap-4 max-w-[95%] mx-auto">
           <MobileLogoItem defaultImg={FlopHero} hoverImg={FlopHeroHover} alt="flophero" />
-          <MobileLogoItem defaultImg={Vittae} hoverImg={VittaeHover} alt="vittae" />
+          <MobileLogoItem defaultImg={Vittae} hoverImg={VittaeHover} alt="vittae" size="h-14" />
           <MobileLogoItem defaultImg={Miniature} hoverImg={MiniatureHover} alt="miniature" />
         </div>
 
@@ -168,14 +166,14 @@ export default function LogoMarquee() {
         <div className="flex justify-between items-center gap-4  max-w-[100%] mx-auto">
           <MobileLogoItem defaultImg={Route} hoverImg={RouteHover} alt="route" />
           <MobileLogoItem defaultImg={Treasure} hoverImg={TreasureHover} alt="treasure" />
-          <MobileLogoItem defaultImg={Buddy} hoverImg={BuddyHover} alt="buddy" />
+          <MobileLogoItem defaultImg={Buddy} hoverImg={BuddyHover} alt="buddy" size="h-10" />
         </div>
 
         {/* Row 5: GameNation, Wealthified, Hirifi */}
-        <div className="flex justify-between items-center gap-4  max-w-[50%] mx-auto mx-h-16">
-          <MobileLogoItem defaultImg={GameNation} hoverImg={GameNationHover} alt="gamenation" />
-          <MobileLogoItem defaultImg={Wealthified} hoverImg={WealthifiedHover} alt="wealthified" />
-          <MobileLogoItem defaultImg={Hirifi} hoverImg={HirifiHover} alt="hirifi" />
+        <div className="flex justify-between items-center gap-8 max-w-[92%] mx-auto">
+          <MobileLogoItem defaultImg={GameNation} hoverImg={GameNationHover} alt="gamenation" scale={1.8} />
+          <MobileLogoItem defaultImg={Wealthified} hoverImg={WealthifiedHover} alt="wealthified" scale={1.3} />
+          <MobileLogoItem defaultImg={Hirifi} hoverImg={HirifiHover} alt="hirifi" scale={2} />
         </div>
       </div>
     </>
