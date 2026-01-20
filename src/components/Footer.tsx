@@ -118,7 +118,7 @@ export default function Footer() {
   }: {
     title: string;
     sectionKey: string;
-    links: { name: string; href: string }[];
+    links: { name: string; href: string; isPdf?: boolean }[];
     isEnabled?: boolean;
   }) => {
     const isOpen = openSection === sectionKey && isEnabled;
@@ -154,19 +154,36 @@ export default function Footer() {
           <ul className="flex flex-col gap-3 pb-4">
             {links.map((link, index) => (
               <li key={index}>
-                <Link
-                  to={link.href}
-                  onClick={() => window.scrollTo(0, 0)}
-                  className="font-['Inter'] font-normal text-[14px] leading-[20px] tracking-[0%] hover:text-white transition-colors"
-                  style={{
-                    color: '#D5D7DD',
-                    fontWeight: 400,
-                    height: '20px',
-                    opacity: 1
-                  }}
-                >
-                  {link.name}
-                </Link>
+                {link.isPdf ? (
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-['Inter'] font-normal text-[14px] leading-[20px] tracking-[0%] hover:text-white transition-colors"
+                    style={{
+                      color: '#D5D7DD',
+                      fontWeight: 400,
+                      height: '20px',
+                      opacity: 1
+                    }}
+                  >
+                    {link.name}
+                  </a>
+                ) : (
+                  <Link
+                    to={link.href}
+                    onClick={() => window.scrollTo(0, 0)}
+                    className="font-['Inter'] font-normal text-[14px] leading-[20px] tracking-[0%] hover:text-white transition-colors"
+                    style={{
+                      color: '#D5D7DD',
+                      fontWeight: 400,
+                      height: '20px',
+                      opacity: 1
+                    }}
+                  >
+                    {link.name}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
@@ -484,7 +501,7 @@ export default function Footer() {
       </div>
 
       {/* Copyright - Both Desktop and Mobile */}
-      <div className="border-t border-zinc-800 mx-6 md:mx-[180px]" />
+      <div className="border-t border-zinc-800" />
       <div
         className="mx-auto mb-8 md:mb-0"
         style={{

@@ -35,8 +35,27 @@ import Wealthified from "../assets/companies/Wealthified.svg";
 import WealthifiedHover from "../assets/companies/WealthifiedHover.svg";
 
 // --- 2. Sub-component for individual hover logic (Desktop) ---
-const LogoItem = ({ defaultImg, hoverImg, alt }: { defaultImg: string, hoverImg: string, alt: string }) => {
+const LogoItem = ({ defaultImg, hoverImg, alt, useGrayscaleFilter = false }: { defaultImg: string, hoverImg: string, alt: string, useGrayscaleFilter?: boolean }) => {
   const [isHovered, setIsHovered] = useState(false);
+
+  // For logos with mismatched image sizes (like GameNation), use CSS grayscale filter instead of image swap
+  if (useGrayscaleFilter) {
+    return (
+      <div
+        className="flex-shrink-0 min-w-[160px] h-16 flex items-center justify-center cursor-pointer relative"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <div className="relative w-full h-full flex items-center justify-center">
+          <img
+            src={defaultImg}
+            alt={alt}
+            className={`h-8 w-auto object-contain transition-all duration-300 ${isHovered ? 'opacity-100 grayscale-0' : 'opacity-40 grayscale'}`}
+          />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div
@@ -51,16 +70,14 @@ const LogoItem = ({ defaultImg, hoverImg, alt }: { defaultImg: string, hoverImg:
         <img
           src={hoverImg}
           alt={alt}
-          className={`h-8 w-auto object-contain transition-opacity duration-300 ${isHovered ? 'opacity-0' : 'opacity-40'
-            }`}
+          className={`h-8 w-auto object-contain transition-opacity duration-300 ${isHovered ? 'opacity-0' : 'opacity-40'}`}
         />
 
         {/* HOVER IMAGE: Absolute positioned to sit exactly on top, shown on hover */}
         <img
           src={defaultImg}
           alt={`${alt} hover`}
-          className={`absolute h-8 w-auto object-contain transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'
-            }`}
+          className={`absolute h-8 w-auto object-contain transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}
         />
       </div>
     </div>
@@ -68,31 +85,27 @@ const LogoItem = ({ defaultImg, hoverImg, alt }: { defaultImg: string, hoverImg:
 };
 
 // --- 3. Mobile Logo Item (Tap to reveal colored version) ---
-const MobileLogoItem = ({ defaultImg, hoverImg, alt, size = 'h-8', scale }: { defaultImg: string, hoverImg: string, alt: string, size?: string, scale?: number }) => {
+const MobileLogoItem = ({ defaultImg, hoverImg, alt, scale = 1 }: { defaultImg: string, hoverImg: string, alt: string, scale?: number }) => {
   const [isActive, setIsActive] = useState(false);
-  const scaleStyle = scale ? { transform: `scale(${scale})` } : {};
 
   return (
     <div
-      className="flex items-center justify-center cursor-pointer"
+      className="flex items-center justify-center cursor-pointer px-2 py-2"
       onClick={() => setIsActive(!isActive)}
-      style={scaleStyle}
     >
-      <div className="relative w-full h-full flex items-center justify-center">
+      <div className="relative h-6 flex items-center justify-center" style={{ transform: `scale(${scale})` }}>
         {/* Grayscale version (default state) */}
         <img
           src={hoverImg}
           alt={alt}
-          className={`${size} w-auto object-contain transition-opacity duration-300 ${isActive ? 'opacity-0' : 'opacity-100'
-            }`}
+          className={`h-6 w-auto object-contain transition-opacity duration-300 ${isActive ? 'opacity-0' : 'opacity-100'}`}
         />
 
         {/* Colored version (appears on tap) */}
         <img
           src={defaultImg}
           alt={`${alt} colored`}
-          className={`absolute ${size} w-auto object-contain transition-opacity duration-300 ${isActive ? 'opacity-100' : 'opacity-0'
-            }`}
+          className={`absolute h-6 w-auto object-contain transition-opacity duration-300 ${isActive ? 'opacity-100' : 'opacity-0'}`}
         />
       </div>
     </div>
@@ -111,7 +124,7 @@ export default function LogoMarquee() {
     { id: 'buddy', defaultImg: Buddy, hoverImg: BuddyHover },
     { id: 'dforth', defaultImg: Dforth, hoverImg: DforthHover },
     { id: 'flophero', defaultImg: FlopHero, hoverImg: FlopHeroHover },
-    { id: 'gamenation', defaultImg: GameNation, hoverImg: GameNationHover },
+    { id: 'gamenation', defaultImg: GameNation, hoverImg: GameNationHover, useGrayscaleFilter: true },
     { id: 'kritivan', defaultImg: Kritivan, hoverImg: KritivanHover },
     { id: 'miniature', defaultImg: Miniature, hoverImg: MiniatureHover },
     { id: 'motorq', defaultImg: MotorQ, hoverImg: MotorQHover },
@@ -119,6 +132,26 @@ export default function LogoMarquee() {
     { id: 'route', defaultImg: Route, hoverImg: RouteHover },
     { id: 'treasure', defaultImg: Treasure, hoverImg: TreasureHover },
     { id: 'wealthified', defaultImg: Wealthified, hoverImg: WealthifiedHover },
+  ];
+
+  // Mobile logos with individual scale values for flexibility
+  const mobileLogos = [
+    { id: 'kritivan', defaultImg: Kritivan, hoverImg: KritivanHover, scale: 1 },
+    { id: 'beaconer', defaultImg: Beaconer, hoverImg: BeaconerHover, scale: 1 },
+    { id: 'bubble', defaultImg: Bubble, hoverImg: BubbleHover, scale: 1 },
+    { id: 'flophero', defaultImg: FlopHero, hoverImg: FlopHeroHover, scale: 1 },
+    { id: 'vittae', defaultImg: Vittae, hoverImg: VittaeHover, scale: 2.1 },
+    { id: 'miniature', defaultImg: Miniature, hoverImg: MiniatureHover, scale: 0.9 },
+    { id: 'motorq', defaultImg: MotorQ, hoverImg: MotorQHover, scale: 1 },
+    { id: 'neartail', defaultImg: NearTail, hoverImg: NearTailHover, scale: 1.1 },
+    { id: 'dforth', defaultImg: Dforth, hoverImg: DforthHover, scale: 1.2 },
+    { id: 'route', defaultImg: Route, hoverImg: RouteHover, scale: 1.75 },
+    { id: 'treasure', defaultImg: Treasure, hoverImg: TreasureHover, scale: 1.35 },
+    { id: 'buddy', defaultImg: Buddy, hoverImg: BuddyHover, scale: 1.25 },
+    { id: 'gamenation', defaultImg: GameNation, hoverImg: GameNationHover, scale: 1.9 },
+    { id: 'wealthified', defaultImg: Wealthified, hoverImg: WealthifiedHover, scale: 1.3 },
+    { id: 'hirifi', defaultImg: Hirifi, hoverImg: HirifiHover, scale: 2 },
+    { id: 'algo', defaultImg: Algo, hoverImg: AlgoHover, scale: 1 },
   ];
 
   const allDesktopLogos = [...desktopLogos, ...desktopLogos];
@@ -134,47 +167,24 @@ export default function LogoMarquee() {
               defaultImg={logo.defaultImg}
               hoverImg={logo.hoverImg}
               alt={logo.id}
+              useGrayscaleFilter={'useGrayscaleFilter' in logo && logo.useGrayscaleFilter}
             />
           ))}
         </div>
       </div>
 
-      {/* Mobile: Manual Row Layout */}
-      <div className="md:hidden flex flex-col gap-2 pb-24">
-        {/* Row 1: Kritivan, Beaconer, Bubble */}
-        <div className="flex justify-between items-center gap-4 max-w-[80%] mx-auto">
-          <MobileLogoItem defaultImg={Kritivan} hoverImg={KritivanHover} alt="kritivan" />
-          <MobileLogoItem defaultImg={Beaconer} hoverImg={BeaconerHover} alt="beaconer" />
-          <MobileLogoItem defaultImg={Bubble} hoverImg={BubbleHover} alt="bubble" />
-        </div>
-
-        {/* Row 2: FlopHero, Vittae, Miniature */}
-        <div className="flex justify-between items-center gap-4 max-w-[95%] mx-auto">
-          <MobileLogoItem defaultImg={FlopHero} hoverImg={FlopHeroHover} alt="flophero" />
-          <MobileLogoItem defaultImg={Vittae} hoverImg={VittaeHover} alt="vittae" size="h-14" />
-          <MobileLogoItem defaultImg={Miniature} hoverImg={MiniatureHover} alt="miniature" />
-        </div>
-
-        {/* Row 3: MotorQ, Neartail, Dforth */}
-        <div className="flex justify-between items-center gap-4 max-w-[90%] mx-auto">
-          <MobileLogoItem defaultImg={MotorQ} hoverImg={MotorQHover} alt="motorq" />
-          <MobileLogoItem defaultImg={NearTail} hoverImg={NearTailHover} alt="neartail" />
-          <MobileLogoItem defaultImg={Dforth} hoverImg={DforthHover} alt="dforth" />
-        </div>
-
-        {/* Row 4: Route, Treasure, Buddy */}
-        <div className="flex justify-between items-center gap-4  max-w-[100%] mx-auto">
-          <MobileLogoItem defaultImg={Route} hoverImg={RouteHover} alt="route" />
-          <MobileLogoItem defaultImg={Treasure} hoverImg={TreasureHover} alt="treasure" />
-          <MobileLogoItem defaultImg={Buddy} hoverImg={BuddyHover} alt="buddy" size="h-10" />
-        </div>
-
-        {/* Row 5: GameNation, Wealthified, Hirifi */}
-        <div className="flex justify-between items-center gap-8 max-w-[92%] mx-auto">
-          <MobileLogoItem defaultImg={GameNation} hoverImg={GameNationHover} alt="gamenation" scale={1.8} />
-          <MobileLogoItem defaultImg={Wealthified} hoverImg={WealthifiedHover} alt="wealthified" scale={1.3} />
-          <MobileLogoItem defaultImg={Hirifi} hoverImg={HirifiHover} alt="hirifi" scale={2} />
-        </div>
+      {/* Mobile: Word Cloud Layout */}
+      <div className="md:hidden flex flex-wrap justify-center items-center gap-x-4 gap-y-3 max-w-[300px] mx-auto pb-24">
+        {mobileLogos.map((logo) => (
+          <MobileLogoItem
+          
+            key={logo.id}
+            defaultImg={logo.defaultImg}
+            hoverImg={logo.hoverImg}
+            alt={logo.id}
+            scale={logo.scale}
+          />
+        ))}
       </div>
     </>
   );

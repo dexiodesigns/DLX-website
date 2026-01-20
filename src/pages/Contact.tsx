@@ -593,7 +593,7 @@ export default function Contact() {
                   >
                     1
                   </div>
-                  <div>
+                  <div className="pt-1.5">
                     <h4
                       className="mb-1"
                       style={{
@@ -634,7 +634,7 @@ export default function Contact() {
                   >
                     2
                   </div>
-                  <div>
+                  <div className="pt-1.5">
                     <h4
                       className="mb-1"
                       style={{
@@ -675,7 +675,7 @@ export default function Contact() {
                   >
                     3
                   </div>
-                  <div>
+                  <div className="pt-1.5">
                     <h4
                       className="mb-1"
                       style={{

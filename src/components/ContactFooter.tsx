@@ -140,7 +140,7 @@ const ContactFooter: React.FC<HeroSectionProps> = ({
           
         @media (max-width: 768px) {
           .content-wrapper {
-            padding: 24px;
+            padding: 40px 24px 24px 24px;
             display: flex;
             align-items: flex-start;
             text-align: left;
