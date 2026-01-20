@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import FutureIntelliImg from "../assets/HomePageImages/futureIntelliImg.jpg";
+import buildingFutureVideo from "../assets/Videos/HomePage-BuildingTheFuture.mp4";
 import { Star } from "../assets/HomeIcons/Star";
 import { Bulb } from "../assets/HomeIcons/Bulb";
 import { Sun } from "../assets/HomeIcons/Sun";
@@ -83,11 +83,16 @@ export default function Home() {
             }}
           ></div>
           <div className="relative rounded-[24px] overflow-hidden flex justify-center">
-            <img
-              src={FutureIntelliImg}
-              alt="Future Intelligent Design"
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
               className="w-full md:max-w-none h-auto object-contain"
-            />
+            >
+              <source src={buildingFutureVideo} type="video/mp4" />
+            </video>
           </div>
         </div>
 

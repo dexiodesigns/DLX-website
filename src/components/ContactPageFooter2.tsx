@@ -448,6 +448,12 @@ const ContactPageFooter2 = ({ }) => {
         </div>
       </div>
 
+      {/* Divider above footer */}
+      <div 
+        className="border-t border-zinc-800 mx-6 md:mx-auto" 
+        style={{ maxWidth: '1280px' }}
+      />
+
       <Footer />
     </div>
   );

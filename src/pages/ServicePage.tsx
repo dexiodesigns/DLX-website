@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { ArrowRight, CheckCircle, Users, Settings, MessageCircle, Sparkles, Focus, MousePointer, PenTool, Heart, ThumbsUp, Award, BarChart2, Scale, ChevronUp, ChevronDown, TrendingDown, AlignLeft, RefreshCw, GitBranch, CircleDot, Zap, Brain, GitPullRequest, LogIn, MessageSquare, Grid3x3, Lightbulb, Maximize, Circle, PlayCircle, Cpu, TrendingUp, Cloud, MessageSquareOff } from "lucide-react";
+import { ArrowRight, CheckCircle, Users, Settings, MessageCircle, Sparkles, Focus, MousePointer, PenTool, Heart, ThumbsUp, Award, BarChart2, Scale, ChevronUp, ChevronDown, ChevronLeft, ChevronRight, TrendingDown, AlignLeft, RefreshCw, GitBranch, CircleDot, Zap, Brain, GitPullRequest, LogIn, MessageSquare, Grid3x3, Lightbulb, Maximize, Circle, PlayCircle, Cpu, TrendingUp, Cloud, MessageSquareOff } from "lucide-react";
 import { motion } from "framer-motion";
 import { getServiceBySlug, serviceNavItems, ServiceData } from "../data/servicesData";
 import Footer from "../components/Footer";
@@ -86,8 +86,46 @@ export default function ServicePage() {
     );
   }
 
+  const currentIndex = serviceNavItems.findIndex(item => item.slug === slug);
+  const goPrev = () => {
+    if (currentIndex > 0) {
+      return serviceNavItems[currentIndex - 1].href;
+    }
+  };
+  const goNext = () => {
+    if (currentIndex < serviceNavItems.length - 1) {
+      return serviceNavItems[currentIndex + 1].href;
+    }
+  };
+
   return (
     <main className="bg-[#0B0C0E] text-white min-h-screen pt-[100px] md:pt-[100px] font-['Inter']">
+      {/* Mobile Service Navigation - Hidden on desktop, visible on mobile/tablet */}
+      <div className="lg:hidden flex items-center justify-center relative px-4 py-6">
+        {/* Left Arrow */}
+        <Link
+          to={goPrev() || '#'}
+          className={`absolute left-6 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center ${currentIndex === 0 ? 'opacity-30 pointer-events-none' : ''
+            }`}
+        >
+          <ChevronLeft size={20} />
+        </Link>
+
+        {/* Active Service Name */}
+        <span className="text-[20px] font-medium text-white capitalize">
+          {service.title}
+        </span>
+
+        {/* Right Arrow */}
+        <Link
+          to={goNext() || '#'}
+          className={`absolute right-6 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center ${currentIndex === serviceNavItems.length - 1 ? 'opacity-30 pointer-events-none' : ''
+            }`}
+        >
+          <ChevronRight size={20} />
+        </Link>
+      </div>
+
       {/* Sticky Service Navigation - Hidden on mobile/tablet, visible on desktop */}
       <div
         className="hidden lg:flex sticky top-0 left-0 right-0 z-40 justify-center px-6 py-4"
@@ -492,6 +530,108 @@ export default function ServicePage() {
           </Link>
         </div>
       </section>
+
+      {/* Bottom Gradient Effect Container - mimics ContactFooter structure */}
+      <style>{`
+        @keyframes spinGradientService {
+          0% {
+            transform: translateX(-50%) rotate(0deg);
+          }
+          100% {
+            transform: translateX(-50%) rotate(360deg);
+          }
+        }
+
+        .service-hero-container {
+          position: relative;
+          width: 100%;
+          margin: 0 auto;
+          margin-top: -380px;
+          height: 480px;
+        }
+
+        @media (max-width: 768px) {
+          .service-hero-container {
+            margin-top: -420px;
+            height: 446px;
+          }
+        }
+
+        .service-sunshine-effect {
+          position: absolute;
+          inset: 0;
+          height: 480px;
+          overflow: hidden;
+          pointer-events: none;
+          z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+          .service-sunshine-effect {
+            height: 446px;
+          }
+        }
+
+        .service-sunshine-effect::before {
+          content: '';
+          position: absolute;
+          bottom: -1256px;
+          left: 50%;
+          width: 1400px;
+          height: 1400px;
+          background: conic-gradient(
+            from 0deg,
+            rgba(244, 220, 124, 0.4) 0deg,
+            rgba(240, 96, 88, 0.35) 90deg,
+            rgba(64, 68, 232, 0.3) 180deg,
+            rgba(240, 96, 88, 0.35) 270deg,
+            rgba(244, 220, 124, 0.4) 360deg
+          );
+          border-radius: 50%;
+          animation: spinGradientService 8s linear infinite;
+          filter: blur(80px);
+          opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+          .service-sunshine-effect::before {
+            width: 900px;
+            height: 900px;
+            bottom: -720px;
+            filter: blur(60px);
+          }
+        }
+
+        .service-sunshine-effect::after {
+          content: '';
+          position: absolute;
+          bottom: -100px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 400px;
+          height: 200px;
+          border-radius: 50%;
+          background: radial-gradient(
+            ellipse at center,
+            rgba(244, 220, 124, 0.5) 0%,
+            rgba(240, 96, 88, 0.3) 40%,
+            transparent 70%
+          );
+          filter: blur(40px);
+        }
+
+        @media (max-width: 768px) {
+          .service-sunshine-effect::after {
+            width: 260px;
+            height: 140px;
+            filter: blur(30px);
+          }
+        }
+      `}</style>
+      
+      <div className="service-hero-container">
+        <div className="service-sunshine-effect"></div>
+      </div>
 
       <Footer />
     </main>

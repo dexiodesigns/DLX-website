@@ -395,21 +395,21 @@ export default function Company() {
                 {/* Icon */}
                 {step.iconType === "circle-outline" && (
                   <div
-                    className="w-8 h-8 rounded-full flex-shrink-0"
+                    className="w-6 h-6 rounded-full flex-shrink-0"
                     style={{
-                      border: '2px solid #F06058',
+                      border: '1.5px solid #F06058',
                       backgroundColor: '#0B0C0E',
                     }}
                   />
                 )}
                 {step.iconType === "triangle" && (
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
-                    <path d="M8 6L8 26L24 16L8 6Z" stroke="#F06058" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="#0B0C0E" />
+                  <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
+                    <path d="M8 6L8 26L24 16L8 6Z" stroke="#F06058" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="#0B0C0E" />
                   </svg>
                 )}
                 {step.iconType === "circle-filled" && (
                   <div
-                    className="w-8 h-8 rounded-full flex-shrink-0"
+                    className="w-6 h-6 rounded-full flex-shrink-0"
                     style={{ backgroundColor: '#F06058' }}
                   />
                 )}
