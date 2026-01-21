@@ -28,7 +28,7 @@ export const testimonials = [
   {
     id: 3,
     name: "Rithwin",
-    role: "Founder, Route Your Travel",
+    role: "Founder, Vittae Money",
     content:
       "Dexio team was able to support us in our revamp journey and are now turning out to be a valuable member of our engineering community. Our POC and designer Ganga has been a phenomenal young talent for Vittae and she has proved that she is hungry to learn & grow along with us.",
     image: People3
