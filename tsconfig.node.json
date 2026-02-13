@@ -11,9 +11,5 @@
     "declaration": true,
     "declarationMap": true
   },
-  "include": [
-    "vite.config.js",
-    "postcss.config.js",
-    "tailwind.config.js"
-  ]
+  "include": ["vite.config.js", "postcss.config.js", "tailwind.config.js"]
 }

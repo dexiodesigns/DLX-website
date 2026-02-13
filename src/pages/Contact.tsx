@@ -11,48 +11,52 @@ export default function Contact() {
     window.scrollTo(0, 0);
   }, []);
   const [formData, setFormData] = useState({
-    fullName: '',
-    workEmail: '',
-    companyName: '',
-    areaOfFocus: '',
-    challenge: '',
+    fullName: "",
+    workEmail: "",
+    companyName: "",
+    areaOfFocus: "",
+    challenge: "",
   });
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
 
   const areaOptions = [
-    'Product Design',
-    'UX Research',
-    'Design Systems',
-    'AI/ML Integration',
-    'Mobile App Design',
-    'Web Application',
-    'Other',
+    "Product Design",
+    "UX Research",
+    "Design Systems",
+    "AI/ML Integration",
+    "Mobile App Design",
+    "Web Application",
+    "Other",
   ];
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
     // Reset status when user starts typing again
-    if (submitStatus !== 'idle') setSubmitStatus('idle');
+    if (submitStatus !== "idle") setSubmitStatus("idle");
   };
 
   const handleSelectOption = (option: string) => {
-    setFormData(prev => ({ ...prev, areaOfFocus: option }));
+    setFormData((prev) => ({ ...prev, areaOfFocus: option }));
     setIsDropdownOpen(false);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setSubmitStatus('idle');
+    setSubmitStatus("idle");
 
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           access_key: WEB3FORMS_ACCESS_KEY,
@@ -75,22 +79,22 @@ export default function Contact() {
       const result = await response.json();
 
       if (result.success) {
-        setSubmitStatus('success');
+        setSubmitStatus("success");
         // Reset form after successful submission
         setFormData({
-          fullName: '',
-          workEmail: '',
-          companyName: '',
-          areaOfFocus: '',
-          challenge: '',
+          fullName: "",
+          workEmail: "",
+          companyName: "",
+          areaOfFocus: "",
+          challenge: "",
         });
       } else {
-        setSubmitStatus('error');
-        console.error('Form submission failed:', result);
+        setSubmitStatus("error");
+        console.error("Form submission failed:", result);
       }
     } catch (error) {
-      setSubmitStatus('error');
-      console.error('Error submitting form:', error);
+      setSubmitStatus("error");
+      console.error("Error submitting form:", error);
     } finally {
       setIsSubmitting(false);
     }
@@ -187,33 +191,34 @@ export default function Contact() {
       <section
         className="flex items-center justify-center mx-auto px-5 md:px-0 pt-[140px] md:pt-[200px] pb-[60px] md:pb-[144px] relative z-10"
         style={{
-          maxWidth: '100%',
+          maxWidth: "100%",
           opacity: 1,
         }}
       >
         <div
           className="flex flex-col items-center text-center w-[335px] md:w-[1280px]"
           style={{
-            gap: '12px',
+            gap: "12px",
           }}
         >
           {/* Main Heading */}
           <h1
             className="w-[335px] md:w-[717px] h-auto md:h-[60px] text-[30px] md:text-[48px] leading-[125%] md:leading-[60px]"
             style={{
-              maxWidth: '800px',
-              fontFamily: 'Sora, sans-serif',
+              maxWidth: "800px",
+              fontFamily: "Sora, sans-serif",
               fontWeight: 600,
-              letterSpacing: '0%',
-              textAlign: 'center',
+              letterSpacing: "0%",
+              textAlign: "center",
               opacity: 1,
             }}
           >
-            Let's Solve the{' '}
+            Let's Solve the{" "}
             <span
               className="bg-clip-text text-transparent block md:inline"
               style={{
-                backgroundImage: 'linear-gradient(225deg, #F4DC7C -0.1%, #F06058 39.94%, #4044E8 100%)',
+                backgroundImage:
+                  "linear-gradient(225deg, #F4DC7C -0.1%, #F06058 39.94%, #4044E8 100%)",
               }}
             >
               Right Problem
@@ -224,16 +229,18 @@ export default function Contact() {
           <p
             className="w-[335px] md:w-auto text-[14px] md:text-[18px] leading-[150%] md:leading-[28px]"
             style={{
-              fontFamily: 'Inter, sans-serif',
+              fontFamily: "Inter, sans-serif",
               fontWeight: 400,
-              letterSpacing: '0%',
-              textAlign: 'center',
-              color: '#D5D7DD',
-              maxWidth: '800px',
+              letterSpacing: "0%",
+              textAlign: "center",
+              color: "#D5D7DD",
+              maxWidth: "800px",
               opacity: 1,
             }}
           >
-            Great products start with the right questions. Tell us what you're working on, we'll respond with a clear, actionable recommendation within 24 hours.
+            Great products start with the right questions. Tell us what you're
+            working on, we'll respond with a clear, actionable recommendation
+            within 24 hours.
           </p>
         </div>
       </section>
@@ -242,28 +249,31 @@ export default function Contact() {
       <section
         className="flex items-center justify-center px-6 relative z-10"
         style={{
-          width: '100%',
-          backdropFilter: 'blur(40px)',
-          WebkitBackdropFilter: 'blur(40px)',
+          width: "100%",
+          backdropFilter: "blur(40px)",
+          WebkitBackdropFilter: "blur(40px)",
         }}
       >
         <div
           className="flex flex-col lg:flex-row gap-12 lg:gap-24"
           style={{
-            width: '1280px',
-            maxWidth: '100%',
+            width: "1280px",
+            maxWidth: "100%",
           }}
         >
           {/* Left Side - Contact Form */}
-          <div className="flex-1 w-full lg:w-auto mx-auto lg:mx-0" style={{ maxWidth: '720px' }}>
+          <div
+            className="flex-1 w-full lg:w-auto mx-auto lg:mx-0"
+            style={{ maxWidth: "720px" }}
+          >
             <h2
               className="mb-10"
               style={{
-                fontFamily: 'Sora, sans-serif',
+                fontFamily: "Sora, sans-serif",
                 fontWeight: 600,
-                fontSize: '32px',
-                lineHeight: '40px',
-                color: '#ffffff',
+                fontSize: "32px",
+                lineHeight: "40px",
+                color: "#ffffff",
               }}
             >
               Get in touch
@@ -277,14 +287,14 @@ export default function Contact() {
                   <label
                     className="block mb-2"
                     style={{
-                      fontFamily: 'Inter, sans-serif',
+                      fontFamily: "Inter, sans-serif",
                       fontWeight: 400,
-                      fontSize: '14px',
-                      lineHeight: '20px',
-                      color: 'rgba(255, 255, 255, 0.7)',
+                      fontSize: "14px",
+                      lineHeight: "20px",
+                      color: "rgba(255, 255, 255, 0.7)",
                     }}
                   >
-                    Full Name <span style={{ color: '#F06058' }}>*</span>
+                    Full Name <span style={{ color: "#F06058" }}>*</span>
                   </label>
                   <input
                     type="text"
@@ -295,11 +305,11 @@ export default function Contact() {
                     required
                     className="w-full px-4 py-3 rounded-lg outline-none transition focus:ring-1 focus:ring-zinc-600"
                     style={{
-                      backgroundColor: '#1A1D21',
-                      border: 'none',
-                      fontFamily: 'Inter, sans-serif',
-                      fontSize: '16px',
-                      color: '#ffffff',
+                      backgroundColor: "#1A1D21",
+                      border: "none",
+                      fontFamily: "Inter, sans-serif",
+                      fontSize: "16px",
+                      color: "#ffffff",
                     }}
                   />
                 </div>
@@ -309,14 +319,14 @@ export default function Contact() {
                   <label
                     className="block mb-2"
                     style={{
-                      fontFamily: 'Inter, sans-serif',
+                      fontFamily: "Inter, sans-serif",
                       fontWeight: 400,
-                      fontSize: '14px',
-                      lineHeight: '20px',
-                      color: 'rgba(255, 255, 255, 0.7)',
+                      fontSize: "14px",
+                      lineHeight: "20px",
+                      color: "rgba(255, 255, 255, 0.7)",
                     }}
                   >
-                    Work Email <span style={{ color: '#F06058' }}>*</span>
+                    Work Email <span style={{ color: "#F06058" }}>*</span>
                   </label>
                   <input
                     type="email"
@@ -327,11 +337,11 @@ export default function Contact() {
                     required
                     className="w-full px-4 py-3 rounded-lg outline-none transition focus:ring-1 focus:ring-zinc-600"
                     style={{
-                      backgroundColor: '#1A1D21',
-                      border: 'none',
-                      fontFamily: 'Inter, sans-serif',
-                      fontSize: '16px',
-                      color: '#ffffff',
+                      backgroundColor: "#1A1D21",
+                      border: "none",
+                      fontFamily: "Inter, sans-serif",
+                      fontSize: "16px",
+                      color: "#ffffff",
                     }}
                   />
                 </div>
@@ -342,14 +352,14 @@ export default function Contact() {
                 <label
                   className="block mb-2"
                   style={{
-                    fontFamily: 'Inter, sans-serif',
+                    fontFamily: "Inter, sans-serif",
                     fontWeight: 400,
-                    fontSize: '14px',
-                    lineHeight: '20px',
-                    color: 'rgba(255, 255, 255, 0.7)',
+                    fontSize: "14px",
+                    lineHeight: "20px",
+                    color: "rgba(255, 255, 255, 0.7)",
                   }}
                 >
-                  Company Name <span style={{ color: '#F06058' }}>*</span>
+                  Company Name <span style={{ color: "#F06058" }}>*</span>
                 </label>
                 <input
                   type="text"
@@ -360,11 +370,11 @@ export default function Contact() {
                   required
                   className="w-full px-4 py-3 rounded-lg outline-none transition focus:ring-1 focus:ring-zinc-600"
                   style={{
-                    backgroundColor: '#1A1D21',
-                    border: 'none',
-                    fontFamily: 'Inter, sans-serif',
-                    fontSize: '16px',
-                    color: '#ffffff',
+                    backgroundColor: "#1A1D21",
+                    border: "none",
+                    fontFamily: "Inter, sans-serif",
+                    fontSize: "16px",
+                    color: "#ffffff",
                   }}
                 />
               </div>
@@ -374,32 +384,35 @@ export default function Contact() {
                 <label
                   className="block mb-2"
                   style={{
-                    fontFamily: 'Inter, sans-serif',
+                    fontFamily: "Inter, sans-serif",
                     fontWeight: 400,
-                    fontSize: '14px',
-                    lineHeight: '20px',
-                    color: 'rgba(255, 255, 255, 0.7)',
+                    fontSize: "14px",
+                    lineHeight: "20px",
+                    color: "rgba(255, 255, 255, 0.7)",
                   }}
                 >
-                  What are you working on? <span style={{ color: '#F06058' }}>*</span>
+                  What are you working on?{" "}
+                  <span style={{ color: "#F06058" }}>*</span>
                 </label>
                 <button
                   type="button"
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                   className="w-full px-4 py-3 rounded-lg outline-none transition flex items-center justify-between focus:ring-1 focus:ring-zinc-600"
                   style={{
-                    backgroundColor: '#1A1D21',
-                    border: 'none',
-                    fontFamily: 'Inter, sans-serif',
-                    fontSize: '16px',
-                    color: formData.areaOfFocus ? '#ffffff' : 'rgba(255, 255, 255, 0.5)',
+                    backgroundColor: "#1A1D21",
+                    border: "none",
+                    fontFamily: "Inter, sans-serif",
+                    fontSize: "16px",
+                    color: formData.areaOfFocus
+                      ? "#ffffff"
+                      : "rgba(255, 255, 255, 0.5)",
                   }}
                 >
-                  {formData.areaOfFocus || 'Select an area of focus'}
+                  {formData.areaOfFocus || "Select an area of focus"}
                   <ChevronDown
                     size={20}
-                    className={`transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}
-                    style={{ color: 'rgba(255, 255, 255, 0.5)' }}
+                    className={`transition-transform ${isDropdownOpen ? "rotate-180" : ""}`}
+                    style={{ color: "rgba(255, 255, 255, 0.5)" }}
                   />
                 </button>
 
@@ -407,8 +420,8 @@ export default function Contact() {
                   <div
                     className="absolute top-full left-0 right-0 mt-2 rounded-lg overflow-hidden z-50"
                     style={{
-                      backgroundColor: '#1A1D21',
-                      border: '1px solid rgba(255, 255, 255, 0.1)',
+                      backgroundColor: "#1A1D21",
+                      border: "1px solid rgba(255, 255, 255, 0.1)",
                     }}
                   >
                     {areaOptions.map((option) => (
@@ -418,9 +431,9 @@ export default function Contact() {
                         onClick={() => handleSelectOption(option)}
                         className="w-full px-4 py-3 text-left hover:bg-zinc-800 transition"
                         style={{
-                          fontFamily: 'Inter, sans-serif',
-                          fontSize: '16px',
-                          color: '#ffffff',
+                          fontFamily: "Inter, sans-serif",
+                          fontSize: "16px",
+                          color: "#ffffff",
                         }}
                       >
                         {option}
@@ -435,14 +448,15 @@ export default function Contact() {
                 <label
                   className="block mb-2"
                   style={{
-                    fontFamily: 'Inter, sans-serif',
+                    fontFamily: "Inter, sans-serif",
                     fontWeight: 400,
-                    fontSize: '14px',
-                    lineHeight: '20px',
-                    color: 'rgba(255, 255, 255, 0.7)',
+                    fontSize: "14px",
+                    lineHeight: "20px",
+                    color: "rgba(255, 255, 255, 0.7)",
                   }}
                 >
-                  Describe your challenge or goal <span style={{ color: '#F06058' }}>*</span>
+                  Describe your challenge or goal{" "}
+                  <span style={{ color: "#F06058" }}>*</span>
                 </label>
                 <textarea
                   name="challenge"
@@ -453,11 +467,11 @@ export default function Contact() {
                   rows={5}
                   className="w-full px-4 py-3 rounded-lg outline-none transition resize-none focus:ring-1 focus:ring-zinc-600"
                   style={{
-                    backgroundColor: '#1A1D21',
-                    border: 'none',
-                    fontFamily: 'Inter, sans-serif',
-                    fontSize: '16px',
-                    color: '#ffffff',
+                    backgroundColor: "#1A1D21",
+                    border: "none",
+                    fontFamily: "Inter, sans-serif",
+                    fontSize: "16px",
+                    color: "#ffffff",
                   }}
                 />
               </div>
@@ -467,12 +481,13 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`flex items-center justify-center gap-2 px-8 py-3 rounded-[20px] font-medium whitespace-nowrap h-[56px] transition ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:opacity-90'}`}
+                  className={`flex items-center justify-center gap-2 px-8 py-3 rounded-[20px] font-medium whitespace-nowrap h-[56px] transition ${isSubmitting ? "opacity-70 cursor-not-allowed" : "hover:opacity-90"}`}
                   style={{
-                    background: submitStatus === 'success'
-                      ? 'linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), linear-gradient(0deg, #22C55E, #22C55E)'
-                      : 'linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), linear-gradient(0deg, #F06058, #F06058)',
-                    color: '#ffffff',
+                    background:
+                      submitStatus === "success"
+                        ? "linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), linear-gradient(0deg, #22C55E, #22C55E)"
+                        : "linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), linear-gradient(0deg, #F06058, #F06058)",
+                    color: "#ffffff",
                   }}
                 >
                   {isSubmitting ? (
@@ -480,7 +495,7 @@ export default function Contact() {
                       <Loader2 size={20} className="animate-spin" />
                       Sending...
                     </>
-                  ) : submitStatus === 'success' ? (
+                  ) : submitStatus === "success" ? (
                     <>
                       <Check size={20} />
                       Sent!
@@ -495,49 +510,52 @@ export default function Contact() {
               </div>
 
               {/* Status Messages */}
-              {submitStatus === 'success' && (
+              {submitStatus === "success" && (
                 <p
                   style={{
-                    fontFamily: 'Inter, sans-serif',
+                    fontFamily: "Inter, sans-serif",
                     fontWeight: 500,
-                    fontSize: '14px',
-                    lineHeight: '20px',
-                    color: '#22C55E',
-                    marginTop: '16px',
+                    fontSize: "14px",
+                    lineHeight: "20px",
+                    color: "#22C55E",
+                    marginTop: "16px",
                   }}
                 >
-                  ✓ Message sent! Check your email for a confirmation. We'll respond within 24 hours.
+                  ✓ Message sent! Check your email for a confirmation. We'll
+                  respond within 24 hours.
                 </p>
               )}
 
-              {submitStatus === 'error' && (
+              {submitStatus === "error" && (
                 <p
                   style={{
-                    fontFamily: 'Inter, sans-serif',
+                    fontFamily: "Inter, sans-serif",
                     fontWeight: 500,
-                    fontSize: '14px',
-                    lineHeight: '20px',
-                    color: '#F06058',
-                    marginTop: '16px',
+                    fontSize: "14px",
+                    lineHeight: "20px",
+                    color: "#F06058",
+                    marginTop: "16px",
                   }}
                 >
-                  Something went wrong. Please try again or email us directly at sales@dexiodesigns.com
+                  Something went wrong. Please try again or email us directly at
+                  sales@dexiodesigns.com
                 </p>
               )}
 
               {/* Note */}
-              {submitStatus === 'idle' && (
+              {submitStatus === "idle" && (
                 <p
                   style={{
-                    fontFamily: 'Inter, sans-serif',
+                    fontFamily: "Inter, sans-serif",
                     fontWeight: 400,
-                    fontSize: '14px',
-                    lineHeight: '20px',
-                    color: 'rgba(255, 255, 255, 0.5)',
-                    marginTop: '16px',
+                    fontSize: "14px",
+                    lineHeight: "20px",
+                    color: "rgba(255, 255, 255, 0.5)",
+                    marginTop: "16px",
                   }}
                 >
-                  No generic calendar links. Just a direct response with a clear next step.
+                  No generic calendar links. Just a direct response with a clear
+                  next step.
                 </p>
               )}
             </form>
@@ -549,18 +567,18 @@ export default function Contact() {
             <div
               className="rounded-2xl p-8"
               style={{
-                backgroundColor: '#131517',
-                border: '1px solid rgba(255, 255, 255, 0.05)',
+                backgroundColor: "#131517",
+                border: "1px solid rgba(255, 255, 255, 0.05)",
               }}
             >
               <h3
                 className="mb-8"
                 style={{
-                  fontFamily: 'Sora, sans-serif',
+                  fontFamily: "Sora, sans-serif",
                   fontWeight: 600,
-                  fontSize: '24px',
-                  lineHeight: '32px',
-                  color: '#ffffff',
+                  fontSize: "24px",
+                  lineHeight: "32px",
+                  color: "#ffffff",
                 }}
               >
                 What to expect?
@@ -572,9 +590,10 @@ export default function Contact() {
                 <div
                   className="absolute left-[18px] top-[36px]"
                   style={{
-                    width: '2px',
-                    height: 'calc(100% - 72px)',
-                    background: 'linear-gradient(180deg, #22D3EE 0%, #22D3EE 100%)',
+                    width: "2px",
+                    height: "calc(100% - 72px)",
+                    background:
+                      "linear-gradient(180deg, #22D3EE 0%, #22D3EE 100%)",
                     opacity: 0.3,
                   }}
                 />
@@ -584,11 +603,11 @@ export default function Contact() {
                   <div
                     className="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center"
                     style={{
-                      backgroundColor: '#22D3EE',
-                      fontFamily: 'Inter, sans-serif',
+                      backgroundColor: "#22D3EE",
+                      fontFamily: "Inter, sans-serif",
                       fontWeight: 600,
-                      fontSize: '16px',
-                      color: '#0B0C0E',
+                      fontSize: "16px",
+                      color: "#0B0C0E",
                     }}
                   >
                     1
@@ -597,25 +616,26 @@ export default function Contact() {
                     <h4
                       className="mb-1"
                       style={{
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: "Inter, sans-serif",
                         fontWeight: 600,
-                        fontSize: '16px',
-                        lineHeight: '24px',
-                        color: '#ffffff',
+                        fontSize: "16px",
+                        lineHeight: "24px",
+                        color: "#ffffff",
                       }}
                     >
                       We Review
                     </h4>
                     <p
                       style={{
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: "Inter, sans-serif",
                         fontWeight: 400,
-                        fontSize: '14px',
-                        lineHeight: '20px',
-                        color: 'rgba(255, 255, 255, 0.6)',
+                        fontSize: "14px",
+                        lineHeight: "20px",
+                        color: "rgba(255, 255, 255, 0.6)",
                       }}
                     >
-                      Your request lands with our product and design team—not a sales queue.
+                      Your request lands with our product and design team—not a
+                      sales queue.
                     </p>
                   </div>
                 </div>
@@ -625,11 +645,11 @@ export default function Contact() {
                   <div
                     className="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center"
                     style={{
-                      backgroundColor: '#22D3EE',
-                      fontFamily: 'Inter, sans-serif',
+                      backgroundColor: "#22D3EE",
+                      fontFamily: "Inter, sans-serif",
                       fontWeight: 600,
-                      fontSize: '16px',
-                      color: '#0B0C0E',
+                      fontSize: "16px",
+                      color: "#0B0C0E",
                     }}
                   >
                     2
@@ -638,25 +658,26 @@ export default function Contact() {
                     <h4
                       className="mb-1"
                       style={{
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: "Inter, sans-serif",
                         fontWeight: 600,
-                        fontSize: '16px',
-                        lineHeight: '24px',
-                        color: '#ffffff',
+                        fontSize: "16px",
+                        lineHeight: "24px",
+                        color: "#ffffff",
                       }}
                     >
                       We Respond
                     </h4>
                     <p
                       style={{
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: "Inter, sans-serif",
                         fontWeight: 400,
-                        fontSize: '14px',
-                        lineHeight: '20px',
-                        color: 'rgba(255, 255, 255, 0.6)',
+                        fontSize: "14px",
+                        lineHeight: "20px",
+                        color: "rgba(255, 255, 255, 0.6)",
                       }}
                     >
-                      Within 24 hours, you'll get a specific recommendation tailored to your situation.
+                      Within 24 hours, you'll get a specific recommendation
+                      tailored to your situation.
                     </p>
                   </div>
                 </div>
@@ -666,11 +687,11 @@ export default function Contact() {
                   <div
                     className="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center"
                     style={{
-                      backgroundColor: '#22D3EE',
-                      fontFamily: 'Inter, sans-serif',
+                      backgroundColor: "#22D3EE",
+                      fontFamily: "Inter, sans-serif",
                       fontWeight: 600,
-                      fontSize: '16px',
-                      color: '#0B0C0E',
+                      fontSize: "16px",
+                      color: "#0B0C0E",
                     }}
                   >
                     3
@@ -679,25 +700,26 @@ export default function Contact() {
                     <h4
                       className="mb-1"
                       style={{
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: "Inter, sans-serif",
                         fontWeight: 600,
-                        fontSize: '16px',
-                        lineHeight: '24px',
-                        color: '#ffffff',
+                        fontSize: "16px",
+                        lineHeight: "24px",
+                        color: "#ffffff",
                       }}
                     >
                       We Decide Together
                     </h4>
                     <p
                       style={{
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: "Inter, sans-serif",
                         fontWeight: 400,
-                        fontSize: '14px',
-                        lineHeight: '20px',
-                        color: 'rgba(255, 255, 255, 0.6)',
+                        fontSize: "14px",
+                        lineHeight: "20px",
+                        color: "rgba(255, 255, 255, 0.6)",
                       }}
                     >
-                      If there's a fit, we move forward. If not, we'll point you somewhere better.
+                      If there's a fit, we move forward. If not, we'll point you
+                      somewhere better.
                     </p>
                   </div>
                 </div>
@@ -708,18 +730,18 @@ export default function Contact() {
             <div
               className="rounded-2xl p-8"
               style={{
-                backgroundColor: '#131517',
-                border: '1px solid rgba(255, 255, 255, 0.05)',
+                backgroundColor: "#131517",
+                border: "1px solid rgba(255, 255, 255, 0.05)",
               }}
             >
               <h3
                 className="mb-6"
                 style={{
-                  fontFamily: 'Sora, sans-serif',
+                  fontFamily: "Sora, sans-serif",
                   fontWeight: 600,
-                  fontSize: '24px',
-                  lineHeight: '32px',
-                  color: '#ffffff',
+                  fontSize: "24px",
+                  lineHeight: "32px",
+                  color: "#ffffff",
                 }}
               >
                 We're a Good Fit If You...
@@ -727,24 +749,24 @@ export default function Contact() {
 
               <ul className="space-y-4">
                 {[
-                  'Care more about outcomes than outputs.',
-                  'Are building for both humans and AI.',
-                  'Want strategic thinking, not just execution.',
+                  "Care more about outcomes than outputs.",
+                  "Are building for both humans and AI.",
+                  "Want strategic thinking, not just execution.",
                 ].map((item, index) => (
                   <li key={index} className="flex items-center gap-3">
                     <div
                       className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center"
-                      style={{ backgroundColor: '#F06058' }}
+                      style={{ backgroundColor: "#F06058" }}
                     >
                       <Check size={14} color="#ffffff" strokeWidth={3} />
                     </div>
                     <span
                       style={{
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: "Inter, sans-serif",
                         fontWeight: 400,
-                        fontSize: '16px',
-                        lineHeight: '24px',
-                        color: '#ffffff',
+                        fontSize: "16px",
+                        lineHeight: "24px",
+                        color: "#ffffff",
                       }}
                     >
                       {item}
@@ -762,4 +784,3 @@ export default function Contact() {
     </main>
   );
 }
-

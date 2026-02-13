@@ -13,41 +13,44 @@ export interface TabConfig {
 }
 
 export const TAB_CONFIGS: Record<string, TabConfig> = {
-  "Services": {
+  Services: {
     id: "services",
     label: "Services",
     activeColor: "#7a78ed",
     textColor: "text-black",
     content: {
       title: "Service\nExcellence",
-      description: "Crafting human-centered design for digital transformation. From UX Research to Marketing Assets, we partner with businesses to design experiences that drive growth.",
+      description:
+        "Crafting human-centered design for digital transformation. From UX Research to Marketing Assets, we partner with businesses to design experiences that drive growth.",
       buttonText: "Explore Services",
-      image: "VideoImg"
-    }
+      image: "VideoImg",
+    },
   },
-  "Products": {
+  Products: {
     id: "products",
     label: "Products",
     activeColor: "rgb(242 103 103)", // Orange
     textColor: "text-black",
     content: {
       title: "SaaS\nIntelligence",
-      description: "AI-powered SaaS tools that automate workflows, enhance productivity, and simplify decisions, built with the same design excellence we deliver to clients.",
-      buttonText: "Explore Products"
-    }
+      description:
+        "AI-powered SaaS tools that automate workflows, enhance productivity, and simplify decisions, built with the same design excellence we deliver to clients.",
+      buttonText: "Explore Products",
+    },
   },
-  "Academy": {
+  Academy: {
     id: "academy",
     label: "Academy",
     activeColor: "rgb(59 196 246)", // Blue
     textColor: "text-black",
     content: {
       title: "Experiential\nLearning",
-      description: "Where learning meets doing. Project-based workshops and mentorship programs that turn real-world challenges into creative skill-building journeys.",
+      description:
+        "Where learning meets doing. Project-based workshops and mentorship programs that turn real-world challenges into creative skill-building journeys.",
       buttonText: "Learn With Us",
-      image: "AcademyHomeImg"
-    }
-  }
+      image: "AcademyHomeImg",
+    },
+  },
 };
 
 export const getTabConfig = (tabName: string): TabConfig => {

@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import People1 from "../assets/peopleImages/people1.png";
 import People2 from "../assets/peopleImages/people2.png";
@@ -15,7 +15,7 @@ export const testimonials = [
     role: "Head of Business Development, Miniture",
     content:
       "Dexio Designs exceeded our expectations in bringing our parenting app vision to life. As a small startup, conveying our story effectively was paramount. Their ability to merge functionality with aesthetics resulted in a sleek, cutting-edge interface that perfectly encapsulates our app's purpose and story. They consistently delivered high-quality work, with special thanks to Mani & Ganga for their dedicated late-hour sessions. Their quick turnaround made it feel like they were part of our in-house team. Excited for our continued partnership!",
-    image: People1
+    image: People1,
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ export const testimonials = [
     role: "Co-Founder of Neartail",
     content:
       "As developers with limited knowledge of UX, we found fantastic partners in Karthik and his team. They did more than just design our user experience; they really got to know our business to better engage our customers. We trusted them to create our product pages and explainer videos because they truly understand our products. To us, they are more than just a vendor; they are an essential part of our team. I highly recommend their services!",
-    image: People2
+    image: People2,
   },
   {
     id: 3,
@@ -31,7 +31,7 @@ export const testimonials = [
     role: "Founder, Vittae Money",
     content:
       "Dexio team was able to support us in our revamp journey and are now turning out to be a valuable member of our engineering community. Our POC and designer Ganga has been a phenomenal young talent for Vittae and she has proved that she is hungry to learn & grow along with us.",
-    image: People3
+    image: People3,
   },
   {
     id: 4,
@@ -39,7 +39,7 @@ export const testimonials = [
     role: "Co-Founder, Beaconer",
     content:
       "Working with Dexio completely changed how our platform looks and feels. They helped us tell a clear story through our UI/UX, which led to great customer feedback. Dexio took the time to truly understand our complex platform instead of copying generic designs. Their work was high quality, collaborative, and budget-friendly for a startup like ours. I’d highly recommend Dexio for thoughtful and personalized design work.",
-    image: People4
+    image: People4,
   },
   {
     id: 5,
@@ -47,8 +47,8 @@ export const testimonials = [
     role: "Founder, Route Your Travel",
     content:
       "Dexio did an excellent job across branding and website design for Route Your Travel. The logo creation was impressive and aligned well with our brand identity, and the website hero section delivered a strong first impression. The AI-based itinerary builder stood out as an innovative solution that significantly reduced the time required to build itineraries while addressing real travel needs. The team supported us closely throughout the journey and delivered with clarity, creativity, and precision.",
-    image: People5
-  }
+    image: People5,
+  },
 ];
 
 const SparkleIcon = () => (
@@ -69,7 +69,7 @@ export default function TestimonialCarousel() {
 
   const handlePrev = () => {
     setActiveIndex(
-      (prev) => (prev - 1 + testimonials.length) % testimonials.length
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length,
     );
   };
 
@@ -78,8 +78,7 @@ export default function TestimonialCarousel() {
   };
 
   return (
-    <section className="bg-[#2f329d] pt-16 pb-12 px-6 flex flex-col items-center text-center relative overflow-hidden">
-
+    <section className="bg-[#2f329d] pt-16 pb-12 px-6 flex flex-col items-center text-center relative overflow-hidden min-h-[650px] md:min-h-[520px]">
       {/* Navigation Arrows – Desktop only */}
       <button
         onClick={handlePrev}
@@ -107,7 +106,11 @@ export default function TestimonialCarousel() {
         }}
       >
         {/* Left Far */}
-        <motion.div layout animate={{ x: -170, scale: 0.8 }} className="absolute z-10">
+        <motion.div
+          layout
+          animate={{ x: -170, scale: 0.8 }}
+          className="absolute z-10"
+        >
           <div className="w-[88px] h-[88px] rounded-[34px] border-2 border-[#4d5ef7] overflow-hidden relative">
             <img
               src={testimonials[getIndex(-2)].image}
@@ -118,7 +121,11 @@ export default function TestimonialCarousel() {
         </motion.div>
 
         {/* Left Near */}
-        <motion.div layout animate={{ x: -110, scale: 1 }} className="absolute z-20">
+        <motion.div
+          layout
+          animate={{ x: -110, scale: 1 }}
+          className="absolute z-20"
+        >
           <div className="w-[96px] h-[96px] rounded-[40px] border-[3px] border-[#4d5ef7] overflow-hidden relative">
             <img
               src={testimonials[getIndex(-1)].image}
@@ -129,7 +136,11 @@ export default function TestimonialCarousel() {
         </motion.div>
 
         {/* Center */}
-        <motion.div layout animate={{ x: 0, scale: 1.1 }} className="relative z-30">
+        <motion.div
+          layout
+          animate={{ x: 0, scale: 1.1 }}
+          className="relative z-30"
+        >
           <div className="w-[144px] h-[144px] rounded-[62px] border border-white flex items-center justify-center bg-[#4044E8]">
             <div className="w-[128px] h-[128px] rounded-[56px] border border-white overflow-hidden bg-white shadow-2xl">
               <img
@@ -141,7 +152,11 @@ export default function TestimonialCarousel() {
         </motion.div>
 
         {/* Right Near */}
-        <motion.div layout animate={{ x: 110, scale: 1 }} className="absolute z-20">
+        <motion.div
+          layout
+          animate={{ x: 110, scale: 1 }}
+          className="absolute z-20"
+        >
           <div className="w-[96px] h-[96px] rounded-[40px] border-[3px] border-[#4d5ef7] overflow-hidden relative">
             <img
               src={testimonials[getIndex(1)].image}
@@ -152,7 +167,11 @@ export default function TestimonialCarousel() {
         </motion.div>
 
         {/* Right Far */}
-        <motion.div layout animate={{ x: 170, scale: 0.8 }} className="absolute z-10">
+        <motion.div
+          layout
+          animate={{ x: 170, scale: 0.8 }}
+          className="absolute z-10"
+        >
           <div className="w-[88px] h-[88px] rounded-[34px] border-2 border-[#4d5ef7] overflow-hidden relative">
             <img
               src={testimonials[getIndex(2)].image}
@@ -171,9 +190,12 @@ export default function TestimonialCarousel() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.3 }}
-          className="flex flex-col items-center"
+          className="flex flex-col items-center min-h-[260px] md:min-h-[220px]"
         >
-          <h4 className="mb-1 text-[28px] md:text-[36px] font-semibold text-[#F1F2F4] leading-[40px] md:leading-normal" style={{ fontFamily: 'Sora, sans-serif' }}>
+          <h4
+            className="mb-1 text-[28px] md:text-[36px] font-semibold text-[#F1F2F4] leading-[40px] md:leading-normal"
+            style={{ fontFamily: "Sora, sans-serif" }}
+          >
             {testimonials[activeIndex].name}
           </h4>
           <p className="text-[#F1F2F4] text-[20px] mb-8">
@@ -198,7 +220,7 @@ export default function TestimonialCarousel() {
               onClick={() => setActiveIndex(i)}
               className="w-2 h-2 rounded-full bg-white/40 cursor-pointer hover:bg-white/70 transition"
             />
-          )
+          ),
         )}
       </div>
     </section>

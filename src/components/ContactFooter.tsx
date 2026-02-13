@@ -1,6 +1,6 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import Footer from './Footer';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import Footer from "./Footer";
 
 interface HeroSectionProps {
   title?: string;
@@ -158,11 +158,11 @@ const ContactFooter: React.FC<HeroSectionProps> = ({
           <div
             className="content-wrapper"
             style={{
-              borderRadius: '36px',
-              borderTop: '2px solid #F06058',
+              borderRadius: "36px",
+              borderTop: "2px solid #F06058",
               background:
-                'linear-gradient(180deg, rgba(11, 12, 14, 0.50) 0%, rgba(11, 12, 14, 0.00) 100%)',
-              position: 'relative',
+                "linear-gradient(180deg, rgba(11, 12, 14, 0.50) 0%, rgba(11, 12, 14, 0.00) 100%)",
+              position: "relative",
               zIndex: 2,
             }}
           >
@@ -171,14 +171,17 @@ const ContactFooter: React.FC<HeroSectionProps> = ({
             </p>
 
             <div className="w-full flex flex-col md:flex-row items-start md:items-center gap-8 md:justify-between">
-              <h1 className="text-white text-2xl md:text-3xl font-bold leading-snug md:text-left" id="content-box-subtitle">
+              <h1
+                className="text-white text-2xl md:text-3xl font-bold leading-snug md:text-left"
+                id="content-box-subtitle"
+              >
                 {subtitle}
               </h1>
 
               <button
-                onClick={() => navigate('/contact')}
+                onClick={() => navigate("/contact")}
                 className="flex items-center justify-center gap-2 px-8 py-3 rounded-[20px] text-white font-medium transition-all duration-300 hover:shadow-xl hover:scale-105 whitespace-nowrap h-[56px]"
-                style={{ background: 'rgb(172 78 72)' }}
+                style={{ background: "rgb(172 78 72)" }}
               >
                 {buttonText}
                 <svg
