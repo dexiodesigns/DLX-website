@@ -208,8 +208,10 @@ export default function ServiceExcellence() {
             <video
               autoPlay
               controls
+              controlsList="nodownload"
               className="w-full rounded-lg"
               onClick={(e) => e.stopPropagation()}
+              onContextMenu={(e) => e.preventDefault()}
             >
               <source src={DesignServicesVideo} type="video/mp4" />
             </video>
