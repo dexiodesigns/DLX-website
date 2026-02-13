@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { ArrowRight, Play } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { TAB_CONFIGS, getTabConfig } from "../constants/tabConfig";
-import productsVideo from "../assets/Videos/Products-SaaS-Intelligence.webm";
+import productsVideoMp4 from "../assets/Videos/Products-SaaS-Intelligence.mp4";
 import AcademyHomeImg from "../assets/HomePageImages/AcademyHomeImg.png";
-import DesignServicesVideo from "../assets/Videos/DesignServicesVideo.webm";
+import DesignServicesVideoMp4 from "../assets/Videos/DesignServicesVideo.mp4";
 
 export default function ServiceExcellence() {
   const [activeTab, setActiveTab] = useState("Services");
@@ -197,7 +197,7 @@ export default function ServiceExcellence() {
                     playsInline
                     className="w-full h-[250px] md:h-[340px] object-cover cursor-pointer"
                   >
-                    <source src={DesignServicesVideo} type="video/webm" />
+                    <source src={DesignServicesVideoMp4} type="video/mp4" />
                   </video>
                   <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity">
                     <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
@@ -213,7 +213,7 @@ export default function ServiceExcellence() {
                   playsInline
                   className="w-full h-[250px] md:h-[340px] object-cover"
                 >
-                  <source src={productsVideo} type="video/webm" />
+                  <source src={productsVideoMp4} type="video/mp4" />
                 </video>
               ) : activeTab === "Academy" ? (
                 <img
@@ -268,7 +268,7 @@ export default function ServiceExcellence() {
               className="w-full rounded-lg"
               onClick={(e) => e.stopPropagation()}
             >
-              <source src={DesignServicesVideo} type="video/webm" />
+              <source src={DesignServicesVideoMp4} type="video/mp4" />
             </video>
           </div>
         </div>

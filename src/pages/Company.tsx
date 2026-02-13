@@ -4,11 +4,11 @@ import ContactFooter from "../components/ContactFooter";
 
 // Video paths - Using URL constructor for files with spaces
 const companyHeroVideoWebm = new URL(
-  "../assets/Videos/CompanyPage-HeroSectionVideo.webm",
+  "../assets/Videos/CompanyPage-HeroSectionVideo.mp4",
   import.meta.url,
 ).href;
 const ourVisionVideo = new URL(
-  "../assets/Videos/our-vision.webm",
+  "../assets/Videos/our-vision.mp4",
   import.meta.url,
 ).href;
 
@@ -33,7 +33,7 @@ export default function Company() {
           className="absolute -top-16 md:top-0 left-0 right-0 bottom-0 w-full h-[calc(100%+64px)] md:h-full object-cover object-top md:object-center"
           style={{ zIndex: 0 }}
         >
-          <source src={companyHeroVideoWebm} type="video/webm" />
+          <source src={companyHeroVideoWebm} type="video/mp4" />
         </video>
 
         {/* Overlay for better text readability */}
@@ -112,7 +112,7 @@ export default function Company() {
               playsInline
               className="w-full h-full object-cover"
             >
-              <source src={ourVisionVideo} type="video/webm" />
+              <source src={ourVisionVideo} type="video/mp4" />
             </video>
           </div>
 

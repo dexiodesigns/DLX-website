@@ -1,12 +1,12 @@
 import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import buildingFutureVideo from "../assets/Videos/HomePage-BuildingTheFuture.webm";
+import buildingFutureVideo from "../assets/Videos/HomePage-BuildingTheFuture.mp4";
 import { Star } from "../assets/HomeIcons/Star";
 import { Bulb } from "../assets/HomeIcons/Bulb";
 import { Sun } from "../assets/HomeIcons/Sun";
 import EvidenceOfImpact from "../components/Evidence";
 import ContactFooter from "../components/ContactFooter";
-import homePageVideo from "../assets/Videos/HomePage-HeroSection.webm";
+import homePageVideo from "../assets/Videos/HomePage-HeroSection.mp4";
 import TestimonialCarousel from "../components/TestimonialCarousel";
 import LogoMarquee from "../components/Companies";
 import FAQSection from "../components/FAQSection";
@@ -29,7 +29,7 @@ export default function Home() {
             preload="metadata"
             className="w-full h-full object-cover"
           >
-            <source src={homePageVideo} type="video/webm" />
+            <source src={homePageVideo} type="video/mp4" />
           </video>
           {/* Bottom gradient - fades video into background */}
           <div className="absolute md:top-[-200px] left-0 right-0 bottom-0 bg-gradient-to-b from-transparent to-[#0B0C0E] z-10"></div>
@@ -102,7 +102,7 @@ export default function Home() {
               preload="metadata"
               className="w-full md:max-w-none h-auto object-contain"
             >
-              <source src={buildingFutureVideo} type="video/webm" />
+              <source src={buildingFutureVideo} type="video/mp4" />
             </video>
           </div>
         </div>
