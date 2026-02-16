@@ -28,7 +28,7 @@ export default function EvidenceOfImpactCarousel() {
 
       {/* Static Heading Area - aligned with site content */}
       <div className="px-6 md:px-[180px] flex flex-col md:flex-row justify-center items-center md:items-end mb-12 gap-6">
-    
+
 
         {/* Mobile-only Explore button from image 1 */}
         {/* <button className="md:hidden w-full bg-[#1A1B1E] border border-zinc-800 px-6 py-3 rounded-full text-sm text-gray-300 flex items-center justify-center gap-2">
@@ -38,11 +38,12 @@ export default function EvidenceOfImpactCarousel() {
 
       {/* Scrollable Container - Full viewport width, starts aligned with content */}
       <div className="w-full overflow-x-auto no-scrollbar pb-4">
-        <div className="flex gap-4 md:h-[350px]" style={{ paddingLeft: 'max(24px, calc((100vw - 1280px) / 2 + 180px))', paddingRight: '24px' }}>
+        <div className="flex gap-4 md:h-[350px]" style={{ paddingLeft: 'max(24px, calc((100vw - 1280px) / 2))', paddingRight: 'max(24px, calc((100vw - 1280px) / 2))' }}>
           {projects.map((project) => (
             <div
               key={project.id}
               onMouseEnter={() => setActiveId(project.id)}
+              onClick={() => setActiveId(project.id)}
               className={`relative rounded-[40px] overflow-hidden transition-all duration-700 ease-in-out cursor-pointer border border-zinc-800/50 flex-shrink-0
                 /* Mobile: Stacking logo on top of text */
                 flex flex-col w-[300px] h-[500px] 
