@@ -130,7 +130,7 @@ export default function Navbar() {
     { name: "Services", hasSubmenu: true, href: "#" },
     // { name: "Products", hasSubmenu: false, href: "/products" },
     // { name: "Academy", hasSubmenu: false, href: "/academy" },
-    // { name: "Resources", hasSubmenu: false, href: "/resources" },
+    { name: "Resources", hasSubmenu: false, href: "/resources" },
     { name: "Company", hasSubmenu: false, href: "/company" },
     { name: "Contact", hasSubmenu: false, href: "/contact" },
   ];
