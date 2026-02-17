@@ -59,10 +59,10 @@ export default function Resources() {
                 <div className="relative w-full h-56 overflow-hidden">
                   <img className="w-full h-full object-cover animate-ken-burns" src={saas} alt="SaaS concept collage" />
                 </div>
-                <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 group-hover:bg-zinc-700/50">
+                <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
                     <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">SaaS Is No Longer Human-Only</div>
-                    <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 group-hover:opacity-100 transition-all duration-400">
+                    <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 card-icon-overlay transition-all duration-400">
                       <img src={OpenIcon} alt="Arrow" className="w-full h-full object-contain" />
                     </div>
                   </div>
@@ -73,10 +73,10 @@ export default function Resources() {
                 <div className="relative w-full h-56 overflow-hidden">
                   <img className="w-full h-full object-cover animate-ken-burns" src={automation} alt="Automation and AI on laptop" />
                 </div>
-                <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 group-hover:bg-zinc-700/50">
+                <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
                     <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">From Automation to Collaboration</div>
-                    <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 group-hover:opacity-100 transition-all duration-400">
+                    <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 card-icon-overlay transition-all duration-400">
                       <img src={OpenIcon} alt="Arrow" className="w-full h-full object-contain" />
                     </div>
                   </div>
@@ -87,10 +87,10 @@ export default function Resources() {
                 <div className="relative w-full h-56 overflow-hidden">
                   <img className="w-full h-full object-cover animate-ken-burns" src={person} alt="AI as teammate metaphor" />
                 </div>
-                <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 group-hover:bg-zinc-700/50">
+                <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
                     <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">AI Is Not a Feature. It’s a Teammate.</div>
-                    <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 group-hover:opacity-100 transition-all duration-400">
+                    <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 card-icon-overlay transition-all duration-400">
                       <img src={OpenIcon} alt="Arrow" className="w-full h-full object-contain" />
                     </div>
                   </div>
@@ -101,10 +101,10 @@ export default function Resources() {
                 <div className="relative w-full h-56 overflow-hidden">
                   <img className="w-full h-full object-cover animate-ken-burns" src={executive} alt="Ending manual processes" />
                 </div>
-                <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 group-hover:bg-zinc-700/50">
+                <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
                     <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">The End of “Manual First” SaaS Thinking</div>
-                    <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 group-hover:opacity-100 transition-all duration-400">
+                    <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 card-icon-overlay transition-all duration-400">
                       <img src={OpenIcon} alt="Arrow" className="w-full h-full object-contain" />
                     </div>
                   </div>
@@ -116,10 +116,10 @@ export default function Resources() {
                 <div className="relative w-full h-56 overflow-hidden">
                   <img className="w-full h-full object-cover animate-ken-burns" src={woman} alt="Human in the loop conceptual UI" />
                 </div>
-                <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 group-hover:bg-zinc-700/50">
+                <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
                     <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">The Loop: Designing Human-in-the-Loop</div>
-                    <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 group-hover:opacity-100 transition-all duration-400">
+                    <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 card-icon-overlay transition-all duration-400">
                       <img src={OpenIcon} alt="Arrow" className="w-full h-full object-contain" />
                     </div>
                   </div>
@@ -130,10 +130,10 @@ export default function Resources() {
                 <div className="relative w-full h-56 overflow-hidden">
                   <img className="w-full h-full object-cover animate-ken-burns" src={joyous} alt="Joyous speaker" />
                 </div>
-                <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 group-hover:bg-zinc-700/50">
+                <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
                     <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">Velocity: Why AI-Native Companies Win</div>
-                    <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 group-hover:opacity-100 transition-all duration-400">
+                    <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 card-icon-overlay transition-all duration-400">
                       <img src={OpenIcon} alt="Arrow" className="w-full h-full object-contain" />
                     </div>
                   </div>
@@ -144,10 +144,10 @@ export default function Resources() {
                 <div className="relative w-full h-56 overflow-hidden">
                   <img className="w-full h-full object-cover animate-ken-burns" src={ui} alt="UI designer brainstorming" />
                 </div>
-                <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 group-hover:bg-zinc-700/50">
+                <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
                     <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">Designing Trust: Explainability as a UX</div>
-                    <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 group-hover:opacity-100 transition-all duration-400">
+                    <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 card-icon-overlay transition-all duration-400">
                       <img src={OpenIcon} alt="Arrow" className="w-full h-full object-contain" />
                     </div>
                   </div>
@@ -158,10 +158,10 @@ export default function Resources() {
                 <div className="relative w-full h-56 overflow-hidden">
                   <img className="w-full h-full object-cover animate-ken-burns" src={cloud} alt="Cloud strategy conceptual" />
                 </div>
-                <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 group-hover:bg-zinc-700/50">
+                <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
                     <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">The Rise of Intent-Aware SaaS</div>
-                    <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 group-hover:opacity-100 transition-all duration-400">
+                    <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 card-icon-overlay transition-all duration-400">
                       <img src={OpenIcon} alt="Arrow" className="w-full h-full object-contain" />
                     </div>
                   </div>
@@ -172,10 +172,10 @@ export default function Resources() {
                 <div className="relative w-full h-56 overflow-hidden">
                   <img className="w-full h-full object-cover animate-ken-burns" src={young_asian} alt="AI chat interface metaphor" />
                 </div>
-                <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 group-hover:bg-zinc-700/50">
+                <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
                     <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">UI as Infrastructure: Why Chat Interfaces</div>
-                    <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 group-hover:opacity-100 transition-all duration-400">
+                    <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 card-icon-overlay transition-all duration-400">
                       <img src={OpenIcon} alt="Arrow" className="w-full h-full object-contain" />
                     </div>
                   </div>
@@ -186,10 +186,10 @@ export default function Resources() {
                 <div className="relative w-full h-56 overflow-hidden">
                   <img className="w-full h-full object-cover animate-ken-burns" src={four} alt="AI impact on product teams" />
                 </div>
-                <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 group-hover:bg-zinc-700/50">
+                <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
                     <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">What Changes in Product Teams When AI</div>
-                    <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 group-hover:opacity-100 transition-all duration-400">
+                    <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 card-icon-overlay transition-all duration-400">
                       <img src={OpenIcon} alt="Arrow" className="w-full h-full object-contain" />
                     </div>
                   </div>
@@ -200,10 +200,10 @@ export default function Resources() {
                 <div className="relative w-full h-56 overflow-hidden">
                   <img className="w-full h-full object-cover animate-ken-burns" src={young_people} alt="UX design for agents" />
                 </div>
-                <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 group-hover:bg-zinc-700/50">
+                <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
                     <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">SaaS UX in the Age of Agents</div>
-                    <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 group-hover:opacity-100 transition-all duration-400">
+                    <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 card-icon-overlay transition-all duration-400">
                       <img src={OpenIcon} alt="Arrow" className="w-full h-full object-contain" />
                     </div>
                   </div>
@@ -214,10 +214,10 @@ export default function Resources() {
                 <div className="relative w-full h-56 overflow-hidden">
                   <img className="w-full h-full object-cover animate-ken-burns" src={focus} alt="Focus concept collage" />
                 </div>
-                <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 group-hover:bg-zinc-700/50">
+                <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
                     <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">The New Stack: Humans, AI, and Systems</div>
-                    <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 group-hover:opacity-100 transition-all duration-400">
+                    <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 card-icon-overlay transition-all duration-400">
                       <img src={OpenIcon} alt="Arrow" className="w-full h-full object-contain" />
                     </div>
                   </div>
@@ -229,10 +229,10 @@ export default function Resources() {
                 <div className="relative w-full h-56 overflow-hidden">
                   <img className="w-full h-full object-cover animate-ken-burns" src={programming} alt="Programming background" />
                 </div>
-                <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 group-hover:bg-zinc-700/50">
+                <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
                     <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">Fluency Is the New Code</div>
-                    <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 group-hover:opacity-100 transition-all duration-400">
+                    <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 card-icon-overlay transition-all duration-400">
                       <img src={OpenIcon} alt="Arrow" className="w-full h-full object-contain" />
                     </div>
                   </div>
@@ -243,10 +243,10 @@ export default function Resources() {
                 <div className="relative w-full h-56 overflow-hidden">
                   <img className="w-full h-full object-cover animate-ken-burns" src={ai} alt="AI analysis team" />
                 </div>
-                <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 group-hover:bg-zinc-700/50">
+                <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
                     <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">AI as a Force Multiplier for Startups</div>
-                    <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 group-hover:opacity-100 transition-all duration-400">
+                    <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 card-icon-overlay transition-all duration-400">
                       <img src={OpenIcon} alt="Arrow" className="w-full h-full object-contain" />
                     </div>
                   </div>
