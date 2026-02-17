@@ -55,7 +55,7 @@ export default function Resources() {
           </div>
           <div className="self-stretch inline-flex flex-col justify-center items-center gap-12">
             <div className="articles-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 w-full max-w-[1280px] mx-auto">
-              <a href="https://medium.com/@marketing_16484/ai-is-not-a-feature-its-a-teammate-62706232d162" target="_blank" rel="noopener noreferrer" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
+              <a href="https://medium.com/@marketing_16484/saas-is-no-longer-human-only-8a41b3f312ab" target="_blank" rel="noopener noreferrer" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
                 <div className="relative w-full h-56 overflow-hidden">
                   <img className="w-full h-full object-cover animate-ken-burns" src={saas} alt="SaaS concept collage" />
                 </div>
@@ -83,7 +83,7 @@ export default function Resources() {
                   <div className="self-stretch text-gray-300 text-base font-normal font-['Inter'] leading-6 line-clamp-2">Automation had its era. It streamlined factories, optimized spreadsheets, and quietly removed repetitive labor from modern work. It delivered efficiency, predictability, and cost savings. For a long time, that was enough.</div>
                 </div>
               </a>
-              <a href="https://medium.com/@marketing_16484/saas-is-no-longer-human-only-8a41b3f312ab" target="_blank" rel="noopener noreferrer" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
+              <a href="https://medium.com/@marketing_16484/ai-is-not-a-feature-its-a-teammate-62706232d162" target="_blank" rel="noopener noreferrer" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
                 <div className="relative w-full h-56 overflow-hidden">
                   <img className="w-full h-full object-cover animate-ken-burns" src={person} alt="AI as teammate metaphor" />
                 </div>
@@ -111,8 +111,8 @@ export default function Resources() {
                   <div className="self-stretch text-gray-300 text-base font-normal font-['Inter'] leading-6 line-clamp-2">For decades, software began in silence.</div>
                 </div>
               </a>
-              {/* 
-              <a href="#" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
+
+              <a href="https://medium.com/@marketing_16484/the-loop-designing-human-in-the-loop-3115e470cc1c" target="_blank" rel="noopener noreferrer" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
                 <div className="relative w-full h-56 overflow-hidden">
                   <img className="w-full h-full object-cover animate-ken-burns" src={woman} alt="Human in the loop conceptual UI" />
                 </div>
@@ -126,7 +126,21 @@ export default function Resources() {
                   <div className="self-stretch text-gray-300 text-base font-normal font-['Inter'] leading-6 line-clamp-2">Something uncomfortable is happening inside modern software.</div>
                 </div>
               </a>
-              <a href="#" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
+              <a href="https://medium.com/@marketing_16484/velocity-why-ai-native-companies-win-4c0c2a0d72ff" target="_blank" rel="noopener noreferrer" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
+                <div className="relative w-full h-56 overflow-hidden">
+                  <img className="w-full h-full object-cover animate-ken-burns" src={joyous} alt="Joyous speaker" />
+                </div>
+                <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 group-hover:bg-zinc-700/50">
+                  <div className="self-stretch flex justify-start items-start gap-4">
+                    <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">Velocity: Why AI-Native Companies Win</div>
+                    <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 group-hover:opacity-100 transition-all duration-400">
+                      <img src={OpenIcon} alt="Arrow" className="w-full h-full object-contain" />
+                    </div>
+                  </div>
+                  <div className="self-stretch text-gray-300 text-base font-normal font-['Inter'] leading-6 line-clamp-2">There was a time when scale was the moat.</div>
+                </div>
+              </a> {/*
+              <a href=" " target="_blank" rel="noopener noreferrer" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
                 <div className="relative w-full h-56 overflow-hidden">
                   <img className="w-full h-full object-cover animate-ken-burns" src={ui} alt="UI designer brainstorming" />
                 </div>
@@ -210,20 +224,7 @@ export default function Resources() {
                   <div className="self-stretch text-gray-300 text-base font-normal font-['Inter'] leading-6 line-clamp-2">For years, the contract was simple.</div>
                 </div>
               </a>
-              <a href="#" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
-                <div className="relative w-full h-56 overflow-hidden">
-                  <img className="w-full h-full object-cover animate-ken-burns" src={joyous} alt="Joyous speaker" />
-                </div>
-                <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 group-hover:bg-zinc-700/50">
-                  <div className="self-stretch flex justify-start items-start gap-4">
-                    <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">Velocity: Why AI-Native Companies Win</div>
-                    <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 group-hover:opacity-100 transition-all duration-400">
-                      <img src={OpenIcon} alt="Arrow" className="w-full h-full object-contain" />
-                    </div>
-                  </div>
-                  <div className="self-stretch text-gray-300 text-base font-normal font-['Inter'] leading-6 line-clamp-2">There was a time when scale was the moat.</div>
-                </div>
-              </a>
+
               <a href="#" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
                 <div className="relative w-full h-56 overflow-hidden">
                   <img className="w-full h-full object-cover animate-ken-burns" src={programming} alt="Programming background" />
@@ -252,7 +253,7 @@ export default function Resources() {
                   <div className="self-stretch text-gray-300 text-base font-normal font-['Inter'] leading-6 line-clamp-2">There’s a belief that the company with the biggest team eventually wins.</div>
                 </div>
               </a>
-              */}
+                 */}
             </div>
           </div>
         </div>
