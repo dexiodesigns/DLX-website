@@ -78,6 +78,17 @@
   transform: scale(1);
 }
 
-.group:hover .animate-ken-burns {
-  transform: scale(1.1);
+@media (hover: hover) {
+  .group:hover .animate-ken-burns {
+    transform: scale(1.1);
+  }
+
+  .group:hover .card-content-overlay {
+    background-color: rgba(63, 63, 70, 0.5);
+    /* zinc-700/50 equivalent */
+  }
+
+  .group:hover .card-icon-overlay {
+    opacity: 1;
+  }
 }
