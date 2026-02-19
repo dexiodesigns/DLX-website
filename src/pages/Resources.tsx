@@ -167,8 +167,8 @@ export default function Resources() {
                   </div>
                   <div className="self-stretch text-gray-300 text-base font-normal font-['Inter'] leading-6 line-clamp-2">For years, software behaved like a passive assistant.</div>
                 </div>
-              </a> {/*
-              <a href="#" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
+              </a> 
+              <a href="https://medium.com/@marketing_16484/ui-as-infrastructure-why-chat-interfaces-are-not-enough-70f013053078" target="_blank" rel="noopener noreferrer" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
                 <div className="relative w-full h-56 overflow-hidden">
                   <img className="w-full h-full object-cover animate-ken-burns" src={young_asian} alt="AI chat interface metaphor" />
                 </div>
@@ -182,7 +182,7 @@ export default function Resources() {
                   <div className="self-stretch text-gray-300 text-base font-normal font-['Inter'] leading-6 line-clamp-2">There is a pattern in every technology wave.</div>
                 </div>
               </a>
-              <a href="#" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
+              <a href="https://medium.com/@marketing_16484/what-changes-in-product-teams-when-ai-enters-the-room-bbf961412e07" target="_blank" rel="noopener noreferrer" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
                 <div className="relative w-full h-56 overflow-hidden">
                   <img className="w-full h-full object-cover animate-ken-burns" src={four} alt="AI impact on product teams" />
                 </div>
@@ -195,7 +195,7 @@ export default function Resources() {
                   </div>
                   <div className="self-stretch text-gray-300 text-base font-normal font-['Inter'] leading-6 line-clamp-2">For years, product teams scaled in predictable ways.</div>
                 </div>
-              </a>
+              </a>{/*
               <a href="#" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
                 <div className="relative w-full h-56 overflow-hidden">
                   <img className="w-full h-full object-cover animate-ken-burns" src={young_people} alt="UX design for agents" />
