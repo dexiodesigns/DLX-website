@@ -195,22 +195,9 @@ export default function Resources() {
                   </div>
                   <div className="self-stretch text-gray-300 text-base font-normal font-['Inter'] leading-6 line-clamp-2">For years, product teams scaled in predictable ways.</div>
                 </div>
-              </a>{/*
-              <a href="#" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
-                <div className="relative w-full h-56 overflow-hidden">
-                  <img className="w-full h-full object-cover animate-ken-burns" src={young_people} alt="UX design for agents" />
-                </div>
-                <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
-                  <div className="self-stretch flex justify-start items-start gap-4">
-                    <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">SaaS UX in the Age of Agents</div>
-                    <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 card-icon-overlay transition-all duration-400">
-                      <img src={OpenIcon} alt="Arrow" className="w-full h-full object-contain" />
-                    </div>
-                  </div>
-                  <div className="self-stretch text-gray-300 text-base font-normal font-['Inter'] leading-6 line-clamp-2">Today we are entering an era where software systems act independently—where agents negotiate schedules, monitor metrics, generate reports, resolve tickets, and optimize campaigns without continuous supervision.</div>
-                </div>
               </a>
-              <a href="#" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
+
+                <a href="https://medium.com/@marketing_16484/the-new-stack-humans-ai-and-systems-38293c2dc1bb" target="_blank" rel="noopener noreferrer" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
                 <div className="relative w-full h-56 overflow-hidden">
                   <img className="w-full h-full object-cover animate-ken-burns" src={focus} alt="Focus concept collage" />
                 </div>
@@ -224,6 +211,22 @@ export default function Resources() {
                   <div className="self-stretch text-gray-300 text-base font-normal font-['Inter'] leading-6 line-clamp-2">For years, the contract was simple.</div>
                 </div>
               </a>
+
+              <a href="https://medium.com/@marketing_16484/saas-ux-in-the-age-of-agents-1d420bb0c1dc" target="_blank" rel="noopener noreferrer" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
+                <div className="relative w-full h-56 overflow-hidden">
+                  <img className="w-full h-full object-cover animate-ken-burns" src={young_people} alt="UX design for agents" />
+                </div>
+                <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
+                  <div className="self-stretch flex justify-start items-start gap-4">
+                    <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">SaaS UX in the Age of Agents</div>
+                    <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 card-icon-overlay transition-all duration-400">
+                      <img src={OpenIcon} alt="Arrow" className="w-full h-full object-contain" />
+                    </div>
+                  </div>
+                  <div className="self-stretch text-gray-300 text-base font-normal font-['Inter'] leading-6 line-clamp-2">Today we are entering an era where software systems act independently—where agents negotiate schedules, monitor metrics, generate reports, resolve tickets, and optimize campaigns without continuous supervision.</div>
+                </div>
+              </a>
+            {/*
 
               <a href="#" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
                 <div className="relative w-full h-56 overflow-hidden">
