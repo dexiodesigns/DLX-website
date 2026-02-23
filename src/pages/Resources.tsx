@@ -226,9 +226,7 @@ export default function Resources() {
                   <div className="self-stretch text-gray-300 text-base font-normal font-['Inter'] leading-6 line-clamp-2">Today we are entering an era where software systems act independently—where agents negotiate schedules, monitor metrics, generate reports, resolve tickets, and optimize campaigns without continuous supervision.</div>
                 </div>
               </a>
-            {/*
-
-              <a href="#" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
+              <a href="https://medium.com/@marketing_16484/fluency-is-the-new-code-0334928901ed"  target="_blank" rel="noopener noreferrer" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
                 <div className="relative w-full h-56 overflow-hidden">
                   <img className="w-full h-full object-cover animate-ken-burns" src={programming} alt="Programming background" />
                 </div>
@@ -242,7 +240,7 @@ export default function Resources() {
                   <div className="self-stretch text-gray-300 text-base font-normal font-['Inter'] leading-6 line-clamp-2">For the last twenty years, the advice was simple:</div>
                 </div>
               </a>
-              <a href="#" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
+              <a href="https://medium.com/@marketing_16484/ai-as-a-force-multiplier-for-startups-383a2212c5ec"  target="_blank" rel="noopener noreferrer" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
                 <div className="relative w-full h-56 overflow-hidden">
                   <img className="w-full h-full object-cover animate-ken-burns" src={ai} alt="AI analysis team" />
                 </div>
@@ -256,7 +254,6 @@ export default function Resources() {
                   <div className="self-stretch text-gray-300 text-base font-normal font-['Inter'] leading-6 line-clamp-2">There’s a belief that the company with the biggest team eventually wins.</div>
                 </div>
               </a>
-                 */}
             </div>
           </div>
         </div>
