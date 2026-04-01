@@ -48,7 +48,7 @@ export default function Footer() {
           <path fillRule="evenodd" clipRule="evenodd" d="M8 0C4.68629 0 2 2.68629 2 6C2 10.5 8 16 8 16C8 16 14 10.5 14 6C14 2.68629 11.3137 0 8 0ZM8 8C9.10457 8 10 7.10457 10 6C10 4.89543 9.10457 4 8 4C6.89543 4 6 4.89543 6 6C6 7.10457 6.89543 8 8 8Z" fill="#D5D7DD" />
         </svg>
       ),
-      href: "https://maps.app.goo.gl/zwexAE6B83mEUBU99",
+      href: "https://share.google/6fmVEVjx01ZJBY7aC",
       label: "Location"
     },
     {
@@ -409,7 +409,7 @@ export default function Footer() {
               ))}
             </div>
             <a
-              href="https://maps.app.goo.gl/zwexAE6B83mEUBU99"
+              href="https://www.google.com/maps/place/Dexio+LabX+(DLX)+Pvt.+Lmt./@13.0579268,80.232988,927m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3a5267001360c821:0x94291c7aa676d575!8m2!3d13.0579268!4d80.2355629!16s%2Fg%2F11z0yypsxn?entry=ttu&g_ep=EgoyMDI2MDMyOS4wIKXMDSoASAFQAw%3D%3D"
               target="_blank"
               rel="noopener noreferrer"
               className="font-['Inter'] font-normal text-[12px] leading-[18px] text-right hover:text-white transition-colors"
@@ -509,7 +509,7 @@ export default function Footer() {
             ))}
           </div>
           <a
-            href="https://maps.app.goo.gl/zwexAE6B83mEUBU99"
+            href="https://www.google.com/maps/place/Dexio+LabX+(DLX)+Pvt.+Lmt./@13.0579268,80.232988,927m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3a5267001360c821:0x94291c7aa676d575!8m2!3d13.0579268!4d80.2355629!16s%2Fg%2F11z0yypsxn?entry=ttu&g_ep=EgoyMDI2MDMyOS4wIKXMDSoASAFQAw%3D%3D"
             target="_blank"
             rel="noopener noreferrer"
             className="font-['Inter'] font-normal text-[12px] leading-[18px] text-center hover:text-white transition-colors"
