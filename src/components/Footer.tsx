@@ -408,6 +408,17 @@ export default function Footer() {
                 </a>
               ))}
             </div>
+            <a
+              href="https://maps.app.goo.gl/zwexAE6B83mEUBU99"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-['Inter'] font-normal text-[12px] leading-[18px] text-right hover:text-white transition-colors"
+              style={{ color: '#818898' }}
+            >
+              3rd floor, Reach office, Mahalingapuram Main Rd,<br />
+              Mahalingapuram, Nungambakkam, Chennai,<br />
+              Tamil Nadu 600034
+            </a>
           </div>
         </div>
       </div>
@@ -497,6 +508,17 @@ export default function Footer() {
               </a>
             ))}
           </div>
+          <a
+            href="https://maps.app.goo.gl/zwexAE6B83mEUBU99"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-['Inter'] font-normal text-[12px] leading-[18px] text-center hover:text-white transition-colors"
+            style={{ color: '#818898' }}
+          >
+            3rd floor, Reach office, Mahalingapuram Main Rd,<br />
+            Mahalingapuram, Nungambakkam, Chennai,<br />
+            Tamil Nadu 600034
+          </a>
         </div>
       </div>
 
