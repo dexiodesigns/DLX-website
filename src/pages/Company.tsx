@@ -63,9 +63,9 @@ export default function Company() {
           {/* Description */}
           <div className="mx-auto w-full max-w-[1280px]">
             <p className="text-zinc-300 text-sm md:text-lg leading-relaxed text-center px-4 md:px-0">
-              Dexio LabX is a multidisciplinary ecosystem where creativity, technology, and learning converge. We empower
+              Dexio LabX is an AI product lab where design, technology and learning come together. We help
               <br className="hidden md:block" />
-              startups to scale, enterprises to innovate, and individuals to evolve.
+              startups launch faster, enterprises innovate with confidence, and people grow their craft.
             </p>
           </div>
 
@@ -75,7 +75,7 @@ export default function Company() {
               to="/contact"
               className="flex items-center justify-center gap-2 bg-white text-black px-8 py-3 rounded-[20px] font-medium hover:bg-zinc-200 transition whitespace-nowrap w-auto h-[56px]"
             >
-              Talk To An Expert
+              Talk to an Expert
               <ArrowRight size={18} />
             </Link>
             {/* <Link
@@ -511,7 +511,7 @@ export default function Company() {
                 "Experiments daily with AI tools and workflows",
                 "Questions defaults and challenges assumptions",
                 "Designs systems, not just interfaces",
-                "Stays stupidly curious about what's next"
+                "Stays relentlessly curious about what's next"
               ].map((item, index) => (
                 <li
                   key={index}

@@ -61,7 +61,7 @@ export default function Resources() {
                 </div>
                 <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
-                    <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">SaaS Is No Longer Human-Only</div>
+                    <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">SaaS, Beyond Humans</div>
                     <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 card-icon-overlay transition-all duration-400">
                       <img src={OpenIcon} alt="Arrow" className="w-full h-full object-contain" />
                     </div>
@@ -75,7 +75,7 @@ export default function Resources() {
                 </div>
                 <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
-                    <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">From Automation to Collaboration</div>
+                    <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">Beyond Automation</div>
                     <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 card-icon-overlay transition-all duration-400">
                       <img src={OpenIcon} alt="Arrow" className="w-full h-full object-contain" />
                     </div>
@@ -89,7 +89,7 @@ export default function Resources() {
                 </div>
                 <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
-                    <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">AI Is Not a Feature. It’s a Teammate.</div>
+                    <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">AI Is a Teammate</div>
                     <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 card-icon-overlay transition-all duration-400">
                       <img src={OpenIcon} alt="Arrow" className="w-full h-full object-contain" />
                     </div>
@@ -103,7 +103,7 @@ export default function Resources() {
                 </div>
                 <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
-                    <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">The End of “Manual First” SaaS Thinking</div>
+                    <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">The End of Manual</div>
                     <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 card-icon-overlay transition-all duration-400">
                       <img src={OpenIcon} alt="Arrow" className="w-full h-full object-contain" />
                     </div>
@@ -118,7 +118,7 @@ export default function Resources() {
                 </div>
                 <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
-                    <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">The Loop: Designing Human-in-the-Loop</div>
+                    <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">Designing the Loop</div>
                     <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 card-icon-overlay transition-all duration-400">
                       <img src={OpenIcon} alt="Arrow" className="w-full h-full object-contain" />
                     </div>
@@ -132,7 +132,7 @@ export default function Resources() {
                 </div>
                 <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
-                    <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">Velocity: Why AI-Native Companies Win</div>
+                    <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">Why AI-Natives Win</div>
                     <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 card-icon-overlay transition-all duration-400">
                       <img src={OpenIcon} alt="Arrow" className="w-full h-full object-contain" />
                     </div>
@@ -146,7 +146,7 @@ export default function Resources() {
                 </div>
                 <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
-                    <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">Designing Trust: Explainability as a UX</div>
+                    <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">Designing for Trust</div>
                     <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 card-icon-overlay transition-all duration-400">
                       <img src={OpenIcon} alt="Arrow" className="w-full h-full object-contain" />
                     </div>
@@ -160,7 +160,7 @@ export default function Resources() {
                 </div>
                 <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
-                    <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">The Rise of Intent-Aware SaaS</div>
+                    <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">Intent-Aware SaaS</div>
                     <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 card-icon-overlay transition-all duration-400">
                       <img src={OpenIcon} alt="Arrow" className="w-full h-full object-contain" />
                     </div>
@@ -174,7 +174,7 @@ export default function Resources() {
                 </div>
                 <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
-                    <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">UI as Infrastructure: Why Chat Interfaces</div>
+                    <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">Chat Isn't Enough</div>
                     <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 card-icon-overlay transition-all duration-400">
                       <img src={OpenIcon} alt="Arrow" className="w-full h-full object-contain" />
                     </div>
@@ -188,7 +188,7 @@ export default function Resources() {
                 </div>
                 <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
-                    <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">What Changes in Product Teams When AI</div>
+                    <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">AI in Product Teams</div>
                     <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 card-icon-overlay transition-all duration-400">
                       <img src={OpenIcon} alt="Arrow" className="w-full h-full object-contain" />
                     </div>
@@ -203,7 +203,7 @@ export default function Resources() {
                 </div>
                 <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
-                    <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">The New Stack: Humans, AI, and Systems</div>
+                    <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">The New Stack</div>
                     <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 card-icon-overlay transition-all duration-400">
                       <img src={OpenIcon} alt="Arrow" className="w-full h-full object-contain" />
                     </div>
@@ -218,7 +218,7 @@ export default function Resources() {
                 </div>
                 <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
-                    <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">SaaS UX in the Age of Agents</div>
+                    <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">UX for AI Agents</div>
                     <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 card-icon-overlay transition-all duration-400">
                       <img src={OpenIcon} alt="Arrow" className="w-full h-full object-contain" />
                     </div>
@@ -232,7 +232,7 @@ export default function Resources() {
                 </div>
                 <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
-                    <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">Fluency Is the New Code</div>
+                    <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">Fluency Is New Code</div>
                     <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 card-icon-overlay transition-all duration-400">
                       <img src={OpenIcon} alt="Arrow" className="w-full h-full object-contain" />
                     </div>
@@ -246,7 +246,7 @@ export default function Resources() {
                 </div>
                 <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
-                    <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">AI as a Force Multiplier for Startups</div>
+                    <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">AI Multiplies Teams</div>
                     <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 card-icon-overlay transition-all duration-400">
                       <img src={OpenIcon} alt="Arrow" className="w-full h-full object-contain" />
                     </div>
@@ -262,8 +262,8 @@ export default function Resources() {
       {/* --- Talk Section --- */}
       <ContactFooter
         title="Our experts work closely with teams to explore challenges together, exchange perspectives, and co-create better ways forward through shared learning."
-        subtitle="Learning doesn’t stop at reading."
-        buttonText="Work With Us"
+        subtitle="Reading is the start. Building is next."
+        buttonText="Start a Conversation"
       />
       {/* --- Footer --- */}
       {/* <Footer/> */}

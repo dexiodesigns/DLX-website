@@ -356,7 +356,7 @@ export default function Contact() {
                   name="companyName"
                   value={formData.companyName}
                   onChange={handleInputChange}
-                  placeholder="Example: Lenovo, Freshworks, SuperOps, ..."
+                  placeholder="e.g. Acme Technologies"
                   required
                   className="w-full px-4 py-3 rounded-lg outline-none transition focus:ring-1 focus:ring-zinc-600"
                   style={{
