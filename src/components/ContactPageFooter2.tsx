@@ -364,7 +364,7 @@ const ContactPageFooter2 = ({ }) => {
                           color: '#D5D7DD',
                         }}
                       >
-                        We reach out when the right role opens
+                        Send your portfolio, and we'll reach out when the right role opens
                       </p>
                     </div>
                     <div className="flex items-center justify-center w-[40px] h-[40px]">
@@ -423,7 +423,7 @@ const ContactPageFooter2 = ({ }) => {
                       color: '#D5D7DD',
                     }}
                   >
-                    We reach out when the right role opens
+                    Send your portfolio, and we'll reach out when the right role opens
                   </p>
                   <a
                     href="mailto:careers@dexiolabx.com"

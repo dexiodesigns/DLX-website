@@ -219,23 +219,25 @@ export default function ServicePage() {
           {service.stats.map((stat, index) => (
             <div
               key={index}
-              className="bg-zinc-900/80 border border-zinc-800/50 rounded-[24px] md:rounded-2xl p-6 md:p-8 flex items-center justify-between"
+              className={`bg-zinc-900/80 border border-zinc-800/50 rounded-[24px] md:rounded-2xl p-6 md:p-8 flex items-center gap-4 ${stat.label ? "justify-between" : "flex-col-reverse justify-center text-center"}`}
             >
               <div>
                 <p
-                  className="text-[24px] md:text-[36px] leading-[48px] md:text-4xl font-bold text-white mb-0 md:mb-3"
+                  className={`text-[24px] md:text-[36px] leading-[48px] md:text-4xl font-bold text-white ${stat.label ? "mb-0 md:mb-3" : ""}`}
                   style={{ fontFamily: 'Sora, sans-serif' }}
                 >
                   {stat.value}
                 </p>
-                <p
-                  className="text-[14px] leading-[24px] md:text-[20px] text-[#F1F2F4]-400"
-                  style={{ fontFamily: 'Inter, sans-serif' }}
-                >
-                  {stat.label}
-                </p>
+                {stat.label && (
+                  <p
+                    className="text-[14px] leading-[24px] md:text-[20px] text-[#F1F2F4]-400"
+                    style={{ fontFamily: 'Inter, sans-serif' }}
+                  >
+                    {stat.label}
+                  </p>
+                )}
               </div>
-              <div className="text-[#6366f1] flex justify-start items-start mb-[22px] md:mb-[38px]" style={{ width: '60px', height: '60px' }}>
+              <div className="text-[#6366f1] flex-shrink-0 flex justify-center items-center" style={{ width: '60px', height: '60px' }}>
                 {stat.iconSrc ? (
                   <img src={stat.iconSrc} alt="" className="w-full h-full" />
                 ) : stat.customSvg ? (

@@ -14,7 +14,7 @@ import ServiceExcellence from "../components/ServiceExcellence";
 
 export default function Home() {
   const navigate = useNavigate();
-  const HomeDescription = 'Every modern user works alongside AI and Dexio LabX designs Human<>AI systems that deliver real value inside SaaS products.';
+  const HomeDescription = 'Every user now works alongside AI. Dexio LabX designs and builds the human + AI experiences that make SaaS products work.';
   return (
     <main className="bg-[#0B0C0E] text-white min-h-screen selection:bg-purple-500/30 overflow-x-hidden">
       <div className="relative">
@@ -121,7 +121,7 @@ export default function Home() {
             /* Desktop resets */
             md:text-base md:leading-relaxed"
           >
-            We are more than a digital agency. We are a laboratory of innovation. By fusing human-centric design with AI-driven SaaS products, we help businesses move from friction to flow. Our mission is to transform complex ideas into intelligent experiences that create measurable value.
+            We're an AI product lab, not just a design agency. We pair human-centred design with our own AI-driven SaaS products to move businesses from friction to flow, turning complex ideas into experiences that create measurable value.
           </p>
         </div>
       </section>
@@ -195,8 +195,8 @@ export default function Home() {
       <EvidenceOfImpact />
       {/* --- Talk Section --- */}
       <ContactFooter
-        title="We design digital products, systems and stories that move the businesses forward - built on, Clarity, Creativity and measurable growth."
-        subtitle="Great partnership, starts with a quick hello."
+        title="We design digital products, systems and stories that move businesses forward—built on clarity, creativity and measurable growth."
+        subtitle="Great partnerships start with a quick hello."
         buttonText="Let’s Talk"
       />
       {/* --- Footer --- */}

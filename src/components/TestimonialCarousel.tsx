@@ -14,7 +14,7 @@ export const testimonials = [
     name: "Shashank Mahesh",
     role: "Head of Business Development, Miniture",
     content:
-      "Dexio Designs exceeded our expectations in bringing our parenting app vision to life. As a small startup, conveying our story effectively was paramount. Their ability to merge functionality with aesthetics resulted in a sleek, cutting-edge interface that perfectly encapsulates our app's purpose and story. They consistently delivered high-quality work, with special thanks to Mani & Ganga for their dedicated late-hour sessions. Their quick turnaround made it feel like they were part of our in-house team. Excited for our continued partnership!",
+      "Dexio LabX exceeded our expectations in bringing our parenting app vision to life. As a small startup, conveying our story effectively was paramount. Their ability to merge functionality with aesthetics resulted in a sleek, cutting-edge interface that perfectly encapsulates our app's purpose and story. They consistently delivered high-quality work, with special thanks to Mani & Ganga for their dedicated late-hour sessions. Their quick turnaround made it feel like they were part of our in-house team. Excited for our continued partnership!",
     image: People1
   },
   {

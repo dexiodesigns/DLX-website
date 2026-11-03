@@ -12,16 +12,16 @@ export default function FAQSection() {
   const faqData: Record<string, { question: string; answer: string }[]> = {
     "Design Company": [
       {
-        question: "What is DexioLabX?",
-        answer: "DexioLabX is a creative design studio focused on crafting user-centric digital experiences. We help businesses translate ideas into functional, visually refined, and scalable design solutions."
+        question: "What is Dexio LabX?",
+        answer: "Dexio LabX is an AI product lab and design studio based in Chennai. We design user-centred SaaS experiences for clients and build our own AI products, like Vaahi."
       },
       { question: "What industries do you work with?", answer: "We work across multiple industries including technology, startups, SaaS, e-commerce, education, and service-based businesses." },
-      { question: "What makes DexioLabX different from other design studios?", answer: "Our work is driven by clarity, research, and purpose. We focus on solving real user and business problems rather than creating design for aesthetics alone." },
-      { question: "Do you work with startups and enterprises?", answer: "Yes. We collaborate with early-stage startups, growing businesses, and established organizations.." },
+      { question: "What makes Dexio LabX different?", answer: "We build and run our own AI products, so we design from operator experience, not theory." },
+      { question: "Do you work with startups and enterprises?", answer: "Yes. We collaborate with early-stage startups, growing businesses, and established organisations." },
       { question: "Do you offer redesign services?", answer: "Yes. We improve existing products and brands through usability audits, visual refinement, and strategic redesigns." }
     ],
-    "Design Services": [
-      { question: "What design services do you provide?", answer: "We offer UI/UX design, web and mobile app design, branding and identity design, design systems, usability audits, and product design support." },
+    "Design Solutions": [
+      { question: "What design solutions do you provide?", answer: "We offer UI/UX design, web and mobile app design, branding and identity design, design systems, usability audits, and product design support." },
       { question: "Do you provide end-to-end design solutions?", answer: "Yes. We handle the complete design lifecycle from discovery and wireframes to final UI and handoff." },
       { question: "Can clients choose individual services?", answer: "Yes. Our services are flexible and can be customized based on specific project requirements." },
       { question: "Do you work with development teams?", answer: "Yes. We collaborate closely with developers to ensure smooth design implementation and consistency." },
@@ -33,13 +33,6 @@ export default function FAQSection() {
       { question: "How involved are clients during the process?", answer: "Clients are involved at every major milestone through reviews and feedback sessions." },
       { question: "How long does a typical project take?", answer: "Project timelines vary by scope, but most design projects take between 2 to 8 weeks." },
       { question: "Do you follow design standards and accessibility guidelines?", answer: "Yes. We follow usability, accessibility, and scalable design best practices." }
-    ],
-    "Design Academy": [
-      { question: "What is DexioLabX Design Academy?", answer: "DexioLabX Design Academy is a learning initiative focused on practical UI/UX and product design education." },
-      { question: "Who can join the Design Academy?", answer: "Students, beginners, career switchers, and professionals looking to enhance their design skills can enroll." },
-      { question: "Are the courses practical or theory-based?", answer: "Our courses are practice-driven, focusing on real-world projects and industry workflows." },
-      { question: "Do learners receive mentorship?", answer: "Yes. Learners receive guidance, feedback, and reviews from experienced designers." },
-      { question: "Do you provide certification or portfolio support?", answer: "Yes. We assist learners in building portfolio-ready projects and provide completion certificates." }
     ]
   };
 

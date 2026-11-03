@@ -66,9 +66,9 @@ export default function Contact() {
           message: formData.challenge,
           // Enable auto-reply to user
           autoresponse: true,
-          autoresponse_subject: "Thanks for reaching out! — Dexio Designs",
-          autoresponse_from: "Dexio Designs",
-          autoresponse_message: `Hi ${formData.fullName},\n\nThank you for reaching out to Dexio Designs! We've received your message and will respond with a clear, actionable recommendation within 24 hours.\n\nBest regards,\nThe Dexio Team`,
+          autoresponse_subject: "Thanks for reaching out — Dexio LabX",
+          autoresponse_from: "Dexio LabX",
+          autoresponse_message: `Hi ${formData.fullName},\n\nThank you for reaching out to Dexio LabX! We've received your message and will respond with a clear, actionable recommendation within 24 hours.\n\nBest regards,\nThe Dexio Team`,
         }),
       });
 
@@ -356,7 +356,7 @@ export default function Contact() {
                   name="companyName"
                   value={formData.companyName}
                   onChange={handleInputChange}
-                  placeholder="Example: Lenovo, Freshworks, SuperOps, ..."
+                  placeholder="e.g. Acme Technologies"
                   required
                   className="w-full px-4 py-3 rounded-lg outline-none transition focus:ring-1 focus:ring-zinc-600"
                   style={{
@@ -521,7 +521,7 @@ export default function Contact() {
                     marginTop: '16px',
                   }}
                 >
-                  Something went wrong. Please try again or email us directly at sales@dexiodesigns.com
+                  Something went wrong. Please try again or email us directly at hello@dexiolabx.com
                 </p>
               )}
 
