@@ -14,9 +14,9 @@ export default function Footer() {
       { name: "UX Audit", href: "/services/ux-audit" },
       { name: "UX Research", href: "/services/ux-research" },
       { name: "UX Design", href: "/services/ux-design" },
-      { name: "Marketing Designs", href: "/services/growth-focused-marketing-design" },
+      { name: "Marketing Design", href: "/services/growth-focused-marketing-design" },
       { name: "Motion Graphics", href: "/services/motion-graphics" },
-      { name: "Next-Gen Experience", href: "/services/next-gen-ux" },
+      { name: "Next-Gen UX", href: "/services/next-gen-ux" },
     ],
     aiProducts: [
       { name: "Mr. RYT", href: "/products/mr-ryt", disabled: true },

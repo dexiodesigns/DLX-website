@@ -371,7 +371,7 @@ export const servicesData: ServiceData[] = [
         customSvg: `<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.768 29.3847L1.91671 27.5387C0.976715 27.4396 0.37427 26.942 0.109381 26.046C-0.155507 25.1504 0.0607145 24.3933 0.758048 23.7747L26.8454 0.359334C26.9649 0.239334 27.1034 0.149558 27.2607 0.0900024C27.4176 0.0300024 27.6432 0 27.9374 0C28.416 0 28.7947 0.206889 29.0734 0.620666C29.352 1.03444 29.3545 1.47023 29.0807 1.928L19.1527 18.7693L35.1067 20.6153C36.0467 20.7144 36.6578 21.2033 36.94 22.082C37.2218 22.9607 37.014 23.7093 36.3167 24.328L10.2294 47.7947C10.1098 47.9147 9.97138 47.996 9.81405 48.0387C9.65716 48.0813 9.4316 48.1027 9.13738 48.1027C8.65871 48.1027 8.29716 47.8958 8.05272 47.482C7.80827 47.0682 7.80583 46.6496 8.04538 46.226L17.768 29.3847ZM14.568 40.0973L33.712 23.1127L14.8554 21L22.594 7.918L3.36271 24.954L22.1527 27.2053L14.568 40.0973Z" fill="#40C8E8"/><path d="M17.768 29.3847L1.91671 27.5387C0.976715 27.4396 0.37427 26.942 0.109381 26.046C-0.155507 25.1504 0.0607145 24.3933 0.758048 23.7747L26.8454 0.359334C26.9649 0.239334 27.1034 0.149558 27.2607 0.0900024C27.4176 0.0300024 27.6432 0 27.9374 0C28.416 0 28.7947 0.206889 29.0734 0.620666C29.352 1.03444 29.3545 1.47023 29.0807 1.928L19.1527 18.7693L35.1067 20.6153C36.0467 20.7144 36.6578 21.2033 36.94 22.082C37.2218 22.9607 37.014 23.7093 36.3167 24.328L10.2294 47.7947C10.1098 47.9147 9.97138 47.996 9.81405 48.0387C9.65716 48.0813 9.4316 48.1027 9.13738 48.1027C8.65871 48.1027 8.29716 47.8958 8.05272 47.482C7.80827 47.0682 7.80583 46.6496 8.04538 46.226L17.768 29.3847ZM14.568 40.0973L33.712 23.1127L14.8554 21L22.594 7.918L3.36271 24.954L22.1527 27.2053L14.568 40.0973Z" fill="white" fill-opacity="0.15"/></svg>` },
     ],
     processHeading: "Working at the intersection of UX and data.",
-    processSubheading: "UX, data, and product thinking; working together, not in silos.",
+    processSubheading: "UX, data and product thinking—working together, not in silos.",
     processSteps: [
       { title: "Data Analysis", description: "Funnels, user behaviour, and drop-off patterns." },
       { title: "UX Mapping", description: "Journeys aligned directly with key metrics." },
@@ -388,7 +388,7 @@ export const servicesData: ServiceData[] = [
     title: "Next-Gen UX",
     subtitle: "Design future-ready experiences practically.",
     subtitleGradient: "from-[#4044E8] via-[#F06058] to-[#F4DC7C]",
-    description: "We design AI, AR, and immersive experiences focused on real usability, adoption, and scale; not demos.",
+    description: "We design AI, AR and immersive experiences focused on real usability, adoption and scale—not demos.",
     ctaText: "Design The Future",
     ctaLink: "/contact",
     statsHeading: "Proven impact before scaling.",
@@ -439,7 +439,7 @@ export const servicesData: ServiceData[] = [
   {
     id: "marketing-designs",
     slug: "growth-focused-marketing-design",
-    title: "Marketing Designs",
+    title: "Marketing Design",
     subtitle: "Design that drives measurable growth.",
     subtitleGradient: "from-[#4044E8] via-[#F06058] to-[#F4DC7C]",
     description: "Create marketing designs that drive measurable engagement, clarity, and growth across channels.",
@@ -481,7 +481,7 @@ export const servicesData: ServiceData[] = [
         customSvg: `<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.768 29.3847L1.91671 27.5387C0.976715 27.4396 0.37427 26.942 0.109381 26.046C-0.155507 25.1504 0.0607145 24.3933 0.758048 23.7747L26.8454 0.359334C26.9649 0.239334 27.1034 0.149558 27.2607 0.0900024C27.4176 0.0300024 27.6432 0 27.9374 0C28.416 0 28.7947 0.206889 29.0734 0.620666C29.352 1.03444 29.3545 1.47023 29.0807 1.928L19.1527 18.7693L35.1067 20.6153C36.0467 20.7144 36.6578 21.2033 36.94 22.082C37.2218 22.9607 37.014 23.7093 36.3167 24.328L10.2294 47.7947C10.1098 47.9147 9.97138 47.996 9.81405 48.0387C9.65716 48.0813 9.4316 48.1027 9.13738 48.1027C8.65871 48.1027 8.29716 47.8958 8.05272 47.482C7.80827 47.0682 7.80583 46.6496 8.04538 46.226L17.768 29.3847ZM14.568 40.0973L33.712 23.1127L14.8554 21L22.594 7.918L3.36271 24.954L22.1527 27.2053L14.568 40.0973Z" fill="#40C8E8"/><path d="M17.768 29.3847L1.91671 27.5387C0.976715 27.4396 0.37427 26.942 0.109381 26.046C-0.155507 25.1504 0.0607145 24.3933 0.758048 23.7747L26.8454 0.359334C26.9649 0.239334 27.1034 0.149558 27.2607 0.0900024C27.4176 0.0300024 27.6432 0 27.9374 0C28.416 0 28.7947 0.206889 29.0734 0.620666C29.352 1.03444 29.3545 1.47023 29.0807 1.928L19.1527 18.7693L35.1067 20.6153C36.0467 20.7144 36.6578 21.2033 36.94 22.082C37.2218 22.9607 37.014 23.7093 36.3167 24.328L10.2294 47.7947C10.1098 47.9147 9.97138 47.996 9.81405 48.0387C9.65716 48.0813 9.4316 48.1027 9.13738 48.1027C8.65871 48.1027 8.29716 47.8958 8.05272 47.482C7.80827 47.0682 7.80583 46.6496 8.04538 46.226L17.768 29.3847ZM14.568 40.0973L33.712 23.1127L14.8554 21L22.594 7.918L3.36271 24.954L22.1527 27.2053L14.568 40.0973Z" fill="white" fill-opacity="0.15"/></svg>` },
     ],
     processHeading: "Working as part of your growth engine.",
-    processSubheading: "Designers aligned to your growth goals; not just visuals.",
+    processSubheading: "Designers aligned to your growth goals—not just visuals.",
     processSteps: [
       { title: "Goal Alignment", description: "Campaign objectives and measurable KPIs." },
       { title: "Creative Direction", description: "Messaging clarity and visual strategy." },
