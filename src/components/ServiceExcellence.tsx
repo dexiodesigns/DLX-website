@@ -7,7 +7,7 @@ import DesignServicesVideo from "../assets/Videos/DesignServicesVideo.mp4";
 import OpenIcon from "../assets/HomeIcons/openLinkIcon.svg";
 
 export default function ServiceExcellence() {
-  const [activeTab, setActiveTab] = useState("Services");
+  const [activeTab, setActiveTab] = useState(Object.keys(TAB_CONFIGS)[0]);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const navigate = useNavigate();
   const tabRefs = useRef<{ [key: string]: HTMLButtonElement | null }>({});
@@ -97,7 +97,7 @@ export default function ServiceExcellence() {
               </p>
 
               {/* Stats Row - Centered on Mobile */}
-              {activeTab === "Services" && (
+              {activeTab === "Solutions" && (
                 <div className="flex justify-center md:justify-start gap-8 md:gap-12 mb-8">
                   <div className="flex flex-col">
                     <span className="text-3xl md:text-4xl font-bold mb-1 font-sora" style={{ fontFamily: 'Sora, sans-serif' }}>100+</span>
@@ -166,7 +166,7 @@ export default function ServiceExcellence() {
               transition={{ duration: 0.3, ease: "easeInOut" }}
               className="rounded-[24px] md:rounded-[32px] overflow-hidden"
             >
-              {activeTab === "Services" ? (
+              {activeTab === "Solutions" ? (
                 <div className="relative" onClick={() => setIsVideoModalOpen(true)}>
                   <video
                     autoPlay

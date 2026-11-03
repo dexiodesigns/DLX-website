@@ -24,19 +24,6 @@ export interface TabConfig {
 }
 
 export const TAB_CONFIGS: Record<string, TabConfig> = {
-  "Services": {
-    id: "services",
-    label: "Services",
-    activeColor: "#7a78ed",
-    textColor: "text-black",
-    content: {
-      title: "Service\nExcellence",
-      description: "Crafting human-centered design for digital transformation. From UX Research to Marketing Assets, we partner with businesses to design experiences that drive growth.",
-      buttonText: "Explore Services",
-      buttonHref: "/services/ux-audit",
-      image: "VideoImg"
-    }
-  },
   "Products": {
     id: "products",
     label: "Products",
@@ -56,9 +43,22 @@ export const TAB_CONFIGS: Record<string, TabConfig> = {
         },
       ]
     }
+  },
+  "Solutions": {
+    id: "services",
+    label: "Solutions",
+    activeColor: "#7a78ed",
+    textColor: "text-black",
+    content: {
+      title: "Service\nExcellence",
+      description: "Crafting human-centered design for digital transformation. From UX Research to Marketing Assets, we partner with businesses to design experiences that drive growth.",
+      buttonText: "Explore our solutions",
+      buttonHref: "/services/ux-audit",
+      image: "VideoImg"
+    }
   }
 };
 
 export const getTabConfig = (tabName: string): TabConfig => {
-  return TAB_CONFIGS[tabName] || TAB_CONFIGS["Services"];
+  return TAB_CONFIGS[tabName] || TAB_CONFIGS["Solutions"];
 };

@@ -22,6 +22,11 @@ export const pageMeta: Record<string, PageMeta> = {
     description:
       "Case studies from FlopHero, Neartail, RouteYourTravel and more, plus essays on designing SaaS for humans and AI.",
   },
+  "/products": {
+    title: "Our Products — Dexio LabX",
+    description:
+      "AI products designed and built in-house by Dexio LabX, including Vaahi and Autistem AI.",
+  },
   "/contact": {
     title: "Contact Dexio LabX — Reply Within 24 Hours",
     description:

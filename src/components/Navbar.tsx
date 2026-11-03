@@ -127,8 +127,8 @@ export default function Navbar() {
   ];
 
   const navItems = [
-    { name: "Services", hasSubmenu: true, href: "#" },
-    // { name: "Products", hasSubmenu: false, href: "/products" },
+    { name: "Our Products", hasSubmenu: false, href: "/products" },
+    { name: "Solutions", hasSubmenu: true, href: "#" },
     // { name: "Academy", hasSubmenu: false, href: "/academy" },
     { name: "Resources", hasSubmenu: false, href: "/resources" },
     { name: "Company", hasSubmenu: false, href: "/company" },
@@ -160,41 +160,44 @@ export default function Navbar() {
                   />
                 )}
               </li>
-              <li className="relative text-[16px] font-[400]">
-                <button
-                  ref={buttonRef}
-                  onClick={() => setIsServicesOpen(!isServicesOpen)}
-                  className={`cursor-pointer transition flex items-center gap-1 outline-none ${isServicesActive ? "text-white font-semibold" : "text-zinc-300 hover:text-white"
-                    }`}
-                >
-                  <span className="relative">
-                    Services
-                    {isServicesActive && (
+              {navItems.map((item) => (
+                item.hasSubmenu ? (
+                  <li key={item.name} className="relative text-[16px] font-[400]">
+                    <button
+                      ref={buttonRef}
+                      onClick={() => setIsServicesOpen(!isServicesOpen)}
+                      className={`cursor-pointer transition flex items-center gap-1 outline-none ${isServicesActive ? "text-white font-semibold" : "text-zinc-300 hover:text-white"
+                        }`}
+                    >
+                      <span className="relative">
+                        {item.name}
+                        {isServicesActive && (
+                          <div
+                            className="absolute left-1/2 -translate-x-1/2 -bottom-3 bg-[#6366f1]"
+                            style={{ width: '40px', height: '4px', borderRadius: '4px' }}
+                          />
+                        )}
+                      </span>
+                      {isServicesOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                    </button>
+                  </li>
+                ) : (
+                  <li key={item.name} className="relative text-[16px] font-[400]">
+                    <Link
+                      to={item.href}
+                      className={`cursor-pointer transition ${isActive(item.href) ? "text-white font-semibold" : "text-zinc-300 hover:text-white"
+                        }`}
+                    >
+                      {item.name}
+                    </Link>
+                    {isActive(item.href) && (
                       <div
                         className="absolute left-1/2 -translate-x-1/2 -bottom-3 bg-[#6366f1]"
                         style={{ width: '40px', height: '4px', borderRadius: '4px' }}
                       />
                     )}
-                  </span>
-                  {isServicesOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-                </button>
-              </li>
-              {navItems.slice(1).map((item) => (
-                <li key={item.name} className="relative text-[16px] font-[400]">
-                  <Link
-                    to={item.href}
-                    className={`cursor-pointer transition ${isActive(item.href) ? "text-white font-semibold" : "text-zinc-300 hover:text-white"
-                      }`}
-                  >
-                    {item.name}
-                  </Link>
-                  {isActive(item.href) && (
-                    <div
-                      className="absolute left-1/2 -translate-x-1/2 -bottom-3 bg-[#6366f1]"
-                      style={{ width: '40px', height: '4px', borderRadius: '4px' }}
-                    />
-                  )}
-                </li>
+                  </li>
+                )
               ))}
             </ul>
           </div>
@@ -291,7 +294,7 @@ export default function Navbar() {
                 <span>Back</span>
               </button>
               <div className="px-6 py-4 flex-shrink-0">
-                <h2 className="text-xl font-semibold">Services</h2>
+                <h2 className="text-xl font-semibold">Solutions</h2>
               </div>
               <div className="px-6 pb-10 space-y-6 overflow-y-auto flex-1">
                 {services.map((service, index) => (

@@ -42,15 +42,15 @@ export default function Footer() {
   const filteredQuickLinks = footerLinks.quickLinks.filter(link => link.href !== location.pathname && !link.disabled);
   // these should open in new tab
   const socialLinks = [
-    {
-      icon: (
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fillRule="evenodd" clipRule="evenodd" d="M8 0C4.68629 0 2 2.68629 2 6C2 10.5 8 16 8 16C8 16 14 10.5 14 6C14 2.68629 11.3137 0 8 0ZM8 8C9.10457 8 10 7.10457 10 6C10 4.89543 9.10457 4 8 4C6.89543 4 6 4.89543 6 6C6 7.10457 6.89543 8 8 8Z" fill="#D5D7DD" />
-        </svg>
-      ),
-      href: "https://share.google/6fmVEVjx01ZJBY7aC",
-      label: "Location"
-    },
+    // {
+    //   icon: (
+    //     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    //       <path fillRule="evenodd" clipRule="evenodd" d="M8 0C4.68629 0 2 2.68629 2 6C2 10.5 8 16 8 16C8 16 14 10.5 14 6C14 2.68629 11.3137 0 8 0ZM8 8C9.10457 8 10 7.10457 10 6C10 4.89543 9.10457 4 8 4C6.89543 4 6 4.89543 6 6C6 7.10457 6.89543 8 8 8Z" fill="#D5D7DD" />
+    //     </svg>
+    //   ),
+    //   href: "https://share.google/6fmVEVjx01ZJBY7aC",
+    //   label: "Location"
+    // },
     {
       icon: (
         <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -209,7 +209,7 @@ export default function Footer() {
                   opacity: 1
                 }}
               >
-                Services
+                Solutions
               </h4>
               <ul className="flex flex-col gap-3">
                 {footerLinks.services.map((link, index) => (
@@ -391,34 +391,36 @@ export default function Footer() {
               <path d="M106.28 42.5551V4.71509H112.495V37.1101H129.27V42.5551H106.28Z" fill="#818898" fillOpacity="0.6" />
               <path d="M68.5752 42.5551V4.71509H80.9502C84.1402 4.71509 86.7435 4.88009 88.7602 5.21009C90.8135 5.50342 92.4269 6.05342 93.6002 6.86009C94.7735 7.66675 95.6169 8.78509 96.1302 10.2151C96.6802 11.6451 97.0285 13.4601 97.1752 15.6601C97.3219 17.8601 97.3952 20.5184 97.3952 23.6351C97.3952 26.7518 97.3219 29.4101 97.1752 31.6101C97.0285 33.8101 96.6802 35.6251 96.1302 37.0551C95.6169 38.4851 94.7735 39.6034 93.6002 40.4101C92.4269 41.2168 90.8135 41.7851 88.7602 42.1151C86.7435 42.4084 84.1402 42.5551 80.9502 42.5551H68.5752ZM74.7902 37.2751H80.4002C82.4535 37.2751 84.1402 37.2384 85.4602 37.1651C86.8169 37.0551 87.8802 36.7984 88.6502 36.3951C89.4202 35.9551 89.9885 35.2584 90.3552 34.3051C90.7219 33.3518 90.9419 32.0134 91.0152 30.2901C91.1252 28.5301 91.1802 26.3118 91.1802 23.6351C91.1802 20.9584 91.1252 18.7584 91.0152 17.0351C90.9419 15.3118 90.7035 13.9734 90.3002 13.0201C89.9335 12.0301 89.3469 11.3334 88.5402 10.9301C87.7702 10.4901 86.7252 10.2334 85.4052 10.1601C84.0852 10.0501 82.4169 9.99509 80.4002 9.99509H74.7902V37.2751Z" fill="#818898" fillOpacity="0.6" />
             </svg>
-            <div className="flex gap-3">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={social.label}
-                  className="w-8 h-8 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
-                  style={{
-                    background: '#22252A'
-                  }}
-                >
-                  {social.icon}
-                </a>
-              ))}
+            <div className="flex flex-col items-end gap-3">
+              <div className="flex gap-3">
+                {socialLinks.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.label}
+                    className="w-8 h-8 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
+                    style={{
+                      background: '#22252A'
+                    }}
+                  >
+                    {social.icon}
+                  </a>
+                ))}
+              </div>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=No+7+Sivagamipuram+2nd+Cross+Street+Thiruvanmiyur+Chennai+600041"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-['Inter'] font-normal text-[12px] leading-[18px] text-right hover:text-white transition-colors"
+                style={{ color: '#818898' }}
+              >
+                Founder's Office, No: 7, Sivagamipuram,<br />
+                2nd Cross Street, Thiruvanmiyur,<br />
+                Chennai, Tamilnadu 600041.
+              </a>
             </div>
-            <a
-              href="https://www.google.com/maps/place/Dexio+LabX+(DLX)+Pvt.+Lmt./@13.0579268,80.232988,927m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3a5267001360c821:0x94291c7aa676d575!8m2!3d13.0579268!4d80.2355629!16s%2Fg%2F11z0yypsxn?entry=ttu&g_ep=EgoyMDI2MDMyOS4wIKXMDSoASAFQAw%3D%3D"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-['Inter'] font-normal text-[12px] leading-[18px] text-right hover:text-white transition-colors"
-              style={{ color: '#818898' }}
-            >
-              3rd floor, Reach office, Mahalingapuram Main Rd,<br />
-              Mahalingapuram, Nungambakkam, Chennai,<br />
-              Tamil Nadu 600034
-            </a>
           </div>
         </div>
       </div>
@@ -428,7 +430,7 @@ export default function Footer() {
         {/* Accordion Sections */}
         <div className="mb-8">
           <MobileAccordion
-            title="SERVICES"
+            title="SOLUTIONS"
             sectionKey="services"
             links={footerLinks.services}
             isEnabled={true}
@@ -482,43 +484,45 @@ export default function Footer() {
             </svg>
           </div>
 
-          {/* Social Icons - Centered */}
-          <div
-            className="flex justify-center"
-            style={{
-              gap: '12px',
-              opacity: 1
-            }}
-          >
-            {socialLinks.map((social, index) => (
-              <a
-                key={index}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={social.label}
-                className="w-12 h-12 md:w-8 md:h-8 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
-                style={{
-                  background: '#22252A'
-                }}
-              >
-                <span className="[&>svg]:w-6 [&>svg]:h-6 md:[&>svg]:w-4 md:[&>svg]:h-4">
-                  {social.icon}
-                </span>
-              </a>
-            ))}
+          <div className="flex flex-col items-center gap-3">
+            {/* Social Icons - Centered */}
+            <div
+              className="flex justify-center"
+              style={{
+                gap: '12px',
+                opacity: 1
+              }}
+            >
+              {socialLinks.map((social, index) => (
+                <a
+                  key={index}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  className="w-12 h-12 md:w-8 md:h-8 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
+                  style={{
+                    background: '#22252A'
+                  }}
+                >
+                  <span className="[&>svg]:w-6 [&>svg]:h-6 md:[&>svg]:w-4 md:[&>svg]:h-4">
+                    {social.icon}
+                  </span>
+                </a>
+              ))}
+            </div>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=No+7+Sivagamipuram+2nd+Cross+Street+Thiruvanmiyur+Chennai+600041"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-['Inter'] font-normal text-[12px] leading-[18px] text-center hover:text-white transition-colors"
+              style={{ color: '#818898' }}
+            >
+              Founder's Office, No: 7, Sivagamipuram,<br />
+              2nd Cross Street, Thiruvanmiyur,<br />
+              Chennai, Tamilnadu 600041.
+            </a>
           </div>
-          <a
-            href="https://www.google.com/maps/place/Dexio+LabX+(DLX)+Pvt.+Lmt./@13.0579268,80.232988,927m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3a5267001360c821:0x94291c7aa676d575!8m2!3d13.0579268!4d80.2355629!16s%2Fg%2F11z0yypsxn?entry=ttu&g_ep=EgoyMDI2MDMyOS4wIKXMDSoASAFQAw%3D%3D"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-['Inter'] font-normal text-[12px] leading-[18px] text-center hover:text-white transition-colors"
-            style={{ color: '#818898' }}
-          >
-            3rd floor, Reach office, Mahalingapuram Main Rd,<br />
-            Mahalingapuram, Nungambakkam, Chennai,<br />
-            Tamil Nadu 600034
-          </a>
         </div>
       </div>
 
