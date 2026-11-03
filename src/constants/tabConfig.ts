@@ -22,6 +22,7 @@ export const TAB_CONFIGS: Record<string, TabConfig> = {
       title: "Service\nExcellence",
       description: "Crafting human-centered design for digital transformation. From UX Research to Marketing Assets, we partner with businesses to design experiences that drive growth.",
       buttonText: "Explore Services",
+      buttonHref: "/services/ux-audit",
       image: "VideoImg"
     }
   },
@@ -31,21 +32,10 @@ export const TAB_CONFIGS: Record<string, TabConfig> = {
     activeColor: "rgb(242 103 103)", // Orange
     textColor: "text-black",
     content: {
-      title: "SaaS\nIntelligence",
-      description: "AI-powered SaaS tools that automate workflows, enhance productivity, and simplify decisions, built with the same design excellence we deliver to clients.",
-      buttonText: "Explore Products"
-    }
-  },
-  "Academy": {
-    id: "academy",
-    label: "Academy",
-    activeColor: "rgb(59 196 246)", // Blue
-    textColor: "text-black",
-    content: {
-      title: "Experiential\nLearning",
-      description: "Where learning meets doing. Project-based workshops and mentorship programs that turn real-world challenges into creative skill-building journeys.",
-      buttonText: "Learn With Us",
-      image: "AcademyHomeImg"
+      title: "AI\nProducts",
+      description: "Our own AI products, like Vaahi, the AI Operations Manager for small businesses, built with the same design rigour we bring to client work.",
+      buttonText: "Meet Vaahi",
+      buttonHref: "/contact"
     }
   }
 };

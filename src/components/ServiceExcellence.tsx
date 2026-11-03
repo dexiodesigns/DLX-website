@@ -4,7 +4,6 @@ import { ArrowRight, Play } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { TAB_CONFIGS, getTabConfig } from "../constants/tabConfig";
 import productsVideo from "../assets/Videos/Products-SaaS-Intelligence.mp4";
-import AcademyHomeImg from "../assets/HomePageImages/AcademyHomeImg.png";
 import DesignServicesVideo from "../assets/Videos/DesignServicesVideo.mp4";
 
 export default function ServiceExcellence() {
@@ -115,19 +114,13 @@ export default function ServiceExcellence() {
 
               {/* Button - Show for all tabs */}
               <div className="flex justify-center md:justify-start">
-                {activeTab === "Services" ? (
-                  <button
-                    onClick={() => navigate('/services/ux-audit')}
-                    className="w-fit bg-[#22252A] px-6 py-3 rounded-[20px] flex items-center gap-2 hover:bg-zinc-800 transition text-[18px] font-medium leading-6 capitalize text-white"
-                  >
-                    {getTabConfig(activeTab).content.buttonText}
-                    <ArrowRight size={16} />
-                  </button>
-                ) : (
-                  <span className="text-[18px] font-medium leading-6 capitalize bg-gradient-to-tr from-[#6366f1] via-[#a855f7] via-[#c34772] to-[#f9f916] bg-clip-text text-transparent">
-                    Coming Soon...
-                  </span>
-                )}
+                <button
+                  onClick={() => navigate(getTabConfig(activeTab).content.buttonHref ?? '/contact')}
+                  className="w-fit bg-[#22252A] px-6 py-3 rounded-[20px] flex items-center gap-2 hover:bg-zinc-800 transition text-[18px] font-medium leading-6 capitalize text-white"
+                >
+                  {getTabConfig(activeTab).content.buttonText}
+                  <ArrowRight size={16} />
+                </button>
               </div>
             </motion.div>
           </AnimatePresence>
@@ -171,12 +164,6 @@ export default function ServiceExcellence() {
                 >
                   <source src={productsVideo} type="video/mp4" />
                 </video>
-              ) : activeTab === "Academy" ? (
-                <img
-                  src={AcademyHomeImg}
-                  alt="Academy Experience"
-                  className="w-full h-[250px] md:h-[340px] object-cover"
-                />
               ) : (
                 <div className="bg-[#111214] p-8 h-[250px] md:h-[340px] flex items-center justify-center">
                   <div className="text-center">

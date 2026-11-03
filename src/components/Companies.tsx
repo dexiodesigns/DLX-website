@@ -76,7 +76,7 @@ const LogoItem = ({ defaultImg, hoverImg, alt, useGrayscaleFilter = false }: { d
         {/* HOVER IMAGE: Absolute positioned to sit exactly on top, shown on hover */}
         <img
           src={defaultImg}
-          alt={`${alt} hover`}
+          alt={alt}
           className={`absolute h-8 w-auto object-contain transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}
         />
       </div>
@@ -104,7 +104,7 @@ const MobileLogoItem = ({ defaultImg, hoverImg, alt, scale = 1 }: { defaultImg: 
         {/* Colored version (appears on tap) */}
         <img
           src={defaultImg}
-          alt={`${alt} colored`}
+          alt={alt}
           className={`absolute h-6 w-auto object-contain transition-opacity duration-300 ${isActive ? 'opacity-100' : 'opacity-0'}`}
         />
       </div>
@@ -116,42 +116,42 @@ const MobileLogoItem = ({ defaultImg, hoverImg, alt, scale = 1 }: { defaultImg: 
 export default function LogoMarquee() {
   // Desktop marquee order (original)
   const desktopLogos = [
-    { id: 'vittae', defaultImg: Vittae, hoverImg: VittaeHover },
-    { id: 'hirifi', defaultImg: Hirifi, hoverImg: HirifiHover },
-    { id: 'algo', defaultImg: Algo, hoverImg: AlgoHover },
-    { id: 'beaconer', defaultImg: Beaconer, hoverImg: BeaconerHover },
-    { id: 'bubble', defaultImg: Bubble, hoverImg: BubbleHover },
-    { id: 'buddy', defaultImg: Buddy, hoverImg: BuddyHover },
-    { id: 'dforth', defaultImg: Dforth, hoverImg: DforthHover },
-    { id: 'flophero', defaultImg: FlopHero, hoverImg: FlopHeroHover },
-    { id: 'gamenation', defaultImg: GameNation, hoverImg: GameNationHover, useGrayscaleFilter: true },
-    { id: 'kritivan', defaultImg: Kritivan, hoverImg: KritivanHover },
-    { id: 'miniature', defaultImg: Miniature, hoverImg: MiniatureHover },
-    { id: 'motorq', defaultImg: MotorQ, hoverImg: MotorQHover },
-    { id: 'neartail', defaultImg: NearTail, hoverImg: NearTailHover },
-    { id: 'route', defaultImg: Route, hoverImg: RouteHover },
-    { id: 'treasure', defaultImg: Treasure, hoverImg: TreasureHover },
-    { id: 'wealthified', defaultImg: Wealthified, hoverImg: WealthifiedHover },
+    { id: 'vittae', alt: 'Vittae logo', defaultImg: Vittae, hoverImg: VittaeHover },
+    { id: 'hirifi', alt: 'Hirifi logo', defaultImg: Hirifi, hoverImg: HirifiHover },
+    { id: 'algo', alt: 'Algo Software logo', defaultImg: Algo, hoverImg: AlgoHover },
+    { id: 'beaconer', alt: 'Beaconer logo', defaultImg: Beaconer, hoverImg: BeaconerHover },
+    { id: 'bubble', alt: 'Bubble logo', defaultImg: Bubble, hoverImg: BubbleHover },
+    { id: 'buddy', alt: 'Buddy logo', defaultImg: Buddy, hoverImg: BuddyHover },
+    { id: 'dforth', alt: 'Dforth logo', defaultImg: Dforth, hoverImg: DforthHover },
+    { id: 'flophero', alt: 'FlopHero logo', defaultImg: FlopHero, hoverImg: FlopHeroHover },
+    { id: 'gamenation', alt: 'GameNation logo', defaultImg: GameNation, hoverImg: GameNationHover, useGrayscaleFilter: true },
+    { id: 'kritivan', alt: 'Kritivan logo', defaultImg: Kritivan, hoverImg: KritivanHover },
+    { id: 'miniature', alt: 'Miniature logo', defaultImg: Miniature, hoverImg: MiniatureHover },
+    { id: 'motorq', alt: 'MotorQ logo', defaultImg: MotorQ, hoverImg: MotorQHover },
+    { id: 'neartail', alt: 'Neartail logo', defaultImg: NearTail, hoverImg: NearTailHover },
+    { id: 'route', alt: 'RouteYourTravel logo', defaultImg: Route, hoverImg: RouteHover },
+    { id: 'treasure', alt: 'Treasure logo', defaultImg: Treasure, hoverImg: TreasureHover },
+    { id: 'wealthified', alt: 'Wealthified logo', defaultImg: Wealthified, hoverImg: WealthifiedHover },
   ];
 
   // Mobile logos with individual scale values for flexibility
   const mobileLogos = [
-    { id: 'kritivan', defaultImg: Kritivan, hoverImg: KritivanHover, scale: 1 },
-    { id: 'beaconer', defaultImg: Beaconer, hoverImg: BeaconerHover, scale: 1 },
-    { id: 'bubble', defaultImg: Bubble, hoverImg: BubbleHover, scale: 1 },
-    { id: 'flophero', defaultImg: FlopHero, hoverImg: FlopHeroHover, scale: 1 },
-    { id: 'vittae', defaultImg: Vittae, hoverImg: VittaeHover, scale: 2.1 },
-    { id: 'miniature', defaultImg: Miniature, hoverImg: MiniatureHover, scale: 0.9 },
-    { id: 'motorq', defaultImg: MotorQ, hoverImg: MotorQHover, scale: 1 },
-    { id: 'neartail', defaultImg: NearTail, hoverImg: NearTailHover, scale: 1.1 },
-    { id: 'dforth', defaultImg: Dforth, hoverImg: DforthHover, scale: 1.2 },
-    { id: 'route', defaultImg: Route, hoverImg: RouteHover, scale: 1.75 },
-    { id: 'treasure', defaultImg: Treasure, hoverImg: TreasureHover, scale: 1.35 },
-    { id: 'buddy', defaultImg: Buddy, hoverImg: BuddyHover, scale: 1.25 },
-    { id: 'gamenation', defaultImg: GameNation, hoverImg: GameNationHover, scale: 1.9 },
-    { id: 'wealthified', defaultImg: Wealthified, hoverImg: WealthifiedHover, scale: 1.3 },
-    { id: 'hirifi', defaultImg: Hirifi, hoverImg: HirifiHover, scale: 2 },
-    { id: 'algo', defaultImg: Algo, hoverImg: AlgoHover, scale: 1 },
+    { id: 'kritivan', alt: 'Kritivan logo', defaultImg: Kritivan, hoverImg: KritivanHover, scale: 1 },
+    { id: 'beaconer', alt: 'Beaconer logo', defaultImg: Beaconer, hoverImg: BeaconerHover, scale: 1 },
+    { id: 'bubble', alt: 'Bubble logo', defaultImg: Bubble, hoverImg: BubbleHover, scale: 1 },
+    { id: 'flophero', alt: 'FlopHero logo', defaultImg: FlopHero, hoverImg: FlopHeroHover, scale: 1 },
+    { id: 'vittae', alt: 'Vittae logo', defaultImg: Vittae, hoverImg: VittaeHover, scale: 2.1 },
+    { id: 'miniature', alt: 'Miniature logo', defaultImg: Miniature, hoverImg: MiniatureHover, scale: 0.9 },
+    { id: 'motorq', alt: 'MotorQ logo', defaultImg: MotorQ, hoverImg: MotorQHover, scale: 1 },
+    { id: 'neartail', alt: 'Neartail logo', defaultImg: NearTail, hoverImg: NearTailHover, scale: 1.1 },
+    { id: 'dforth', alt: 'Dforth logo', defaultImg: Dforth, hoverImg: DforthHover, scale: 1.2 },
+    { id: 'route', alt: 'RouteYourTravel logo', defaultImg: Route, hoverImg: RouteHover, scale: 1.75 },
+    { id: 'treasure', alt: 'Treasure logo', defaultImg: Treasure, hoverImg: TreasureHover, scale: 1.35 },
+    { id: 'buddy', alt: 'Buddy logo', defaultImg: Buddy, hoverImg: BuddyHover, scale: 1.25 },
+    { id: 'gamenation', alt: 'GameNation logo', defaultImg: GameNation, hoverImg: GameNationHover, scale: 1.9 },
+    { id: 'wealthified', alt: 'Wealthified logo', defaultImg: Wealthified, hoverImg: WealthifiedHover, scale: 1.3 },
+    { id: 'hirifi', alt: 'Hirifi logo', defaultImg: Hirifi, hoverImg: HirifiHover, scale: 2 },
+    { id: 'algo', alt: 'Algo Software logo', defaultImg: Algo, hoverImg: AlgoHover, scale: 1 },
   ];
 
   const allDesktopLogos = [...desktopLogos, ...desktopLogos];
@@ -166,7 +166,7 @@ export default function LogoMarquee() {
               key={`${logo.id}-${index}`}
               defaultImg={logo.defaultImg}
               hoverImg={logo.hoverImg}
-              alt={logo.id}
+              alt={logo.alt}
               useGrayscaleFilter={'useGrayscaleFilter' in logo && logo.useGrayscaleFilter}
             />
           ))}
@@ -181,7 +181,7 @@ export default function LogoMarquee() {
             key={logo.id}
             defaultImg={logo.defaultImg}
             hoverImg={logo.hoverImg}
-            alt={logo.id}
+            alt={logo.alt}
             scale={logo.scale}
           />
         ))}
