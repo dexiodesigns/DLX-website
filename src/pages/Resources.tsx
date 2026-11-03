@@ -57,7 +57,7 @@ export default function Resources() {
             <div className="articles-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 w-full max-w-[1280px] mx-auto">
               <a href="https://medium.com/@marketing_16484/saas-is-no-longer-human-only-8a41b3f312ab" target="_blank" rel="noopener noreferrer" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
                 <div className="relative w-full h-56 overflow-hidden">
-                  <img className="w-full h-full object-cover animate-ken-burns" src={saas} alt="SaaS concept collage" />
+                  <img className="w-full h-full object-cover animate-ken-burns" src={saas} alt="Hand interacting with a holographic SaaS network diagram" />
                 </div>
                 <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
@@ -71,7 +71,7 @@ export default function Resources() {
               </a>
               <a href="https://medium.com/@marketing_16484/from-automation-to-collaboration-d8c0982afd7e" target="_blank" rel="noopener noreferrer" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
                 <div className="relative w-full h-56 overflow-hidden">
-                  <img className="w-full h-full object-cover animate-ken-burns" src={automation} alt="Automation and AI on laptop" />
+                  <img className="w-full h-full object-cover animate-ken-burns" src={automation} alt="Team collaborating around laptops in a tech office" />
                 </div>
                 <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
@@ -85,7 +85,7 @@ export default function Resources() {
               </a>
               <a href="https://medium.com/@marketing_16484/ai-is-not-a-feature-its-a-teammate-62706232d162" target="_blank" rel="noopener noreferrer" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
                 <div className="relative w-full h-56 overflow-hidden">
-                  <img className="w-full h-full object-cover animate-ken-burns" src={person} alt="AI as teammate metaphor" />
+                  <img className="w-full h-full object-cover animate-ken-burns" src={person} alt="Colleagues discussing an AI interface on a tablet" />
                 </div>
                 <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
@@ -99,7 +99,7 @@ export default function Resources() {
               </a>
               <a href="https://medium.com/@marketing_16484/the-end-of-manual-first-saas-thinking-1f564982c92e" target="_blank" rel="noopener noreferrer" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
                 <div className="relative w-full h-56 overflow-hidden">
-                  <img className="w-full h-full object-cover animate-ken-burns" src={executive} alt="Ending manual processes" />
+                  <img className="w-full h-full object-cover animate-ken-burns" src={executive} alt="Manager reviewing growth charts at a desk after hours" />
                 </div>
                 <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
@@ -114,7 +114,7 @@ export default function Resources() {
 
               <a href="https://medium.com/@marketing_16484/the-loop-designing-human-in-the-loop-3115e470cc1c" target="_blank" rel="noopener noreferrer" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
                 <div className="relative w-full h-56 overflow-hidden">
-                  <img className="w-full h-full object-cover animate-ken-burns" src={woman} alt="Human in the loop conceptual UI" />
+                  <img className="w-full h-full object-cover animate-ken-burns" src={woman} alt="Hand drawing a design–develop–analyse–evaluate loop" />
                 </div>
                 <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
@@ -128,7 +128,7 @@ export default function Resources() {
               </a>
               <a href="https://medium.com/@marketing_16484/velocity-why-ai-native-companies-win-4c0c2a0d72ff" target="_blank" rel="noopener noreferrer" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
                 <div className="relative w-full h-56 overflow-hidden">
-                  <img className="w-full h-full object-cover animate-ken-burns" src={joyous} alt="Joyous speaker" />
+                  <img className="w-full h-full object-cover animate-ken-burns" src={joyous} alt="Speaker presenting AI business solutions on stage" />
                 </div>
                 <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
@@ -142,7 +142,7 @@ export default function Resources() {
               </a>
               <a href="https://medium.com/@marketing_16484/designing-trust-explainability-as-a-ux-problem-b9ac8b729071" target="_blank" rel="noopener noreferrer" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
                 <div className="relative w-full h-56 overflow-hidden">
-                  <img className="w-full h-full object-cover animate-ken-burns" src={ui} alt="UI designer brainstorming" />
+                  <img className="w-full h-full object-cover animate-ken-burns" src={ui} alt="Designers sketching app wireframes with sticky notes" />
                 </div>
                 <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
@@ -156,7 +156,7 @@ export default function Resources() {
               </a>
               <a href="https://medium.com/@marketing_16484/the-rise-of-intent-aware-saas-2fd113d85a26" target="_blank" rel="noopener noreferrer" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
                 <div className="relative w-full h-56 overflow-hidden">
-                  <img className="w-full h-full object-cover animate-ken-burns" src={cloud} alt="Cloud strategy conceptual" />
+                  <img className="w-full h-full object-cover animate-ken-burns" src={cloud} alt="Businessman touching a glowing cloud computing icon" />
                 </div>
                 <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
@@ -184,7 +184,7 @@ export default function Resources() {
               </a>
               <a href="https://medium.com/@marketing_16484/what-changes-in-product-teams-when-ai-enters-the-room-bbf961412e07" target="_blank" rel="noopener noreferrer" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
                 <div className="relative w-full h-56 overflow-hidden">
-                  <img className="w-full h-full object-cover animate-ken-burns" src={four} alt="AI impact on product teams" />
+                  <img className="w-full h-full object-cover animate-ken-burns" src={four} alt="Product team around a table with a holographic AI figure" />
                 </div>
                 <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
@@ -199,7 +199,7 @@ export default function Resources() {
 
               <a href="https://medium.com/@marketing_16484/the-new-stack-humans-ai-and-systems-38293c2dc1bb" target="_blank" rel="noopener noreferrer" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
                 <div className="relative w-full h-56 overflow-hidden">
-                  <img className="w-full h-full object-cover animate-ken-burns" src={focus} alt="Focus concept collage" />
+                  <img className="w-full h-full object-cover animate-ken-burns" src={focus} alt="Laptop running AI analytics in a data centre" />
                 </div>
                 <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
@@ -214,7 +214,7 @@ export default function Resources() {
 
               <a href="https://medium.com/@marketing_16484/saas-ux-in-the-age-of-agents-1d420bb0c1dc" target="_blank" rel="noopener noreferrer" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
                 <div className="relative w-full h-56 overflow-hidden">
-                  <img className="w-full h-full object-cover animate-ken-burns" src={young_people} alt="UX design for agents" />
+                  <img className="w-full h-full object-cover animate-ken-burns" src={young_people} alt="Team reviewing documents and screens together" />
                 </div>
                 <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
@@ -228,7 +228,7 @@ export default function Resources() {
               </a>
               <a href="https://medium.com/@marketing_16484/fluency-is-the-new-code-0334928901ed" target="_blank" rel="noopener noreferrer" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
                 <div className="relative w-full h-56 overflow-hidden">
-                  <img className="w-full h-full object-cover animate-ken-burns" src={programming} alt="Programming background" />
+                  <img className="w-full h-full object-cover animate-ken-burns" src={programming} alt="Hands typing code on a laptop" />
                 </div>
                 <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">
@@ -242,7 +242,7 @@ export default function Resources() {
               </a>
               <a href="https://medium.com/@marketing_16484/ai-as-a-force-multiplier-for-startups-383a2212c5ec" target="_blank" rel="noopener noreferrer" className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400">
                 <div className="relative w-full h-56 overflow-hidden">
-                  <img className="w-full h-full object-cover animate-ken-burns" src={ai} alt="AI analysis team" />
+                  <img className="w-full h-full object-cover animate-ken-burns" src={ai} alt="Analysts reviewing AI dashboards on large screens" />
                 </div>
                 <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
                   <div className="self-stretch flex justify-start items-start gap-4">

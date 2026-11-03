@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { ArrowRight, Play } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { TAB_CONFIGS, getTabConfig } from "../constants/tabConfig";
-import productsVideo from "../assets/Videos/Products-SaaS-Intelligence.mp4";
 import DesignServicesVideo from "../assets/Videos/DesignServicesVideo.mp4";
+import OpenIcon from "../assets/HomeIcons/openLinkIcon.svg";
 
 export default function ServiceExcellence() {
   const [activeTab, setActiveTab] = useState("Services");
@@ -30,6 +30,7 @@ export default function ServiceExcellence() {
   }, [activeTab]);
 
   const tabOrder = Object.keys(TAB_CONFIGS);
+  const products = getTabConfig(activeTab).content.products;
 
   return (
     <section className="max-w-10xl px-6 xl:px-[200px] pt-12 pb-16 md:py-[28px]">
@@ -79,7 +80,7 @@ export default function ServiceExcellence() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-[48px] items-start max-w-[1208px] mx-auto">
 
         {/* Left Side: Content & Stats */}
-        <div className="flex flex-col text-center md:text-left order-2 md:order-1 md:max-w-[604px]">
+        <div className={`flex flex-col text-center order-2 md:order-1 ${products ? "md:col-span-2" : "md:text-left md:max-w-[604px]"}`}>
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
@@ -91,7 +92,7 @@ export default function ServiceExcellence() {
               <h2 className="text-[28px] md:text-[40px] font-semibold leading-tight mb-6 font-sora md:font-sans" style={{ color: '#F1F2F4', fontFamily: 'Sora, sans-serif' }}>
                 {getTabConfig(activeTab).content.title}
               </h2>
-              <p className="text-sm md:text-base leading-relaxed mb-8 max-w-[38rem] mx-auto md:mx-0" style={{ color: '#D5D7DD' }}>
+              <p className={`text-sm md:text-base leading-relaxed mb-8 max-w-[38rem] mx-auto ${products ? "" : "md:mx-0"}`} style={{ color: '#D5D7DD' }}>
                 {getTabConfig(activeTab).content.description}
               </p>
 
@@ -112,21 +113,49 @@ export default function ServiceExcellence() {
                 </div>
               )}
 
-              {/* Button - Show for all tabs */}
-              <div className="flex justify-center md:justify-start">
-                <button
-                  onClick={() => navigate(getTabConfig(activeTab).content.buttonHref ?? '/contact')}
-                  className="w-fit bg-[#22252A] px-6 py-3 rounded-[20px] flex items-center gap-2 hover:bg-zinc-800 transition text-[18px] font-medium leading-6 capitalize text-white"
-                >
-                  {getTabConfig(activeTab).content.buttonText}
-                  <ArrowRight size={16} />
-                </button>
-              </div>
+              {/* Product Cards - same style as Resources article cards */}
+              {products && (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 text-left">
+                  {products.map((product) => (
+                    <a
+                      key={product.name}
+                      href={product.href}
+                      className="group w-full bg-zinc-800 rounded-[36px] flex flex-col justify-start items-start overflow-hidden transition-all duration-400 cursor-pointer"
+                    >
+                      <div className="relative w-full h-56 overflow-hidden">
+                        <img className="w-full h-full object-cover animate-ken-burns" src={product.image} alt={product.name} />
+                      </div>
+                      <div className="flex-1 self-stretch p-6 flex flex-col justify-start items-start gap-3 relative z-10 transition-colors duration-400 card-content-overlay">
+                        <div className="self-stretch flex justify-start items-start gap-4">
+                          <div className="flex-1 text-gray-100 text-2xl font-bold font-['Sora'] leading-9 line-clamp-1">{product.name}</div>
+                          <div className="flex-shrink-0 w-5 h-5 md:w-4 md:h-4 mt-2 flex items-center justify-center opacity-70 card-icon-overlay transition-all duration-400">
+                            <img src={OpenIcon} alt="" className="w-full h-full object-contain" />
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              )}
+
+              {/* Button - Tabs without product cards */}
+              {getTabConfig(activeTab).content.buttonText && (
+                <div className="flex justify-center md:justify-start">
+                  <button
+                    onClick={() => navigate(getTabConfig(activeTab).content.buttonHref ?? '/contact')}
+                    className="w-fit bg-[#22252A] px-6 py-3 rounded-[20px] flex items-center gap-2 hover:bg-zinc-800 transition text-[18px] font-medium leading-6 capitalize text-white"
+                  >
+                    {getTabConfig(activeTab).content.buttonText}
+                    <ArrowRight size={16} />
+                  </button>
+                </div>
+              )}
             </motion.div>
           </AnimatePresence>
         </div>
 
         {/* Right Side: Visual Content (Video/Image) - Higher priority on mobile order */}
+        {!products && (
         <div className="relative group cursor-pointer order-1 md:order-2 w-full md:w-[604px]">
           <AnimatePresence mode="wait">
             <motion.div
@@ -154,16 +183,6 @@ export default function ServiceExcellence() {
                     </div>
                   </div>
                 </div>
-              ) : activeTab === "Products" ? (
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-[250px] md:h-[340px] object-cover"
-                >
-                  <source src={productsVideo} type="video/mp4" />
-                </video>
               ) : (
                 <div className="bg-[#111214] p-8 h-[250px] md:h-[340px] flex items-center justify-center">
                   <div className="text-center">
@@ -175,6 +194,7 @@ export default function ServiceExcellence() {
             </motion.div>
           </AnimatePresence>
         </div>
+        )}
       </div>
 
       {/* Video Modal */}
